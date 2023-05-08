@@ -1,0 +1,23 @@
+---
+layout: default.html
+title: Estátuas — Monumentos Rio
+---
+
+<%_ const monuments = collections.all.filter(file =>
+	file.filePathStem.startsWith("/id/") && file.data.categoria === "estátua"
+); %>
+
+<main>
+	<h1>Estátuas</h1>
+	<p>
+		Esta é uma lista de todas as estátuas catalogadas atualmente. Ela possui
+		as seguintes <strong><%= monuments.length %></strong> estátuas:
+	</p>
+	<ul>
+	<%_ for(const mon of monuments) { %>
+		<li>
+			<a href="<%= mon.filePathStem %>"><%= mon.data.name %></a> (<%= mon.filePathStem.slice(4) %>)
+		</li>
+	<%_ } %>
+	</ul>
+</main>

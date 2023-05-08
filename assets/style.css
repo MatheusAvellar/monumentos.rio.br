@@ -1,0 +1,121 @@
+html {
+	height: 100%;
+}
+body {
+	display: grid;
+	min-height: 100%;
+	max-width: 1024px;
+	margin: auto;
+	grid-template-rows: auto 1fr auto;
+	font-family: Inter, Roboto, sans-serif;
+}
+header, main, footer {
+	padding: 1em;
+}
+header > nav > ul {
+	display: flex;
+	flex-direction: row;
+	list-style: none;
+	padding: 0;
+	gap: 2em;
+}
+header > nav details {
+	cursor: default;
+}
+header > nav details ul {
+	position: absolute;
+	background-color: white;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	padding: .5em 0;
+	list-style: none;
+}
+header > nav a[href] {
+	text-decoration: none;
+	color: inherit;
+}
+header > nav details ul > li {
+	padding: .125em 1em .125em .5em;
+}
+header > nav details ul > li span {
+	vertical-align: middle;
+}
+header > nav details ul > li:is(:hover, :active, :focus, :focus-within) {
+	background-color: #f2f2f2;
+}
+.icon {
+	display: inline-block;
+	vertical-align: middle;
+	height: 24px;
+	width: 24px;
+	fill: #444;
+}
+
+main.monument {
+	display: grid;
+	grid-template-columns: 1fr auto;
+}
+footer {
+	color: #444;
+}
+footer > section {
+	display: grid;
+	grid-template-columns: 1fr auto;
+}
+footer .heart-icon {
+	height: 1.5rem;
+	padding: 0.1rem 0;
+	vertical-align: middle;
+	box-sizing: border-box;
+	fill: none;
+	stroke: #444;
+	stroke-width: 1.5;
+	stroke-linecap: round;
+	stroke-linejoin: round;
+}
+
+h1 {
+	margin: 0;
+	font-size: 3rem;
+}
+p {
+	margin: 0;
+	font-size: 1rem;
+	line-height: 1.25;
+}
+strong {
+	font-weight: 500;
+}
+
+aside > dl > dt {
+	font-weight: bold;
+}
+
+.monument-id {
+	display: block;
+	color: #444;
+	font-size: 1.5rem;
+	font-style: normal;
+}
+hr {
+	border: 0;
+	border-top: 1px solid #f1f1f1;
+	margin: .75em 0;
+}
+
+i.category {
+	padding: .125em .5em;
+	font-style: normal;
+	font-size: 75%;
+	border-radius: 4px;
+}
+i.category.busto     { background-color: #f0bdf9; }
+i.category.chafariz  { background-color: #f5c0ae; }
+i.category.estátua   { background-color: #fde099; }
+i.category.marco     { background-color: #c7e79a; }
+i.category.escultura { background-color: #cbf0ff; }
+
+
+[hidden] {
+	display: none !important;
+}

@@ -1,0 +1,22 @@
+---
+layout: default.html
+title: Todos — Monumentos Rio
+---
+
+<%_ const monuments = collections.all.filter(file => file.filePathStem.startsWith("/id/")); %>
+
+<main>
+	<h1>Todos os monumentos</h1>
+	<p>
+		Esta é uma lista de todos os monumentos catalogados atualmente. Ela possui
+		os seguintes <strong><%= monuments.length %></strong> monumentos:
+	</p>
+	<ul>
+	<%_ for(const mon of monuments) { %>
+		<li>
+			<a href="<%= mon.filePathStem %>"><%= mon.data.name %></a> (<%= mon.filePathStem.slice(4) %>)
+			<i class="category <%= mon.data.categoria %>"><%= mon.data.categoria %></i>
+		</li>
+	<%_ } %>
+	</ul>
+</main>

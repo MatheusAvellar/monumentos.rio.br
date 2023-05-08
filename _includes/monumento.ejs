@@ -1,0 +1,36 @@
+---
+layout: default.html
+eleventyComputed: {
+	title: "{{name}} — Monumentos Rio"
+}
+---
+
+<main class="monument">
+<section>
+	<h1><%= name %></h1>
+	<div>
+		<%- content %>
+	</div>
+</section>
+<aside>
+	<em class="monument-id"><%= page.fileSlug %></em>
+	<i class="category <%= categoria %>"><%= categoria %></i>
+	<hr>
+	<dl>
+		<%_ if(typeof imrj !== "undefined") { %>
+			<dt>Inventário dos Monumentos RJ</dt>
+			<dd>
+				ID <a href="<%= IMRJ_URL %><%= imrj %>"><%= imrj %></a>
+			</dd>
+		<%_ } %>
+		<%_ if(typeof wikidata !== "undefined") { %>
+			<dt>Wikidata</dt>
+			<dd><a href="<%= WIKIDATA_URL %><%= wikidata %>"><%= wikidata %></a></dd>
+		<%_ } %>
+		<%_ if(typeof iphan !== "undefined") { %>
+			<dt>IPHAN</dt>
+			<dd><%= iphan %></dd>
+		<%_ } %>
+	</dl>
+</aside>
+</main>
