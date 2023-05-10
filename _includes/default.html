@@ -9,6 +9,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="referrer" content="no-referrer">
 	<link rel="stylesheet" href="/assets/style.css">
+	<script src="/assets/leaflet/leaflet.min.1.9.3.js"></script>
 </head>
 <body>
 	<div hidden>
@@ -35,37 +36,39 @@
 				<li><a href="/">monumentos.rio</a></li>
 				<li>
 					<details>
-						<summary>Acervo</summary>
+						<summary>Inventário</summary>
 						<ul>
 							<li>
-								<svg class="icon"><use href="#all"/></svg>
-								<a href="/todos">Todos</a>
+								<a href="/todos">
+									<svg class="icon"><use href="#all"/></svg>
+									<span>Todos</span>
+								</a>
 							</li>
-							<li>
+							<li style="--accent:#f0bdf9">
 								<a href="/bustos">
 									<svg class="icon"><use href="#bust"/></svg>
 									<span>Bustos</span>
 								</a>
 							</li>
-							<li>
+							<li style="--accent:#f5c0ae">
 								<a href="/chafarizes">
 									<svg class="icon"><use href="#fountain"/></svg>
 									<span>Chafarizes e fontes</span>
 								</a>
 							</li>
-							<li>
+							<li style="--accent:#fde099">
 								<a href="/estatuas">
 									<svg class="icon"><use href="#statue"/></svg>
 									<span>Estátuas</span>
 								</a>
 							</li>
-							<li>
+							<li style="--accent:#c7e79a">
 								<a href="/marcos">
 									<svg class="icon"><use href="#mark"/></svg>
 									<span>Marcos</span>
 								</a>
 							</li>
-							<li>
+							<li style="--accent:#cbf0ff">
 								<a href="/esculturas">
 									<svg class="icon"><use href="#sculpture"/></svg>
 									<span>Esculturas</span>
@@ -74,6 +77,8 @@
 						</ul>
 					</details>
 				</li>
+				<li><a href="/sobre">Sobre</a></li>
+				<li><a href="/mais">Mais</a></li>
 			</ul>
 		</nav>
 	</header>
@@ -82,24 +87,32 @@
 		<hr>
 		<section>
 			<p>
-				Feito com ♥︎&#xFE0E;<!--&#xFE0E;[Ref] stackoverflow.com/a/38452396/4824627-->
-				por <a href="https://avl.la/">Matheus Avellar</a>
-			</p>
-			<p>
-				Sugestões, reclamações ou comentários?<br>
-				contato<svg class="heart-icon" viewBox="0 0 24 24" aria-label="@">
-					<circle cx="12" cy="12" r="4"></circle>
-					<path d="M16 12v1.5a2.5 2.5 0 0 0 5 0v-1.5a9 9 0 1 0 -5.5 8.28"></path>
-				</svg>monumentos.rio
-			</p>
-			<p>
 				Este projeto não é apoiado, patrocinado ou desenvolvido pelo governo
 				municipal do Rio de Janeiro, ou quaisquer outras organizações,
 				governamentais ou não. Ele é desenvolvido e mantido voluntária e
 				independentemente.
 			</p>
+			<div>
+				<p>
+					Feito com ♥︎&#xFE0E;<!--&#xFE0E;[Ref] stackoverflow.com/a/38452396/4824627-->
+					por <a href="https://avl.la/">Matheus Avellar</a>
+				</p>
+				<p>
+					Sugestões, reclamações ou comentários?<br>
+					contato<svg class="heart-icon" viewBox="0 0 24 24" aria-label="@">
+						<circle cx="12" cy="12" r="4"></circle>
+						<path d="M16 12v1.5a2.5 2.5 0 0 0 5 0v-1.5a9 9 0 1 0 -5.5 8.28"></path>
+					</svg>monumentos.rio
+				</p>
+			</div>
 		</section>
 	</footer>
+	<!-- Rasmus' Inter font -->
 	<link rel="stylesheet" href="https://cdn.avl.la/font/inter.css">
+	<!-- LiteLightbox -->
+	<link href="/assets/litelightbox.min.css" rel="stylesheet" type="text/css">
+	<script src="/assets/litelightbox.min.js"></script>
+	<!-- Leaflet Maps -->
+	<link href="/assets/leaflet/leaflet.css" rel="stylesheet" type="text/css">
 </body>
 </html>

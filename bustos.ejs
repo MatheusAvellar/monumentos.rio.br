@@ -1,0 +1,35 @@
+---
+layout: default.html
+title: Bustos — Monumentos Rio
+---
+
+<%_ const monuments = collections.all.filter(file =>
+	file.filePathStem.startsWith("/id/") && file.data.categoria === "busto"
+);
+monuments.sort((a, b) => a.filePathStem.slice(4).localeCompare(b.filePathStem.slice(4)));
+%>
+
+<main>
+	<h1>Bustos</h1>
+	<p>
+		Esta é uma lista de todos os bustos catalogados.
+
+		Exemplos incluem o <a href="/id/B52023">Busto de Aldir Blanc</a>.
+	</p>
+	<p>
+		Monumentos nesta categoria são marcados com a tag <%- makeTag("busto") %>.
+	</p>
+	<p>
+		Ela possui os seguintes <strong><%= monuments.length %></strong> monumentos:
+	</p>
+	<ul>
+	<%_ for(const mon of monuments) { %>
+		<li>
+			<p>
+				<a class="identifier" href="<%= mon.filePathStem %>"><%= mon.filePathStem.slice(4) %></a> –
+				<span><%= mon.data.name %></span>
+			</p>
+		</li>
+	<%_ } %>
+	</ul>
+</main>

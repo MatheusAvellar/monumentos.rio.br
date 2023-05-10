@@ -1,9 +1,29 @@
 ---
 layout: default.html
 eleventyComputed: {
-	title: "{{name}} — Monumentos Rio"
+	title: "<%= name %> — Monumentos Rio"
 }
 ---
+<%_
+data_inaug = fallback(data_inaug);
+altura = fallback(altura, 0);
+largura = fallback(largura, 0);
+peso = fallback(peso, 0);
+material = fallback(material);
+
+autores = fallback(autores, []);
+
+lat = fallback(lat, 0);
+lon = fallback(lon, 0);
+local = fallback(local);
+
+imrj = fallback(imrj);
+hpip = fallback(hpip);
+wikidata = fallback(wikidata);
+iphan = fallback(iphan);
+inepac = fallback(inepac);
+inepac_url = fallback(inepac_url);
+%>
 
 <main class="monument">
 <section>
@@ -11,25 +31,139 @@ eleventyComputed: {
 	<div>
 		<%- content %>
 	</div>
+	<%_ if(lat && lon) { %>
+		<section class="location">
+			<h2>Localização</h2>
+			<p>
+			<%_ if(local) { %>
+				<strong>Endereço:</strong> <%= local %><br>
+			<%_ } %>
+				<strong>Coordenadas:</strong> <%= lat %>, <%= lon %>
+			</p>
+			<div id="map"></div>
+			<script>
+const bounds = new L.LatLngBounds(
+	new L.LatLng(<%= lat %> - 0.01, <%= lon %> - 0.02),
+	new L.LatLng(<%= lat %> + 0.01, <%= lon %> + 0.02)
+);
+const map = L.map("map", {
+	center: bounds.getCenter(),
+	zoom: 17,
+	maxBounds: bounds,
+	maxBoundsViscosity: .75
+})
+L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
+//L.tileLayer("https://tile.openstreetmap.de/{z}/{x}/{y}.png", {
+//L.tileLayer("https://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png", {
+	minZoom: 15,
+	maxZoom: 18,
+	attribution: "&copy; <a href='http://www.openstreetmap.org/copyright'>OpenStreetMap</a>"
+}).addTo(map);
+L.marker([<%= lat %>, <%= lon %>], {
+	icon: L.icon({
+		iconUrl: "/assets/leaflet/images/red-pin.png",
+		iconSize: [50, 50],
+		iconAnchor: [25, 50],
+		// iconUrl: "/assets/leaflet/images/google-pin.png",
+		// iconSize: [50, 50],
+		// iconAnchor: [25, 50],
+		shadowUrl: "/assets/leaflet/images/marker-shadow.png",
+		shadowSize: [41, 41],
+		shadowAnchor: [14, 41],
+	})
+}).addTo(map);
+			</script>
+		</section>
+	<%_ } %>
 </section>
 <aside>
-	<em class="monument-id"><%= page.fileSlug %></em>
-	<i class="category <%= categoria %>"><%= categoria %></i>
+	<em class="display-identifier"><%= page.fileSlug %></em>
+	<%- makeTag(categoria) %>
+	<%_ if(data_inaug || altura || largura || peso || material) { %>
+		<hr>
+		<%_ if(data_inaug || autores.length) { %>
+			<dl>
+			<%_ if(autores.length) { %>
+				<dt>Autores</dt>
+				<dd>
+					<%- autores.join("<br>") %>
+				</dd>
+			<%_ } %>
+			<%_ if(data_inaug) { %>
+				<dt>Data de Inauguração</dt>
+				<dd>
+					<%= formatDate(data_inaug) %><br>
+					(<%= getYearsSince(data_inaug) %>)
+				</dd>
+			<%_ } %>
+			</dl>
+		<%_ } %>
+		<%_ if(altura || largura) { %>
+			<div class="description-size">
+				<%_ if(altura) { %>
+					<div title="Altura">
+						<svg class="description-icon" aria-label="Altura" viewBox="0 0 24 24">
+							<path d="m12.95 5.9.09-.1 2.35-2.36c.18-.27.5-.44.86-.44.32 0 .62.14.81.37l0 0 .05.07 2.36 2.36.08.1.01.01c.25.34.26.82 0 1.17l0 .01-.1.12-.11.09 0 0c-.35.26-.83.27-1.18.01l-.01 0-.11-.09-.8-.81v3.19l-.01.11 0 .01c-.07.47-.51.78-.99.78-.48 0-.92-.31-.99-.78l0-.01-.01-.11v-3.19l-.8.8-.1.09 0 0c-.4.3-.95.26-1.31-.09-.35-.36-.38-.91-.09-1.3l0-.01zm-8.95.59c0-1.38 1.12-2.5 2.5-2.5h4c.55 0 1 .45 1 1 0 .55-.45 1-1 1h-4c-.28 0-.5.23-.5.5v11c0 .28.22.5.5.5h4c.55 0 1 .45 1 1 0 .55-.45 1-1 1h-4c-1.38 0-2.5-1.12-2.5-2.5v-11zm10.45 10.3-.1-.09 0 0c-.39-.3-.95-.26-1.31.09-.39.39-.39 1.03 0 1.42l2.35 2.35c.18.27.51.44.86.44.36 0 .68-.17.86-.44l2.36-2.36.08-.1.01-.01c.29-.39.26-.94-.1-1.3l-.01 0-.09-.09-.01 0c-.39-.3-.95-.26-1.3.09l-.8.8v-3.19l-.01-.11 0-.01c-.07-.47-.51-.78-.99-.78-.52 0-1 .38-1 .91v3.18l-.8-.8z"/>
+						</svg>
+						<%= altura %>&nbsp;m
+					</div>
+				<%_ } %>
+				<%_ if(largura) { %>
+					<div title="Largura">
+						<svg class="description-icon" aria-label="Largura" viewBox="0 0 24 24">
+							<path d="m17.5 3.99c1.38 0 2.5 1.12 2.5 2.5v4c0 .55-.45 1-1 1-.55 0-1-.45-1-1v-4c0-.27-.22-.5-.5-.5h-11c-.28 0-.5.23-.5.5v4c0 .55-.45 1-1 1-.55 0-1-.45-1-1v-4c0-1.38 1.12-2.5 2.5-2.5h11zm.7 9.05-.1-.09-.01 0c-.39-.29-.94-.26-1.3.09-.35.36-.39.91-.09 1.31l0 0 .09.1.8.8h-3.19l-.11.01-.01 0c-.47.07-.78.51-.78.99 0 .48.31.92.78.99l.01 0 .11.01h3.19l-.81.8-.09.11 0 .01c-.26.35-.25.83.01 1.18l0 0 .09.11.12.1.01 0c.35.26.83.25 1.17 0l.01-.01.1-.08 2.36-2.36.07-.05 0 0c.23-.19.37-.49.37-.81 0-.36-.17-.68-.44-.86l-2.36-2.35zm-10.93 1.32-.08.09-.8.8h3.18c.53 0 .9.48.9 1 0 .48-.31.92-.77.99l-.01 0-.11.01h-3.19l.79.8c.36.35.39.91.1 1.3l-.01.01-.08.1-.01 0c-.35.36-.91.39-1.3.1l-.01-.01-.1-.08-2.35-2.36c-.28-.17-.45-.5-.45-.86 0-.35.17-.68.45-.86l2.35-2.34c.39-.39 1.02-.39 1.41 0 .36.35.39.91.1 1.3l-.01.01z"/>
+						</svg>
+						<%= largura %>&nbsp;m
+					</div>
+				<%_ } %>
+			</div>
+		<%_ } %>
+		<dl>
+			<%_ if(peso) { %>
+				<dt>Peso</dt>
+				<dd><%= peso %>&nbsp;kg</dd>
+			<%_ } %>
+			<%_ if(material) { %>
+				<dt>Material</dt>
+				<dd><%= material %></dd>
+			<%_ } %>
+		</dl>
+	<%_ } %>
 	<hr>
 	<dl>
-		<%_ if(typeof imrj !== "undefined") { %>
+		<%_ if(imrj) { %>
 			<dt>Inventário dos Monumentos RJ</dt>
 			<dd>
-				ID <a href="<%= IMRJ_URL %><%= imrj %>"><%= imrj %></a>
+				ID&nbsp;<a href="<%= IMRJ_URL %><%= imrj %>"><%= imrj %></a>
 			</dd>
 		<%_ } %>
-		<%_ if(typeof wikidata !== "undefined") { %>
+		<%_ if(hpip) { %>
+			<dt>Património de Influência Portuguesa</dt>
+			<dd>
+				ID&nbsp;<a href="<%= HPIP_URL %><%= hpip %>"><%= hpip %></a>
+			</dd>
+		<%_ } %>
+		<%_ if(wikidata) { %>
 			<dt>Wikidata</dt>
 			<dd><a href="<%= WIKIDATA_URL %><%= wikidata %>"><%= wikidata %></a></dd>
 		<%_ } %>
-		<%_ if(typeof iphan !== "undefined") { %>
-			<dt>IPHAN</dt>
-			<dd><%= iphan %></dd>
+		<%_ if(iphan) { %>
+			<dt title="Instituto do Patrimônio Histórico e Artístico Nacional">IPHAN</dt>
+			<dd>
+				Nº&nbsp;<a href="<%= IPHAN_URL %>"><%= iphan %></a>
+			</dd>
+		<%_ } %>
+		<%_ if(inepac) { %>
+			<dt title="Instituto Estadual do Patrimônio Cultural">INEPAC</dt>
+			<%_ if(inepac_url) { %>
+				<dd>
+					Nº&nbsp;<a href="<%= inepac_url %>"><%= inepac %></a>
+				</dd>
+			<%_ } else { %>
+				<dd>
+					Nº&nbsp;<%= inepac %>
+				</dd>
+			<%_ } %>
 		<%_ } %>
 	</dl>
 </aside>

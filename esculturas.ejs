@@ -1,25 +1,26 @@
 ---
 layout: default.html
-title: Estátuas — Monumentos Rio
+title: Esculturas — Monumentos Rio
 ---
 
 <%_ const monuments = collections.all.filter(file =>
-	file.filePathStem.startsWith("/id/") && file.data.categoria === "estátua"
+	file.filePathStem.startsWith("/id/") && file.data.categoria === "escultura"
 );
 monuments.sort((a, b) => a.filePathStem.slice(4).localeCompare(b.filePathStem.slice(4)));
 %>
 
 <main>
-	<h1>Estátuas</h1>
+	<h1>Esculturas</h1>
 	<p>
-		Esta é uma lista de todas as estátuas catalogadas. Estátuas são
-		esculturas que representam uma ou múltiplas pessoas, animais ou figuras
-		relevantes. Exemplos incluem a estátua de <a href="/id/E00001">Estátua de Dom Pedro I</a>.
+		Esta é uma lista de todas as esculturas catalogadas. Esculturas
+		são obras de arte tridimensionais que normalmente representam conceitos
+		abstratos.
+		Exemplos incluem a estátua de <a href="/id/S00001">Estátua de Dom Pedro I</a>.
 	</p>
 	<p>
 		Monumentos nesta categoria são marcados com a tag
-		<a class="tag" href="<%= catToHref("estátua") %>">
-			<i class="category <%= catToClass("estátua") %>">estátua</i></a>.
+		<a class="tag" href="<%= catToHref("escultura") %>">
+			<i class="category <%= catToClass("escultura") %>">escultura</i></a>.
 	</p>
 	<p>
 		Ela possui

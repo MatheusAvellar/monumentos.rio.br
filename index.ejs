@@ -13,10 +13,79 @@ title: Monumentos Rio
 		Os monumentos estão separados nas seguintes categorias:
 	</p>
 	<ul>
-		<li><i class="category busto">busto</i> iniciados com B</li>
-		<li><i class="category chafariz">chafariz</i> iniciados com C</li>
-		<li><i class="category estátua">estátua</i> iniciados com E</li>
-		<li><i class="category marco">marco</i> iniciados com M</li>
-		<li><i class="category escultura">escultura</i> iniciados com S</li>
+		<li>
+			<%- makeTag("busto") %>
+			iniciados com B
+		</li>
+		<li>
+			<%- makeTag("chafariz") %>
+			iniciados com C
+		</li>
+		<li>
+			<%- makeTag("estátua") %>
+			iniciados com E
+		</li>
+		<li>
+			<%- makeTag("marco") %>
+			iniciados com M
+		</li>
+		<li>
+			<%- makeTag("escultura") %>
+			iniciados com S
+		</li>
 	</ul>
+
+<%_
+// [Ref] https://bost.ocks.org/mike/shuffle/
+function shuffle(array) {
+  let m = array.length, t, i;
+  while(m) {
+    i = Math.floor(Math.random() * m--);
+    t = array[m];
+    array[m] = array[i];
+    array[i] = t;
+  }
+  return array;
+}
+const monuments = shuffle(collections.all.filter(file =>
+	file.filePathStem.startsWith("/id/")
+));
+%>
+	<hr>
+	<p>
+		Aqui estão alguns monumentos de exemplo, escolhidos aleatoriamente:
+	</p>
+	<br>
+	<figure>
+		<img src="/assets/<%= monuments[0].filePathStem.slice(4) %>/thumb.jpg">
+		<figcaption>
+			<a class="identifier" href="<%= monuments[0].filePathStem %>"><%= monuments[0].filePathStem.slice(4) %></a> –
+			<span><%= monuments[0].data.name %></span><br>
+			<%- makeTag(monuments[0].data.categoria) %>
+		</figcaption>
+	</figure>
+	<figure>
+		<img src="/assets/<%= monuments[1].filePathStem.slice(4) %>/thumb.jpg">
+		<figcaption>
+			<a class="identifier" href="<%= monuments[1].filePathStem %>"><%= monuments[1].filePathStem.slice(4) %></a> –
+			<span><%= monuments[1].data.name %></span><br>
+			<%- makeTag(monuments[1].data.categoria) %>
+		</figcaption>
+	</figure>
+	<figure>
+		<img src="/assets/<%= monuments[2].filePathStem.slice(4) %>/thumb.jpg">
+		<figcaption>
+			<a class="identifier" href="<%= monuments[2].filePathStem %>"><%= monuments[2].filePathStem.slice(4) %></a> –
+			<span><%= monuments[2].data.name %></span><br>
+			<%- makeTag(monuments[2].data.categoria) %>
+		</figcaption> 
+	</figure>
+	<figure>
+		<img src="/assets/<%= monuments[3].filePathStem.slice(4) %>/thumb.jpg">
+		<figcaption>
+			<a class="identifier" href="<%= monuments[3].filePathStem %>"><%= monuments[3].filePathStem.slice(4) %></a> –
+			<span><%= monuments[3].data.name %></span><br>
+			<%- makeTag(monuments[3].data.categoria) %>
+		</figcaption>
+	</figure>
 </main>

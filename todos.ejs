@@ -3,19 +3,24 @@ layout: default.html
 title: Todos — Monumentos Rio
 ---
 
-<%_ const monuments = collections.all.filter(file => file.filePathStem.startsWith("/id/")); %>
+<%_ const monuments = collections.all.filter(file => file.filePathStem.startsWith("/id/"));
+monuments.sort((a, b) => a.filePathStem.slice(4).localeCompare(b.filePathStem.slice(4)));
+%>
 
 <main>
 	<h1>Todos os monumentos</h1>
 	<p>
-		Esta é uma lista de todos os monumentos catalogados atualmente. Ela possui
+		Esta é uma lista de todos os monumentos catalogados. Ela possui
 		os seguintes <strong><%= monuments.length %></strong> monumentos:
 	</p>
 	<ul>
 	<%_ for(const mon of monuments) { %>
 		<li>
-			<a href="<%= mon.filePathStem %>"><%= mon.data.name %></a> (<%= mon.filePathStem.slice(4) %>)
-			<i class="category <%= mon.data.categoria %>"><%= mon.data.categoria %></i>
+			<a class="tag" href="<%= catToHref(mon.data.categoria) %>">
+				<i class="category <%= catToClass(mon.data.categoria) %>"><%= mon.data.categoria %></i>
+			</a>
+			<a class="identifier" href="<%= mon.filePathStem %>"><%= mon.filePathStem.slice(4) %></a> –
+			<span><%= mon.data.name %></span>
 		</li>
 	<%_ } %>
 	</ul>
