@@ -1,5 +1,5 @@
 ---
-layout: default.html
+layout: default.ejs
 title: Esculturas — Monumentos Rio
 ---
 
@@ -15,7 +15,7 @@ monuments.sort((a, b) => a.filePathStem.slice(4).localeCompare(b.filePathStem.sl
 		Esta é uma lista de todas as esculturas catalogadas. Esculturas
 		são obras de arte tridimensionais que normalmente representam conceitos
 		abstratos.
-		Exemplos incluem a estátua de <a href="/id/S00001">Estátua de Dom Pedro I</a>.
+		Exemplos incluem a <a href="/id/xxx">xxx</a>.
 	</p>
 	<p>
 		Monumentos nesta categoria são marcados com a tag
@@ -24,7 +24,7 @@ monuments.sort((a, b) => a.filePathStem.slice(4).localeCompare(b.filePathStem.sl
 	</p>
 	<p>
 		Ela possui
-		as seguintes <strong><%= monuments.length %></strong> estátuas:
+		as seguintes <strong><%= monuments.length %></strong> esculturas:
 	</p>
 	<ul>
 	<%_ for(const mon of monuments) { %>

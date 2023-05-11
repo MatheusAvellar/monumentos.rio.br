@@ -2,7 +2,7 @@
 <html lang="pt-br">
 <head>
 	<meta charset="utf-8">
-	<title>{{ title }}</title>
+	<title><%= title %></title>
 	<meta content="Matheus Avellar" name="author">
 	<!-- <meta name="description" content=""> -->
 	<link rel="preconnect" href="https://cdn.avl.la">
@@ -27,11 +27,11 @@
 			<!-- Jeff Anders (Pictogrammers – Apache License 2.0) -->
 			<path id="sculpture" d="M2 3c.55 0 1 .45 1 1v9h2V5c0-.55.45-1 1-1 .55 0 1 .45 1 1v8h2V6c0-.55.45-1 1-1 .55 0 1 .45 1 1v7h1.5c.17 0 .34 0 .5.05V7c0-.55.45-1 1-1 .55 0 1 .45 1 1v8.5c0 1.38-1.12 2.5-2.5 2.5h-1c-.28 0-.5.22-.5.5 0 .28.22.5.5.5H17V8c0-.55.45-1 1-1 .55 0 1 .45 1 1v11h2V9c0-.55.45-1 1-1 .55 0 1 .45 1 1v11c0 .55-.45 1-1 1H11.5c-1.38 0-2.5-1.12-2.5-2.5 0-1.38 1.12-2.5 2.5-2.5h1c.28 0 .5-.22.5-.5 0-.28-.22-.5-.5-.5H2C1.45 15 1 14.55 1 14V4c0-.55.45-1 1-1z"/>
 			<!-- Aniket Suvarna (Boxicons – MIT License) -->
-			<path id="arch" d="M21 8V6H3v14H2v2h6v-7c0-.16.05-4 4-4 3.82 0 3.99 3.6 4 4v7h6v-2h-1V8zM2 2h20v2H2z"/>
+			<path id="public" d="M21 8V6H3v14H2v2h6v-7c0-.16.05-4 4-4 3.82 0 3.99 3.6 4 4v7h6v-2h-1V8zM2 2h20v2H2z"/>
 		</svg>
 	</div>
 	<header>
-		<nav>
+		<nav class="downsize">
 			<ul>
 				<li><a href="/">monumentos.rio</a></li>
 				<li>
@@ -44,31 +44,37 @@
 									<span>Todos</span>
 								</a>
 							</li>
-							<li style="--accent:#f0bdf9">
+							<li class="<%= catToClass("obra") %>">
+								<a href="/obras">
+									<svg class="icon"><use href="#public"/></svg>
+									<span>Obras públicas</span>
+								</a>
+							</li>
+							<li class="<%= catToClass("busto") %>">
 								<a href="/bustos">
 									<svg class="icon"><use href="#bust"/></svg>
 									<span>Bustos</span>
 								</a>
 							</li>
-							<li style="--accent:#f5c0ae">
+							<li class="<%= catToClass("chafariz") %>">
 								<a href="/chafarizes">
 									<svg class="icon"><use href="#fountain"/></svg>
 									<span>Chafarizes e fontes</span>
 								</a>
 							</li>
-							<li style="--accent:#fde099">
+							<li class="<%= catToClass("estátua") %>">
 								<a href="/estatuas">
 									<svg class="icon"><use href="#statue"/></svg>
 									<span>Estátuas</span>
 								</a>
 							</li>
-							<li style="--accent:#c7e79a">
+							<li class="<%= catToClass("marco") %>">
 								<a href="/marcos">
 									<svg class="icon"><use href="#mark"/></svg>
 									<span>Marcos</span>
 								</a>
 							</li>
-							<li style="--accent:#cbf0ff">
+							<li class="<%= catToClass("escultura") %>">
 								<a href="/esculturas">
 									<svg class="icon"><use href="#sculpture"/></svg>
 									<span>Esculturas</span>
@@ -79,13 +85,13 @@
 				</li>
 				<li><a href="/sobre">Sobre</a></li>
 				<li><a href="/mais">Mais</a></li>
+				<li><a href="/creditos">Créditos</a></li>
 			</ul>
 		</nav>
 	</header>
-	{{ content }}
+	<%- content %>
 	<footer>
-		<hr>
-		<section>
+		<section class="downsize">
 			<p>
 				Este projeto não é apoiado, patrocinado ou desenvolvido pelo governo
 				municipal do Rio de Janeiro, ou quaisquer outras organizações,

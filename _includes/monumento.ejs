@@ -1,5 +1,5 @@
 ---
-layout: default.html
+layout: default.ejs
 eleventyComputed: {
 	title: "<%= name %> — Monumentos Rio"
 }
@@ -16,6 +16,7 @@ autores = fallback(autores, []);
 lat = fallback(lat, 0);
 lon = fallback(lon, 0);
 local = fallback(local);
+bairro = fallback(bairro);
 
 imrj = fallback(imrj);
 hpip = fallback(hpip);
@@ -36,7 +37,8 @@ inepac_url = fallback(inepac_url);
 			<h2>Localização</h2>
 			<p>
 			<%_ if(local) { %>
-				<strong>Endereço:</strong> <%= local %><br>
+				<strong>Endereço:</strong>
+				<%= local %><%_ if(bairro) { %>, <%= bairro %><%_ } %><br>
 			<%_ } %>
 				<strong>Coordenadas:</strong> <%= lat %>, <%= lon %>
 			</p>

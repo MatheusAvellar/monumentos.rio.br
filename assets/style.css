@@ -1,62 +1,97 @@
 [hidden] {
 	display: none !important;
 }
+* {
+	box-sizing: border-box;
+}
 html {
 	height: 100%;
 }
 body {
+	margin: 0;
 	display: grid;
 	min-height: 100%;
-	max-width: 1024px;
-	margin: auto;
 	grid-template-rows: auto 1fr auto;
 	font-family: Inter, Roboto, sans-serif;
+	background-color: #fafafa;
 }
 header, main, footer {
-	padding: 1em;
+	padding: 1rem;
+}
+header {
+	background-color: #fff;
+	box-shadow: 0 2px 5px #e5e5e5;
 }
 header > nav > ul {
 	display: flex;
 	flex-direction: row;
+	align-items: center;
 	list-style: none;
 	padding: 0;
 	gap: 2em;
 }
-header > nav details {
-	cursor: default;
+header > nav details summary {
+	cursor: pointer;
 }
 header > nav details ul {
 	position: absolute;
 	z-index: 1;
-	background-color: white;
+	margin-top: 4px;
 	border: 1px solid #d8d8d8;
 	border-radius: 4px;
 	padding: .5rem 0;
 	list-style: none;
+	background-color: white;
+	box-shadow:
+		0 1px 1.1px hsl(0deg 0% 71% / 0.32),
+		0 2.7px 2.8px -1px hsl(0deg 0% 71% / 0.29),
+		0 7px 7.4px -2px hsl(0deg 0% 71% / 0.27),
+		0 17.5px 18.4px -3px hsl(0deg 0% 71% / 0.24);
 }
 header > nav a[href] {
-	text-decoration: none;
+	display: inline-block;
 	color: inherit;
-}
-header > nav details ul > li {
+	text-decoration: none;
+	width: 100%;
 	padding: .125em 1em .125em .5em;
 }
 header > nav details ul > li span {
 	vertical-align: middle;
 }
 header > nav details ul > li:is(:hover, :active, :focus, :focus-within) {
-	--accent: #f2f2f2;
 	background-color: #f2f2f2;
+	background-color: var(--accent, #f2f2f2);
+}
+.cat-obra      { --accent: #d2d2ff; }
+.cat-busto     { --accent: #f0bdf9; }
+.cat-chafariz  { --accent: #f5c0ae; }
+.cat-estatua   { --accent: #fde099; }
+.cat-marco     { --accent: #c7e79a; }
+.cat-escultura { --accent: #cbf0ff; }
+i.category {
+	padding: .125em .5em;
+	font-style: normal;
+	font-size: 75%;
+	border-radius: 4px;
 	background-color: var(--accent);
 }
+
 .icon {
 	display: inline-block;
 	vertical-align: middle;
 	height: 24px;
 	width: 24px;
 	fill: #444;
+	transform: scale(.75);
 }
-
+main {
+	padding: 2rem 1rem 5rem;
+}
+main, .downsize {
+	width: 100%;
+	max-width: 1024px;
+	margin: 0 auto;
+}
 main.monument {
 	display: grid;
 	grid-template-columns: 1fr auto;
@@ -75,8 +110,13 @@ main li+li {
 }
 
 footer {
-	color: #444;
 	font-size: 75%;
+	width: 100%;
+	padding-top: 27px;
+	color: #444;
+	background-color: #fff;
+	background-image: url(/assets/fundo_seconserva.jpg);
+	background-repeat: repeat-x;
 }
 footer > section {
 	display: grid;
@@ -124,6 +164,9 @@ strong {
 aside > dl > dt {
 	font-weight: bold;
 }
+aside > dl > dd + dt {
+	margin-top: 1rem;
+}
 
 main figure {
 	float: left;
@@ -139,6 +182,7 @@ main figure {
 figcaption .credits {
 	font-size: .75rem;
 }
+main section.refs,
 main section.more,
 main section.gallery,
 main section.location {
@@ -150,6 +194,16 @@ main section.description {
 main section.description p {
 	text-indent: 1rem;
 }
+main section.description sup {
+	color: #8f97a9;
+}
+main section.refs {
+	font-size: 75%;
+	color: #8f97a9;
+}
+main section.refs li+li {
+	margin: 0;
+}
 main section.gallery > figure {
 	display: inline-block;
 	float: none;
@@ -157,6 +211,21 @@ main section.gallery > figure {
 }
 main section.gallery img {
 	max-height: 250px;
+}
+
+main section.maxwidth {
+	max-width: 700px;
+}
+
+cite {
+	font-size: 75%;
+}
+
+.indent-children > p {
+	text-indent: 1rem;
+}
+p.noindent {
+	text-indent: unset;
 }
 
 .identifier {
@@ -170,22 +239,9 @@ main section.gallery img {
 }
 hr {
 	border: 0;
-	border-top: 1px solid #f1f1f1;
+	border-top: 1px solid #dfdfdf;
 	margin: .75em 0;
 }
-
-
-i.category {
-	padding: .125em .5em;
-	font-style: normal;
-	font-size: 75%;
-	border-radius: 4px;
-}
-i.category.cat-busto     { background-color: #f0bdf9; }
-i.category.cat-chafariz  { background-color: #f5c0ae; }
-i.category.cat-estatua   { background-color: #fde099; }
-i.category.cat-marco     { background-color: #c7e79a; }
-i.category.cat-escultura { background-color: #cbf0ff; }
 
 .description-icon {
 	width: 1.25rem;

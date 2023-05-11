@@ -55,6 +55,7 @@ module.exports = function(eleventyConfig) {
 	catToHrefMap.set("estátua", "/estatuas");
 	catToHrefMap.set("marco", "/marcos");
 	catToHrefMap.set("escultura", "/esculturas");
+	catToHrefMap.set("obra", "/obras");
 	catToHref = cat => catToHrefMap.get(cat) || "";
 
 	/* Conversão de categorias (e.g. "estátua")
@@ -65,6 +66,7 @@ module.exports = function(eleventyConfig) {
 	catToClassMap.set("estátua", "cat-estatua");
 	catToClassMap.set("marco", "cat-marco");
 	catToClassMap.set("escultura", "cat-escultura");
+	catToClassMap.set("obra", "cat-obra");
 	catToClass = cat => catToClassMap.get(cat) || "";
 
 	makeTag = (tagName) => {
