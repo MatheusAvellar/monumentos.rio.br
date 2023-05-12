@@ -5,33 +5,45 @@ eleventyComputed: {
 }
 ---
 <%_
-data_inaug = fallback(data_inaug);
-altura = fallback(altura, 0);
-largura = fallback(largura, 0);
-peso = fallback(peso, 0);
-material = fallback(material);
+const doFallback = fallback.bind(null, arguments[0]);
+categoria = doFallback("categoria");
+alt_names = doFallback("alt_names", []);
+tags = doFallback("tags", []);
 
-autores = fallback(autores, []);
+data_inaug = doFallback("data_inaug");
+altura = doFallback("altura", 0);
+largura = doFallback("largura", 0);
+comprimento = doFallback("comprimento", 0);
+peso = doFallback("peso", 0);
+material = doFallback("material");
 
-lat = fallback(lat, 0);
-lon = fallback(lon, 0);
-local = fallback(local);
-bairro = fallback(bairro);
+autores = doFallback("autores", []);
 
-imrj = fallback(imrj);
-hpip = fallback(hpip);
-wikidata = fallback(wikidata);
-iphan = fallback(iphan);
-inepac = fallback(inepac);
-inepac_url = fallback(inepac_url);
+lat = doFallback("lat", 0);
+lon = doFallback("lon", 0);
+local = doFallback("local");
+bairro = doFallback("bairro");
+
+imrj = doFallback("imrj");
+wikidata = doFallback("wikidata");
+structurae = doFallback("structurae");
+cona = doFallback("cona");
+
+hpip = doFallback("hpip");
+iphan = doFallback("iphan");
+inepac = doFallback("inepac");
+inepac_url = doFallback("inepac_url");
 %>
 
 <main class="monument">
 <section>
 	<h1><%= name %></h1>
-	<div>
-		<%- content %>
-	</div>
+<%_ if(alt_names.length > 0) { %>
+	<p class="alt-names">
+		Também conhecido como <%= alt_names.map(n => `"${n}"`).join(", ") %>.
+	</p>
+<%_ } %>
+	<div><%- content %></div>
 	<%_ if(lat && lon) { %>
 		<section class="location">
 			<h2>Localização</h2>
@@ -55,23 +67,18 @@ const map = L.map("map", {
 	maxBoundsViscosity: .75
 })
 L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
-//L.tileLayer("https://tile.openstreetmap.de/{z}/{x}/{y}.png", {
-//L.tileLayer("https://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png", {
 	minZoom: 15,
 	maxZoom: 18,
-	attribution: "&copy; <a href='http://www.openstreetmap.org/copyright'>OpenStreetMap</a>"
+	attribution: "&copy; <a href='http://www.openstreetmap.org/copyright'>OSM</a>"
 }).addTo(map);
 L.marker([<%= lat %>, <%= lon %>], {
 	icon: L.icon({
-		iconUrl: "/assets/leaflet/images/red-pin.png",
-		iconSize: [50, 50],
-		iconAnchor: [25, 50],
-		// iconUrl: "/assets/leaflet/images/google-pin.png",
-		// iconSize: [50, 50],
-		// iconAnchor: [25, 50],
-		shadowUrl: "/assets/leaflet/images/marker-shadow.png",
+		iconUrl: `<%= MARKER_PATH %>/phosphor-marker--<%= catCleanup(categoria) %>.svg`,
+		iconSize: [64, 64],
+		iconAnchor: [32, 64],
+		shadowUrl: "<%= MARKER_PATH %>/marker-shadow.png",
 		shadowSize: [41, 41],
-		shadowAnchor: [14, 41],
+		shadowAnchor: [13, 44],
 	})
 }).addTo(map);
 			</script>
@@ -81,8 +88,12 @@ L.marker([<%= lat %>, <%= lon %>], {
 <aside>
 	<em class="display-identifier"><%= page.fileSlug %></em>
 	<%- makeTag(categoria) %>
+	<%_ for(let i = 0; i < tags.length; i++) { %>
+		<%- makeInfoTag(tags[i]) %>
+	<%_ } %>
 	<%_ if(data_inaug || altura || largura || peso || material) { %>
 		<hr>
+		<p class="section-heading">Detalhes</p>
 		<%_ if(data_inaug || autores.length) { %>
 			<dl>
 			<%_ if(autores.length) { %>
@@ -92,81 +103,101 @@ L.marker([<%= lat %>, <%= lon %>], {
 				</dd>
 			<%_ } %>
 			<%_ if(data_inaug) { %>
-				<dt>Data de Inauguração</dt>
+				<dt>Inauguração</dt>
 				<dd>
 					<%= formatDate(data_inaug) %><br>
 					(<%= getYearsSince(data_inaug) %>)
 				</dd>
 			<%_ } %>
+			<%_ if(material) { %>
+					<dt>Material</dt>
+					<dd><%= material %></dd>
+			<%_ } %>
 			</dl>
 		<%_ } %>
-		<%_ if(altura || largura) { %>
+		<%_ if(altura || largura || comprimento || peso) { %>
+			<hr>
 			<div class="description-size">
 				<%_ if(altura) { %>
-					<div title="Altura">
-						<svg class="description-icon" aria-label="Altura" viewBox="0 0 24 24">
-							<path d="m12.95 5.9.09-.1 2.35-2.36c.18-.27.5-.44.86-.44.32 0 .62.14.81.37l0 0 .05.07 2.36 2.36.08.1.01.01c.25.34.26.82 0 1.17l0 .01-.1.12-.11.09 0 0c-.35.26-.83.27-1.18.01l-.01 0-.11-.09-.8-.81v3.19l-.01.11 0 .01c-.07.47-.51.78-.99.78-.48 0-.92-.31-.99-.78l0-.01-.01-.11v-3.19l-.8.8-.1.09 0 0c-.4.3-.95.26-1.31-.09-.35-.36-.38-.91-.09-1.3l0-.01zm-8.95.59c0-1.38 1.12-2.5 2.5-2.5h4c.55 0 1 .45 1 1 0 .55-.45 1-1 1h-4c-.28 0-.5.23-.5.5v11c0 .28.22.5.5.5h4c.55 0 1 .45 1 1 0 .55-.45 1-1 1h-4c-1.38 0-2.5-1.12-2.5-2.5v-11zm10.45 10.3-.1-.09 0 0c-.39-.3-.95-.26-1.31.09-.39.39-.39 1.03 0 1.42l2.35 2.35c.18.27.51.44.86.44.36 0 .68-.17.86-.44l2.36-2.36.08-.1.01-.01c.29-.39.26-.94-.1-1.3l-.01 0-.09-.09-.01 0c-.39-.3-.95-.26-1.3.09l-.8.8v-3.19l-.01-.11 0-.01c-.07-.47-.51-.78-.99-.78-.52 0-1 .38-1 .91v3.18l-.8-.8z"/>
-						</svg>
-						<%= altura %>&nbsp;m
+					<div>
+						<strong><%= altura %>&nbsp;m</strong>
+						<span class="description-size-label">Altura</span>
 					</div>
 				<%_ } %>
 				<%_ if(largura) { %>
-					<div title="Largura">
-						<svg class="description-icon" aria-label="Largura" viewBox="0 0 24 24">
-							<path d="m17.5 3.99c1.38 0 2.5 1.12 2.5 2.5v4c0 .55-.45 1-1 1-.55 0-1-.45-1-1v-4c0-.27-.22-.5-.5-.5h-11c-.28 0-.5.23-.5.5v4c0 .55-.45 1-1 1-.55 0-1-.45-1-1v-4c0-1.38 1.12-2.5 2.5-2.5h11zm.7 9.05-.1-.09-.01 0c-.39-.29-.94-.26-1.3.09-.35.36-.39.91-.09 1.31l0 0 .09.1.8.8h-3.19l-.11.01-.01 0c-.47.07-.78.51-.78.99 0 .48.31.92.78.99l.01 0 .11.01h3.19l-.81.8-.09.11 0 .01c-.26.35-.25.83.01 1.18l0 0 .09.11.12.1.01 0c.35.26.83.25 1.17 0l.01-.01.1-.08 2.36-2.36.07-.05 0 0c.23-.19.37-.49.37-.81 0-.36-.17-.68-.44-.86l-2.36-2.35zm-10.93 1.32-.08.09-.8.8h3.18c.53 0 .9.48.9 1 0 .48-.31.92-.77.99l-.01 0-.11.01h-3.19l.79.8c.36.35.39.91.1 1.3l-.01.01-.08.1-.01 0c-.35.36-.91.39-1.3.1l-.01-.01-.1-.08-2.35-2.36c-.28-.17-.45-.5-.45-.86 0-.35.17-.68.45-.86l2.35-2.34c.39-.39 1.02-.39 1.41 0 .36.35.39.91.1 1.3l-.01.01z"/>
-						</svg>
-						<%= largura %>&nbsp;m
+					<div>
+						<strong><%= largura %>&nbsp;m</strong>
+						<span class="description-size-label">Largura</span>
+					</div>
+				<%_ } %>
+				<%_ if(comprimento) { %>
+					<div>
+						<strong><%= comprimento %>&nbsp;m</strong>
+						<span class="description-size-label">Comprimento</span>
+					</div>
+				<%_ } %>
+				<%_ if(peso) { %>
+					<div>
+						<strong><%= peso %>&nbsp;kg</strong>
+						<span class="description-size-label">Peso</span>
 					</div>
 				<%_ } %>
 			</div>
 		<%_ } %>
+	<%_ } %>
+	<%_ if(imrj || wikidata || structurae || cona) { %>
+		<hr>
+		<p class="section-heading">Catálogos</p>
 		<dl>
-			<%_ if(peso) { %>
-				<dt>Peso</dt>
-				<dd><%= peso %>&nbsp;kg</dd>
+			<%_ if(imrj) { %>
+				<dt><abbr title="Inventário dos Monumentos RJ">IMRJ</abbr></dt>
+				<dd>
+					ID&nbsp;<a href="<%= IMRJ_URL %><%= imrj %>"><%= imrj %></a>
+				</dd>
 			<%_ } %>
-			<%_ if(material) { %>
-				<dt>Material</dt>
-				<dd><%= material %></dd>
+			<%_ if(wikidata) { %>
+				<dt>Wikidata</dt>
+				<dd><a href="<%= WIKIDATA_URL %><%= wikidata %>"><%= wikidata %></a></dd>
+			<%_ } %>
+			<%_ if(structurae) { %>
+				<dt>Structurae</dt>
+				<dd><a href="<%= STRUCTURAE_URL %><%= structurae %>"><%= structurae %></a></dd>
+			<%_ } %>
+			<%_ if(cona) { %>
+				<dt><abbr title="Cultural Objects Names Authority">CONA</abbr></dt>
+				<dd><a href="<%= CONA_URL %><%= cona %>"><%= cona %></a></dd>
 			<%_ } %>
 		</dl>
 	<%_ } %>
-	<hr>
-	<dl>
-		<%_ if(imrj) { %>
-			<dt>Inventário dos Monumentos RJ</dt>
-			<dd>
-				ID&nbsp;<a href="<%= IMRJ_URL %><%= imrj %>"><%= imrj %></a>
-			</dd>
-		<%_ } %>
-		<%_ if(hpip) { %>
-			<dt>Património de Influência Portuguesa</dt>
-			<dd>
-				ID&nbsp;<a href="<%= HPIP_URL %><%= hpip %>"><%= hpip %></a>
-			</dd>
-		<%_ } %>
-		<%_ if(wikidata) { %>
-			<dt>Wikidata</dt>
-			<dd><a href="<%= WIKIDATA_URL %><%= wikidata %>"><%= wikidata %></a></dd>
-		<%_ } %>
-		<%_ if(iphan) { %>
-			<dt title="Instituto do Patrimônio Histórico e Artístico Nacional">IPHAN</dt>
-			<dd>
-				Nº&nbsp;<a href="<%= IPHAN_URL %>"><%= iphan %></a>
-			</dd>
-		<%_ } %>
-		<%_ if(inepac) { %>
-			<dt title="Instituto Estadual do Patrimônio Cultural">INEPAC</dt>
-			<%_ if(inepac_url) { %>
+	<%_ if(iphan || inepac || hpip) { %>
+		<hr>
+		<p class="section-heading">Patrimônio</p>
+		<dl>
+			<%_ if(iphan) { %>
+				<dt><abbr title="Instituto do Patrimônio Histórico e Artístico Nacional">IPHAN</abbr></dt>
 				<dd>
-					Nº&nbsp;<a href="<%= inepac_url %>"><%= inepac %></a>
-				</dd>
-			<%_ } else { %>
-				<dd>
-					Nº&nbsp;<%= inepac %>
+					Nº&nbsp;<a href="<%= IPHAN_URL %>"><%= iphan %></a>
 				</dd>
 			<%_ } %>
-		<%_ } %>
-	</dl>
+			<%_ if(inepac) { %>
+				<dt><abbr title="Instituto Estadual do Patrimônio Cultural">INEPAC</abbr></dt>
+				<%_ if(inepac_url) { %>
+					<dd>
+						Nº&nbsp;<a href="<%= inepac_url %>"><%= inepac %></a>
+					</dd>
+				<%_ } else { %>
+					<dd>
+						Nº&nbsp;<%= inepac %>
+					</dd>
+				<%_ } %>
+			<%_ } %>
+			<%_ if(hpip) { %>
+				<dt><abbr title="Património de Influência Portuguesa">HPIP</abbr></dt>
+				<dd>
+					ID&nbsp;<a href="<%= HPIP_URL %><%= hpip %>"><%= hpip %></a>
+				</dd>
+			<%_ } %>
+		</dl>
+	<%_ } %>
 </aside>
 </main>

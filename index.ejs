@@ -38,7 +38,10 @@ title: Monumentos Rio
 			iniciados com S
 		</li>
 	</ul>
-
+	<hr>
+	<p>
+		Aqui estão alguns monumentos escolhidos aleatoriamente:
+	</p>
 <%_
 // [Ref] https://bost.ocks.org/mike/shuffle/
 function shuffle(array) {
@@ -55,41 +58,9 @@ const monuments = shuffle(collections.all.filter(file =>
 	file.filePathStem.startsWith("/id/")
 ));
 %>
-	<hr>
-	<p>
-		Aqui estão alguns monumentos de exemplo, escolhidos aleatoriamente:
-	</p>
-	<br>
-	<figure>
-		<img src="/assets/<%= monuments[0].filePathStem.slice(4) %>/thumb.jpg">
-		<figcaption>
-			<a class="identifier" href="<%= monuments[0].filePathStem %>"><%= monuments[0].filePathStem.slice(4) %></a> –
-			<span><%= monuments[0].data.name %></span><br>
-			<%- makeTag(monuments[0].data.categoria) %>
-		</figcaption>
-	</figure>
-	<figure>
-		<img src="/assets/<%= monuments[1].filePathStem.slice(4) %>/thumb.jpg">
-		<figcaption>
-			<a class="identifier" href="<%= monuments[1].filePathStem %>"><%= monuments[1].filePathStem.slice(4) %></a> –
-			<span><%= monuments[1].data.name %></span><br>
-			<%- makeTag(monuments[1].data.categoria) %>
-		</figcaption>
-	</figure>
-	<figure>
-		<img src="/assets/<%= monuments[2].filePathStem.slice(4) %>/thumb.jpg">
-		<figcaption>
-			<a class="identifier" href="<%= monuments[2].filePathStem %>"><%= monuments[2].filePathStem.slice(4) %></a> –
-			<span><%= monuments[2].data.name %></span><br>
-			<%- makeTag(monuments[2].data.categoria) %>
-		</figcaption> 
-	</figure>
-	<figure>
-		<img src="/assets/<%= monuments[3].filePathStem.slice(4) %>/thumb.jpg">
-		<figcaption>
-			<a class="identifier" href="<%= monuments[3].filePathStem %>"><%= monuments[3].filePathStem.slice(4) %></a> –
-			<span><%= monuments[3].data.name %></span><br>
-			<%- makeTag(monuments[3].data.categoria) %>
-		</figcaption>
-	</figure>
+	<div class="card-list">
+		<%_ for(let i = 0; i < 6; i++) { %>
+			<%- makeCard(monuments[i]) %>
+		<%_ } %>
+	</div>
 </main>

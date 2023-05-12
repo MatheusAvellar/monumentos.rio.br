@@ -1,35 +1,10 @@
 ---
-layout: default.ejs
-title: Chafarizes e fontes — Monumentos Rio
+layout: monument-list.ejs
+eleventyComputed: {
+	name: "<%= catToName('chafariz') %>"
+}
+tag_name: "chafariz"
 ---
 
-<%_ const monuments = collections.all.filter(file =>
-	file.filePathStem.startsWith("/id/") && file.data.categoria === "chafariz"
-);
-monuments.sort((a, b) => a.filePathStem.slice(4).localeCompare(b.filePathStem.slice(4)));
-%>
-
-<main>
-	<h1>Chafarizes e fontes</h1>
-	<p>
-		Esta é uma lista de todos os chafarizes e fontes catalogadas.
-
-		Exemplos incluem o <a href="/id/C00001">Chafariz do Mestre Valentim</a>.
-	</p>
-	<p>
-		Monumentos nesta categoria são marcados com a tag <%- makeTag("chafariz") %>.
-	</p>
-	<p>
-		Ela possui os seguintes <strong><%= monuments.length %></strong> monumentos:
-	</p>
-	<ul>
-	<%_ for(const mon of monuments) { %>
-		<li>
-			<p>
-				<a class="identifier" href="<%= mon.filePathStem %>"><%= mon.filePathStem.slice(4) %></a> –
-				<span><%= mon.data.name %></span>
-			</p>
-		</li>
-	<%_ } %>
-	</ul>
-</main>
+Chafarizes são estruturas das quais jorram jatos d'água. Fontes, similarmente,
+são nascentes de água em estruturas construídas.

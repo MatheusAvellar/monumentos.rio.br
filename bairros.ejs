@@ -1,23 +1,24 @@
 ---
 layout: default.ejs
-title: Todos — Monumentos Rio
+title: Bairros — Monumentos Rio
 ---
 
 <%_ const monuments = collections.all.filter(file => file.filePathStem.startsWith("/id/"));
 monuments.sort((a, b) => a.filePathStem.slice(4).localeCompare(b.filePathStem.slice(4)));
 const monument_count = monuments.length;
 
-const cats = new Set();
+const bairros = new Set();
 monuments.forEach(mon => {
-	cats.add(mon.data.categoria);
+	bairros.add(mon.data.bairro);
 });
 
 const lists = [];
-const cat_list = [...cats];
+const bairros_list = [...bairros];
+bairros_list.sort((a, b) => a.localeCompare(b));
 
-cat_list.forEach(cat => {
+bairros_list.forEach(cat => {
 	lists.push(monuments.reduce((acc, file) => {
-		if(cat === file.data.categoria)
+		if(cat === file.data.bairro)
 			acc.push(file);
 		return acc;
 	}, []));
@@ -25,21 +26,22 @@ cat_list.forEach(cat => {
 %>
 
 <main>
-	<h1>Todos os monumentos</h1>
+	<h1>Monumentos por bairro</h1>
 	<section class="indent-children maxwidth">
 		<p>
-			Esta é uma lista de todos os monumentos catalogados. Isto é, este website
-			como um todo possui os seguintes <strong><%= monument_count %></strong>
-			monumentos catalogados:
+			Esta é uma lista de todos os monumentos catalogados, organizados pelos
+			bairros onde estão instalados. Ela contém todos os
+			<strong><%= monument_count %></strong> monumentos catalogados:
 		</p>
 	</section>
 	<%_ for(let c = 0; c < lists.length; c++) {
-		const current_cat = cat_list[c]; %>
-		<h2 id="<%= catCleanup(current_cat) %>"><%= catToName(current_cat) %></h2>
+		const current_bairro = bairros_list[c]; %>
+		<h2 id="<%= catCleanup(current_bairro) %>"><%= current_bairro %></h2>
 		<div class="card-list">
 			<%_ for(let i = 0; i < lists[c].length; i++) { %>
 				<%- makeCard(lists[c][i]) %>
 			<%_ } %>
 		</div>
+		<%- (c < lists.length-1 ? "<hr>" : "") %>
 	<%_ } %>
 </main>

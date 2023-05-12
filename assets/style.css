@@ -35,7 +35,7 @@ header > nav details summary {
 }
 header > nav details ul {
 	position: absolute;
-	z-index: 1;
+	z-index: 401; /* Leaflet map uses 400 */
 	margin-top: 4px;
 	border: 1px solid #d8d8d8;
 	border-radius: 4px;
@@ -53,12 +53,17 @@ header > nav a[href] {
 	color: inherit;
 	text-decoration: none;
 	width: 100%;
-	padding: .125em 1em .125em .5em;
+	padding: .125rem 1rem .125rem .5rem;
 }
 header > nav details ul > li span {
 	vertical-align: middle;
 }
-header > nav details ul > li:is(:hover, :active, :focus, :focus-within) {
+header > nav details ul > li.menu-description {
+	color: #444;
+	padding: 0 .5rem;
+	font-size: 75%;
+}
+header > nav details ul > li:is(:hover, :active, :focus, :focus-within):not(.menu-description) {
 	background-color: #f2f2f2;
 	background-color: var(--accent, #f2f2f2);
 }
@@ -69,11 +74,15 @@ header > nav details ul > li:is(:hover, :active, :focus, :focus-within) {
 .cat-marco     { --accent: #c7e79a; }
 .cat-escultura { --accent: #cbf0ff; }
 i.category {
-	padding: .125em .5em;
 	font-style: normal;
 	font-size: 75%;
+	white-space: pre;
+	padding: .125em .5em;
 	border-radius: 4px;
 	background-color: var(--accent);
+}
+i.category.info-tag {
+	background-color: #e1e1e1;
 }
 
 .icon {
@@ -143,7 +152,7 @@ h1 {
 	font-size: 3rem;
 }
 h2 {
-	margin-top: 1rem;
+	margin-top: 2rem;
 	margin-bottom: .5rem;
 	font-size: 1.75rem;
 }
@@ -161,11 +170,38 @@ strong {
 	text-decoration: underline;
 }
 
+aside {
+	position: sticky;
+	top: .75rem;
+	height: min-content;
+	max-width: 250px;
+	background-color: #fff;
+	padding: .75rem 1rem 1rem;
+	border: 1px solid #dfdfdf;
+	border-radius: 4px;
+	box-shadow: 2px 2px 5px #e5e5e5;
+}
+aside > dl {
+	margin: 0;
+}
 aside > dl > dt {
-	font-weight: bold;
+	font-weight: 500;
+}
+aside > dl > dd {
+	margin-left: 1rem;
 }
 aside > dl > dd + dt {
-	margin-top: 1rem;
+	margin-top: .5rem;
+}
+aside abbr {
+	text-decoration: none;
+}
+aside > .section-heading {
+	display: block;
+	color: #444;
+	font-size: 65%;
+	text-transform: uppercase;
+	margin-bottom: .5rem;
 }
 
 main figure {
@@ -175,7 +211,6 @@ main figure {
 	padding: .5rem;
 	margin: 0 1rem 1rem 0;
 	width: min-content;
-	box-sizing: border-box;
 	box-shadow: 2px 2px 5px #e5e5e5;
 	background-color: #fff;
 }
@@ -221,6 +256,13 @@ cite {
 	font-size: 75%;
 }
 
+.alt-names {
+	color: #444;
+	font-size: 85%;
+	font-weight: 500;
+	margin-top: -.5rem;
+	margin-bottom: .5rem;
+}
 .indent-children > p {
 	text-indent: 1rem;
 }
@@ -243,17 +285,21 @@ hr {
 	margin: .75em 0;
 }
 
-.description-icon {
-	width: 1.25rem;
-}
 .description-size {
 	display: flex;
-	justify-content: left;
+	flex-wrap: wrap;
+	justify-content: space-evenly;
 	gap: .75rem;
 }
 .description-size > div {
 	display: flex;
 	align-items: center;
+	flex-direction: column;
+	flex-basis: 33%;
+}
+.description-size .description-size-label {
+	font-size: 85%;
+	color: #444;
 }
 
 #map {
@@ -263,4 +309,82 @@ hr {
 	border-radius: 4px;
 	border: 1px solid #d8d8d8;
 	box-shadow: 2px 2px 5px #e5e5e5;
+}
+#map.big {
+	height: 650px;
+}
+
+.card-list {
+	display: flex;
+	gap: 1rem;
+	flex-direction: row;
+	flex-wrap: wrap;
+	margin-top: 1rem;
+}
+
+.card {
+	display: grid;
+	grid-template-columns: 150px 150px;
+	gap: 1rem;
+	background-color: #fff;
+	border: 1px solid #dfdfdf;
+	border-radius: 4px;
+	width: max-content;
+	overflow: hidden;
+}
+.card-preview {
+	width: 150px;
+	height: 150px;
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+.card-description {
+	padding: 1rem 1rem 1rem 0;
+	display: grid;
+	grid-template-rows: 35fr 35fr 30fr;
+}
+.card > .card-description > a[href] {
+	color: unset;
+}
+.card-details {
+	padding-top: .25rem;
+	border-top: 1px solid #dfdfdf;
+	font-size: 75%;
+	color: #444;
+	width: calc(150px - 1rem);/* FIXME? */
+}
+.card-details > .neighborhood {
+	display: inline-block;
+	width: 100%;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+.card .truncate {
+	display: -webkit-box;
+	-webkit-line-clamp: 2;
+	-webkit-box-orient: vertical;
+	overflow: hidden;
+}
+
+
+.leaflet-container .leaflet-popup-content-wrapper {
+	border-radius: 4px;
+	cursor: default;
+}
+.leaflet-container .leaflet-popup-content {
+	margin: .75rem 1rem;
+}
+.leaflet-container .leaflet-popup-content > :not(a[href]) {
+	cursor: text;
+}
+
+.leaflet-container .leaflet-busto-pane,
+.leaflet-container .leaflet-chafariz-pane,
+.leaflet-container .leaflet-estatua-pane,
+.leaflet-container .leaflet-marco-pane,
+.leaflet-container .leaflet-escultura-pane,
+.leaflet-container .leaflet-obra-pane {
+	z-index: 601;
 }

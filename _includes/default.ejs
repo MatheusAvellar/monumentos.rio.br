@@ -47,37 +47,63 @@
 							<li class="<%= catToClass("obra") %>">
 								<a href="/obras">
 									<svg class="icon"><use href="#public"/></svg>
-									<span>Obras públicas</span>
+									<span><%= catToName("obra") %></span>
 								</a>
 							</li>
 							<li class="<%= catToClass("busto") %>">
 								<a href="/bustos">
 									<svg class="icon"><use href="#bust"/></svg>
-									<span>Bustos</span>
+									<span><%= catToName("busto") %></span>
 								</a>
 							</li>
 							<li class="<%= catToClass("chafariz") %>">
 								<a href="/chafarizes">
 									<svg class="icon"><use href="#fountain"/></svg>
-									<span>Chafarizes e fontes</span>
+									<span><%= catToName("chafariz") %></span>
 								</a>
 							</li>
 							<li class="<%= catToClass("estátua") %>">
 								<a href="/estatuas">
 									<svg class="icon"><use href="#statue"/></svg>
-									<span>Estátuas</span>
+									<span><%= catToName("estátua") %></span>
 								</a>
 							</li>
 							<li class="<%= catToClass("marco") %>">
 								<a href="/marcos">
 									<svg class="icon"><use href="#mark"/></svg>
-									<span>Marcos</span>
+									<span><%= catToName("marco") %></span>
 								</a>
 							</li>
 							<li class="<%= catToClass("escultura") %>">
 								<a href="/esculturas">
 									<svg class="icon"><use href="#sculpture"/></svg>
-									<span>Esculturas</span>
+									<span><%= catToName("escultura") %></span>
+								</a>
+							</li>
+						</ul>
+					</details>
+				</li>
+				<li>
+					<a href="/mapa">
+						<span>Mapa</span>
+					</a>
+				</li>
+				<li>
+					<details>
+						<summary>Outros</summary>
+						<ul>
+							<li class="menu-description">
+								<span class="menu-description">Organizar monumentos por...</span>
+								<hr>
+							</li>
+							<li>
+								<a href="/bairros">
+									<span>Bairro</span>
+								</a>
+							</li>
+							<li>
+								<a href="/autores">
+									<span>Autor da obra</span>
 								</a>
 							</li>
 						</ul>
@@ -120,5 +146,6 @@
 	<script src="/assets/litelightbox.min.js"></script>
 	<!-- Leaflet Maps -->
 	<link href="/assets/leaflet/leaflet.css" rel="stylesheet" type="text/css">
+	<script src="/assets/details.js"></script>
 </body>
 </html>

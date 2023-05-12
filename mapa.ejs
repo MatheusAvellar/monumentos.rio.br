@@ -1,0 +1,206 @@
+---
+layout: default.ejs
+title: Mapa — Monumentos Rio
+---
+
+<%_ const monuments = collections.all.filter(file => file.filePathStem.startsWith("/id/"));
+monuments.sort((a, b) => a.filePathStem.slice(4).localeCompare(b.filePathStem.slice(4)));
+const monument_count = monuments.length;
+
+function countCategory(cat) {
+	const count = monuments.reduce((acc, file) => acc + (file.data.categoria === cat), 0);
+	return count + " ite" + (count < 2 ? "m" : "ns");
+}
+%>
+<main>
+	<h1>Mapa dos monumentos</h1>
+	<p>
+		<strong>Filtros:</strong>
+	</p>
+	<section class="control-panel">
+		<section class="inputs">
+			<label>
+				<input checked data-cat="obra" type="checkbox">
+				<span>
+					<strong>Obras públicas</strong><br>
+					<%- makeTag("obra", false) %>
+					<small>(<%= countCategory("obra") %>)</small>
+				</span>
+			</label>
+			<label>
+				<input checked data-cat="busto" type="checkbox">
+				<span>
+					<strong>Bustos e efígies</strong><br>
+					<%- makeTag("busto", false) %>
+					<small>(<%= countCategory("busto") %>)</small>
+				</span>
+			</label>
+			<label>
+				<input checked data-cat="chafariz" type="checkbox">
+				<span>
+					<strong>Chafarizes e fontes</strong><br>
+					<%- makeTag("chafariz", false) %>
+					<small>(<%= countCategory("chafariz") %>)</small>
+				</span>
+			</label>
+			<label>
+				<input checked data-cat="estatua" type="checkbox">
+				<span>
+					<strong>Estátuas</strong><br>
+					<%- makeTag("estátua", false) %>
+					<small>(<%= countCategory("estátua") %>)</small>
+				</span>
+			</label>
+			<label>
+				<input checked data-cat="marco" type="checkbox">
+				<span>
+					<strong>Marcos</strong><br>
+					<%- makeTag("marco", false) %>
+					<small>(<%= countCategory("marco") %>)</small>
+				</span>
+			</label>
+			<label>
+				<input checked data-cat="escultura" type="checkbox">
+				<span>
+					<strong>Esculturas</strong><br>
+					<%- makeTag("escultura", false) %>
+					<small>(<%= countCategory("escultura") %>)</small>
+				</span>
+			</label>
+		</section>
+		<section class="selections">
+			<button id="select-all">Selecionar todos</button>
+			<button id="deselect-all">Remover todos</button>
+		</section>
+	</section>
+	<div id="map" class="big"></div>
+	<script>
+function toggleMarkers(cat, state) {
+	console.log(cat, state);
+	const markers = [...document.querySelectorAll(`.leaflet-container img.leaflet-marker-icon[src$="${cat}.svg"]`)];
+	console.log(markers);
+	markers.forEach(m => {
+		if(!state)
+			m.classList.add("hidden-marker");
+		else
+			m.classList.remove("hidden-marker");
+	});
+}
+[...document.querySelectorAll(".control-panel input[type='checkbox']")].forEach(input => {
+	input.addEventListener("click", evt => {
+		toggleMarkers(input.dataset.cat, input.checked);
+	});
+});
+document.getElementById("select-all").addEventListener("click", function() {
+	[...document.querySelectorAll(".control-panel input[type='checkbox']")].forEach(input => {
+		if(!input.checked) input.click();
+	});
+});
+document.getElementById("deselect-all").addEventListener("click", function() {
+	[...document.querySelectorAll(".control-panel input[type='checkbox']")].forEach(input => {
+		if(input.checked) input.click();
+	});
+});
+	</script>
+	<script>
+const map = L.map("map", {
+	center: [-22.9353, -43.3233],
+	zoom: 11,
+	maxBounds: new L.LatLngBounds(
+		new L.LatLng(-22.9353 - 0.5, -43.3233 - 0.8),
+		new L.LatLng(-22.9353 + 0.5, -43.3233 + 0.8)
+	),
+	maxBoundsViscosity: .75
+})
+L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
+	minZoom: 10,
+	maxZoom: 18,
+	attribution: "&copy; <a href='http://www.openstreetmap.org/copyright'>OSM</a>"
+}).addTo(map);
+
+/*const panesMap = new Map();
+panesMap.set("busto",     map.createPane("<%= catCleanup("busto")     %>"));
+panesMap.set("chafariz",  map.createPane("<%= catCleanup("chafariz")  %>"));
+panesMap.set("estátua",   map.createPane("<%= catCleanup("estátua")   %>"));
+panesMap.set("marco",     map.createPane("<%= catCleanup("marco")     %>"));
+panesMap.set("escultura", map.createPane("<%= catCleanup("escultura") %>"));
+panesMap.set("obra",      map.createPane("<%= catCleanup("obra")      %>"));*/
+
+function makeMarker(cat) {
+	return {
+		iconUrl: `<%= MARKER_PATH %>/phosphor-marker--${cat}.svg`,
+		iconSize: [32, 32],
+		iconAnchor: [16, 32]
+	};
+}
+const markersMap = new Map();
+markersMap.set("busto",     L.icon(makeMarker("<%= catCleanup("busto")     %>")));
+markersMap.set("chafariz",  L.icon(makeMarker("<%= catCleanup("chafariz")  %>")));
+markersMap.set("estátua",   L.icon(makeMarker("<%= catCleanup("estátua")   %>")));
+markersMap.set("marco",     L.icon(makeMarker("<%= catCleanup("marco")     %>")));
+markersMap.set("escultura", L.icon(makeMarker("<%= catCleanup("escultura") %>")));
+markersMap.set("obra",      L.icon(makeMarker("<%= catCleanup("obra")      %>")));
+
+function generatePopup(id, name, data, bairro, extra) {
+	return `<a href="/id/${id}"><strong>${name}</strong></a><br>
+	<span class="identifier">${id}</span> &middot; <span>${data}</span><br>
+	<span class="neighborhood">${bairro}</span><br>${extra}`;
+}
+<%_ for(let i = 0; i < monument_count; i++) {
+	const lat = monuments[i].data.lat;
+	const lon = monuments[i].data.lon;
+	const ID = monuments[i].filePathStem.slice(4);
+	// pane: panesMap.get("< %= monuments[i].data.categoria % >") %>
+const m<%=i%> = L.marker([<%= lat %>, <%= lon %>], { icon: markersMap.get("<%= monuments[i].data.categoria %>") });
+m<%=i%>.bindPopup(generatePopup("<%= ID %>", "<%= monuments[i].data.name %>", "<%= getYearFromDate(monuments[i].data.data_inaug) %>", "<%= monuments[i].data.bairro %>", '<%- makeTag(monuments[i].data.categoria) %>'), { offset: [0, -24] }).openPopup();
+m<%=i%>.addTo(map);<%_ } %>
+	</script>
+	<style>
+.control-panel {
+	margin-bottom: 1rem;
+}
+.control-panel > .inputs {
+	display: flex;
+	flex-wrap: wrap;
+	gap: .5rem;
+	margin-bottom: .5rem;
+}
+.control-panel > .inputs > label {
+	padding: .5rem;
+	border: 1px solid #dfdfdf;
+	background-color: #fff;
+	border-radius: 4px;
+}
+.control-panel > .inputs > label:has(> input:checked) {
+	background-color: #ecf3ff;
+	border-color: #93baff;
+}
+
+.control-panel > .selections {
+	text-align: right;
+}
+.control-panel button {
+	font: inherit;
+	font-size: 75%;
+	border: 2px solid #444;
+	color: #444;
+	font-weight: 500;
+	border-radius: 50px;
+	padding: .5rem 1rem;
+	background-color: #fff;
+	cursor: pointer;
+}
+.control-panel button:is(:hover, :focus) {
+	background-color: #efefef;
+	color: #000;
+}
+.control-panel button:active {
+	background-color: #444;
+	color: #fff;
+}
+
+#map > .leaflet-pane > .leaflet-marker-pane > img.hidden-marker {
+	display: none;
+}
+	</style>
+</main>

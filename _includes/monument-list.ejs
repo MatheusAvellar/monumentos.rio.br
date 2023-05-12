@@ -1,0 +1,34 @@
+---
+layout: default.ejs
+eleventyComputed: {
+	title: "<%= name %> — Monumentos Rio"
+}
+---
+
+<%_ const monuments = collections.all.filter(file =>
+	file.filePathStem.startsWith("/id/") && file.data.categoria === tag_name
+);
+monuments.sort((a, b) => a.filePathStem.slice(4).localeCompare(b.filePathStem.slice(4)));
+const monument_count = monuments.length;
+%>
+
+<main>
+	<h1><%= name %></h1>
+	<section class="indent-children maxwidth">
+		<p>
+			<%= content %>
+		</p>
+		<p>
+			Monumentos nesta categoria são marcados com a tag
+			<a class="tag" href="<%= catToHref(tag_name) %>">
+				<i class="category <%= catToClass(tag_name) %>"><%= tag_name %></i></a>.
+			O inventário possui os seguintes <strong><%= monument_count %></strong>
+			monumentos nesta categoria:
+		</p>
+	</section>
+	<div class="card-list">
+		<%_ for(let i = 0; i < monument_count; i++) { %>
+			<%- makeCard(monuments[i]) %>
+		<%_ } %>
+	</div>
+</main>

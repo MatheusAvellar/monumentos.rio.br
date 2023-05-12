@@ -1,37 +1,10 @@
 ---
-layout: default.ejs
-title: Obras públicas — Monumentos Rio
+layout: monument-list.ejs
+eleventyComputed: {
+	name: "<%= catToName('obra') %>"
+}
+tag_name: obra
 ---
 
-<%_ const monuments = collections.all.filter(file =>
-	file.filePathStem.startsWith("/id/") && file.data.categoria === "obra"
-);
-monuments.sort((a, b) => a.filePathStem.slice(4).localeCompare(b.filePathStem.slice(4)));
-%>
-
-<main>
-	<h1>Obras públicas</h1>
-	<p>
-		Esta é uma lista de todas as obras públicas catalogadas. Obras públicas
-		são monumentos artísticos que possuem uma função pública.
-		Por exemplo, a <a href="/id/A41202">Ponte do Saber</a>.
-	</p>
-	<p>
-		Monumentos nesta categoria são marcados com a tag
-		<a class="tag" href="<%= catToHref("obra") %>">
-			<i class="category <%= catToClass("obra") %>">obra</i></a>.
-	</p>
-	<p>
-		Ela possui as seguintes <strong><%= monuments.length %></strong> obras:
-	</p>
-	<ul>
-	<%_ for(const mon of monuments) { %>
-		<li>
-			<p>
-				<a class="identifier" href="<%= mon.filePathStem %>"><%= mon.filePathStem.slice(4) %></a> –
-				<span><%= mon.data.name %></span>
-			</p>
-		</li>
-	<%_ } %>
-	</ul>
-</main>
+Obras públicas são monumentos artísticos que possuem uma função pública, como
+pontes ou arcos.

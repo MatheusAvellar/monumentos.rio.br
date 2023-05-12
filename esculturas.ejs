@@ -1,39 +1,10 @@
 ---
-layout: default.ejs
-title: Esculturas — Monumentos Rio
+layout: monument-list.ejs
+eleventyComputed: {
+	name: "<%= catToName('escultura') %>"
+}
+tag_name: escultura
 ---
 
-<%_ const monuments = collections.all.filter(file =>
-	file.filePathStem.startsWith("/id/") && file.data.categoria === "escultura"
-);
-monuments.sort((a, b) => a.filePathStem.slice(4).localeCompare(b.filePathStem.slice(4)));
-%>
-
-<main>
-	<h1>Esculturas</h1>
-	<p>
-		Esta é uma lista de todas as esculturas catalogadas. Esculturas
-		são obras de arte tridimensionais que normalmente representam conceitos
-		abstratos.
-		Exemplos incluem a <a href="/id/xxx">xxx</a>.
-	</p>
-	<p>
-		Monumentos nesta categoria são marcados com a tag
-		<a class="tag" href="<%= catToHref("escultura") %>">
-			<i class="category <%= catToClass("escultura") %>">escultura</i></a>.
-	</p>
-	<p>
-		Ela possui
-		as seguintes <strong><%= monuments.length %></strong> esculturas:
-	</p>
-	<ul>
-	<%_ for(const mon of monuments) { %>
-		<li>
-			<p>
-				<a class="identifier" href="<%= mon.filePathStem %>"><%= mon.filePathStem.slice(4) %></a> –
-				<span><%= mon.data.name %></span>
-			</p>
-		</li>
-	<%_ } %>
-	</ul>
-</main>
+Esculturas são obras de arte tridimensionais que normalmente representam
+conceitos abstratos.
