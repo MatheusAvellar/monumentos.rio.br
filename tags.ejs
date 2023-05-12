@@ -1,0 +1,98 @@
+---
+layout: default.ejs
+heading: Monumentos por tags
+title: Tags — Monumentos Rio
+property: tags
+---
+<%_ const monuments = collections.all.filter(file => file.filePathStem.startsWith("/id/"));
+monuments.sort((a, b) => a.filePathStem.slice(4).localeCompare(b.filePathStem.slice(4)));
+const monument_count = monuments.length;
+
+const distinct_categories = new Set();
+monuments.forEach(mon => {
+	// If property is an array
+	if(mon.data[property] instanceof Array) {
+		mon.data[property].forEach(val => {
+			distinct_categories.add(val);
+		});
+	} else {
+		// Otherwise, if it's a simple value, add it
+		distinct_categories.add(mon.data[property]);
+	}
+});
+// Make sure there's no undefined
+distinct_categories.delete(undefined);
+
+const lists = [];
+const categories_list = [...distinct_categories];
+categories_list.sort((a, b) => a.localeCompare(b));
+
+categories_list.forEach(cat => {
+	lists.push(monuments.reduce((acc, file) => {
+		// If property is an array
+		if(file.data[property] instanceof Array) {
+			// Check if array includes this category
+			if(file.data[property].includes(cat)) {
+				// Add it to the list
+				acc.push(file);
+			}
+		} else {
+			// Otherwise, if it's a simple value
+			// Check if it matches
+			if(cat === file.data[property])
+				acc.push(file);
+		}
+		return acc;
+	}, []));
+});
+%>
+
+<main>
+	<h1><%= heading %></h1>
+	<section class="indent-children maxwidth">
+		<p>
+			Esta é uma lista de todos os monumentos catalogados, organizados por tags.
+			Estas são majoritariamente para manutenção – por exemplo,
+			<%- makeInfoTag("sem descrição") %> indica um monumento catalogado que
+			ainda não possui um texto descritivo.
+		</p>
+	</section>
+	<section>
+		<hr>
+		<p class="section-heading">Categorias manuais</p>
+	<%_ for(let c = 0; c < lists.length; c++) {
+		const current_cat = categories_list[c]; %>
+		<h2 id="<%= catCleanup(current_cat) %>">
+			<%_ if(property === "tags") { %>
+				<%- makeInfoTag(current_cat) %>
+			<%_ } else { %>
+				<%= current_cat %>
+			<%_ } %>
+		</h2>
+		<div class="card-list">
+			<%_ for(let i = 0; i < lists[c].length; i++) { %>
+				<%- makeCard(lists[c][i]) %>
+			<%_ } %>
+		</div>
+	<%_ } %>
+	</section>
+	<section>
+	<%_
+const no_authorship = [];
+monuments.forEach(mon => {
+	if(!mon.data.autores || mon.data.autores.length <= 0) {
+		no_authorship.push(mon);
+	}
+});
+if(no_authorship.length > 0) { %>
+		<hr>
+		<p class="section-heading">Categorias automáticas</p>
+		<h2 id="<%= catCleanup("sem autoria") %>"><%- makeInfoTag("sem autoria") %></h2>
+		<div class="card-list">
+		<%_ for(let i = 0; i < no_authorship.length; i++) { %>
+			<%- makeCard(no_authorship[i]) %>
+		<%_ } %>
+		</div>
+<%_ } %>
+	</section>
+</main>

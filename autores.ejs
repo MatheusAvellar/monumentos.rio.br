@@ -1,50 +1,9 @@
 ---
-layout: default.ejs
-title: Autores — Monumentos Rio
+layout: category-list.ejs
+heading: Monumentos por autor
+name: Autores
+property: autores
 ---
 
-<%_ const monuments = collections.all.filter(file => file.filePathStem.startsWith("/id/"));
-monuments.sort((a, b) => a.filePathStem.slice(4).localeCompare(b.filePathStem.slice(4)));
-const monument_count = monuments.length;
-
-const authors = new Set();
-monuments.forEach(mon => {
-	mon.data.autores.forEach(name => {
-		authors.add(name);
-	});
-});
-
-const lists = [];
-const authors_list = [...authors];
-authors_list.sort((a, b) => a.localeCompare(b));
-
-authors_list.forEach(name => {
-	lists.push(monuments.reduce((acc, file) => {
-		if(file.data.autores.includes(name))
-			acc.push(file);
-		return acc;
-	}, []));
-});
-%>
-
-<main>
-	<h1>Monumentos por autor</h1>
-	<section class="indent-children maxwidth">
-		<p>
-			Esta é uma lista de todos os monumentos catalogados, organizados pelos
-			nomes de seus criadores. Ela contém todos os
-			<strong><%= monument_count %></strong> monumentos catalogados mas,
-			como algumas obras são realizadas por múltiplos autores, podem haver
-			repetições:
-		</p>
-	</section>
-	<%_ for(let c = 0; c < lists.length; c++) { %>
-		<h2><%= authors_list[c] %></h2>
-		<div class="card-list">
-			<%_ for(let i = 0; i < lists[c].length; i++) { %>
-				<%- makeCard(lists[c][i]) %>
-			<%_ } %>
-		</div>
-		<%- (c < lists.length-1 ? "<hr>" : "") %>
-	<%_ } %>
-</main>
+Esta é uma lista de todos os monumentos catalogados, organizados pelos
+nomes de seus criadores.

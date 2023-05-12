@@ -10,6 +10,8 @@ module.exports = function(eleventyConfig) {
 	eleventyConfig.addGlobalData("MARKER_PATH", "/assets/leaflet/images");
 
 	eleventyConfig.addPassthroughCopy("assets");
+	eleventyConfig.addPassthroughCopy("**/*.png");
+	eleventyConfig.addPassthroughCopy("**/*.jpg");
 
 	fallback = function(obj, key, if_false="") {
 		if(!(key in obj)) return if_false;
@@ -21,7 +23,6 @@ module.exports = function(eleventyConfig) {
 
 		return (typeof val === "string" ? val.trim() : val);
 	}
-
 
 	const titleCase = (str) => {
 		str = `${str}`;
@@ -35,20 +36,28 @@ module.exports = function(eleventyConfig) {
 		return new Date(`${date}T00:00Z`);
 	};
 
-	formatDate = (date) => {
+	formatDate = (date, circa) => {
 		const d = dateify(date);
-		if(!d) return "????";
+		if(!d) return "S.d.";
 		const count = (date instanceof Date) ? 2 : (typeof date === "number" ? 0 : 1);
 
 		const ye = new Intl.DateTimeFormat("pt-br", { year: "numeric", timeZone: "UTC" }).format(d);
 		const mo = new Intl.DateTimeFormat("pt-br", { month: "long", timeZone: "UTC" }).format(d);
 		const da = new Intl.DateTimeFormat("pt-br", { day: "numeric", timeZone: "UTC" }).format(d);
 
-		if(count >= 2)
-			return `${da} de ${mo} de ${ye}`;
-		if(count === 1)
-			return `${titleCase(mo)} de ${ye}`;
-		return `${ye}`;
+		if(!circa) {
+			if(count >= 2)
+				return `${da} de ${mo} de ${ye}`;
+			if(count === 1)
+				return `${titleCase(mo)} de ${ye}`;
+			return `${ye}`;
+		} else {
+			if(count >= 2)
+				return `Circa ${da} de ${mo} de ${ye}`;
+			if(count === 1)
+				return `Circa ${mo} de ${ye}`;
+			return `c.${ye}`;
+		}
 	};
 	getYearsSince = (date) => {
 		const d =dateify(date);
@@ -59,10 +68,10 @@ module.exports = function(eleventyConfig) {
 		return `${delta_years} ano${delta_years >= 2 ? "s" : ""} atrás`;
 	};
 
-	getYearFromDate = (date) => {
+	getYearFromDate = (date, circa) => {
 		const d = dateify(date);
-		if(!d) return "????";
-		return d.getUTCFullYear();
+		if(!d) return "S.d.";
+		return (circa ? "c." : "") + d.getUTCFullYear();
 	};
 
 	/* Conversão de categorias (e.g. "estátua")
@@ -108,27 +117,26 @@ module.exports = function(eleventyConfig) {
 	makeInfoTag = (tag) => `<i class="category info-tag">${tag}</i>`
 
 	makeCard = (item) => {
-		const ID = item.filePathStem.slice(4);
+		const ID = `${item.filePathStem}`.match(/\/id\/([A-Za-z0-9]+)\//)[1];
 		const data = item.data;
 		return `<div class="card">
-			<a href="/id/${ID}">
-				<div class="card-preview" style="background-image:url(/assets/${ID}/thumb.jpg)"></div>
-			</a>
-			<div class="card-description">
-				<a href="/id/${ID}">
-					<p class="truncate">
-						<strong>${data.name || "?"}</strong>
-					</p>
-				</a>
-				<div class="card-details">
-					<span class="identifier">${ID}</span>
-					&middot;
-					<span>${getYearFromDate(data.data_inaug)}</span><br>
-					<span class="neighborhood">${data.bairro || "?"}</span>
-				</div>
-				<div>${makeTag(data.categoria)}
-				</div>
-			</div>
-		</div>`;
+	<a href="/id/${ID}">
+		<div class="card-preview" style="background-image:url(/id/${ID}/thumb.jpg)"></div>
+	</a>
+	<div class="card-description">
+		<a href="/id/${ID}">
+			<p class="truncate">
+				<strong>${data.name || "?"}</strong>
+			</p>
+		</a>
+		<div class="card-details">
+			<span class="identifier">${ID}</span>
+			&middot;
+			<span>${getYearFromDate(data.data_inaug, data.data_circa)}</span><br>
+			<span class="neighborhood">${data.bairro || "?"}</span>
+		</div>
+		<div>${makeTag(data.categoria)}</div>
+	</div>
+</div>`;
 	};
 };

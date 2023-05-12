@@ -19,9 +19,7 @@ const monument_count = monuments.length;
 			<%= content %>
 		</p>
 		<p>
-			Monumentos nesta categoria são marcados com a tag
-			<a class="tag" href="<%= catToHref(tag_name) %>">
-				<i class="category <%= catToClass(tag_name) %>"><%= tag_name %></i></a>.
+			Monumentos nesta categoria são marcados com a tag <%- makeTag(tag_name, false) %>.
 			O inventário possui os seguintes <strong><%= monument_count %></strong>
 			monumentos nesta categoria:
 		</p>

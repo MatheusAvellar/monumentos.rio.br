@@ -1,0 +1,212 @@
+---
+layout: default.ejs
+eleventyComputed: {
+	title: "<%= name %> — Monumentos Rio"
+}
+---
+<%_
+const doFallback = fallback.bind(null, arguments[0]);
+categoria = doFallback("categoria");
+alt_names = doFallback("alt_names", []);
+tags = doFallback("tags", []);
+
+data_inaug = doFallback("data_inaug");
+data_circa = doFallback("data_circa", "");
+
+altura = doFallback("altura", 0);
+largura = doFallback("largura", 0);
+comprimento = doFallback("comprimento", 0);
+peso = doFallback("peso", 0);
+material = doFallback("material");
+
+autores = doFallback("autores", []);
+
+lat = doFallback("lat", 0);
+lon = doFallback("lon", 0);
+local = doFallback("local");
+bairro = doFallback("bairro");
+
+imrj = doFallback("imrj");
+wikidata = doFallback("wikidata");
+structurae = doFallback("structurae");
+cona = doFallback("cona");
+
+hpip = doFallback("hpip");
+iphan = doFallback("iphan");
+inepac = doFallback("inepac");
+inepac_url = doFallback("inepac_url");
+%>
+
+<main class="monument">
+<section>
+	<h1><%= name %></h1>
+<%_ if(alt_names.length > 0) { %>
+	<p class="alt-names">
+		Também conhecido como <%= alt_names.map(n => `"${n}"`).join(", ") %>.
+	</p>
+<%_ } %>
+	<div><%- content %></div>
+	<%_ if(lat && lon) { %>
+		<section class="location">
+			<h2>Localização</h2>
+			<p>
+			<%_ if(local || bairro) { %>
+				<strong>Localização:</strong>
+				<%_ if(local) { %><%= local %><%_ }
+				%><%_ if(bairro) {
+				%><%_ if(local) { %><%=", "%><%_ } %><%= bairro %>
+				<%_ } %><br>
+			<%_ } %>
+				<strong>Coordenadas:</strong> <%= lat %>, <%= lon %>
+			</p>
+			<div id="map"></div>
+			<script>
+const bounds = new L.LatLngBounds(
+	new L.LatLng(<%= lat %> - 0.01, <%= lon %> - 0.02),
+	new L.LatLng(<%= lat %> + 0.01, <%= lon %> + 0.02)
+);
+const map = L.map("map", {
+	center: bounds.getCenter(),
+	zoom: 17,
+	maxBounds: bounds,
+	maxBoundsViscosity: .75
+})
+L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
+	minZoom: 15,
+	maxZoom: 18,
+	attribution: "&copy; <a href='http://www.openstreetmap.org/copyright'>OSM</a>"
+}).addTo(map);
+L.marker([<%= lat %>, <%= lon %>], {
+	icon: L.icon({
+		iconUrl: `<%= MARKER_PATH %>/phosphor-marker--<%= catCleanup(categoria) %>.svg`,
+		iconSize: [64, 64],
+		iconAnchor: [32, 64],
+		shadowUrl: "<%= MARKER_PATH %>/marker-shadow.png",
+		shadowSize: [41, 41],
+		shadowAnchor: [13, 44],
+	})
+}).addTo(map);
+			</script>
+		</section>
+	<%_ } %>
+</section>
+<aside>
+	<em class="display-identifier"><%= page.fileSlug %></em>
+	<!-- Main category tag -->
+	<%- makeTag(categoria) %>
+	<!-- Assigned tags -->
+	<%_ for(let i = 0; i < tags.length; i++) { %>
+		<%- makeInfoTag(tags[i]) %>
+	<%_ } %>
+	<!-- Auto-tags -->
+	<%- !autores.length ? makeInfoTag("sem autoria") : undefined %>
+	<%_ if(data_inaug || altura || largura || peso || material) { %>
+		<%_ if(data_inaug || autores.length) { %>
+		<hr>
+		<p class="section-heading">Detalhes</p>
+			<dl>
+			<%_ if(autores.length) { %>
+				<dt>Autores</dt>
+				<dd>
+					<%- autores.join("<br>") %>
+				</dd>
+			<%_ } %>
+			<%_ if(data_inaug) { %>
+				<dt>Inauguração</dt>
+				<dd>
+					<%= formatDate(data_inaug, data_circa) %><br>
+					(<%= getYearsSince(data_inaug) %>)
+				</dd>
+			<%_ } %>
+			<%_ if(material) { %>
+					<dt>Material</dt>
+					<dd><%= material %></dd>
+			<%_ } %>
+			</dl>
+		<%_ } %>
+		<%_ if(altura || largura || comprimento || peso) { %>
+			<hr>
+			<div class="description-size">
+				<%_ if(altura) { %>
+					<div>
+						<strong><%= altura %>&nbsp;m</strong>
+						<span class="description-size-label">Altura</span>
+					</div>
+				<%_ } %>
+				<%_ if(largura) { %>
+					<div>
+						<strong><%= largura %>&nbsp;m</strong>
+						<span class="description-size-label">Largura</span>
+					</div>
+				<%_ } %>
+				<%_ if(comprimento) { %>
+					<div>
+						<strong><%= comprimento %>&nbsp;m</strong>
+						<span class="description-size-label">Comprimento</span>
+					</div>
+				<%_ } %>
+				<%_ if(peso) { %>
+					<div>
+						<strong><%= peso %>&nbsp;kg</strong>
+						<span class="description-size-label">Peso</span>
+					</div>
+				<%_ } %>
+			</div>
+		<%_ } %>
+	<%_ } %>
+	<%_ if(imrj || wikidata || structurae || cona) { %>
+		<hr>
+		<p class="section-heading">Catálogos</p>
+		<dl>
+			<%_ if(imrj) { %>
+				<dt><abbr title="Inventário dos Monumentos RJ">IMRJ</abbr></dt>
+				<dd>
+					ID&nbsp;<a href="<%= IMRJ_URL %><%= imrj %>"><%= imrj %></a>
+				</dd>
+			<%_ } %>
+			<%_ if(wikidata) { %>
+				<dt>Wikidata</dt>
+				<dd><a href="<%= WIKIDATA_URL %><%= wikidata %>"><%= wikidata %></a></dd>
+			<%_ } %>
+			<%_ if(structurae) { %>
+				<dt>Structurae</dt>
+				<dd><a href="<%= STRUCTURAE_URL %><%= structurae %>"><%= structurae %></a></dd>
+			<%_ } %>
+			<%_ if(cona) { %>
+				<dt><abbr title="Cultural Objects Names Authority">CONA</abbr></dt>
+				<dd><a href="<%= CONA_URL %><%= cona %>"><%= cona %></a></dd>
+			<%_ } %>
+		</dl>
+	<%_ } %>
+	<%_ if(iphan || inepac || hpip) { %>
+		<hr>
+		<p class="section-heading">Patrimônio</p>
+		<dl>
+			<%_ if(iphan) { %>
+				<dt><abbr title="Instituto do Patrimônio Histórico e Artístico Nacional">IPHAN</abbr></dt>
+				<dd>
+					Nº&nbsp;<a href="<%= IPHAN_URL %>"><%= iphan %></a>
+				</dd>
+			<%_ } %>
+			<%_ if(inepac) { %>
+				<dt><abbr title="Instituto Estadual do Patrimônio Cultural">INEPAC</abbr></dt>
+				<%_ if(inepac_url) { %>
+					<dd>
+						Nº&nbsp;<a href="<%= inepac_url %>"><%= inepac %></a>
+					</dd>
+				<%_ } else { %>
+					<dd>
+						Nº&nbsp;<%= inepac %>
+					</dd>
+				<%_ } %>
+			<%_ } %>
+			<%_ if(hpip) { %>
+				<dt><abbr title="Património de Influência Portuguesa">HPIP</abbr></dt>
+				<dd>
+					ID&nbsp;<a href="<%= HPIP_URL %><%= hpip %>"><%= hpip %></a>
+				</dd>
+			<%_ } %>
+		</dl>
+	<%_ } %>
+</aside>
+</main>
