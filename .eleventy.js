@@ -10,8 +10,9 @@ module.exports = function(eleventyConfig) {
 	eleventyConfig.addGlobalData("MARKER_PATH", "/assets/leaflet/images");
 
 	eleventyConfig.addPassthroughCopy("assets");
-	eleventyConfig.addPassthroughCopy("**/*.png");
-	eleventyConfig.addPassthroughCopy("**/*.jpg");
+	// [Ref] https://github.com/11ty/eleventy/issues/2461#issuecomment-1238279042
+	eleventyConfig.addPassthroughCopy("{,!(_site)/**/}*.png");
+	eleventyConfig.addPassthroughCopy("{,!(_site)/**/}*.jpg");
 
 	fallback = function(obj, key, if_false="") {
 		if(!(key in obj)) return if_false;
@@ -36,15 +37,19 @@ module.exports = function(eleventyConfig) {
 		return new Date(`${date}T00:00Z`);
 	};
 
+	getDatePrecision = (date) => {
+		return (date instanceof Date) ? 2 : (typeof date === "number" ? 0 : 1);
+	};
+
 	formatDate = (date, circa) => {
 		const d = dateify(date);
 		if(!d) return "S.d.";
-		const count = (date instanceof Date) ? 2 : (typeof date === "number" ? 0 : 1);
 
 		const ye = new Intl.DateTimeFormat("pt-br", { year: "numeric", timeZone: "UTC" }).format(d);
 		const mo = new Intl.DateTimeFormat("pt-br", { month: "long", timeZone: "UTC" }).format(d);
 		const da = new Intl.DateTimeFormat("pt-br", { day: "numeric", timeZone: "UTC" }).format(d);
 
+		const count = (date instanceof Date) ? 2 : (typeof date === "number" ? 0 : 1);
 		if(!circa) {
 			if(count >= 2)
 				return `${da} de ${mo} de ${ye}`;
@@ -116,8 +121,15 @@ module.exports = function(eleventyConfig) {
 
 	makeInfoTag = (tag) => `<i class="category info-tag">${tag}</i>`
 
+	getIDFromPath = (path) => {
+		const matches = `${path}`.match(/\/id\/([A-Za-z0-9]+)\//);
+		if(matches && matches.length > 0)
+			return matches[1];
+		return "";
+	};
+
 	makeCard = (item) => {
-		const ID = `${item.filePathStem}`.match(/\/id\/([A-Za-z0-9]+)\//)[1];
+		const ID = getIDFromPath(item.filePathStem);
 		const data = item.data;
 		return `<div class="card">
 	<a href="/id/${ID}">

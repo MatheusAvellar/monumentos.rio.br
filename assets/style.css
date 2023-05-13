@@ -88,6 +88,9 @@ h2 i.category.info-tag {
 	border-radius: 8px;
 	font-weight: normal;
 }
+.tags-list {
+	line-height: 1.25;
+}
 
 .icon {
 	display: inline-block;
@@ -157,6 +160,7 @@ h1, h2, h3 {
 h1 {
 	margin-bottom: .5rem;
 	font-size: 3rem;
+	line-height: 1;
 }
 h2 {
 	margin-top: 2rem;
@@ -277,7 +281,7 @@ p.noindent {
 	text-indent: unset;
 }
 
-.identifier {
+.identifier, .tabular-nums {
 	font-variant-numeric: tabular-nums;
 }
 .display-identifier {
@@ -374,6 +378,16 @@ hr {
 	-webkit-line-clamp: 2;
 	-webkit-box-orient: vertical;
 	overflow: hidden;
+}
+
+.inscription-text {
+	font-size: 90%;
+	font-family: inherit;
+	font-variant-numeric: tabular-nums;
+	padding: .5rem .75rem;
+	border: 1px solid #dfdfdf;
+	border-radius: 4px;
+	background-color: #fff;
 }
 
 

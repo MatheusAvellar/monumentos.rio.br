@@ -7,8 +7,8 @@ eleventyComputed: {
 <%_
 const doFallback = fallback.bind(null, arguments[0]);
 categoria = doFallback("categoria");
-alt_names = doFallback("alt_names", []);
-tags = doFallback("tags", []);
+alt_names = [doFallback("alt_names", [])].flat();
+tags = [doFallback("tags", [])].flat();
 
 data_inaug = doFallback("data_inaug");
 data_circa = doFallback("data_circa", "");
@@ -17,9 +17,9 @@ altura = doFallback("altura", 0);
 largura = doFallback("largura", 0);
 comprimento = doFallback("comprimento", 0);
 peso = doFallback("peso", 0);
-material = doFallback("material");
+material = [doFallback("material", [])].flat();
 
-autores = doFallback("autores", []);
+autores = [doFallback("autores", [])].flat();
 
 lat = doFallback("lat", 0);
 lon = doFallback("lon", 0);
@@ -92,14 +92,18 @@ L.marker([<%= lat %>, <%= lon %>], {
 </section>
 <aside>
 	<em class="display-identifier"><%= page.fileSlug %></em>
-	<!-- Main category tag -->
-	<%- makeTag(categoria) %>
-	<!-- Assigned tags -->
-	<%_ for(let i = 0; i < tags.length; i++) { %>
-		<%- makeInfoTag(tags[i]) %>
-	<%_ } %>
-	<!-- Auto-tags -->
-	<%- !autores.length ? makeInfoTag("sem autoria") : undefined %>
+	<div class="tags-list">
+		<!-- Main category tag -->
+		<%- makeTag(categoria) %>
+		<!-- Assigned tags -->
+		<%_ for(let i = 0; i < tags.length; i++) { %>
+			<%- makeInfoTag(tags[i]) %>
+		<%_ } %>
+		<!-- Auto-tags -->
+		<%- !autores.length ? makeInfoTag("sem autoria") : undefined %>
+		<%- (data_circa || getDatePrecision(data_inaug) < 2)
+			? makeInfoTag("data imprecisa") : undefined %>
+	</div>
 	<%_ if(data_inaug || altura || largura || peso || material) { %>
 		<%_ if(data_inaug || autores.length) { %>
 		<hr>
@@ -107,9 +111,7 @@ L.marker([<%= lat %>, <%= lon %>], {
 			<dl>
 			<%_ if(autores.length) { %>
 				<dt>Autores</dt>
-				<dd>
-					<%- autores.join("<br>") %>
-				</dd>
+				<dd><%- autores.join("<br>") %></dd>
 			<%_ } %>
 			<%_ if(data_inaug) { %>
 				<dt>Inauguração</dt>
@@ -118,9 +120,9 @@ L.marker([<%= lat %>, <%= lon %>], {
 					(<%= getYearsSince(data_inaug) %>)
 				</dd>
 			<%_ } %>
-			<%_ if(material) { %>
+			<%_ if(material && material.length > 0) { %>
 					<dt>Material</dt>
-					<dd><%= material %></dd>
+					<dd><%- material.join("<br>") %></dd>
 			<%_ } %>
 			</dl>
 		<%_ } %>

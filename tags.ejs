@@ -79,20 +79,34 @@ categories_list.forEach(cat => {
 	<section>
 	<%_
 const no_authorship = [];
+const imprecise_dating = [];
 monuments.forEach(mon => {
 	if(!mon.data.autores || mon.data.autores.length <= 0) {
 		no_authorship.push(mon);
 	}
-});
-if(no_authorship.length > 0) { %>
+	if(mon.data.data_circa || getDatePrecision(mon.data.data_inaug) < 2) {
+		imprecise_dating.push(mon);
+	}
+}); %>
+<%_ if(no_authorship.length > 0 || imprecise_dating.length > 0) { %>
 		<hr>
 		<p class="section-heading">Categorias automáticas</p>
+	<%_ if(no_authorship.length > 0) { %>
 		<h2 id="<%= catCleanup("sem autoria") %>"><%- makeInfoTag("sem autoria") %></h2>
 		<div class="card-list">
 		<%_ for(let i = 0; i < no_authorship.length; i++) { %>
 			<%- makeCard(no_authorship[i]) %>
 		<%_ } %>
 		</div>
+	<%_ } %>
+	<%_ if(imprecise_dating.length > 0) { %>
+		<h2 id="<%= catCleanup("data imprecisa") %>"><%- makeInfoTag("data imprecisa") %></h2>
+		<div class="card-list">
+		<%_ for(let i = 0; i < imprecise_dating.length; i++) { %>
+			<%- makeCard(imprecise_dating[i]) %>
+		<%_ } %>
+		</div>
+	<%_ } %>
 <%_ } %>
 	</section>
 </main>
