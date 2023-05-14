@@ -1,0 +1,148 @@
+---
+layout: monument.ejs
+name: Cápsula do Tempo (1972–2022) na Quinta da Boa Vista
+internal_ref: capsulamn1972
+categoria: marco
+tags: [
+	"possui escrita",
+	"cápsula do tempo"
+]
+
+data_inaug: 1973-01-07
+altura: 
+largura: 
+peso: 
+material: [
+	Bronze,
+	Latão,
+	Acrílico
+]
+
+autores: [
+	Elde Pires Braga,
+	Fernando Luís da Câmara Cascudo
+]
+
+local: Quinta da Boa Vista
+bairro: São Cristovão
+lat: -22.9056
+lon: -43.2258
+
+imrj: 667
+wikidata: Q67210190
+---
+
+<figure>
+	<a href="photo.jpg" data-llb-src="href">
+		<img src="thumb.jpg">
+	</a>
+	<figcaption>
+			<p class="credits">
+				Foto: Estela Neto (22 de setembro de 2022),
+				<a href="https://creativecommons.org/licenses/by-sa/4.0/deed.en">CC-BY-SA-4.0</a>,
+				via
+				<a href="https://commons.wikimedia.org/wiki/File:C%C3%A1psula_do_Tempo_na_Quinta_da_Boa_Vista_-_Rio_de_Janeiro_-_20220922133816.jpg">Wikimedia
+				Commons</a>.
+			</p>
+	</figcaption>
+</figure>
+<section class="description">
+	<p>
+		Cápsula do tempo enterrada em virtude do 150º aniversário da Independência
+		do Brasil, em 1972, com a intenção de ser retirada no 200º aniversário, em
+		2022. A caixa foi lacrada em 7 de janeiro de 1973<sup>1</sup> e, presume-se,
+		enterrada não muito depois.
+	</p>
+	<p>
+		Em 7 de dezembro de 2022, a Secretaria Municipal de Conservação
+		desenterrou a cápsula, revelando seus conteúdos. Segundo a divulgação,
+		a cápsula possuía revistas e livros da época, uma cópia do primeiro Plano
+		Nacional de Desenvolvimento (1972–1974), uma bandeira do Brasil, entre
+		outros documentos.<sup>2</sup>
+	</p>
+</section>
+<section class="refs">
+	<ol>
+		<li>
+			Ricardo Oriá, Alexander W.A. Kellner (23 de janeiro de 2022).
+			<a href="https://www.ibdcult.org/post/a-c%C3%A1psula-do-tempo-no-museu-nacional-ufrj">A
+			cápsula do tempo no Museu Nacional / UFRJ</a>.
+			<i>Instituto Brasileiro de Direitos Culturais</i>.
+		</li>
+		<li>
+			S.n. (7 de dezembro de 2022).
+			<a href="https://conservacao.prefeitura.rio/noticias/capsula-do-tempo-e-aberta-na-quinta-da-boa-vista-50-anos-depois/">Cápsula
+			do tempo é aberta na Quinta da Boa Vista, 50 anos depois</a>.
+			<i>Secretaria Municipal de Conservação</i>.
+		</li>
+	</ol>
+</section>
+<section class="gallery">
+	<h2>Galeria</h2>
+	<figure>
+		<a href="gallery-2022a-full.jpg" data-llb-src="href">
+			<img src="gallery-2022a.jpg">
+		</a>
+		<figcaption>
+			<p>
+				Caixa desenterrada em dez/2022
+			</p>
+			<p class="credits">
+				Foto: Beth Santos/Prefeitura do Rio (7 de dezembro de 2022),
+				via
+				<a href="https://conservacao.prefeitura.rio/noticias/capsula-do-tempo-e-aberta-na-quinta-da-boa-vista-50-anos-depois/">divulgação</a>.
+			</p>
+		</figcaption>
+	</figure>
+	<figure>
+		<a href="gallery-2022b-full.jpg" data-llb-src="href">
+			<img src="gallery-2022b.jpg">
+		</a>
+		<figcaption>
+			<p>
+				Conteúdos da caixa desenterrada
+			</p>
+			<p class="credits">
+				Foto: Beth Santos/Prefeitura do Rio (7 de dezembro de 2022),
+				via
+				<a href="https://prefeitura.rio/conservacao/bicentenario-da-independencia-50-anos-depois-capsula-do-tempo-e-aberta-na-quinta-da-boa-vista/">divulgação</a>.
+			</p>
+		</figcaption>
+	</figure>
+</section>
+<section class="inscription">
+	<h2>Inscrição</h2>
+	<p>
+		Há uma placa no local onde a cápsula foi enterrada, contendo o seguinte
+		texto:
+	</p>
+	<pre class="inscription-text">
+      1972
+
+Todos que por aqui passem
+protejam esta laje, pois
+ela guarda um documento
+que revela a cultura de
+uma geração e um
+marco na história de um
+povo que soube construir o
+seu próprio futuro.
+
+      2.022</pre>
+</section>
+<section class="more">
+<!-- 	<h2>Leia mais</h2>
+	<ol>
+		<li>
+		</li>
+	</ol> -->
+</section>
+<%_
+const monuments = collections.all.filter(file => file.filePathStem.startsWith("/id/"));
+const i = monuments.findIndex(m => m.data.internal_ref === "capsulamn2022");
+if(i >= 0) { %>
+<section class="related">
+	<h2>Monumentos relacionados</h2>
+	<div class="card-list"><%- makeCard(monuments[i]) %></div>
+</section>
+<%_ } %>

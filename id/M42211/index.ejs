@@ -1,0 +1,158 @@
+---
+layout: monument.ejs
+name: Cápsula do Tempo (2022–2072) na Quinta da Boa Vista
+internal_ref: capsulamn2022
+categoria: marco
+tags: [
+	"possui escrita",
+	"cápsula do tempo"
+]
+
+data_inaug: 2022-11-25
+altura: 0.55
+largura: 0.61
+comprimento: 0.43
+peso: 
+
+material: [
+	Aço inoxidável
+]
+
+autores: [
+	Instituto Nacional de Tecnologia
+]
+
+local: Quinta da Boa Vista
+bairro: São Cristovão
+lat: -22.9056
+lon: -43.2257
+
+imrj: 
+wikidata: 
+---
+
+<figure>
+	<a href="photo.jpg" data-llb-src="href">
+		<img src="thumb.jpg">
+	</a>
+	<figcaption>
+			<p class="credits">
+				Foto: S.n. (25 de novembro de 2022),
+				via
+				<a href="https://www.gov.br/int/pt-br/assuntos/noticias/no-museu-nacional-int-participa-do-lancamento-da-capsula-do-tempo-para-2072">Instituto
+				Nacional de Tecnologia</a>.
+			</p>
+	</figcaption>
+</figure>
+<section class="description">
+	<p>
+		Cápsula do tempo enterrada em virtude do 200º aniversário da Independência
+		do Brasil, em 2022, com a intenção de ser retirada no 250º aniversário, em
+		2072. A caixa foi enterrada em 25 de novembro de 2022, em frente ao Museu
+		Nacional e próxima à cápsula do tempo de 1972.
+	</p>
+	<p>
+		A cápsula contém mais de 100 itens, dentre eles: jornais, vídeos,
+		documentos (impressos e em pendrives), partes de revestimentos do Paço de
+		São Cristóvão e desenhos de alunos de escolas públicas.<sup>1</sup>
+	</p>
+</section>
+<section class="refs">
+	<ol>
+		<li>
+			S.n. (26 de novembro de 2022).
+			<a href="https://revistagalileu.globo.com/ciencia/noticia/2022/11/museu-nacional-envia-capsula-do-tempo-para-2072.ghtml">Museu
+			Nacional envia cápsula do tempo para 2072</a>. <i>Revista Galileu</i>.
+		</li>
+	</ol>
+</section>
+<section class="gallery">
+	<h2>Galeria</h2>
+	<figure>
+		<a href="gallery-2022a-full.jpg" data-llb-src="href">
+			<img src="gallery-2022a.jpg">
+		</a>
+		<figcaption>
+			<p>
+				A cápsula em si, antes de ser lacrada
+			</p>
+			<p class="credits">
+				Foto: Goethe-Institut Rio de Janeiro (1 de dezembro de 2022),
+				via <a href="https://www.instagram.com/p/ClpKKdEpF-i/">Instagram</a>.
+			</p>
+		</figcaption>
+	</figure>
+	<figure>
+		<a href="gallery-2022b-full.jpg" data-llb-src="href">
+			<img src="gallery-2022b.jpg">
+		</a>
+		<figcaption>
+			<p>
+				A cápsula já em seu buraco
+			</p>
+			<p class="credits">
+				Foto: Goethe-Institut Rio de Janeiro (1 de dezembro de 2022),
+				via <a href="https://www.instagram.com/p/ClpKKdEpF-i/">Instagram</a>.
+			</p>
+		</figcaption>
+	</figure>
+</section>
+<section class="inscription">
+	<h2>Inscrição</h2>
+	<p>
+		Há uma placa no monumento, contendo o seguinte texto:
+	</p>
+	<pre class="inscription-text">
+      2022–2072
+
+Todos que por aqui passem,
+protejam esta cápsula - que guarda a
+memória da ciência, da tecnologia
+e da cultura de seu tempo e aponta
+as expectativas para o futuro
+da nação brasileira.</pre>
+	<p>
+		A caixa em si possui o seguinte texto:
+	</p>
+	<pre class="inscription-text">
+Cápsula do Tempo
+
+Enterrada em 2022, por ocasião do
+Bicentenário da independência do Brasil
+
+Instituto Nacional de Tecnologia
+Museu Nacional/UFRJ
+
+Esta cápsula deve ser aberta em 2072</pre>
+</section>
+<section class="more">
+	<h2>Leia mais</h2>
+	<ol>
+		<li>
+			<strong>Fotografias do conteúdo da caixa:</strong><br>
+			Museu Nacional (8 de dezembro de 2022), via
+			<a href="https://www.instagram.com/p/Cl6Q6odNPvm/">Instagram</a>.
+		</li>
+		<li>
+			Ana Cristina Campos (25 de novembro de 2022).
+			<a href="https://agenciabrasil.ebc.com.br/geral/noticia/2022-11/museu-nacional-do-rio-enterra-sua-primeira-capsula-do-tempo">Museu
+			Nacional do Rio enterra sua primeira cápsula do tempo</a>. <i>Agência
+			Brasil</i>.
+		</li>
+		<li>
+			S.n. (25 de novembro de 2022).
+			<a href="https://www.gov.br/int/pt-br/assuntos/noticias/no-museu-nacional-int-participa-do-lancamento-da-capsula-do-tempo-para-2072">No
+			Museu Nacional, INT participa do lançamento da cápsula do tempo para
+			2072</a>. <i>Instituto Nacional de Tecnologia</i>.
+		</li>
+	</ol>
+</section>
+<%_
+const monuments = collections.all.filter(file => file.filePathStem.startsWith("/id/"));
+const i = monuments.findIndex(m => m.data.internal_ref === "capsulamn1972");
+if(i >= 0) { %>
+<section class="related">
+	<h2>Monumentos relacionados</h2>
+	<div class="card-list"><%- makeCard(monuments[i]) %></div>
+</section>
+<%_ } %>

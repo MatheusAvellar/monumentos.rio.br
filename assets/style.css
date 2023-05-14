@@ -6,17 +6,15 @@
 }
 html {
 	height: 100%;
+	overflow-y: scroll;
 }
 body {
-	margin: 0;
 	display: grid;
-	min-height: 100%;
 	grid-template-rows: auto 1fr auto;
 	font-family: Inter, Roboto, sans-serif;
+	min-height: 100%;
+	margin: 0;
 	background-color: #fafafa;
-}
-header, main, footer {
-	padding: 1rem;
 }
 header {
 	background-color: #fff;
@@ -27,16 +25,48 @@ header > nav > ul {
 	flex-direction: row;
 	align-items: center;
 	list-style: none;
+	margin: 0;
 	padding: 0;
-	gap: 2em;
+	gap: .5rem;
 }
-header > nav details summary {
+header > nav a[href] {
+	display: inline-block;
+	color: inherit;
+	text-decoration: none;
+	width: 100%;
+}
+details > summary {
+	background-repeat: no-repeat;
+	background-position: 12px center;
+	background-size: 24px;
+	list-style: none;
+	padding-left: 36px !important;
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M8.59 16.58 13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z'/%3E%3C/svg%3E");
+
+}
+details[open] > summary {
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M7.41 8.58 12 13.17l4.59-4.59L18 10l-6 6-6-6L7.41 8.58z'/%3E%3C/svg%3E");
+}
+
+header > nav > ul > li > details summary {
 	cursor: pointer;
+}
+header > nav > ul > li > details summary,
+header > nav > ul > li > a[href] {
+	padding: 1rem;
+	line-height: 2rem;
+	border-bottom: 2px solid transparent;
+}
+header > nav > ul > li > details[open] summary,
+header > nav > ul > li > details summary:hover,
+header > nav > ul > li > a[href]:hover {
+	background-color: #f2f2f2;
+	border-bottom-color: #444;
 }
 header > nav details ul {
 	position: absolute;
 	z-index: 401; /* Leaflet map uses 400 */
-	margin-top: 4px;
+	margin-top: -1rem;
 	border: 1px solid #d8d8d8;
 	border-radius: 4px;
 	padding: .5rem 0;
@@ -48,11 +78,7 @@ header > nav details ul {
 		0 7px 7.4px -2px hsl(0deg 0% 71% / 0.27),
 		0 17.5px 18.4px -3px hsl(0deg 0% 71% / 0.24);
 }
-header > nav a[href] {
-	display: inline-block;
-	color: inherit;
-	text-decoration: none;
-	width: 100%;
+header > nav details a[href] {
 	padding: .125rem 1rem .125rem .5rem;
 }
 header > nav details ul > li span {
@@ -62,6 +88,7 @@ header > nav details ul > li.menu-description {
 	color: #444;
 	padding: 0 .5rem;
 	font-size: 75%;
+	margin-bottom: .25rem;
 }
 header > nav details ul > li:is(:hover, :active, :focus, :focus-within):not(.menu-description) {
 	background-color: #f2f2f2;
@@ -131,7 +158,7 @@ main .tight-list li+li {
 footer {
 	font-size: 75%;
 	width: 100%;
-	padding-top: 27px;
+	padding: 27px 1rem 1rem;
 	color: #444;
 	background-color: #fff;
 	background-image: url(/assets/fundo_seconserva.jpg);
@@ -313,7 +340,7 @@ hr {
 	color: #444;
 }
 
-#map {
+#monument-location-map {
 	height: 400px;
 	width: 100%;
 	margin: .25rem 0;
@@ -321,7 +348,7 @@ hr {
 	border: 1px solid #d8d8d8;
 	box-shadow: 2px 2px 5px #e5e5e5;
 }
-#map.big {
+#monument-location-map.big {
 	height: 650px;
 }
 

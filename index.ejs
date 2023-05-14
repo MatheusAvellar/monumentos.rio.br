@@ -6,37 +6,19 @@ title: Monumentos Rio
 <main>
 	<p>Bem vindo ao <strong>monumentos.rio</strong>!</p>
 	<p>
-		Este é um catálogo, ou inventário, de todos os monumentos na cidade do
-		Rio de Janeiro.
+		Este website tem como objetivo formar um inventário de todos os monumentos
+		da cidade do Rio de Janeiro.
 	</p>
 	<p>
 		Os monumentos estão separados nas seguintes categorias:
 	</p>
 	<ul>
-		<li>
-			<%- makeTag("obra") %>
-			iniciados com A
-		</li>
-		<li>
-			<%- makeTag("busto") %>
-			iniciados com B
-		</li>
-		<li>
-			<%- makeTag("chafariz") %>
-			iniciados com C
-		</li>
-		<li>
-			<%- makeTag("estátua") %>
-			iniciados com E
-		</li>
-		<li>
-			<%- makeTag("marco") %>
-			iniciados com M
-		</li>
-		<li>
-			<%- makeTag("escultura") %>
-			iniciados com S
-		</li>
+		<li><%- makeTag("obra") %> iniciados com A</li>
+		<li><%- makeTag("busto") %> iniciados com B</li>
+		<li><%- makeTag("chafariz") %> iniciados com C</li>
+		<li><%- makeTag("estátua") %> iniciados com E</li>
+		<li><%- makeTag("marco") %> iniciados com M</li>
+		<li><%- makeTag("escultura") %> iniciados com S</li>
 	</ul>
 	<hr>
 	<p>
@@ -59,7 +41,7 @@ const monuments = shuffle(collections.all.filter(file =>
 ));
 %>
 	<div class="card-list">
-		<%_ for(let i = 0; i < 6; i++) { %>
+		<%_ for(let i = 0; i < 9; i++) { %>
 			<%- makeCard(monuments[i]) %>
 		<%_ } %>
 	</div>

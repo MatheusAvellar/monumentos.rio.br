@@ -59,13 +59,13 @@ inepac_url = doFallback("inepac_url");
 			<%_ } %>
 				<strong>Coordenadas:</strong> <%= lat %>, <%= lon %>
 			</p>
-			<div id="map"></div>
+			<div id="monument-location-map"></div>
 			<script>
 const bounds = new L.LatLngBounds(
 	new L.LatLng(<%= lat %> - 0.01, <%= lon %> - 0.02),
 	new L.LatLng(<%= lat %> + 0.01, <%= lon %> + 0.02)
 );
-const map = L.map("map", {
+const map = L.map("monument-location-map", {
 	center: bounds.getCenter(),
 	zoom: 17,
 	maxBounds: bounds,

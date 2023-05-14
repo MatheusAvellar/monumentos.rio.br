@@ -73,7 +73,7 @@ function countCategory(cat) {
 			<button id="deselect-all">Remover todos</button>
 		</section>
 	</section>
-	<div id="map" class="big"></div>
+	<div id="monument-location-map" class="big"></div>
 	<script>
 function toggleMarkers(cat, state) {
 	console.log(cat, state);
@@ -103,7 +103,7 @@ document.getElementById("deselect-all").addEventListener("click", function() {
 });
 	</script>
 	<script>
-const map = L.map("map", {
+const map = L.map("monument-location-map", {
 	center: [-22.9353, -43.3233],
 	zoom: 11,
 	maxBounds: new L.LatLngBounds(
@@ -114,17 +114,9 @@ const map = L.map("map", {
 })
 L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
 	minZoom: 10,
-	maxZoom: 18,
+	maxZoom: 20,
 	attribution: "&copy; <a href='http://www.openstreetmap.org/copyright'>OSM</a>"
 }).addTo(map);
-
-/*const panesMap = new Map();
-panesMap.set("busto",     map.createPane("<%= catCleanup("busto")     %>"));
-panesMap.set("chafariz",  map.createPane("<%= catCleanup("chafariz")  %>"));
-panesMap.set("estátua",   map.createPane("<%= catCleanup("estátua")   %>"));
-panesMap.set("marco",     map.createPane("<%= catCleanup("marco")     %>"));
-panesMap.set("escultura", map.createPane("<%= catCleanup("escultura") %>"));
-panesMap.set("obra",      map.createPane("<%= catCleanup("obra")      %>"));*/
 
 function makeMarker(cat) {
 	return {
@@ -149,12 +141,9 @@ function generatePopup(id, name, data, bairro, extra) {
 <%_ for(let i = 0; i < monument_count; i++) {
 	const lat = monuments[i].data.lat;
 	const lon = monuments[i].data.lon;
-	const ID = getIDFromPath(monuments[i].filePathStem);
-	// pane: panesMap.get("< %= monuments[i].data.categoria % >") %>
+	const ID = getIDFromPath(monuments[i].filePathStem); %>
 const m<%=i%> = L.marker([<%= lat %>, <%= lon %>], { icon: markersMap.get("<%= monuments[i].data.categoria %>") });
-m<%=i%>.bindPopup(generatePopup("<%= ID %>", "<%= monuments[i].data.name %>",
-	"<%= (monuments[i].data.data_circa ? 'c.' : '') + getYearFromDate(monuments[i].data.data_inaug) %>",
-	"<%= monuments[i].data.bairro %>", '<%- makeTag(monuments[i].data.categoria) %>'), { offset: [0, -24] }).openPopup();
+m<%=i%>.bindPopup(generatePopup("<%= ID %>", "<%= monuments[i].data.name %>", "<%= (monuments[i].data.data_circa ? 'c.' : '') + getYearFromDate(monuments[i].data.data_inaug) %>", "<%= monuments[i].data.bairro %>", '<%- makeTag(monuments[i].data.categoria) %>'), { offset: [0, -24] }).openPopup();
 m<%=i%>.addTo(map);<%_ } %>
 	</script>
 	<style>
