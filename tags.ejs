@@ -2,7 +2,6 @@
 layout: default.ejs
 heading: Monumentos por tags
 title: Tags — Monumentos Rio
-property: tags
 ---
 <%_ const monuments = collections.all.filter(file => file.filePathStem.startsWith("/id/"));
 monuments.sort((a, b) => a.filePathStem.slice(4).localeCompare(b.filePathStem.slice(4)));
@@ -11,13 +10,13 @@ const monument_count = monuments.length;
 const distinct_categories = new Set();
 monuments.forEach(mon => {
 	// If property is an array
-	if(mon.data[property] instanceof Array) {
-		mon.data[property].forEach(val => {
+	if(mon.data.tags instanceof Array) {
+		mon.data.tags.forEach(val => {
 			distinct_categories.add(val);
 		});
 	} else {
 		// Otherwise, if it's a simple value, add it
-		distinct_categories.add(mon.data[property]);
+		distinct_categories.add(mon.data.tags);
 	}
 });
 // Make sure there's no undefined
@@ -30,16 +29,16 @@ categories_list.sort((a, b) => a.localeCompare(b));
 categories_list.forEach(cat => {
 	lists.push(monuments.reduce((acc, file) => {
 		// If property is an array
-		if(file.data[property] instanceof Array) {
+		if(file.data.tags instanceof Array) {
 			// Check if array includes this category
-			if(file.data[property].includes(cat)) {
+			if(file.data.tags.includes(cat)) {
 				// Add it to the list
 				acc.push(file);
 			}
 		} else {
 			// Otherwise, if it's a simple value
 			// Check if it matches
-			if(cat === file.data[property])
+			if(cat === file.data.tags)
 				acc.push(file);
 		}
 		return acc;
@@ -48,38 +47,50 @@ categories_list.forEach(cat => {
 %>
 
 <main>
-	<h1><%= heading %></h1>
-	<section class="indent-children maxwidth">
-		<p>
-			Esta é uma lista de todos os monumentos catalogados, organizados por tags.
-			Estas são majoritariamente para manutenção – por exemplo,
-			<%- makeInfoTag("sem descrição") %> indica um monumento catalogado que
-			ainda não possui um texto descritivo.
-		</p>
-	</section>
-	<section>
-		<hr>
-		<p class="section-heading">Categorias manuais</p>
-	<%_ for(let c = 0; c < lists.length; c++) {
-		const current_cat = categories_list[c]; %>
-		<h2 id="<%= catCleanup(current_cat) %>">
-			<%_ if(property === "tags") { %>
-				<%- makeInfoTag(current_cat) %>
-			<%_ } else { %>
-				<%= current_cat %>
-			<%_ } %>
-		</h2>
-		<div class="card-list">
-			<%_ for(let i = 0; i < lists[c].length; i++) { %>
-				<%- makeCard(lists[c][i]) %>
-			<%_ } %>
-		</div>
+<h1><%= heading %></h1>
+<section class="indent-children maxwidth">
+	<p>
+		Esta é uma lista de todos os monumentos catalogados, organizados por tags.
+		Estas são majoritariamente para manutenção – por exemplo,
+		<%- makeInfoTag("sem descrição") %> indica um monumento catalogado que
+		ainda não possui um texto descritivo.
+	</p>
+</section>
+<details id="list-toc">
+	<summary>Pular para:</summary>
+	<div>
+	<%_ for(let i = 0; i < categories_list.length; i++) { %>
+		<a href="#<%= normalize(categories_list[i]) %>"><%= categories_list[i] %></a>
 	<%_ } %>
-	</section>
-	<section>
+		<br>
+		<a href="#<%= normalize("sem autoria") %>">sem autoria</a>
+		<a href="#<%= normalize("data imprecisa") %>">data imprecisa</a>
+		<a href="#<%= normalize("sem imrj") %>">sem imrj</a>
+	</div>
+</details>
+<section>
+	<hr>
+	<p class="section-heading">Categorias manuais</p>
+<%_ for(let c = 0; c < lists.length; c++) {
+	const current_cat = categories_list[c];
+	const cat_count = lists[c].length; %>
+	<h2 id="<%= normalize(current_cat) %>"><%- makeInfoTag(current_cat) %></h2>
+	<p><%-
+		`<strong>${cat_count}</strong> monumento`
+		+ (cat_count < 2 ? "" : "s")
+	%></p>
+	<div class="card-list">
+		<%_ for(let i = 0; i < cat_count; i++) { %>
+			<%- makeCard(lists[c][i]) %>
+		<%_ } %>
+	</div>
+<%_ } %>
+</section>
+<section>
 	<%_
 const no_authorship = [];
 const imprecise_dating = [];
+const no_imrj = [];
 monuments.forEach(mon => {
 	if(!mon.data.autores || mon.data.autores.length <= 0) {
 		no_authorship.push(mon);
@@ -87,12 +98,19 @@ monuments.forEach(mon => {
 	if(mon.data.data_circa || getDatePrecision(mon.data.data_inaug) < 2) {
 		imprecise_dating.push(mon);
 	}
+	if(!mon.data.imrj) {
+		no_imrj.push(mon);
+	}
 }); %>
 <%_ if(no_authorship.length > 0 || imprecise_dating.length > 0) { %>
 		<hr>
 		<p class="section-heading">Categorias automáticas</p>
 	<%_ if(no_authorship.length > 0) { %>
-		<h2 id="<%= catCleanup("sem autoria") %>"><%- makeInfoTag("sem autoria") %></h2>
+		<h2 id="<%= normalize("sem autoria") %>"><%- makeInfoTag("sem autoria") %></h2>
+		<p><%-
+			`<strong>${no_authorship.length}</strong> monumento`
+			+ (no_authorship.length < 2 ? "" : "s")
+		%></p>
 		<div class="card-list">
 		<%_ for(let i = 0; i < no_authorship.length; i++) { %>
 			<%- makeCard(no_authorship[i]) %>
@@ -100,13 +118,29 @@ monuments.forEach(mon => {
 		</div>
 	<%_ } %>
 	<%_ if(imprecise_dating.length > 0) { %>
-		<h2 id="<%= catCleanup("data imprecisa") %>"><%- makeInfoTag("data imprecisa") %></h2>
+		<h2 id="<%= normalize("data imprecisa") %>"><%- makeInfoTag("data imprecisa") %></h2>
+		<p><%-
+			`<strong>${imprecise_dating.length}</strong> monumento`
+			+ (imprecise_dating.length < 2 ? "" : "s")
+		%></p>
 		<div class="card-list">
 		<%_ for(let i = 0; i < imprecise_dating.length; i++) { %>
 			<%- makeCard(imprecise_dating[i]) %>
 		<%_ } %>
 		</div>
 	<%_ } %>
+	<%_ if(no_imrj.length > 0) { %>
+		<h2 id="<%= normalize("sem imrj") %>"><%- makeInfoTag("sem imrj") %></h2>
+		<p><%-
+			`<strong>${no_imrj.length}</strong> monumento`
+			+ (no_imrj.length < 2 ? "" : "s")
+		%></p>
+		<div class="card-list">
+		<%_ for(let i = 0; i < no_imrj.length; i++) { %>
+			<%- makeCard(no_imrj[i]) %>
+		<%_ } %>
+		</div>
+	<%_ } %>
 <%_ } %>
-	</section>
+</section>
 </main>

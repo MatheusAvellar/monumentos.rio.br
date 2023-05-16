@@ -22,6 +22,9 @@ module.exports = function(eleventyConfig) {
 			|| (typeof val === "number" && isNaN(val)))
 			return if_false;
 
+		if("dont_show" in obj && [obj.dont_show].flat().includes(key))
+			return if_false;
+
 		return (typeof val === "string" ? val.trim() : val);
 	}
 
@@ -29,7 +32,7 @@ module.exports = function(eleventyConfig) {
 		str = `${str}`;
 		return str.charAt(0).toUpperCase() + str.substr(1).toLowerCase();
 	};
-	const dateify = (date) => {
+	dateify = (date) => {
 		if(date instanceof Date)
 			return date;
 		if(!date)
@@ -113,13 +116,19 @@ module.exports = function(eleventyConfig) {
 	catToNameMap.set("escultura", "Esculturas");
 	catToName = cat => catToNameMap.get(cat) || "?";
 
+	// Remove acentos e troca espaços por _
+	normalize = text =>
+		text.normalize("NFD")
+			.replace(/[\u0300-\u036f]/g, "")
+			.replaceAll(" ", "_")
+
 	makeTag = (tagName, hyperlink=true) => {
 		return (hyperlink ? `<a class="tag" href="${catToHref(tagName)}">` : "")
 		+ `<i class="category ${catToClass(tagName)}">${tagName}</i>`
 		+ (hyperlink ? `</a>` : "");
 	};
 
-	makeInfoTag = (tag) => `<i class="category info-tag">${tag}</i>`
+	makeInfoTag = (tag) => `<i class="category info-tag ${normalize(tag)}">${tag}</i>`
 
 	getIDFromPath = (path) => {
 		const matches = `${path}`.match(/\/id\/([A-Za-z0-9]+)\//);
@@ -131,13 +140,15 @@ module.exports = function(eleventyConfig) {
 	makeCard = (item) => {
 		const ID = getIDFromPath(item.filePathStem);
 		const data = item.data;
-		return `<div class="card">
+		const hasIMRJ = (data.imrj && `${data.imrj}`.length > 0);
+		const hasMissing = [data.tags].flat().includes("desaparecido");
+		return `<div class="card" data-${hasIMRJ ? "" : "no-"}imrj >
 	<a href="/id/${ID}">
 		<div class="card-preview" style="background-image:url(/id/${ID}/thumb.jpg)"></div>
 	</a>
 	<div class="card-description">
 		<a href="/id/${ID}">
-			<p class="truncate">
+			<p class="truncate" title="${data.name || "?"}">
 				<strong>${data.name || "?"}</strong>
 			</p>
 		</a>
@@ -147,7 +158,9 @@ module.exports = function(eleventyConfig) {
 			<span>${getYearFromDate(data.data_inaug, data.data_circa)}</span><br>
 			<span class="neighborhood">${data.bairro || "?"}</span>
 		</div>
-		<div>${makeTag(data.categoria)}</div>
+		<div class="card-tags">
+			${makeTag(data.categoria)} ${hasMissing ? makeInfoTag("desaparecido") : ""}
+		</div>
 	</div>
 </div>`;
 	};

@@ -104,11 +104,11 @@ document.getElementById("deselect-all").addEventListener("click", function() {
 	</script>
 	<script>
 const map = L.map("monument-location-map", {
-	center: [-22.9353, -43.3233],
+	center: [-22.9, -43.4],
 	zoom: 11,
 	maxBounds: new L.LatLngBounds(
-		new L.LatLng(-22.9353 - 0.5, -43.3233 - 0.8),
-		new L.LatLng(-22.9353 + 0.5, -43.3233 + 0.8)
+		new L.LatLng(-22.9 - 0.5, -43.4 - 0.8),
+		new L.LatLng(-22.9 + 0.5, -43.4 + 0.8)
 	),
 	maxBoundsViscosity: .75
 })
@@ -190,7 +190,7 @@ m<%=i%>.addTo(map);<%_ } %>
 	color: #fff;
 }
 
-#map > .leaflet-pane > .leaflet-marker-pane > img.hidden-marker {
+#monument-location-map > .leaflet-pane > .leaflet-marker-pane > img.hidden-marker {
 	display: none;
 }
 	</style>

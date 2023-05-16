@@ -1,9 +1,93 @@
 ---
-layout: category-list.ejs
-heading: Monumentos por bairro
-name: Bairros
-property: bairro
+layout: default.ejs
+title: "Bairros — Monumentos Rio"
 ---
+<%_ const monuments = collections.all.filter(file => file.filePathStem.startsWith("/id/"));
+monuments.sort((a, b) => a.filePathStem.slice(4).localeCompare(b.filePathStem.slice(4)));
+const monument_count = monuments.length;
 
-Esta é uma lista de todos os monumentos catalogados, organizados pelos
-bairros onde estão instalados.
+const distinct_categories = new Set();
+monuments.forEach(mon => {
+	// If property is an array
+	if(mon.data.bairro instanceof Array) {
+		mon.data.bairro.forEach(val => {
+			if(val)
+				distinct_categories.add(val);
+		});
+	} else {
+		// Otherwise, if it's a simple value, add it
+		if(mon.data.bairro)
+			distinct_categories.add(mon.data.bairro);
+	}
+});
+
+const lists = [];
+const categories_list = [...distinct_categories];
+categories_list.sort((a, b) => a.localeCompare(b));
+
+categories_list.forEach(cat => {
+	lists.push(monuments.reduce((acc, file) => {
+		// If property is an array
+		if(file.data.bairro instanceof Array) {
+			// Check if array includes this category
+			if(file.data.bairro.includes(cat)) {
+				// Add it to the list
+				acc.push(file);
+			}
+		} else {
+			// Otherwise, if it's a simple value
+			// Check if it matches
+			if(cat === file.data.bairro)
+				acc.push(file);
+		}
+		return acc;
+	}, []));
+});
+
+
+const bairros_name = [];
+const bairros_imrj = new Map();
+for(let i = 0; i < bairros.length; i++) {
+	bairros_name.push(bairros[i].name);
+	bairros_imrj.set(bairros[i].name, bairros[i].imrj);
+}
+bairros_name.sort((a,b) => a.localeCompare(b));
+%>
+
+<main>
+<h1>Monumentos por bairro</h1>
+<section class="indent-children maxwidth">
+	<p>
+		Esta é uma lista de todos os monumentos catalogados, organizados pelos
+		bairros onde estão instalados.
+	</p>
+</section>
+<details id="list-toc">
+	<summary>Pular para:</summary>
+	<div>
+	<%_ for(let i = 0; i < bairros_name.length; i++) { %>
+		<%_ if(distinct_categories.has(bairros_name[i])) { %>
+			<a href="#<%= normalize(bairros_name[i]) %>"><%= bairros_name[i] %></a>
+		<%_ } else { %>
+			<span><%= bairros_name[i] %></span>
+		<%_ } %>
+	<%_ } %>
+	</div>
+</details>
+<%_ for(let c = 0; c < lists.length; c++) {
+	const current_bairro = categories_list[c];
+	const bairro_count = lists[c].length; %>
+	<h2 id="<%= normalize(current_bairro) %>"><%- current_bairro %></h2>
+	<p><%-
+		`<strong>${bairro_count}</strong> monumento`
+		+ (bairro_count < 2 ? "" : "s")
+	%></p>
+	<div class="card-list">
+	<%_ for(let i = 0; i < lists[c].length; i++) {
+		%><%- makeCard(lists[c][i]) %><%_
+	} %>
+	</div>
+<%_ } %>
+</main>
+
+

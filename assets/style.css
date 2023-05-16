@@ -37,15 +37,20 @@ header > nav a[href] {
 }
 details > summary {
 	background-repeat: no-repeat;
+	background-position: 0 center;
+	background-size: 24px;
+	list-style: none;
+	padding-left: calc(24px + .5em) !important;
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M8.59 16.58 13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z'/%3E%3C/svg%3E");
+}
+details[open] > summary {
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M7.41 8.58 12 13.17l4.59-4.59L18 10l-6 6-6-6L7.41 8.58z'/%3E%3C/svg%3E");
+}
+nav details > summary {
 	background-position: 12px center;
 	background-size: 24px;
 	list-style: none;
 	padding-left: 36px !important;
-	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M8.59 16.58 13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z'/%3E%3C/svg%3E");
-
-}
-details[open] > summary {
-	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M7.41 8.58 12 13.17l4.59-4.59L18 10l-6 6-6-6L7.41 8.58z'/%3E%3C/svg%3E");
 }
 
 header > nav > ul > li > details summary {
@@ -115,6 +120,11 @@ h2 i.category.info-tag {
 	border-radius: 8px;
 	font-weight: normal;
 }
+i.info-tag.desaparecido {
+	font-weight: 500;
+	color: white;
+	background-color: #bf3d3d;
+}
 .tags-list {
 	line-height: 1.25;
 }
@@ -139,6 +149,9 @@ main.monument {
 	display: grid;
 	grid-template-columns: 1fr auto;
 	gap: .75rem;
+}
+main.monument figure img {
+	max-width: 250px;
 }
 main p {
 	margin: 0;
@@ -209,8 +222,6 @@ strong {
 }
 
 aside {
-	position: sticky;
-	top: .75rem;
 	height: min-content;
 	width: 250px;
 	background-color: #fff;
@@ -298,7 +309,7 @@ cite {
 	color: #444;
 	font-size: 85%;
 	font-weight: 500;
-	margin-top: -.5rem;
+	margin-top: -.25rem;
 	margin-bottom: .5rem;
 }
 .indent-children > p {
@@ -363,7 +374,7 @@ hr {
 .card {
 	display: grid;
 	grid-template-columns: 150px 150px;
-	gap: 1rem;
+	gap: .75rem;
 	background-color: #fff;
 	border: 1px solid #dfdfdf;
 	border-radius: 4px;
@@ -378,9 +389,9 @@ hr {
 	background-repeat: no-repeat;
 }
 .card-description {
-	padding: 1rem 1rem 1rem 0;
+	padding: .75rem .75rem .75rem 0;
 	display: grid;
-	grid-template-rows: 35fr 35fr 30fr;
+	grid-template-rows: 34fr 30fr 32fr;
 }
 .card > .card-description > a[href] {
 	color: unset;
@@ -405,6 +416,21 @@ hr {
 	-webkit-line-clamp: 2;
 	-webkit-box-orient: vertical;
 	overflow: hidden;
+}
+.card-tags {
+	line-height: 1.3;
+}
+
+.card[data-no-imrj] {
+	--ribbon-color: #a1aec0;
+	border-color: var(--ribbon-color);
+	background-image: linear-gradient(
+		135deg, transparent 25%, transparent 50%,
+		var(--ribbon-color) 50%, var(--ribbon-color) 75%,
+		transparent 75%, transparent 100%);
+	background-size: 1rem 1rem;
+	background-repeat: no-repeat;
+	background-position: bottom right;
 }
 
 .inscription-text {
@@ -436,4 +462,35 @@ hr {
 .leaflet-container .leaflet-escultura-pane,
 .leaflet-container .leaflet-obra-pane {
 	z-index: 601;
+}
+
+
+h2 {
+	scroll-margin-top: .75rem;
+}
+#list-toc {
+	padding: .5rem;
+	cursor: default;
+	background-color: #f2f2f2;
+	border: 1px solid #dfdfdf;
+	border-radius: 4px;
+	margin-top: 1rem;
+}
+#list-toc > div {
+	display: inline-block;
+	margin-left: .5rem;
+	font-size: 75%;
+}
+#list-toc > div > * {
+	display: inline-block;
+	padding: .25rem .5rem;
+	border-radius: 2px;
+	min-width: 1.25rem;
+	text-align: center;
+}
+#list-toc > div > *:hover {
+	background-color: #ddd;
+}
+#list-toc span {
+	color: #444;
 }

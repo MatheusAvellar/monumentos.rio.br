@@ -22,22 +22,35 @@ letters_list.forEach(letter => {
 %>
 
 <main>
-	<h1>Inventário</h1>
-	<section class="indent-children maxwidth">
-		<p>
-			Esta é uma lista de todos os monumentos catalogados, ordenados
-			alfabeticamente. Para outras 
-			Até agora, os seguintes
-			<strong><%= monument_count %></strong> monumentos já foram catalogados:
-		</p>
-	</section>
-	<%_ for(let c = 0; c < lists.length; c++) {
-		const current_letter = letters_list[c]; %>
-		<h2 id="letter-<%= current_letter %>"><%= current_letter %></h2>
-		<div class="card-list">
-			<%_ for(let i = 0; i < lists[c].length; i++) { %>
-				<%- makeCard(lists[c][i]) %>
-			<%_ } %>
-		</div>
+<h1>Inventário</h1>
+<section class="indent-children maxwidth">
+	<p>
+		Esta é uma lista de todos os monumentos catalogados, ordenados
+		alfabeticamente. Para outras 
+		Até agora, os seguintes
+		<strong><%= monument_count %></strong> monumentos já foram catalogados:
+	</p>
+</section>
+<details id="list-toc">
+	<summary>Pular para:</summary>
+	<div>
+	<%_ const alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
+	for(let i = 0; i < alphabet.length; i++) { %>
+		<%_ if(letters.has(alphabet[i])) { %>
+			<a href="#letra-<%= alphabet[i] %>"><%= alphabet[i] %></a>
+		<%_ } else { %>
+			<span><%= alphabet[i] %></span>
+		<%_ } %>
 	<%_ } %>
+	</div>
+</details>
+<%_ for(let c = 0; c < lists.length; c++) {
+	const current_letter = letters_list[c]; %>
+	<h2 id="letra-<%= current_letter %>"><%= current_letter %></h2>
+	<div class="card-list">
+		<%_ for(let i = 0; i < lists[c].length; i++) { %>
+			<%- makeCard(lists[c][i]) %>
+		<%_ } %>
+	</div>
+<%_ } %>
 </main>

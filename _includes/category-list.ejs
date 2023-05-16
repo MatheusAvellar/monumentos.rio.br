@@ -55,17 +55,11 @@ categories_list.forEach(cat => {
 	</section>
 	<%_ for(let c = 0; c < lists.length; c++) {
 		const current_cat = categories_list[c]; %>
-		<h2 id="<%= catCleanup(current_cat) %>">
-			<%_ if(property === "tags") { %>
-				<%- makeInfoTag(current_cat) %>
-			<%_ } else { %>
-				<%= current_cat %>
-			<%_ } %>
-		</h2>
+		<h2 id="<%= catCleanup(current_cat) %>"><%- current_cat %></h2>
 		<div class="card-list">
-			<%_ for(let i = 0; i < lists[c].length; i++) { %>
-				<%- makeCard(lists[c][i]) %>
-			<%_ } %>
+			<%_ for(let i = 0; i < lists[c].length; i++) {
+			%><%- makeCard(lists[c][i]) %><%_
+			} %>
 		</div>
 	<%_ } %>
 </main>

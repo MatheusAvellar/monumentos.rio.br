@@ -4,26 +4,37 @@ title: Monumentos Rio
 ---
 
 <main>
+<section class="maxwidth">
 	<p>Bem vindo ao <strong>monumentos.rio</strong>!</p>
 	<p>
 		Este website tem como objetivo formar um inventário de todos os monumentos
 		da cidade do Rio de Janeiro.
 	</p>
 	<p>
-		Os monumentos estão separados nas seguintes categorias:
+		Um monumento é uma estrutura:
 	</p>
 	<ul>
-		<li><%- makeTag("obra") %> iniciados com A</li>
-		<li><%- makeTag("busto") %> iniciados com B</li>
-		<li><%- makeTag("chafariz") %> iniciados com C</li>
-		<li><%- makeTag("estátua") %> iniciados com E</li>
-		<li><%- makeTag("marco") %> iniciados com M</li>
-		<li><%- makeTag("escultura") %> iniciados com S</li>
+		<li>que comemora uma pessoa ou evento; ou</li>
+		<li>
+			que se tornou relevante para um grupo, como parte de sua memória ou herança
+			cultural, devido à importância artística, histórica, política,
+			técnica ou arquitetural
+		</li>
 	</ul>
+	<p>
+		Os monumentos estão separados nas seguintes categorias:
+		<%- makeTag("obra") %>
+		<%- makeTag("busto") %>
+		<%- makeTag("chafariz") %>
+		<%- makeTag("estátua") %>
+		<%- makeTag("marco") %>
+		<%- makeTag("escultura") %>
+	</p>
 	<hr>
 	<p>
 		Aqui estão alguns monumentos escolhidos aleatoriamente:
 	</p>
+</section>
 <%_
 // [Ref] https://bost.ocks.org/mike/shuffle/
 function shuffle(array) {
@@ -40,9 +51,9 @@ const monuments = shuffle(collections.all.filter(file =>
 	file.filePathStem.startsWith("/id/")
 ));
 %>
-	<div class="card-list">
-		<%_ for(let i = 0; i < 9; i++) { %>
-			<%- makeCard(monuments[i]) %>
-		<%_ } %>
-	</div>
+<div class="card-list">
+	<%_ for(let i = 0; i < 9; i++) { %>
+		<%- makeCard(monuments[i]) %>
+	<%_ } %>
+</div>
 </main>
