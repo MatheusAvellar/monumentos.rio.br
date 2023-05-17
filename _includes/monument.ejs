@@ -11,7 +11,9 @@ alt_names = [doFallback("alt_names", [])].flat();
 tags = [doFallback("tags", [])].flat();
 
 data_inaug = doFallback("data_inaug");
-data_circa = doFallback("data_circa", "");
+data_circa = doFallback("data_circa");
+data_remov = doFallback("data_remov");
+motiv_remov = doFallback("motiv_remov");
 
 altura = doFallback("altura", 0);
 largura = doFallback("largura", 0);
@@ -118,6 +120,16 @@ L.marker([<%= lat %>, <%= lon %>], {
 				<dd>
 					<%= formatDate(data_inaug, data_circa) %><br>
 					(<%= getYearsSince(data_inaug) %>)
+				</dd>
+			<%_ } %>
+			<%_ if(data_remov) { %>
+				<dt>Remoção</dt>
+				<dd>
+					<%= formatDate(data_remov) %><br>
+					(<%= getYearsSince(data_remov) %>)<br>
+					<%_ if(motiv_remov) { %>
+					<small><strong>Motivo:</strong> <%= motiv_remov %></small>
+					<%_ } %>
 				</dd>
 			<%_ } %>
 			<%_ if(material && material.length > 0) { %>

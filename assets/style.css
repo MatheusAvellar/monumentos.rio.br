@@ -179,7 +179,7 @@ footer {
 }
 footer > section {
 	display: grid;
-	grid-template-columns: 2fr 1fr;
+	grid-template-columns: 1fr 1fr 1fr;
 	gap: 1rem;
 }
 footer .heart-icon {
@@ -420,7 +420,6 @@ hr {
 .card-tags {
 	line-height: 1.3;
 }
-
 .card[data-no-imrj] {
 	--ribbon-color: #a1aec0;
 	border-color: var(--ribbon-color);
@@ -443,7 +442,6 @@ hr {
 	background-color: #fff;
 }
 
-
 .leaflet-container .leaflet-popup-content-wrapper {
 	border-radius: 4px;
 	cursor: default;
@@ -463,7 +461,6 @@ hr {
 .leaflet-container .leaflet-obra-pane {
 	z-index: 601;
 }
-
 
 h2 {
 	scroll-margin-top: .75rem;
