@@ -1,0 +1,548 @@
+[hidden] {
+	display: none !important;
+}
+* {
+	box-sizing: border-box;
+}
+html {
+	height: 100%;
+	overflow-y: scroll;
+}
+body {
+	display: grid;
+	grid-template-rows: auto 1fr auto;
+	font-family: Inter, Roboto, sans-serif;
+	min-height: 100%;
+	margin: 0;
+	background-color: #fafafa;
+}
+header {
+	background-color: #fff;
+	box-shadow: 0 2px 5px #e5e5e5;
+}
+header > nav > ul {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	align-items: center;
+	column-gap: 0.5rem;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+header > nav a[href] {
+	display: inline-block;
+	color: inherit;
+	text-decoration: none;
+	width: 100%;
+}
+details > summary {
+	background-repeat: no-repeat;
+	background-position: 0 center;
+	background-size: 24px;
+	list-style: none;
+	padding-left: calc(24px + .5em);
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M8.59 16.58 13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z'/%3E%3C/svg%3E");
+}
+details[open] > summary {
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M7.41 8.58 12 13.17l4.59-4.59L18 10l-6 6-6-6L7.41 8.58z'/%3E%3C/svg%3E");
+}
+nav details > summary {
+	background-position: 12px center;
+	background-size: 24px;
+	list-style: none;
+	padding-left: 36px !important;
+}
+
+header > nav > ul > li > details summary {
+	cursor: pointer;
+}
+header > nav > ul > li > details summary,
+header > nav > ul > li > a[href] {
+	padding: 1rem;
+	line-height: 2rem;
+	border-bottom: 2px solid transparent;
+}
+header > nav > ul > li > details[open] summary,
+header > nav > ul > li > details summary:hover,
+header > nav > ul > li > a[href]:hover {
+	background-color: #f2f2f2;
+	border-bottom-color: #444;
+}
+header > nav details ul {
+	position: absolute;
+	z-index: 401; /* Leaflet map uses 400 */
+	margin-top: -1rem;
+	border: 1px solid #d8d8d8;
+	border-radius: 4px;
+	padding: .5rem 0;
+	list-style: none;
+	background-color: white;
+	box-shadow:
+		0 1px 1.1px hsl(0deg 0% 71% / 0.32),
+		0 2.7px 2.8px -1px hsl(0deg 0% 71% / 0.29),
+		0 7px 7.4px -2px hsl(0deg 0% 71% / 0.27),
+		0 17.5px 18.4px -3px hsl(0deg 0% 71% / 0.24);
+}
+header > nav details a[href] {
+	padding: .125rem 1rem .125rem .5rem;
+}
+header > nav details ul > li span {
+	vertical-align: middle;
+}
+header > nav details ul > li.menu-description {
+	color: #444;
+	padding: 0 .5rem;
+	font-size: 75%;
+	margin-bottom: .25rem;
+}
+header > nav details ul > li:is(:hover, :active, :focus, :focus-within):not(.menu-description) {
+	background-color: #f2f2f2;
+	background-color: var(--accent, #f2f2f2);
+}
+.cat-obra      { --accent: #d2d2ff; }
+.cat-busto     { --accent: #f0bdf9; }
+.cat-chafariz  { --accent: #f5c0ae; }
+.cat-estatua   { --accent: #fde099; }
+.cat-marco     { --accent: #c7e79a; }
+.cat-escultura { --accent: #cbf0ff; }
+i.category {
+	font-style: normal;
+	font-size: 75%;
+	white-space: pre;
+	padding: .125em .5em;
+	border-radius: 4px;
+	background-color: var(--accent);
+}
+i.category.info-tag {
+	background-color: #e1e1e1;
+}
+h2 i.category.info-tag {
+	border-radius: 8px;
+	font-weight: normal;
+}
+i.info-tag.desaparecido {
+	font-weight: 500;
+	color: white;
+	background-color: #bf3d3d;
+}
+.tags-list {
+	line-height: 1.25;
+}
+details.hidden-tags-list {
+	display: contents;
+}
+details.hidden-tags-list > summary {
+	display: inline-block;
+	padding: 0;
+	cursor: pointer;
+	background: none;
+}
+
+details.hidden-tags-list > summary:hover svg {
+	rotate: 15deg;
+}
+
+.icon {
+	display: inline-block;
+	vertical-align: middle;
+	height: 24px;
+	width: 24px;
+	fill: #444;
+	transform: scale(.75);
+}
+main {
+	padding: 2rem 1rem 5rem;
+}
+main, .downsize {
+	width: 100%;
+	max-width: 1024px;
+	margin: 0 auto;
+}
+main.monument {
+	display: grid;
+	grid-template-columns: 1fr auto;
+	gap: .75rem;
+}
+main.monument figure img {
+	max-width: 250px;
+}
+main p {
+	margin: 0;
+	font-size: 1rem;
+	line-height: 1.25;
+}
+main p + p {
+	margin-top: .5rem;
+}
+main li+li {
+	margin-top: .5rem;
+}
+main .tight-list li+li {
+	margin-top: 0;
+}
+
+footer {
+	font-size: 75%;
+	width: 100%;
+	padding: 27px 1rem 1rem;
+	color: #444;
+	background-color: #fff;
+	background-image: url(/assets/fundo_seconserva.jpg);
+	background-repeat: repeat-x;
+}
+footer > section {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	gap: 1rem;
+	hyphens: auto;
+}
+footer .heart-icon {
+	height: 1.5rem;
+	padding: 0.1rem 0;
+	vertical-align: middle;
+	box-sizing: border-box;
+	fill: none;
+	stroke: #444;
+	stroke-width: 1.5;
+	stroke-linecap: round;
+	stroke-linejoin: round;
+}
+
+h1, h2, h3 {
+	margin: 0;
+}
+h1 {
+	margin-bottom: .5rem;
+	font-size: 3rem;
+	line-height: 1;
+}
+h2 {
+	margin-top: 2rem;
+	margin-bottom: .5rem;
+	font-size: 1.75rem;
+}
+strong {
+	font-weight: 500;
+}
+:is(main, footer) a[href] {
+	text-decoration: none;
+	color: inherit;
+}
+:is(main, footer) a[href]:not(.tag) {
+	color: #0b7dda;
+}
+:is(main, footer) a[href]:not(.tag):is(:hover, :active, :focus) {
+	text-decoration: underline;
+}
+
+aside {
+	height: min-content;
+	width: 250px;
+	background-color: #fff;
+	padding: .75rem 1rem 1rem;
+	border: 1px solid #dfdfdf;
+	border-radius: 4px;
+	box-shadow: 2px 2px 5px #e5e5e5;
+}
+aside > dl {
+	margin: 0;
+}
+aside > dl > dt {
+	font-weight: 500;
+}
+aside > dl > dd {
+	margin-left: 1rem;
+}
+aside > dl > dd + dt {
+	margin-top: .5rem;
+}
+aside abbr {
+	text-decoration: none;
+}
+.section-heading {
+	display: block;
+	color: #444;
+	font-size: 65%;
+	text-transform: uppercase;
+	margin-bottom: .5rem;
+}
+
+main figure {
+	float: left;
+	border: 1px solid #d8d8d8;
+	border-radius: 4px;
+	padding: .5rem;
+	margin: 0 1rem 1rem 0;
+	width: min-content;
+	box-shadow: 2px 2px 5px #e5e5e5;
+	background-color: #fff;
+}
+figcaption .credits {
+	font-size: .75rem;
+}
+main section.refs,
+main section.more,
+main section.gallery,
+main section.location {
+	clear: both;
+}
+main section.description {
+	margin: 1rem auto;
+}
+main section.description p {
+	text-indent: 1rem;
+}
+main section.description sup {
+	color: #8f97a9;
+}
+main section.refs {
+	font-size: 75%;
+	color: #8f97a9;
+}
+main section.refs li+li {
+	margin: 0;
+}
+main section.gallery > figure {
+	display: inline-block;
+	float: none;
+	vertical-align: top;
+}
+main section.gallery img {
+	max-height: 250px;
+}
+
+main section.maxwidth {
+	max-width: 700px;
+}
+
+blockquote {
+	position: relative;
+	text-indent: 1rem;
+	font-size: 85%;
+	margin: .5rem .5rem 0;
+	color: #444;
+}
+blockquote::before {
+	content: "";
+	display: inline-block;
+	position: absolute;
+	width: 24px;
+	height: 24px;
+	margin-left: -1.5rem;
+	margin-top: -.25rem;
+	z-index: -1;
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23dfdfdf'%3E%3Cpath d='m10 7-2 4h3v6H5v-6L7 7h3m8 0-2 4h3v6h-6v-6l2-4h3z'/%3E%3C/svg%3E");
+	background-repeat: no-repeat;
+	background-position: top left;
+}
+cite {
+	font-size: 75%;
+	margin-bottom: .5rem;
+}
+
+.alt-names {
+	color: #444;
+	font-size: 85%;
+	font-weight: 500;
+	margin-top: -.25rem;
+	margin-bottom: .5rem;
+}
+.indent-children > p {
+	text-indent: 1rem;
+}
+p.noindent {
+	text-indent: unset;
+}
+
+.identifier, .tabular-nums {
+	font-variant-numeric: tabular-nums;
+}
+.display-identifier {
+	display: block;
+	color: #444;
+	font-size: 1.75rem;
+	font-style: normal;
+}
+hr {
+	border: 0;
+	border-top: 1px solid #dfdfdf;
+	margin: .75em 0;
+}
+
+.description-size {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-evenly;
+	gap: .75rem;
+}
+.description-size > div {
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	flex-basis: 33%;
+}
+.description-size .description-size-label {
+	font-size: 85%;
+	color: #444;
+}
+
+#monument-location-map {
+	height: 400px;
+	width: 100%;
+	margin: .25rem 0;
+	border-radius: 4px;
+	border: 1px solid #d8d8d8;
+	box-shadow: 2px 2px 5px #e5e5e5;
+}
+#monument-location-map.big {
+	height: 650px;
+}
+
+.card-list {
+	display: flex;
+	gap: 1rem;
+	flex-direction: row;
+	flex-wrap: wrap;
+	margin-top: 1rem;
+}
+
+.card {
+	display: grid;
+	grid-template-columns: 150px 150px;
+	gap: .75rem;
+	background-color: #fff;
+	border: 1px solid #dfdfdf;
+	border-radius: 4px;
+	width: max-content;
+	overflow: hidden;
+}
+.card-preview {
+	width: 150px;
+	height: 150px;
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+.card-description {
+	padding: .75rem .75rem .75rem 0;
+	display: grid;
+	grid-template-rows: 34fr 30fr 32fr;
+}
+.card > .card-description > a[href] {
+	color: unset;
+}
+.card-details {
+	padding-top: .25rem;
+	border-top: 1px solid #dfdfdf;
+	font-size: 75%;
+	color: #444;
+	width: calc(150px - 1rem);/* FIXME? */
+}
+.card-details > .neighborhood {
+	display: inline-block;
+	width: 100%;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+.card .truncate {
+	line-height: 1.125;
+	display: -webkit-box;
+	-webkit-line-clamp: 2;
+	-webkit-box-orient: vertical;
+	overflow: hidden;
+}
+.card-tags {
+	line-height: 1.3;
+}
+.card[data-no-imrj] {
+	--ribbon-color: #a1aec0;
+	border-color: var(--ribbon-color);
+	background-image: linear-gradient(
+		135deg, transparent 25%, transparent 50%,
+		var(--ribbon-color) 50%, var(--ribbon-color) 75%,
+		transparent 75%, transparent 100%);
+	background-size: 1rem 1rem;
+	background-repeat: no-repeat;
+	background-position: bottom right;
+}
+
+.inscription-text {
+	font-size: 90%;
+	font-family: inherit;
+	font-variant-numeric: tabular-nums;
+	padding: .5rem .75rem;
+	border: 1px solid #dfdfdf;
+	border-radius: 4px;
+	background-color: #fff;
+}
+
+.leaflet-container .leaflet-popup-content-wrapper {
+	border-radius: 4px;
+	cursor: default;
+}
+.leaflet-container .leaflet-popup-content {
+	margin: .75rem 1rem;
+}
+.leaflet-container .leaflet-popup-content > :not(a[href]) {
+	cursor: text;
+}
+
+.leaflet-container .leaflet-busto-pane,
+.leaflet-container .leaflet-chafariz-pane,
+.leaflet-container .leaflet-estatua-pane,
+.leaflet-container .leaflet-marco-pane,
+.leaflet-container .leaflet-escultura-pane,
+.leaflet-container .leaflet-obra-pane {
+	z-index: 601;
+}
+
+h2 {
+	scroll-margin-top: .75rem;
+}
+#list-toc {
+	padding: .5rem;
+	cursor: default;
+	background-color: #f2f2f2;
+	border: 1px solid #dfdfdf;
+	border-radius: 4px;
+	margin-top: 1rem;
+}
+#list-toc > div {
+	display: inline-block;
+	margin-left: .5rem;
+	font-size: 75%;
+}
+#list-toc > div > * {
+	display: inline-block;
+	padding: .25rem .5rem;
+	border-radius: 2px;
+	min-width: 1.25rem;
+	text-align: center;
+}
+#list-toc > div > *:hover {
+	background-color: #ddd;
+}
+#list-toc span {
+	color: #444;
+}
+
+#beta-tag {
+	position: absolute;
+	color: white;
+	font-size: .65rem;
+	font-weight: bold;
+	background-color: #e36262;
+	pointer-events: none;
+	padding: .2rem .35rem;
+	border-radius: 50px;
+	transform: translateX(-30px) translateY(10px);
+	rotate: 5deg;
+}
+
+@media screen and (max-width: 700px) {
+	footer > section {
+		grid-template-columns: 1fr 1fr;
+	}
+}
