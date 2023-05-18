@@ -8,7 +8,7 @@
 	<link rel="preconnect" href="https://cdn.avl.la">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="referrer" content="no-referrer">
-	<link rel="stylesheet" href="/assets/style.css">
+	<link rel="stylesheet" href="/assets/style.css?v=05-18">
 	<script src="/assets/leaflet/leaflet.min.1.9.3.js"></script>
 </head>
 <body>
@@ -59,6 +59,12 @@
 					<a href="/inventario">
 						<svg class="icon"><use href="#icon-list"/></svg>
 						<span>Inventário</span>
+					</a>
+				</li>
+				<li>
+					<a href="/mapa">
+						<svg class="icon"><use href="#icon-map"/></svg>
+						<span>Mapa</span>
 					</a>
 				</li>
 				<li>
@@ -131,12 +137,6 @@
 							</li>
 						</ul>
 					</details>
-				</li>
-				<li>
-					<a href="/mapa">
-						<svg class="icon"><use href="#icon-map"/></svg>
-						<span>Mapa</span>
-					</a>
 				</li>
 				<li>
 					<details>
@@ -307,7 +307,9 @@ L.marker([-22.9128, -43.1799], {
 			</summary>
 			<div>
 			<!-- Assigned tags -->
-<i class="category info-tag sem_descricao">sem descrição</i>
+
+				<i class="category info-tag sem_descricao">sem descrição</i>
+
 			<!-- Auto-tags -->
 			<i class="category info-tag sem_autoria">sem autoria</i>
 			<i class="category info-tag data_imprecisa">data imprecisa</i>
@@ -431,6 +433,6 @@ L.marker([-22.9128, -43.1799], {
 	<script src="/assets/litelightbox.min.js"></script>
 	<!-- Leaflet Maps -->
 	<link href="/assets/leaflet/leaflet.css" rel="stylesheet" type="text/css">
-	<script src="/assets/details.js"></script>
+	<script src="/assets/details.js?v=05-18"></script>
 </body>
 </html>
