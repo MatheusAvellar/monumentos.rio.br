@@ -2,38 +2,33 @@
 layout: default.ejs
 title: Monumentos Rio
 ---
+<%_ const monuments = collections.all.filter(file => file.filePathStem.startsWith("/id/"));
+const monument_count = monuments.length;
 
+const distinct_bairros = new Set();
+monuments.forEach(m => { distinct_bairros.add(m.data.bairro); });
+%>
 <main>
 <section class="maxwidth">
-	<p>Bem vindo ao <strong>monumentos.rio</strong>!</p>
+	<p>Bem vindo ao <strong><%= website_domain %></strong>!</p>
 	<p>
 		Este website tem como objetivo formar um inventário de todos os monumentos
 		da cidade do Rio de Janeiro.
 	</p>
 	<p>
-		Um monumento é uma estrutura:
+		Selecione a aba "Inventário" acima psara ver a lista completa de monumentos
+		já catalogados. O projeto possui, no momento,
+		<strong><%= monument_count %></strong> monumentos de
+		<strong><%= distinct_bairros.size %></strong> bairros distintos.
 	</p>
-	<ul>
-		<li>que comemora uma pessoa ou evento; ou</li>
-		<li>
-			que se tornou relevante para um grupo, como parte de sua memória ou herança
-			cultural, devido à importância artística, histórica, política,
-			técnica ou arquitetural
-		</li>
-	</ul>
 	<p>
-		Os monumentos estão separados nas seguintes categorias:
-		<%- makeTag("obra") %>
-		<%- makeTag("busto") %>
-		<%- makeTag("chafariz") %>
-		<%- makeTag("estátua") %>
-		<%- makeTag("marco") %>
-		<%- makeTag("escultura") %>
+		Alternativamente, escolha uma das categorias usadas para classificar cada
+		monumento. Elas são as seguintes:
+		<%- makeTag("obra") %> <%- makeTag("busto") %> <%- makeTag("chafariz") %>
+		<%- makeTag("estátua") %> <%- makeTag("marco") %> <%- makeTag("escultura") %>
 	</p>
-	<hr>
-	<p>
-		Aqui estão alguns monumentos escolhidos aleatoriamente:
-	</p>
+	<br><hr><br>
+	<p>Aqui estão alguns monumentos escolhidos aleatoriamente:</p>
 </section>
 <%_
 // [Ref] https://bost.ocks.org/mike/shuffle/
@@ -47,9 +42,6 @@ function shuffle(array) {
 	}
 	return array;
 }
-const monuments = shuffle(collections.all.filter(file =>
-	file.filePathStem.startsWith("/id/")
-));
 %>
 <div class="card-list">
 	<%_ for(let i = 0; i < 9; i++) { %>

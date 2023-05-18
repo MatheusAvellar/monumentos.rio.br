@@ -97,14 +97,22 @@ L.marker([<%= lat %>, <%= lon %>], {
 	<div class="tags-list">
 		<!-- Main category tag -->
 		<%- makeTag(categoria) %>
-		<!-- Assigned tags -->
-		<%_ for(let i = 0; i < tags.length; i++) { %>
-			<%- makeInfoTag(tags[i]) %>
-		<%_ } %>
-		<!-- Auto-tags -->
-		<%- !autores.length ? makeInfoTag("sem autoria") : undefined %>
-		<%- (data_circa || getDatePrecision(data_inaug) < 2)
-			? makeInfoTag("data imprecisa") : undefined %>
+		<details title="Ver tags" class="hidden-tags-list">
+			<summary>
+				<svg class="icon"><use href="#icon-tag"></use></svg>
+			</summary>
+			<div>
+			<!-- Assigned tags -->
+			<%_ for(let i = 0; i < tags.length; i++) {
+				if(tags[i] !== "imagem não-livre") { %><%-
+					makeInfoTag(tags[i])
+			%><%_ }} %>
+			<!-- Auto-tags -->
+			<%- !autores.length ? makeInfoTag("sem autoria") : undefined %>
+			<%- (data_circa || getDatePrecision(data_inaug) < 2)
+				? makeInfoTag("data imprecisa") : undefined %>
+			</div>
+		</details>
 	</div>
 	<%_ if(data_inaug || altura || largura || peso || material) { %>
 		<%_ if(data_inaug || autores.length) { %>

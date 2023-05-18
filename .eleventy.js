@@ -14,6 +14,8 @@ module.exports = function(eleventyConfig) {
 	eleventyConfig.addPassthroughCopy("{,!(_site)/**/}*.png");
 	eleventyConfig.addPassthroughCopy("{,!(_site)/**/}*.jpg");
 
+	website_domain = "monumentos.rio.br";
+
 	fallback = function(obj, key, if_false="") {
 		if(!(key in obj)) return if_false;
 		const val = obj[key];

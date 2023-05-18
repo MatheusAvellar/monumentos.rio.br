@@ -46,11 +46,13 @@ letters_list.forEach(letter => {
 </details>
 <%_ for(let c = 0; c < lists.length; c++) {
 	const current_letter = letters_list[c]; %>
-	<h2 id="letra-<%= current_letter %>"><%= current_letter %></h2>
-	<div class="card-list">
-		<%_ for(let i = 0; i < lists[c].length; i++) { %>
-			<%- makeCard(lists[c][i]) %>
-		<%_ } %>
-	</div>
+	<section>
+		<h2 id="letra-<%= current_letter %>"><%= current_letter %></h2>
+		<div class="card-list">
+			<%_ for(let i = 0; i < lists[c].length; i++) { %>
+				<%- makeCard(lists[c][i]) %>
+			<%_ } %>
+		</div>
+	</section>
 <%_ } %>
 </main>
