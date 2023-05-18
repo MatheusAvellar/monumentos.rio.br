@@ -104,9 +104,9 @@ L.marker([<%= lat %>, <%= lon %>], {
 			<div>
 			<!-- Assigned tags -->
 			<%_ for(let i = 0; i < tags.length; i++) {
-				if(tags[i] !== "imagem não-livre") { %><%-
-					makeInfoTag(tags[i])
-			%><%_ }} %>
+				if(tags[i] !== "imagem não-livre") { %>
+				<%- makeInfoTag(tags[i]) %>
+			<%_ }} %>
 			<!-- Auto-tags -->
 			<%- !autores.length ? makeInfoTag("sem autoria") : undefined %>
 			<%- (data_circa || getDatePrecision(data_inaug) < 2)
