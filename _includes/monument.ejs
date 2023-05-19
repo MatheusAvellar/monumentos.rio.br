@@ -37,6 +37,11 @@ hpip = doFallback("hpip");
 iphan = doFallback("iphan");
 inepac = doFallback("inepac");
 inepac_url = doFallback("inepac_url");
+
+tombado_nome = doFallback("tombado_nome");
+tombado_desc = doFallback("tombado_desc");
+tombado_quote = doFallback("tombado_quote", false);
+tombado_url = doFallback("tombado_url");
 %>
 
 <main class="monument">
@@ -200,7 +205,7 @@ L.marker([<%= lat %>, <%= lon %>], {
 			<%_ } %>
 		</dl>
 	<%_ } %>
-	<%_ if(iphan || inepac || hpip) { %>
+	<%_ if(iphan || inepac || hpip || tombado_nome) { %>
 		<hr>
 		<p class="section-heading">Patrimônio</p>
 		<dl>
@@ -226,6 +231,22 @@ L.marker([<%= lat %>, <%= lon %>], {
 				<dt><abbr title="Património de Influência Portuguesa">HPIP</abbr></dt>
 				<dd>
 					ID&nbsp;<a href="<%= HPIP_URL %><%= hpip %>"><%= hpip %></a>
+				</dd>
+			<%_ } %>
+			<%_ if(tombado_nome) { %>
+				<dt>
+					<%_ if(tombado_url) { %>
+						<p><a href="<%= tombado_url %>"><%= tombado_nome %></a></p>
+					<%_ } else { %>
+						<p><%= tombado_nome %></p>
+					<%_ } %>
+				</dt>
+				<dd>
+					<%_ if(tombado_quote) { %>
+						<blockquote><%= tombado_desc %></blockquote>
+					<%_ } else { %>
+						<%= tombado_desc %>
+					<%_ } %>
 				</dd>
 			<%_ } %>
 		</dl>

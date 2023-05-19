@@ -143,7 +143,7 @@ module.exports = function(eleventyConfig) {
 		const ID = getIDFromPath(item.filePathStem);
 		const data = item.data;
 		const hasIMRJ = (data.imrj && `${data.imrj}`.length > 0);
-		const hasMissing = [data.tags].flat().includes("desaparecido");
+		const hasMissing = [data.tags].flat().includes("removido");
 		return `<div class="card" data-${hasIMRJ ? "" : "no-"}imrj >
 	<a href="/id/${ID}">
 		<div class="card-preview" style="background-image:url(/id/${ID}/thumb.jpg)"></div>
@@ -161,7 +161,7 @@ module.exports = function(eleventyConfig) {
 			<span class="neighborhood">${data.bairro || "?"}</span>
 		</div>
 		<div class="card-tags">
-			${makeTag(data.categoria)} ${hasMissing ? makeInfoTag("desaparecido") : ""}
+			${makeTag(data.categoria)} ${hasMissing ? makeInfoTag("removido") : ""}
 		</div>
 	</div>
 </div>`;

@@ -10,25 +10,46 @@ monuments.forEach(m => { distinct_bairros.add(m.data.bairro); });
 %>
 <main>
 <section class="maxwidth">
-	<p>Bem vindo ao <strong><%= website_domain %></strong>!</p>
+	<p>Bem-vindo ao <strong><%= website_domain %></strong>!</p>
 	<p>
 		Este website tem como objetivo formar um inventário de todos os monumentos
-		da cidade do Rio de Janeiro.
+		da cidade do Rio de Janeiro. Selecione a aba "<strong>Inventário</strong>"
+		acima para ver a lista completa de monumentos já catalogados.
 	</p>
 	<p>
-		Selecione a aba "Inventário" acima psara ver a lista completa de monumentos
-		já catalogados. O projeto possui, no momento,
-		<strong><%= monument_count %></strong> monumentos de
-		<strong><%= distinct_bairros.size %></strong> bairros distintos.
+		Essas são as estatísticas atuais:
 	</p>
+	<div class="statistics">
+		<div>
+			<div>
+				<strong class="stats-value"><%= monument_count %></strong>
+				<span>monumentos</span>
+			</div>
+			<span class="stats-total">
+				de ~<strong>1400</strong> (<%= ((monument_count/1400)*100).toFixed(2) %>%)
+			</span>
+		</div>
+		<div>
+			<div>
+				<strong class="stats-value"><%= distinct_bairros.size %></strong>
+				<span>bairros</span>
+			</div>
+			<span class="stats-total">
+				de <strong>164</strong> (<%= ((distinct_bairros.size/164)*100).toFixed(2) %>%)
+			</span>
+		</div>
+	</div>
+	<br><hr><br>
 	<p>
 		Alternativamente, escolha uma das categorias usadas para classificar cada
 		monumento. Elas são as seguintes:
-		<%- makeTag("obra") %> <%- makeTag("busto") %> <%- makeTag("chafariz") %>
-		<%- makeTag("estátua") %> <%- makeTag("marco") %> <%- makeTag("escultura") %>
 	</p>
-	<br><hr><br>
-	<p>Aqui estão alguns monumentos escolhidos aleatoriamente:</p>
+	<section id="home-categories-list">
+		<section class="home-category">
+			<%- makeTag("obra") %> <%- makeTag("busto") %> <%- makeTag("chafariz") %>
+			<%- makeTag("estátua") %> <%- makeTag("marco") %> <%- makeTag("escultura") %>
+		</section>
+	</section>
 </section>
 <%_
 // [Ref] https://bost.ocks.org/mike/shuffle/
@@ -43,9 +64,4 @@ function shuffle(array) {
 	return array;
 }
 %>
-<div class="card-list">
-	<%_ for(let i = 0; i < 9; i++) { %>
-		<%- makeCard(monuments[i]) %>
-	<%_ } %>
-</div>
 </main>
