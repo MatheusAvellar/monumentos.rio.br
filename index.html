@@ -8,7 +8,7 @@
 	<link rel="preconnect" href="https://cdn.avl.la">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="referrer" content="no-referrer">
-	<link rel="stylesheet" href="/assets/style.css?v=05-18">
+	<link rel="stylesheet" href="/assets/style.css?v=05-19">
 	<script src="/assets/leaflet/leaflet.min.1.9.3.js"></script>
 </head>
 <body>
@@ -169,228 +169,48 @@
 	
 <main>
 <section class="maxwidth">
-	<p>Bem vindo ao <strong>monumentos.rio.br</strong>!</p>
+	<p>Bem-vindo ao <strong>monumentos.rio.br</strong>!</p>
 	<p>
 		Este website tem como objetivo formar um inventário de todos os monumentos
-		da cidade do Rio de Janeiro.
+		da cidade do Rio de Janeiro. Selecione a aba "<strong>Inventário</strong>"
+		acima para ver a lista completa de monumentos já catalogados.
 	</p>
 	<p>
-		Selecione a aba "Inventário" acima psara ver a lista completa de monumentos
-		já catalogados. O projeto possui, no momento,
-		<strong>34</strong> monumentos de
-		<strong>17</strong> bairros distintos.
+		Essas são as estatísticas atuais:
 	</p>
+	<div class="statistics">
+		<div>
+			<div>
+				<strong class="stats-value">35</strong>
+				<span>monumentos</span>
+			</div>
+			<span class="stats-total">
+				de ~<strong>1400</strong> (2.50%)
+			</span>
+		</div>
+		<div>
+			<div>
+				<strong class="stats-value">17</strong>
+				<span>bairros</span>
+			</div>
+			<span class="stats-total">
+				de <strong>164</strong> (10.37%)
+			</span>
+		</div>
+	</div>
+	<br><hr><br>
 	<p>
 		Alternativamente, escolha uma das categorias usadas para classificar cada
 		monumento. Elas são as seguintes:
-		<a class="tag" href="/obras"><i class="category cat-obra">obra</i></a> <a class="tag" href="/bustos"><i class="category cat-busto">busto</i></a> <a class="tag" href="/chafarizes"><i class="category cat-chafariz">chafariz</i></a>
-		<a class="tag" href="/estatuas"><i class="category cat-estatua">estátua</i></a> <a class="tag" href="/marcos"><i class="category cat-marco">marco</i></a> <a class="tag" href="/esculturas"><i class="category cat-escultura">escultura</i></a>
 	</p>
-	<br><hr><br>
-	<p>Aqui estão alguns monumentos escolhidos aleatoriamente:</p>
+	<section id="home-categories-list">
+		<section class="home-category">
+			<a class="tag" href="/obras"><i class="category cat-obra">obra</i></a> <a class="tag" href="/bustos"><i class="category cat-busto">busto</i></a> <a class="tag" href="/chafarizes"><i class="category cat-chafariz">chafariz</i></a>
+			<a class="tag" href="/estatuas"><i class="category cat-estatua">estátua</i></a> <a class="tag" href="/marcos"><i class="category cat-marco">marco</i></a> <a class="tag" href="/esculturas"><i class="category cat-escultura">escultura</i></a>
+		</section>
+	</section>
 </section>
 
-<div class="card-list">
-
-		<div class="card" data-imrj >
-	<a href="/id/A15000">
-		<div class="card-preview" style="background-image:url(/id/A15000/thumb.jpg)"></div>
-	</a>
-	<div class="card-description">
-		<a href="/id/A15000">
-			<p class="truncate" title="Arcos da Lapa">
-				<strong>Arcos da Lapa</strong>
-			</p>
-		</a>
-		<div class="card-details">
-			<span class="identifier">A15000</span>
-			&middot;
-			<span>1750</span><br>
-			<span class="neighborhood">Lapa</span>
-		</div>
-		<div class="card-tags">
-			<a class="tag" href="/obras"><i class="category cat-obra">obra</i></a> 
-		</div>
-	</div>
-</div>
-
-		<div class="card" data-no-imrj >
-	<a href="/id/A22907">
-		<div class="card-preview" style="background-image:url(/id/A22907/thumb.jpg)"></div>
-	</a>
-	<div class="card-description">
-		<a href="/id/A22907">
-			<p class="truncate" title="Farol da Ilha Rasa">
-				<strong>Farol da Ilha Rasa</strong>
-			</p>
-		</a>
-		<div class="card-details">
-			<span class="identifier">A22907</span>
-			&middot;
-			<span>1829</span><br>
-			<span class="neighborhood">Ipanema</span>
-		</div>
-		<div class="card-tags">
-			<a class="tag" href="/obras"><i class="category cat-obra">obra</i></a> 
-		</div>
-	</div>
-</div>
-
-		<div class="card" data-imrj >
-	<a href="/id/A36508">
-		<div class="card-preview" style="background-image:url(/id/A36508/thumb.jpg)"></div>
-	</a>
-	<div class="card-description">
-		<a href="/id/A36508">
-			<p class="truncate" title="Farol-Relógio da Mesbla">
-				<strong>Farol-Relógio da Mesbla</strong>
-			</p>
-		</a>
-		<div class="card-details">
-			<span class="identifier">A36508</span>
-			&middot;
-			<span>1965</span><br>
-			<span class="neighborhood">Paquetá</span>
-		</div>
-		<div class="card-tags">
-			<a class="tag" href="/obras"><i class="category cat-obra">obra</i></a> 
-		</div>
-	</div>
-</div>
-
-		<div class="card" data-imrj >
-	<a href="/id/A37020">
-		<div class="card-preview" style="background-image:url(/id/A37020/thumb.jpg)"></div>
-	</a>
-	<div class="card-description">
-		<a href="/id/A37020">
-			<p class="truncate" title="Coreto da Praça dos Bichinhos">
-				<strong>Coreto da Praça dos Bichinhos</strong>
-			</p>
-		</a>
-		<div class="card-details">
-			<span class="identifier">A37020</span>
-			&middot;
-			<span>S.d.</span><br>
-			<span class="neighborhood">Tijuca</span>
-		</div>
-		<div class="card-tags">
-			<a class="tag" href="/obras"><i class="category cat-obra">obra</i></a> 
-		</div>
-	</div>
-</div>
-
-		<div class="card" data-no-imrj >
-	<a href="/id/A41202">
-		<div class="card-preview" style="background-image:url(/id/A41202/thumb.jpg)"></div>
-	</a>
-	<div class="card-description">
-		<a href="/id/A41202">
-			<p class="truncate" title="Ponte do Saber">
-				<strong>Ponte do Saber</strong>
-			</p>
-		</a>
-		<div class="card-details">
-			<span class="identifier">A41202</span>
-			&middot;
-			<span>2012</span><br>
-			<span class="neighborhood">Cidade Universitária</span>
-		</div>
-		<div class="card-tags">
-			<a class="tag" href="/obras"><i class="category cat-obra">obra</i></a> 
-		</div>
-	</div>
-</div>
-
-		<div class="card" data-imrj >
-	<a href="/id/B34811">
-		<div class="card-preview" style="background-image:url(/id/B34811/thumb.jpg)"></div>
-	</a>
-	<div class="card-description">
-		<a href="/id/B34811">
-			<p class="truncate" title="Busto de Pedro Paulo Bruno">
-				<strong>Busto de Pedro Paulo Bruno</strong>
-			</p>
-		</a>
-		<div class="card-details">
-			<span class="identifier">B34811</span>
-			&middot;
-			<span>1948</span><br>
-			<span class="neighborhood">Paquetá</span>
-		</div>
-		<div class="card-tags">
-			<a class="tag" href="/bustos"><i class="category cat-busto">busto</i></a> 
-		</div>
-	</div>
-</div>
-
-		<div class="card" data-imrj >
-	<a href="/id/B35210">
-		<div class="card-preview" style="background-image:url(/id/B35210/thumb.jpg)"></div>
-	</a>
-	<div class="card-description">
-		<a href="/id/B35210">
-			<p class="truncate" title="Busto de Bartlet James">
-				<strong>Busto de Bartlet James</strong>
-			</p>
-		</a>
-		<div class="card-details">
-			<span class="identifier">B35210</span>
-			&middot;
-			<span>1952</span><br>
-			<span class="neighborhood">Tijuca</span>
-		</div>
-		<div class="card-tags">
-			<a class="tag" href="/bustos"><i class="category cat-busto">busto</i></a> 
-		</div>
-	</div>
-</div>
-
-		<div class="card" data-imrj >
-	<a href="/id/B35806">
-		<div class="card-preview" style="background-image:url(/id/B35806/thumb.jpg)"></div>
-	</a>
-	<div class="card-description">
-		<a href="/id/B35806">
-			<p class="truncate" title="Busto de Carmen Gomes">
-				<strong>Busto de Carmen Gomes</strong>
-			</p>
-		</a>
-		<div class="card-details">
-			<span class="identifier">B35806</span>
-			&middot;
-			<span>1958</span><br>
-			<span class="neighborhood">Glória</span>
-		</div>
-		<div class="card-tags">
-			<a class="tag" href="/bustos"><i class="category cat-busto">busto</i></a> 
-		</div>
-	</div>
-</div>
-
-		<div class="card" data-imrj >
-	<a href="/id/B35812">
-		<div class="card-preview" style="background-image:url(/id/B35812/thumb.jpg)"></div>
-	</a>
-	<div class="card-description">
-		<a href="/id/B35812">
-			<p class="truncate" title="Efígie de Elias Reis e Silva">
-				<strong>Efígie de Elias Reis e Silva</strong>
-			</p>
-		</a>
-		<div class="card-details">
-			<span class="identifier">B35812</span>
-			&middot;
-			<span>1958</span><br>
-			<span class="neighborhood">Glória</span>
-		</div>
-		<div class="card-tags">
-			<a class="tag" href="/bustos"><i class="category cat-busto">busto</i></a> 
-		</div>
-	</div>
-</div>
-
-</div>
 </main>
 	<footer>
 		<section class="downsize">

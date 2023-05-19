@@ -126,7 +126,7 @@ h2 i.category.info-tag {
 	border-radius: 8px;
 	font-weight: normal;
 }
-i.info-tag.desaparecido {
+i.info-tag.removido {
 	font-weight: 500;
 	color: white;
 	background-color: #bf3d3d;
@@ -221,6 +221,7 @@ h1 {
 	margin-bottom: .5rem;
 	font-size: 3rem;
 	line-height: 1;
+	text-wrap: balance;
 }
 h2 {
 	margin-top: 2rem;
@@ -327,6 +328,7 @@ blockquote {
 	font-size: 85%;
 	margin: .5rem .5rem 0;
 	color: #444;
+	z-index: 1;
 }
 blockquote::before {
 	content: "";
@@ -375,22 +377,38 @@ hr {
 	margin: .75em 0;
 }
 
-.description-size {
+.description-size, .statistics {
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-evenly;
 	gap: .75rem;
+	text-align: center;
 }
-.description-size > div {
+.statistics {
+	margin: 1rem 0;
+	padding: 1rem;
+	border: 1px solid #dfdfdf;
+	border-radius: 4px;
+	background-color: #fff;
+}
+.description-size > div, .statistics > div {
 	display: flex;
 	align-items: center;
 	flex-direction: column;
 	flex-basis: 33%;
 }
-.description-size .description-size-label {
+.description-size .description-size-label,
+.statistics .stats-total {
 	font-size: 85%;
 	color: #444;
 }
+.statistics .stats-value {
+	display: block;
+	font-size: 3rem;
+	text-align: center;
+	line-height: 1;
+}
+
 
 #monument-location-map {
 	height: 400px;
