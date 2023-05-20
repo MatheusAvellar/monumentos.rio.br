@@ -26,7 +26,8 @@ monuments.forEach(m => { distinct_bairros.add(m.data.bairro); });
 				<span>monumentos</span>
 			</div>
 			<span class="stats-total">
-				de ~<strong>1400</strong> (<%= ((monument_count/1400)*100).toFixed(2) %>%)
+				de ~<strong>1400</strong><br>
+				(<%= ((monument_count/1400)*100).toFixed(2) %>%)
 			</span>
 		</div>
 		<div>
@@ -35,7 +36,8 @@ monuments.forEach(m => { distinct_bairros.add(m.data.bairro); });
 				<span>bairros</span>
 			</div>
 			<span class="stats-total">
-				de <strong>164</strong> (<%= ((distinct_bairros.size/164)*100).toFixed(2) %>%)
+				de <strong>164</strong><br>
+				(<%= ((distinct_bairros.size/164)*100).toFixed(2) %>%)
 			</span>
 		</div>
 	</div>

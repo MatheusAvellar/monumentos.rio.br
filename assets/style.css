@@ -585,4 +585,7 @@ h2 {
 	footer > section {
 		grid-template-columns: 1fr 1fr;
 	}
+	footer > section .conditional-fullwidth {
+		grid-column-end: span 2;
+	}
 }
