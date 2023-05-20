@@ -76,9 +76,7 @@ function countCategory(cat) {
 	<div id="monument-location-map" class="big"></div>
 	<script>
 function toggleMarkers(cat, state) {
-	console.log(cat, state);
 	const markers = [...document.querySelectorAll(`.leaflet-container img.leaflet-marker-icon[src$="${cat}.svg"]`)];
-	console.log(markers);
 	markers.forEach(m => {
 		if(!state)
 			m.classList.add("hidden-marker");

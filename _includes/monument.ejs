@@ -119,8 +119,8 @@ L.marker([<%= lat %>, <%= lon %>], {
 			</div>
 		</details>
 	</div>
-	<%_ if(data_inaug || altura || largura || peso || material) { %>
-		<%_ if(data_inaug || autores.length) { %>
+	<%_ if(data_inaug || altura || largura || peso || material.length) { %>
+		<%_ if(autores.length || data_inaug || data_remov || material.length) { %>
 		<hr>
 		<p class="section-heading">Detalhes</p>
 			<dl>
@@ -145,7 +145,7 @@ L.marker([<%= lat %>, <%= lon %>], {
 					<%_ } %>
 				</dd>
 			<%_ } %>
-			<%_ if(material && material.length > 0) { %>
+			<%_ if(material.length) { %>
 					<dt>Material</dt>
 					<dd><%- material.join("<br>") %></dd>
 			<%_ } %>

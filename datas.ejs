@@ -4,8 +4,8 @@ title: "Datas — Monumentos Rio"
 ---
 <%_ const monuments = collections.all.filter(file => file.filePathStem.startsWith("/id/"));
 monuments.sort((a, b) => {
-	const ad = dateify(a.data.data_inaug);
-	const bd = dateify(b.data.data_inaug);
+	const ad = dateify(a.data.data_inaug) || -Infinity;
+	const bd = dateify(b.data.data_inaug) || -Infinity;
 	return ad - bd;
 });
 const monument_count = monuments.length;
