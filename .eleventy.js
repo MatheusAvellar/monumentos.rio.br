@@ -10,6 +10,7 @@ module.exports = function(eleventyConfig) {
 	eleventyConfig.addGlobalData("MARKER_PATH", "/assets/leaflet/images");
 
 	eleventyConfig.addPassthroughCopy("assets");
+	eleventyConfig.addPassthroughCopy("CNAME");
 	// [Ref] https://github.com/11ty/eleventy/issues/2461#issuecomment-1238279042
 	eleventyConfig.addPassthroughCopy("{,!(_site)/**/}*.png");
 	eleventyConfig.addPassthroughCopy("{,!(_site)/**/}*.jpg");
