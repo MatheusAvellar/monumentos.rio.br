@@ -8,7 +8,7 @@
 	<link rel="preconnect" href="https://cdn.avl.la">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="referrer" content="no-referrer">
-	<link rel="stylesheet" href="/assets/style.css?v=05-19">
+	<link rel="stylesheet" href="/assets/style.css?v=05-20">
 	<script src="/assets/leaflet/leaflet.min.1.9.3.js"></script>
 </head>
 <body>
@@ -196,7 +196,7 @@
 				<span>
 					<strong>Chafarizes e fontes</strong><br>
 					<i class="category cat-chafariz">chafariz</i>
-					<small>(5 itens)</small>
+					<small>(6 itens)</small>
 				</span>
 			</label>
 			<label>
@@ -232,9 +232,7 @@
 	<div id="monument-location-map" class="big"></div>
 	<script>
 function toggleMarkers(cat, state) {
-	console.log(cat, state);
 	const markers = [...document.querySelectorAll(`.leaflet-container img.leaflet-marker-icon[src$="${cat}.svg"]`)];
-	console.log(markers);
 	markers.forEach(m => {
 		if(!state)
 			m.classList.add("hidden-marker");
@@ -358,48 +356,51 @@ m19.addTo(map);
 const m20 = L.marker([-22.9383, -43.1906], { icon: markersMap.get("chafariz") });
 m20.bindPopup(generatePopup("C36509", "Chafariz Concha", "1965", "Laranjeiras", '<a class="tag" href="/chafarizes"><i class="category cat-chafariz">chafariz</i></a>'), { offset: [0, -24] }).openPopup();
 m20.addTo(map);
-const m21 = L.marker([-22.9069, -43.1828], { icon: markersMap.get("estátua") });
-m21.bindPopup(generatePopup("E26203", "Estátua equestre de D. Pedro I", "1862", "Centro", '<a class="tag" href="/estatuas"><i class="category cat-estatua">estátua</i></a>'), { offset: [0, -24] }).openPopup();
+const m21 = L.marker([-22.9355, -43.2441], { icon: markersMap.get("chafariz") });
+m21.bindPopup(generatePopup("C99900", "Chafariz do Centro da Música Carioca Artur da Távola", "S.d.", "Tijuca", '<a class="tag" href="/chafarizes"><i class="category cat-chafariz">chafariz</i></a>'), { offset: [0, -24] }).openPopup();
 m21.addTo(map);
-const m22 = L.marker([-22.9837, -43.206], { icon: markersMap.get("estátua") });
-m22.bindPopup(generatePopup("E33100", "Monumento ao Senador Pinheiro Machado", "1931", "Ipanema", '<a class="tag" href="/estatuas"><i class="category cat-estatua">estátua</i></a>'), { offset: [0, -24] }).openPopup();
+const m22 = L.marker([-22.9069, -43.1828], { icon: markersMap.get("estátua") });
+m22.bindPopup(generatePopup("E26203", "Estátua equestre de D. Pedro I", "1862", "Centro", '<a class="tag" href="/estatuas"><i class="category cat-estatua">estátua</i></a>'), { offset: [0, -24] }).openPopup();
 m22.addTo(map);
-const m23 = L.marker([-22.9519, -43.2105], { icon: markersMap.get("estátua") });
-m23.bindPopup(generatePopup("E33110", "Cristo Redentor", "1931", "Parque Nacional da Tijuca", '<a class="tag" href="/estatuas"><i class="category cat-estatua">estátua</i></a>'), { offset: [0, -24] }).openPopup();
+const m23 = L.marker([-22.9837, -43.206], { icon: markersMap.get("estátua") });
+m23.bindPopup(generatePopup("E33100", "Monumento ao Senador Pinheiro Machado", "1931", "Ipanema", '<a class="tag" href="/estatuas"><i class="category cat-estatua">estátua</i></a>'), { offset: [0, -24] }).openPopup();
 m23.addTo(map);
-const m24 = L.marker([-22.9056, -43.2254], { icon: markersMap.get("estátua") });
-m24.bindPopup(generatePopup("E39703", "Imperatriz Leopoldina", "1997", "São Cristóvão", '<a class="tag" href="/estatuas"><i class="category cat-estatua">estátua</i></a>'), { offset: [0, -24] }).openPopup();
+const m24 = L.marker([-22.9519, -43.2105], { icon: markersMap.get("estátua") });
+m24.bindPopup(generatePopup("E33110", "Cristo Redentor", "1931", "Parque Nacional da Tijuca", '<a class="tag" href="/estatuas"><i class="category cat-estatua">estátua</i></a>'), { offset: [0, -24] }).openPopup();
 m24.addTo(map);
-const m25 = L.marker([-22.9517, -43.2602], { icon: markersMap.get("marco") });
-m25.bindPopup(generatePopup("M34012", "Marco de Inauguração da Avenida Edson Passos", "1940", "Alto da Boa Vista", '<a class="tag" href="/marcos"><i class="category cat-marco">marco</i></a>'), { offset: [0, -24] }).openPopup();
+const m25 = L.marker([-22.9056, -43.2254], { icon: markersMap.get("estátua") });
+m25.bindPopup(generatePopup("E39703", "Imperatriz Leopoldina", "1997", "São Cristóvão", '<a class="tag" href="/estatuas"><i class="category cat-estatua">estátua</i></a>'), { offset: [0, -24] }).openPopup();
 m25.addTo(map);
-const m26 = L.marker([-22.9094, -43.1699], { icon: markersMap.get("marco") });
-m26.bindPopup(generatePopup("M36908", "Cápsula do Tempo da Federação de Bandeirantes", "1969", "Centro", '<a class="tag" href="/marcos"><i class="category cat-marco">marco</i></a>'), { offset: [0, -24] }).openPopup();
+const m26 = L.marker([-22.9517, -43.2602], { icon: markersMap.get("marco") });
+m26.bindPopup(generatePopup("M34012", "Marco de Inauguração da Avenida Edson Passos", "1940", "Alto da Boa Vista", '<a class="tag" href="/marcos"><i class="category cat-marco">marco</i></a>'), { offset: [0, -24] }).openPopup();
 m26.addTo(map);
-const m27 = L.marker([-22.9056, -43.2258], { icon: markersMap.get("marco") });
-m27.bindPopup(generatePopup("M37301", "Cápsula do Tempo (1972–2022) na Quinta da Boa Vista", "1973", "São Cristóvão", '<a class="tag" href="/marcos"><i class="category cat-marco">marco</i></a>'), { offset: [0, -24] }).openPopup();
+const m27 = L.marker([-22.9094, -43.1699], { icon: markersMap.get("marco") });
+m27.bindPopup(generatePopup("M36908", "Cápsula do Tempo da Federação de Bandeirantes", "1969", "Centro", '<a class="tag" href="/marcos"><i class="category cat-marco">marco</i></a>'), { offset: [0, -24] }).openPopup();
 m27.addTo(map);
-const m28 = L.marker([-22.9513, -43.1783], { icon: markersMap.get("marco") });
-m28.bindPopup(generatePopup("M42012", "Monumento às Vítimas do Holocausto", "2020", "Botafogo", '<a class="tag" href="/marcos"><i class="category cat-marco">marco</i></a>'), { offset: [0, -24] }).openPopup();
+const m28 = L.marker([-22.9056, -43.2258], { icon: markersMap.get("marco") });
+m28.bindPopup(generatePopup("M37301", "Cápsula do Tempo (1972–2022) na Quinta da Boa Vista", "1973", "São Cristóvão", '<a class="tag" href="/marcos"><i class="category cat-marco">marco</i></a>'), { offset: [0, -24] }).openPopup();
 m28.addTo(map);
-const m29 = L.marker([-22.8957, -43.1776], { icon: markersMap.get("marco") });
-m29.bindPopup(generatePopup("M42112", "Placa Expedição de Magalhães e Elcano (1519–1522)", "2021", "Centro", '<a class="tag" href="/marcos"><i class="category cat-marco">marco</i></a>'), { offset: [0, -24] }).openPopup();
+const m29 = L.marker([-22.9513, -43.1783], { icon: markersMap.get("marco") });
+m29.bindPopup(generatePopup("M42012", "Monumento às Vítimas do Holocausto", "2020", "Botafogo", '<a class="tag" href="/marcos"><i class="category cat-marco">marco</i></a>'), { offset: [0, -24] }).openPopup();
 m29.addTo(map);
-const m30 = L.marker([-22.9056, -43.2257], { icon: markersMap.get("marco") });
-m30.bindPopup(generatePopup("M42211", "Cápsula do Tempo (2022–2072) na Quinta da Boa Vista", "2022", "São Cristóvão", '<a class="tag" href="/marcos"><i class="category cat-marco">marco</i></a>'), { offset: [0, -24] }).openPopup();
+const m30 = L.marker([-22.8957, -43.1776], { icon: markersMap.get("marco") });
+m30.bindPopup(generatePopup("M42112", "Placa Expedição de Magalhães e Elcano (1519–1522)", "2021", "Centro", '<a class="tag" href="/marcos"><i class="category cat-marco">marco</i></a>'), { offset: [0, -24] }).openPopup();
 m30.addTo(map);
-const m31 = L.marker([-22.9575, -43.2662], { icon: markersMap.get("escultura") });
-m31.bindPopup(generatePopup("S30620", "Leão", "c.1906", "Alto da Boa Vista", '<a class="tag" href="/esculturas"><i class="category cat-escultura">escultura</i></a>'), { offset: [0, -24] }).openPopup();
+const m31 = L.marker([-22.9056, -43.2257], { icon: markersMap.get("marco") });
+m31.bindPopup(generatePopup("M42211", "Cápsula do Tempo (2022–2072) na Quinta da Boa Vista", "2022", "São Cristóvão", '<a class="tag" href="/marcos"><i class="category cat-marco">marco</i></a>'), { offset: [0, -24] }).openPopup();
 m31.addTo(map);
-const m32 = L.marker([-22.9846, -43.2153], { icon: markersMap.get("escultura") });
-m32.bindPopup(generatePopup("S33800", "A Mulher e o Felino", "c.1938", "Leblon", '<a class="tag" href="/esculturas"><i class="category cat-escultura">escultura</i></a>'), { offset: [0, -24] }).openPopup();
+const m32 = L.marker([-22.9575, -43.2662], { icon: markersMap.get("escultura") });
+m32.bindPopup(generatePopup("S30620", "Leão", "c.1906", "Alto da Boa Vista", '<a class="tag" href="/esculturas"><i class="category cat-escultura">escultura</i></a>'), { offset: [0, -24] }).openPopup();
 m32.addTo(map);
-const m33 = L.marker([-22.9358, -43.2349], { icon: markersMap.get("escultura") });
-m33.bindPopup(generatePopup("S37020", "Conjunto de Arte Naïf da Praça dos Bichinhos", "c.1970", "Tijuca", '<a class="tag" href="/esculturas"><i class="category cat-escultura">escultura</i></a>'), { offset: [0, -24] }).openPopup();
+const m33 = L.marker([-22.9846, -43.2153], { icon: markersMap.get("escultura") });
+m33.bindPopup(generatePopup("S33800", "A Mulher e o Felino", "c.1938", "Leblon", '<a class="tag" href="/esculturas"><i class="category cat-escultura">escultura</i></a>'), { offset: [0, -24] }).openPopup();
 m33.addTo(map);
-const m34 = L.marker([-22.86, -43.234], { icon: markersMap.get("escultura") });
-m34.bindPopup(generatePopup("S40012", "Exu dos Ventos", "2000", "Cidade Universitária", '<a class="tag" href="/esculturas"><i class="category cat-escultura">escultura</i></a>'), { offset: [0, -24] }).openPopup();
+const m34 = L.marker([-22.9358, -43.2349], { icon: markersMap.get("escultura") });
+m34.bindPopup(generatePopup("S37020", "Conjunto de Arte Naïf da Praça dos Bichinhos", "c.1970", "Tijuca", '<a class="tag" href="/esculturas"><i class="category cat-escultura">escultura</i></a>'), { offset: [0, -24] }).openPopup();
 m34.addTo(map);
+const m35 = L.marker([-22.86, -43.234], { icon: markersMap.get("escultura") });
+m35.bindPopup(generatePopup("S40012", "Exu dos Ventos", "2000", "Cidade Universitária", '<a class="tag" href="/esculturas"><i class="category cat-escultura">escultura</i></a>'), { offset: [0, -24] }).openPopup();
+m35.addTo(map);
 	</script>
 	<style>
 .control-panel {
