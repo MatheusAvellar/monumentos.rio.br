@@ -7,7 +7,8 @@ module.exports = function(eleventyConfig) {
 	eleventyConfig.addGlobalData("CONA_URL", "http://vocab.getty.edu/page/cona/");
 	eleventyConfig.addGlobalData("IPHAN_URL",
 		"http://portal.iphan.gov.br/uploads/ckfinder/arquivos/Lista_bens_tombados_processos_andamento_2018");
-	eleventyConfig.addGlobalData("MARKER_PATH", "/assets/leaflet/images");
+	const MARKER_PATH = "/assets/leaflet/images";
+	eleventyConfig.addGlobalData("MARKER_PATH", MARKER_PATH);
 
 	eleventyConfig.addPassthroughCopy("assets");
 	eleventyConfig.addPassthroughCopy("CNAME");
@@ -166,5 +167,50 @@ module.exports = function(eleventyConfig) {
 		</div>
 	</div>
 </div>`;
+	};
+
+	makeMap = (item) => {
+		const lat = item.lat;
+		const lon = item.lon;
+		const local = item.local;
+		const bairro = item.bairro;
+		const categoria = item.categoria;
+		if(!(lat && lon)) return "";
+
+		const out = [];
+		const location_text = local ? `${local}, ${bairro}` : bairro;
+		out.push(`<section class="location"><h2>Localização</h2>`);
+		if(local || bairro)
+			out.push(`<p><strong>Localização:</strong> ${location_text}</p>`);
+		out.push(`<p><strong>Coordenadas:</strong> ${lat.toFixed(4)}, ${lon.toFixed(4)}</p>`);
+		out.push(`<div id="monument-location-map"></div>`);
+		out.push(`<script>
+const bounds = new L.LatLngBounds(
+	new L.LatLng(${lat-0.025}, ${lon-0.05}),
+	new L.LatLng(${lat+0.025}, ${lon+0.05})
+);
+const map = L.map("monument-location-map", {
+	center: bounds.getCenter(),
+	zoom: 17,
+	maxBounds: bounds,
+	maxBoundsViscosity: .75
+})
+L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
+	minZoom: 15,
+	maxZoom: 19,
+	attribution: "&copy; <a href='http://www.openstreetmap.org/copyright'>OSM</a>"
+}).addTo(map);
+L.marker([${lat}, ${lon}], {
+	icon: L.icon({
+		iconUrl: "${MARKER_PATH}/phosphor-marker--${catCleanup(categoria)}.svg",
+		iconSize: [64, 64],
+		iconAnchor: [32, 64],
+		shadowUrl: "${MARKER_PATH}/marker-shadow.png",
+		shadowSize: [41, 41],
+		shadowAnchor: [13, 44],
+	})
+}).addTo(map);
+</script></section>`);
+		return out.join("");
 	};
 };

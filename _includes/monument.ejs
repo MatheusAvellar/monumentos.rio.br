@@ -52,50 +52,7 @@ tombado_url = doFallback("tombado_url");
 		Também conhecido como <%= alt_names.map(n => `"${n}"`).join(", ") %>.
 	</p>
 <%_ } %>
-	<div><%- content %></div>
-	<%_ if(lat && lon) { %>
-		<section class="location">
-			<h2>Localização</h2>
-			<p>
-			<%_ if(local || bairro) { %>
-				<strong>Localização:</strong>
-				<%_ if(local) { %><%= local %><%_ }
-				%><%_ if(bairro) {
-				%><%_ if(local) { %><%=", "%><%_ } %><%= bairro %>
-				<%_ } %><br>
-			<%_ } %>
-				<strong>Coordenadas:</strong> <%= lat %>, <%= lon %>
-			</p>
-			<div id="monument-location-map"></div>
-			<script>
-const bounds = new L.LatLngBounds(
-	new L.LatLng(<%= lat %> - 0.025, <%= lon %> - 0.05),
-	new L.LatLng(<%= lat %> + 0.025, <%= lon %> + 0.05)
-);
-const map = L.map("monument-location-map", {
-	center: bounds.getCenter(),
-	zoom: 17,
-	maxBounds: bounds,
-	maxBoundsViscosity: .75
-})
-L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
-	minZoom: 15,
-	maxZoom: 19,
-	attribution: "&copy; <a href='http://www.openstreetmap.org/copyright'>OSM</a>"
-}).addTo(map);
-L.marker([<%= lat %>, <%= lon %>], {
-	icon: L.icon({
-		iconUrl: `<%= MARKER_PATH %>/phosphor-marker--<%= catCleanup(categoria) %>.svg`,
-		iconSize: [64, 64],
-		iconAnchor: [32, 64],
-		shadowUrl: "<%= MARKER_PATH %>/marker-shadow.png",
-		shadowSize: [41, 41],
-		shadowAnchor: [13, 44],
-	})
-}).addTo(map);
-			</script>
-		</section>
-	<%_ } %>
+	<%- content %>
 </section>
 <aside>
 	<em class="display-identifier"><%= page.fileSlug %></em>
@@ -126,7 +83,7 @@ L.marker([<%= lat %>, <%= lon %>], {
 			<dl>
 			<%_ if(autores.length) { %>
 				<dt>Autores</dt>
-				<dd><%- autores.join("<br>") %></dd>
+				<dd><ul><%- autores.map(a=>`<li>${a}</li>`).join("") %></ul></dd>
 			<%_ } %>
 			<%_ if(data_inaug) { %>
 				<dt>Inauguração</dt>

@@ -43,54 +43,47 @@ monuments.forEach(m => { distinct_bairros.add(m.data.bairro); });
 	</div>
 	<br><hr><br>
 	<p>
-		Selecione a aba "<strong>Inventário</strong>" acima para ver a lista
+		Selecione "<strong>Inventário</strong>" no menu acima para ver a lista
 		completa de monumentos já catalogados. Ou, então, escolha uma das categorias
 		usadas para classificar cada monumento. Elas são as seguintes:
 	</p>
 	<section id="home-categories-list">
 		<section class="home-category <%= catToClass("obra") %>">
-			<a href="<%= catToHref("obra") %>" style="background-image:url(/assets/home-categories/obra.png)">
+			<a href="<%= catToHref("obra") %>">
+				<img src="/assets/home-categories/obra.png">
 				<h2>Obras públicas</h2>
 			</a>
 		</section>
 		<section class="home-category <%= catToClass("busto") %>">
-			<a href="<%= catToHref("busto") %>" style="background-image:url(/assets/home-categories/busto.png)">
+			<a href="<%= catToHref("busto") %>">
+				<img src="/assets/home-categories/busto.png">
 				<h2>Bustos e efígies</h2>
 			</a>
 		</section>
 		<section class="home-category <%= catToClass("chafariz") %>">
-			<a href="<%= catToHref("chafariz") %>" style="background-image:url(/assets/home-categories/chafariz.png)">
+			<a href="<%= catToHref("chafariz") %>">
+				<img src="/assets/home-categories/chafariz.png">
 				<h2>Chafarizes e fontes</h2>
 			</a>
 		</section>
 		<section class="home-category <%= catToClass("estátua") %>">
-			<a href="<%= catToHref("estátua") %>" style="background-image:url(/assets/home-categories/estatua.png)">
+			<a href="<%= catToHref("estátua") %>">
+				<img src="/assets/home-categories/estatua.png">
 				<h2>Estátuas</h2>
 			</a>
 		</section>
 		<section class="home-category <%= catToClass("marco") %>">
-			<a href="<%= catToHref("marco") %>" style="background-image:url(/assets/home-categories/marco.png)">
+			<a href="<%= catToHref("marco") %>">
+				<img src="/assets/home-categories/marco.png">
 				<h2>Marcos</h2>
 			</a>
 		</section>
 		<section class="home-category <%= catToClass("escultura") %>">
-			<a href="<%= catToHref("escultura") %>" style="background-image:url(/assets/home-categories/escultura.png)">
+			<a href="<%= catToHref("escultura") %>">
+				<img src="/assets/home-categories/escultura.png">
 				<h2>Esculturas</h2>
 			</a>
 		</section>
 	</section>
 </section>
-<%_
-// [Ref] https://bost.ocks.org/mike/shuffle/
-function shuffle(array) {
-	let m = array.length, t, i;
-	while(m) {
-		i = Math.floor(Math.random() * m--);
-		t = array[m];
-		array[m] = array[i];
-		array[i] = t;
-	}
-	return array;
-}
-%>
 </main>
