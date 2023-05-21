@@ -8,7 +8,7 @@
 	<link rel="preconnect" href="https://cdn.avl.la">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="referrer" content="no-referrer">
-	<link rel="stylesheet" href="/assets/style.css?v=05-20b">
+	<link rel="stylesheet" href="/assets/style.css?v=05-21">
 	<script src="/assets/leaflet/leaflet.min.1.9.3.js"></script>
 </head>
 <body>
@@ -50,120 +50,122 @@
 	</div>
 	<header>
 		<nav class="downsize">
-			<ul>
-				<li>
-					<a href="/">monumentos.rio.br</a>
-					<span id="beta-tag">BETA</span>
-				</li>
-				<li>
-					<a href="/inventario">
-						<svg class="icon"><use href="#icon-list"/></svg>
-						<span>Inventário</span>
-					</a>
-				</li>
-				<li>
-					<a href="/mapa">
-						<svg class="icon"><use href="#icon-map"/></svg>
-						<span>Mapa</span>
-					</a>
-				</li>
-				<li>
-					<details>
-						<summary>Categorias</summary>
-						<ul>
-							<li class="cat-obra">
-								<a href="/obras">
-									<svg class="icon"><use href="#icon-public"/></svg>
-									<span>Obras públicas</span>
-								</a>
-							</li>
-							<li class="cat-busto">
-								<a href="/bustos">
-									<svg class="icon"><use href="#icon-bust"/></svg>
-									<span>Bustos e efígies</span>
-								</a>
-							</li>
-							<li class="cat-chafariz">
-								<a href="/chafarizes">
-									<svg class="icon"><use href="#icon-fountain"/></svg>
-									<span>Chafarizes e fontes</span>
-								</a>
-							</li>
-							<li class="cat-estatua">
-								<a href="/estatuas">
-									<svg class="icon"><use href="#icon-statue"/></svg>
-									<span>Estátuas</span>
-								</a>
-							</li>
-							<li class="cat-marco">
-								<a href="/marcos">
-									<svg class="icon"><use href="#icon-obelisk"/></svg>
-									<span>Marcos</span>
-								</a>
-							</li>
-							<li class="cat-escultura">
-								<a href="/esculturas">
-									<svg class="icon"><use href="#icon-sculpture"/></svg>
-									<span>Esculturas</span>
-								</a>
-							</li>
-							<li class="menu-description">
-								<hr>
-								<span>Organizar monumentos por...</span>
-							</li>
-							<li>
-								<a href="/datas">
-									<svg class="icon"><use href="#icon-calendar"/></svg>
-									<span>Data</span>
-								</a>
-							</li>
-							<li>
-								<a href="/bairros">
-									<svg class="icon"><use href="#icon-neighborhood"/></svg>
-									<span>Bairro</span>
-								</a>
-							</li>
-							<li>
-								<a href="/autores">
-									<svg class="icon"><use href="#icon-author"/></svg>
-									<span>Autor da obra</span>
-								</a>
-							</li>
-							<li>
-								<a href="/tags">
-									<svg class="icon"><use href="#icon-tag"/></svg>
-									<span>Tags</span>
-								</a>
-							</li>
-						</ul>
-					</details>
-				</li>
-				<li>
-					<details>
-						<summary>Mais</summary>
-						<ul>
-							<li>
-								<a href="/sobre">
-									<svg class="icon"><use href="#icon-information"/></svg>
-									<span>Sobre o projeto</span>
-								</a>
-							</li>
-							<li>
-								<a href="/similares">
-									<svg class="icon"><use href="#icon-shapes"/></svg>
-									<span>Projetos similares</span>
-								</a>
-							</li>
-							<li>
-								<a href="/creditos">
-									<svg class="icon"><use href="#icon-copyright"/></svg>
-									<span>Créditos e licenças</span>
-								</a>
-							</li>
-						</ul>
-					</details>
-				</li>
-			</ul>
+			<a id="logo" href="/">monumentos.rio.br</a>
+			<a class="mobile-hide" href="/inventario">
+				<svg class="icon"><use href="#icon-list"/></svg>
+				<span>Inventário</span>
+			</a>
+			<a class="mobile-hide" href="/mapa">
+				<svg class="icon"><use href="#icon-map"/></svg>
+				<span>Mapa</span>
+			</a>
+			<details>
+				<summary>Menu</summary>
+				<ul>
+					<li class="desktop-hide">
+						<a href="/inventario">
+							<svg class="icon"><use href="#icon-list"/></svg>
+							<span>Inventário</span>
+						</a>
+					</li>
+					<li class="desktop-hide">
+						<a href="/mapa">
+							<svg class="icon"><use href="#icon-map"/></svg>
+							<span>Mapa</span>
+						</a>
+					</li>
+					<li class="menu-description">
+						<hr class="desktop-hide">
+						<span>Categorias</span>
+					</li>
+					<li class="cat-obra">
+						<a href="/obras">
+							<svg class="icon"><use href="#icon-public"/></svg>
+							<span>Obras públicas</span>
+						</a>
+					</li>
+					<li class="cat-busto">
+						<a href="/bustos">
+							<svg class="icon"><use href="#icon-bust"/></svg>
+							<span>Bustos e efígies</span>
+						</a>
+					</li>
+					<li class="cat-chafariz">
+						<a href="/chafarizes">
+							<svg class="icon"><use href="#icon-fountain"/></svg>
+							<span>Chafarizes e fontes</span>
+						</a>
+					</li>
+					<li class="cat-estatua">
+						<a href="/estatuas">
+							<svg class="icon"><use href="#icon-statue"/></svg>
+							<span>Estátuas</span>
+						</a>
+					</li>
+					<li class="cat-marco">
+						<a href="/marcos">
+							<svg class="icon"><use href="#icon-obelisk"/></svg>
+							<span>Marcos</span>
+						</a>
+					</li>
+					<li class="cat-escultura">
+						<a href="/esculturas">
+							<svg class="icon"><use href="#icon-sculpture"/></svg>
+							<span>Esculturas</span>
+						</a>
+					</li>
+					<li class="menu-description">
+						<hr>
+						<span>Ordenar monumentos por...</span>
+					</li>
+					<li>
+						<a href="/datas">
+							<svg class="icon"><use href="#icon-calendar"/></svg>
+							<span>Data</span>
+						</a>
+					</li>
+					<li>
+						<a href="/bairros">
+							<svg class="icon"><use href="#icon-neighborhood"/></svg>
+							<span>Bairro</span>
+						</a>
+					</li>
+					<li>
+						<a href="/autores">
+							<svg class="icon"><use href="#icon-author"/></svg>
+							<span>Autor da obra</span>
+						</a>
+					</li>
+					<li>
+						<a href="/tags">
+							<svg class="icon"><use href="#icon-tag"/></svg>
+							<span>Tags</span>
+						</a>
+					</li>
+					<li class="menu-description">
+						<hr>
+						<span>Mais opções</span>
+					</li>
+					<li>
+						<a href="/sobre">
+							<svg class="icon"><use href="#icon-information"/></svg>
+							<span>Sobre o projeto</span>
+						</a>
+					</li>
+					<li>
+						<a href="/similares">
+							<svg class="icon"><use href="#icon-shapes"/></svg>
+							<span>Projetos similares</span>
+						</a>
+					</li>
+					<li>
+						<a href="/creditos">
+							<svg class="icon"><use href="#icon-copyright"/></svg>
+							<span>Créditos e licenças</span>
+						</a>
+					</li>
+				</ul>
+			</details>
 		</nav>
 	</header>
 	
@@ -338,23 +340,23 @@
 		</div>
 	</div>
 </div><div class="card" data-imrj >
-	<a href="/id/E33110">
-		<div class="card-preview" style="background-image:url(/id/E33110/thumb.jpg)"></div>
+	<a href="/id/S33110">
+		<div class="card-preview" style="background-image:url(/id/S33110/thumb.jpg)"></div>
 	</a>
 	<div class="card-description">
-		<a href="/id/E33110">
+		<a href="/id/S33110">
 			<p class="truncate" title="Cristo Redentor">
 				<strong>Cristo Redentor</strong>
 			</p>
 		</a>
 		<div class="card-details">
-			<span class="identifier">E33110</span>
+			<span class="identifier">S33110</span>
 			&middot;
 			<span>1931</span><br>
 			<span class="neighborhood">Parque Nacional da Tijuca</span>
 		</div>
 		<div class="card-tags">
-			<a class="tag" href="/estatuas"><i class="category cat-estatua">estátua</i></a> 
+			<a class="tag" href="/esculturas"><i class="category cat-escultura">escultura</i></a> 
 		</div>
 	</div>
 </div><div class="card" data-imrj >
@@ -837,7 +839,7 @@
 			<a class="tag" href="/bustos"><i class="category cat-busto">busto</i></a> 
 		</div>
 	</div>
-</div><div class="card" data-no-imrj >
+</div><div class="card" data-imrj >
 	<a href="/id/M42012">
 		<div class="card-preview" style="background-image:url(/id/M42012/thumb.jpg)"></div>
 	</a>
@@ -925,6 +927,104 @@
 
 	<footer>
 		<section class="downsize">
+			<section class="signature">
+				<p>
+					Feito com ♥︎&#xFE0E;<!--&#xFE0E;[Ref] stackoverflow.com/a/38452396/4824627-->
+					por <a href="https://avl.la/">Matheus Avellar</a><br>
+					Rio de Janeiro, RJ, Brasil
+				</p>
+				<p>
+					Sugestões, reclamações ou comentários?<br>
+					contato<svg class="heart-icon" viewBox="0 0 24 24" aria-label="@">
+						<circle cx="12" cy="12" r="4"></circle>
+						<path d="M16 12v1.5a2.5 2.5 0 0 0 5 0v-1.5a9 9 0 1 0 -5.5 8.28"></path>
+					</svg>monumentos.rio.br
+				</p>
+			</section>
+			<nav>
+				<ul>
+					<li class="menu-description">
+						<span>Principal</span>
+					</li>
+					<li>
+						<svg class="icon"><use href="#icon-list"/></svg>
+						<a href="/inventario"><span>Inventário</span></a>
+					</li>
+					<li>
+						<svg class="icon"><use href="#icon-map"/></svg>
+						<a href="/mapa"><span>Mapa</span></a>
+					</li>
+				</ul>
+				<ul>
+					<li class="menu-description">
+						<span>Categorias</span>
+					</li>
+					<li class="cat-obra">
+						<svg class="icon"><use href="#icon-public"/></svg>
+						<a href="/obras"><span>Obras públicas</span></a>
+					</li>
+					<li class="cat-busto">
+						<svg class="icon"><use href="#icon-bust"/></svg>
+						<a href="/bustos"><span>Bustos e efígies</span></a>
+					</li>
+					<li class="cat-chafariz">
+						<svg class="icon"><use href="#icon-fountain"/></svg>
+						<a href="/chafarizes"><span>Chafarizes e fontes</span></a>
+					</li>
+					<li class="cat-estatua">
+						<svg class="icon"><use href="#icon-statue"/></svg>
+						<a href="/estatuas"><span>Estátuas</span></a>
+					</li>
+					<li class="cat-marco">
+						<svg class="icon"><use href="#icon-obelisk"/></svg>
+						<a href="/marcos"><span>Marcos</span></a>
+					</li>
+					<li class="cat-escultura">
+						<svg class="icon"><use href="#icon-sculpture"/></svg>
+						<a href="/esculturas"><span>Esculturas</span></a>
+					</li>
+				</ul>
+				<ul>
+					<li class="menu-description">
+						<span>Ordenar por...</span>
+					</li>
+					<li>
+						<svg class="icon"><use href="#icon-calendar"/></svg>
+						<a href="/datas"><span>Data</span></a>
+					</li>
+					<li>
+						<svg class="icon"><use href="#icon-neighborhood"/></svg>
+						<a href="/bairros"><span>Bairro</span></a>
+					</li>
+					<li>
+						<svg class="icon"><use href="#icon-author"/></svg>
+						<a href="/autores"><span>Autor da obra</span></a>
+					</li>
+					<li>
+						<svg class="icon"><use href="#icon-tag"/></svg>
+						<a href="/tags"><span>Tags</span></a>
+					</li>
+				</ul>
+				<ul>
+					<li class="menu-description">
+						<span>Mais opções</span>
+					</li>
+					<li>
+						<svg class="icon"><use href="#icon-information"/></svg>
+						<a href="/sobre"><span>Sobre o projeto</span></a>
+					</li>
+					<li>
+						<svg class="icon"><use href="#icon-shapes"/></svg>
+						<a href="/similares"><span>Projetos similares</span></a>
+					</li>
+					<li>
+						<svg class="icon"><use href="#icon-copyright"/></svg>
+						<a href="/creditos"><span>Créditos e licenças</span></a>
+					</li>
+				</ul>
+			</nav>
+		</section>
+		<section class="disclaimer downsize">
 			<p>
 				Este projeto não é apoiado, patrocinado ou desenvolvido pelo governo
 				municipal do Rio de Janeiro, ou quaisquer outras organizações,
@@ -938,20 +1038,6 @@
 				Isso significa que você pode reutilizá-lo e modificá-lo para quaisquer
 				finalidades, desde que credite a fonte.
 			</p>
-			<div class="conditional-fullwidth">
-				<p>
-					Feito com ♥︎&#xFE0E;<!--&#xFE0E;[Ref] stackoverflow.com/a/38452396/4824627-->
-					por <a href="https://avl.la/">Matheus Avellar</a><br>
-					Rio de Janeiro, RJ, Brasil
-				</p>
-				<p>
-					Sugestões, reclamações ou comentários?<br>
-					contato<svg class="heart-icon" viewBox="0 0 24 24" aria-label="@">
-						<circle cx="12" cy="12" r="4"></circle>
-						<path d="M16 12v1.5a2.5 2.5 0 0 0 5 0v-1.5a9 9 0 1 0 -5.5 8.28"></path>
-					</svg>monumentos.rio.br
-				</p>
-			</div>
 		</section>
 	</footer>
 	<!-- Rasmus' Inter font -->
@@ -961,6 +1047,6 @@
 	<script src="/assets/litelightbox.min.js"></script>
 	<!-- Leaflet Maps -->
 	<link href="/assets/leaflet/leaflet.css" rel="stylesheet" type="text/css">
-	<script src="/assets/details.js?v=05-18"></script>
+	<script src="/assets/details.js?v=05-21"></script>
 </body>
 </html>
