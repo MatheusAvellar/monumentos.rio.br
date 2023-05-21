@@ -9,14 +9,13 @@ const distinct_bairros = new Set();
 monuments.forEach(m => { distinct_bairros.add(m.data.bairro); });
 %>
 <main>
-<section class="maxwidth">
-	<p>Bem-vindo ao <strong><%= website_domain %></strong>!</p>
+<section class="maxwidth indent-children">
 	<p>
-		Este website tem como objetivo formar um inventário de todos os monumentos
-		da cidade do Rio de Janeiro. Selecione a aba "<strong>Inventário</strong>"
-		acima para ver a lista completa de monumentos já catalogados.
+		Bem-vindo ao <strong><%= website_domain %></strong>!
+		Este website tem como objetivo formar um inventário de <em>todos</em> os
+		monumentos da cidade do Rio de Janeiro.
 	</p>
-	<p>
+	<p class="noindent">
 		Essas são as estatísticas atuais:
 	</p>
 	<div class="statistics">
@@ -30,6 +29,7 @@ monuments.forEach(m => { distinct_bairros.add(m.data.bairro); });
 				(<%= ((monument_count/1400)*100).toFixed(2) %>%)
 			</span>
 		</div>
+		<hr class="vertical">
 		<div>
 			<div>
 				<strong class="stats-value"><%= distinct_bairros.size %></strong>
@@ -43,13 +43,40 @@ monuments.forEach(m => { distinct_bairros.add(m.data.bairro); });
 	</div>
 	<br><hr><br>
 	<p>
-		Alternativamente, escolha uma das categorias usadas para classificar cada
-		monumento. Elas são as seguintes:
+		Selecione a aba "<strong>Inventário</strong>" acima para ver a lista
+		completa de monumentos já catalogados. Ou, então, escolha uma das categorias
+		usadas para classificar cada monumento. Elas são as seguintes:
 	</p>
 	<section id="home-categories-list">
-		<section class="home-category">
-			<%- makeTag("obra") %> <%- makeTag("busto") %> <%- makeTag("chafariz") %>
-			<%- makeTag("estátua") %> <%- makeTag("marco") %> <%- makeTag("escultura") %>
+		<section class="home-category <%= catToClass("obra") %>">
+			<a href="<%= catToHref("obra") %>" style="background-image:url(/assets/home-categories/obra.png)">
+				<h2>Obras públicas</h2>
+			</a>
+		</section>
+		<section class="home-category <%= catToClass("busto") %>">
+			<a href="<%= catToHref("busto") %>" style="background-image:url(/assets/home-categories/busto.png)">
+				<h2>Bustos e efígies</h2>
+			</a>
+		</section>
+		<section class="home-category <%= catToClass("chafariz") %>">
+			<a href="<%= catToHref("chafariz") %>" style="background-image:url(/assets/home-categories/chafariz.png)">
+				<h2>Chafarizes e fontes</h2>
+			</a>
+		</section>
+		<section class="home-category <%= catToClass("estátua") %>">
+			<a href="<%= catToHref("estátua") %>" style="background-image:url(/assets/home-categories/estatua.png)">
+				<h2>Estátuas</h2>
+			</a>
+		</section>
+		<section class="home-category <%= catToClass("marco") %>">
+			<a href="<%= catToHref("marco") %>" style="background-image:url(/assets/home-categories/marco.png)">
+				<h2>Marcos</h2>
+			</a>
+		</section>
+		<section class="home-category <%= catToClass("escultura") %>">
+			<a href="<%= catToHref("escultura") %>" style="background-image:url(/assets/home-categories/escultura.png)">
+				<h2>Esculturas</h2>
+			</a>
 		</section>
 	</section>
 </section>
