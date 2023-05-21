@@ -8,7 +8,7 @@
 	<link rel="preconnect" href="https://cdn.avl.la">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="referrer" content="no-referrer">
-	<link rel="stylesheet" href="/assets/style.css?v=05-21">
+	<link rel="stylesheet" href="/assets/style.css?v=05-21b">
 	<script src="/assets/leaflet/leaflet.min.1.9.3.js"></script>
 </head>
 <body>
@@ -174,7 +174,7 @@
 <section>
 	<h1>Cápsula do Tempo da Federação de Bandeirantes</h1>
 
-	<div>
+	
 <figure>
 	<a href="photo.jpg" data-llb-src="href">
 		<img src="thumb.jpg">
@@ -188,9 +188,7 @@
 	</figcaption>
 </figure>
 <section class="description">
-	<p>
-		
-	</p>
+	<!-- <p></p> -->
 </section>
 <section class="refs">
 <!-- 	<ol>
@@ -247,37 +245,10 @@ que deverá ser aberta no dia 13 de agosto de 2019.
         Governo da Guanabara - 1969
 </pre>
 </section>
-<section class="more">
-	<h2>Leia mais</h2>
-	<ol>
-		<li>
-			Movimento Bandeirante Brasil (28 de agosto de 2019).
-			<a href="https://www.facebook.com/media/set/?set=a.2506446682744803">Cerimônia
-			de Abertura da Cápsula do Tempo</a>. <i>Facebook</i>.
-		</li>
-		<li>
-			Movimento Bandeirante BR (23 de agosto de 2019).
-			<a href="https://youtu.be/vpBeUX-aKho">Cápsula do Tempo 1969-2019</a>.
-			<i>YouTube</i>.
-		</li>
-	</ol>
-</section></div>
-
-		<section class="location">
-			<h2>Localização</h2>
-			<p>
-
-				<strong>Localização:</strong>
-Avenida Franklin Roosevelt, Centro
-<br>
-
-				<strong>Coordenadas:</strong> -22.9094, -43.1699
-			</p>
-			<div id="monument-location-map"></div>
-			<script>
+<section class="location"><h2>Localização</h2><p><strong>Localização:</strong> Avenida Franklin Roosevelt, Centro</p><p><strong>Coordenadas:</strong> -22.9094, -43.1699</p><div id="monument-location-map"></div><script>
 const bounds = new L.LatLngBounds(
-	new L.LatLng(-22.9094 - 0.025, -43.1699 - 0.05),
-	new L.LatLng(-22.9094 + 0.025, -43.1699 + 0.05)
+	new L.LatLng(-22.9344, -43.219899999999996),
+	new L.LatLng(-22.884400000000003, -43.1199)
 );
 const map = L.map("monument-location-map", {
 	center: bounds.getCenter(),
@@ -292,7 +263,7 @@ L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
 }).addTo(map);
 L.marker([-22.9094, -43.1699], {
 	icon: L.icon({
-		iconUrl: `/assets/leaflet/images/phosphor-marker--marco.svg`,
+		iconUrl: "/assets/leaflet/images/phosphor-marker--marco.svg",
 		iconSize: [64, 64],
 		iconAnchor: [32, 64],
 		shadowUrl: "/assets/leaflet/images/marker-shadow.png",
@@ -300,9 +271,22 @@ L.marker([-22.9094, -43.1699], {
 		shadowAnchor: [13, 44],
 	})
 }).addTo(map);
-			</script>
-		</section>
-
+</script></section>
+<section class="more">
+	<h2>Leia mais</h2>
+	<ol>
+		<li>
+			Movimento Bandeirante Brasil (28 de agosto de 2019).
+			<a href="https://www.facebook.com/media/set/?set=a.2506446682744803">Cerimônia
+			de Abertura da Cápsula do Tempo</a>. <i>Facebook</i>.
+		</li>
+		<li>
+			Movimento Bandeirante BR (23 de agosto de 2019).
+			<a href="https://youtu.be/vpBeUX-aKho">Cápsula do Tempo 1969-2019</a>.
+			<i>YouTube</i>.
+		</li>
+	</ol>
+</section>
 </section>
 <aside>
 	<em class="display-identifier">M36908</em>
@@ -378,7 +362,7 @@ L.marker([-22.9094, -43.1699], {
 					Feito com ♥︎&#xFE0E;<!--&#xFE0E;[Ref] stackoverflow.com/a/38452396/4824627-->
 					por <a href="https://avl.la/">Matheus Avellar</a><br>
 					Rio de Janeiro, RJ, Brasil
-				</p>
+				</p><br>
 				<p>
 					Sugestões, reclamações ou comentários?<br>
 					contato<svg class="heart-icon" viewBox="0 0 24 24" aria-label="@">

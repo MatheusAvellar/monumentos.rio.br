@@ -8,7 +8,7 @@
 	<link rel="preconnect" href="https://cdn.avl.la">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="referrer" content="no-referrer">
-	<link rel="stylesheet" href="/assets/style.css?v=05-21">
+	<link rel="stylesheet" href="/assets/style.css?v=05-21b">
 	<script src="/assets/leaflet/leaflet.min.1.9.3.js"></script>
 </head>
 <body>
@@ -174,7 +174,7 @@
 <section>
 	<h1>Chafariz da Praça Saens Peña</h1>
 
-	<div>
+	
 <figure>
 	<a href="photo.jpg" data-llb-src="href">
 		<img src="thumb.jpg">
@@ -250,27 +250,10 @@
 		</figcaption>
 	</figure>
 </section>
-<section class="more">
-<!-- 	<h2>Leia mais</h2>
-	<ol></ol> -->
-</section>
-</div>
-
-		<section class="location">
-			<h2>Localização</h2>
-			<p>
-
-				<strong>Localização:</strong>
-Praça Saens Peña, Tijuca
-<br>
-
-				<strong>Coordenadas:</strong> -22.924712, -43.232697
-			</p>
-			<div id="monument-location-map"></div>
-			<script>
+<section class="location"><h2>Localização</h2><p><strong>Localização:</strong> Praça Saens Peña, Tijuca</p><p><strong>Coordenadas:</strong> -22.9247, -43.2327</p><div id="monument-location-map"></div><script>
 const bounds = new L.LatLngBounds(
-	new L.LatLng(-22.924712 - 0.025, -43.232697 - 0.05),
-	new L.LatLng(-22.924712 + 0.025, -43.232697 + 0.05)
+	new L.LatLng(-22.949711999999998, -43.282697),
+	new L.LatLng(-22.899712, -43.182697000000005)
 );
 const map = L.map("monument-location-map", {
 	center: bounds.getCenter(),
@@ -285,7 +268,7 @@ L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
 }).addTo(map);
 L.marker([-22.924712, -43.232697], {
 	icon: L.icon({
-		iconUrl: `/assets/leaflet/images/phosphor-marker--chafariz.svg`,
+		iconUrl: "/assets/leaflet/images/phosphor-marker--chafariz.svg",
 		iconSize: [64, 64],
 		iconAnchor: [32, 64],
 		shadowUrl: "/assets/leaflet/images/marker-shadow.png",
@@ -293,8 +276,11 @@ L.marker([-22.924712, -43.232697], {
 		shadowAnchor: [13, 44],
 	})
 }).addTo(map);
-			</script>
-		</section>
+</script></section>
+<section class="more">
+<!-- 	<h2>Leia mais</h2>
+	<ol></ol> -->
+</section>
 
 </section>
 <aside>
@@ -322,7 +308,7 @@ L.marker([-22.924712, -43.232697], {
 			<dl>
 
 				<dt>Autores</dt>
-				<dd>José Silva Azevedo Neto</dd>
+				<dd><ul><li>José Silva Azevedo Neto</li></ul></dd>
 
 
 				<dt>Inauguração</dt>
@@ -365,7 +351,7 @@ L.marker([-22.924712, -43.232697], {
 					Feito com ♥︎&#xFE0E;<!--&#xFE0E;[Ref] stackoverflow.com/a/38452396/4824627-->
 					por <a href="https://avl.la/">Matheus Avellar</a><br>
 					Rio de Janeiro, RJ, Brasil
-				</p>
+				</p><br>
 				<p>
 					Sugestões, reclamações ou comentários?<br>
 					contato<svg class="heart-icon" viewBox="0 0 24 24" aria-label="@">

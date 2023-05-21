@@ -8,7 +8,7 @@
 	<link rel="preconnect" href="https://cdn.avl.la">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="referrer" content="no-referrer">
-	<link rel="stylesheet" href="/assets/style.css?v=05-21">
+	<link rel="stylesheet" href="/assets/style.css?v=05-21b">
 	<script src="/assets/leaflet/leaflet.min.1.9.3.js"></script>
 </head>
 <body>
@@ -178,7 +178,7 @@
 		Também conhecido como &#34;Arcos da Carioca&#34;.
 	</p>
 
-	<div>
+	
 <figure>
 	<a href="photo.jpg" data-llb-src="href">
 		<img src="thumb.jpg">
@@ -195,10 +195,7 @@
 	</figcaption>
 </figure>
 <section class="description">
-	<p>
-		
-	</p>
-	</p>
+	<!-- <p></p> -->
 </section>
 <section class="refs">
 <!-- 	<ol>
@@ -244,34 +241,10 @@
 		</figcaption>
 	</figure>
 </section>
-<section class="more">
-	<h2>Leia mais</h2>
-	<ol>
-		<li>
-			José de Souza Reis (1955).
-			<a href="http://portal.iphan.gov.br/uploads/publicacao/RevPat12_m.pdf">Revista
-			do Patrimônio Histórico e Artístico Nacional</a>: Arcos da Carioca.
-			<i>Ministério da Educação e Cultura</i>, Nº 12, pp.9–109.
-		</li>
-	</ol>
-</section>
-</div>
-
-		<section class="location">
-			<h2>Localização</h2>
-			<p>
-
-				<strong>Localização:</strong>
-Praça Cardeal Câmara, Lapa
-<br>
-
-				<strong>Coordenadas:</strong> -22.9128, -43.1799
-			</p>
-			<div id="monument-location-map"></div>
-			<script>
+<section class="location"><h2>Localização</h2><p><strong>Localização:</strong> Praça Cardeal Câmara, Lapa</p><p><strong>Coordenadas:</strong> -22.9128, -43.1799</p><div id="monument-location-map"></div><script>
 const bounds = new L.LatLngBounds(
-	new L.LatLng(-22.9128 - 0.025, -43.1799 - 0.05),
-	new L.LatLng(-22.9128 + 0.025, -43.1799 + 0.05)
+	new L.LatLng(-22.9378, -43.2299),
+	new L.LatLng(-22.887800000000002, -43.129900000000006)
 );
 const map = L.map("monument-location-map", {
 	center: bounds.getCenter(),
@@ -286,7 +259,7 @@ L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
 }).addTo(map);
 L.marker([-22.9128, -43.1799], {
 	icon: L.icon({
-		iconUrl: `/assets/leaflet/images/phosphor-marker--obra.svg`,
+		iconUrl: "/assets/leaflet/images/phosphor-marker--obra.svg",
 		iconSize: [64, 64],
 		iconAnchor: [32, 64],
 		shadowUrl: "/assets/leaflet/images/marker-shadow.png",
@@ -294,8 +267,18 @@ L.marker([-22.9128, -43.1799], {
 		shadowAnchor: [13, 44],
 	})
 }).addTo(map);
-			</script>
-		</section>
+</script></section>
+<section class="more">
+	<h2>Leia mais</h2>
+	<ol>
+		<li>
+			José de Souza Reis (1955).
+			<a href="http://portal.iphan.gov.br/uploads/publicacao/RevPat12_m.pdf">Revista
+			do Patrimônio Histórico e Artístico Nacional</a>: Arcos da Carioca.
+			<i>Ministério da Educação e Cultura</i>, Nº 12, pp.9–109.
+		</li>
+	</ol>
+</section>
 
 </section>
 <aside>
@@ -405,7 +388,7 @@ L.marker([-22.9128, -43.1799], {
 					Feito com ♥︎&#xFE0E;<!--&#xFE0E;[Ref] stackoverflow.com/a/38452396/4824627-->
 					por <a href="https://avl.la/">Matheus Avellar</a><br>
 					Rio de Janeiro, RJ, Brasil
-				</p>
+				</p><br>
 				<p>
 					Sugestões, reclamações ou comentários?<br>
 					contato<svg class="heart-icon" viewBox="0 0 24 24" aria-label="@">

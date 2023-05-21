@@ -8,7 +8,7 @@
 	<link rel="preconnect" href="https://cdn.avl.la">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="referrer" content="no-referrer">
-	<link rel="stylesheet" href="/assets/style.css?v=05-21">
+	<link rel="stylesheet" href="/assets/style.css?v=05-21b">
 	<script src="/assets/leaflet/leaflet.min.1.9.3.js"></script>
 </head>
 <body>
@@ -174,7 +174,7 @@
 <section>
 	<h1>Chafariz Concha</h1>
 
-	<div>
+	
 <figure>
 	<a href="photo.jpg" data-llb-src="href">
 		<img src="thumb.jpg">
@@ -244,37 +244,10 @@
 		</figcaption>
 	</figure>
 </section>
-<section class="more">
-	<h2>Leia mais</h2>
-	<ol>
-		<li>
-			Vera Dias (3 de setembro de 2013). <a href="https://ashistoriasdosmonumentosdorio.blogspot.com/2013/09/francisco-bolonha-e-seus-chafarizes-na.html">Francisco Bolonha
-			e seus chafarizes na Cidade do Rio de Janeiro</a>.
-			<i>As histórias dos monumentos do Rio de Janeiro</i>.
-		</li>
-		<li>
-			Erick V. da Cruz (23 de fevereiro de 2007). <a href="https://www.bairrodaslaranjeiras.com.br/principal/BenGurion.shtml">Praça Ben Gurion,
-			uma homenagem ao fundador de Israel</a>. <i>Bairro das Laranjeiras</i>.
-		</li>
-	</ol>
-</section>
-</div>
-
-		<section class="location">
-			<h2>Localização</h2>
-			<p>
-
-				<strong>Localização:</strong>
-Praça David Ben Gurion, Laranjeiras
-<br>
-
-				<strong>Coordenadas:</strong> -22.9383, -43.1906
-			</p>
-			<div id="monument-location-map"></div>
-			<script>
+<section class="location"><h2>Localização</h2><p><strong>Localização:</strong> Praça David Ben Gurion, Laranjeiras</p><p><strong>Coordenadas:</strong> -22.9383, -43.1906</p><div id="monument-location-map"></div><script>
 const bounds = new L.LatLngBounds(
-	new L.LatLng(-22.9383 - 0.025, -43.1906 - 0.05),
-	new L.LatLng(-22.9383 + 0.025, -43.1906 + 0.05)
+	new L.LatLng(-22.9633, -43.2406),
+	new L.LatLng(-22.913300000000003, -43.140600000000006)
 );
 const map = L.map("monument-location-map", {
 	center: bounds.getCenter(),
@@ -289,7 +262,7 @@ L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
 }).addTo(map);
 L.marker([-22.9383, -43.1906], {
 	icon: L.icon({
-		iconUrl: `/assets/leaflet/images/phosphor-marker--chafariz.svg`,
+		iconUrl: "/assets/leaflet/images/phosphor-marker--chafariz.svg",
 		iconSize: [64, 64],
 		iconAnchor: [32, 64],
 		shadowUrl: "/assets/leaflet/images/marker-shadow.png",
@@ -297,8 +270,21 @@ L.marker([-22.9383, -43.1906], {
 		shadowAnchor: [13, 44],
 	})
 }).addTo(map);
-			</script>
-		</section>
+</script></section>
+<section class="more">
+	<h2>Leia mais</h2>
+	<ol>
+		<li>
+			Vera Dias (3 de setembro de 2013). <a href="https://ashistoriasdosmonumentosdorio.blogspot.com/2013/09/francisco-bolonha-e-seus-chafarizes-na.html">Francisco Bolonha
+			e seus chafarizes na Cidade do Rio de Janeiro</a>.
+			<i>As histórias dos monumentos do Rio de Janeiro</i>.
+		</li>
+		<li>
+			Erick V. da Cruz (23 de fevereiro de 2007). <a href="https://www.bairrodaslaranjeiras.com.br/principal/BenGurion.shtml">Praça Ben Gurion,
+			uma homenagem ao fundador de Israel</a>. <i>Bairro das Laranjeiras</i>.
+		</li>
+	</ol>
+</section>
 
 </section>
 <aside>
@@ -326,7 +312,7 @@ L.marker([-22.9383, -43.1906], {
 			<dl>
 
 				<dt>Autores</dt>
-				<dd>Francisco Bolonha</dd>
+				<dd><ul><li>Francisco Bolonha</li></ul></dd>
 
 
 				<dt>Inauguração</dt>
@@ -369,7 +355,7 @@ L.marker([-22.9383, -43.1906], {
 					Feito com ♥︎&#xFE0E;<!--&#xFE0E;[Ref] stackoverflow.com/a/38452396/4824627-->
 					por <a href="https://avl.la/">Matheus Avellar</a><br>
 					Rio de Janeiro, RJ, Brasil
-				</p>
+				</p><br>
 				<p>
 					Sugestões, reclamações ou comentários?<br>
 					contato<svg class="heart-icon" viewBox="0 0 24 24" aria-label="@">

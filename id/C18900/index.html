@@ -8,7 +8,7 @@
 	<link rel="preconnect" href="https://cdn.avl.la">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="referrer" content="no-referrer">
-	<link rel="stylesheet" href="/assets/style.css?v=05-21">
+	<link rel="stylesheet" href="/assets/style.css?v=05-21b">
 	<script src="/assets/leaflet/leaflet.min.1.9.3.js"></script>
 </head>
 <body>
@@ -174,7 +174,7 @@
 <section>
 	<h1>Chafariz do Mestre Valentim</h1>
 
-	<div>
+	
 <figure>
 	<a href="photo.jpg" data-llb-src="href">
 		<img src="thumb.jpg">
@@ -218,33 +218,10 @@
 		</figcaption>
 	</figure>
 </section>
-<section class="more">
-	<h2>Leia mais</h2>
-	<ol>
-		<li>
-			Vera Dias (17 de maio de 2010). <a href="https://ashistoriasdosmonumentosdorio.blogspot.com/2010/05/chafariz-da-praca-xv-parte-da-historia.html">Chafariz
-			da Praça XV - Parte da história da Cidade</a>.
-			<i>As histórias dos monumentos do Rio de Janeiro</i>.
-		</li>
-	</ol>
-</section>
-</div>
-
-		<section class="location">
-			<h2>Localização</h2>
-			<p>
-
-				<strong>Localização:</strong>
-Praça XV de Novembro, Centro
-<br>
-
-				<strong>Coordenadas:</strong> -22.9027, -43.1739
-			</p>
-			<div id="monument-location-map"></div>
-			<script>
+<section class="location"><h2>Localização</h2><p><strong>Localização:</strong> Praça XV de Novembro, Centro</p><p><strong>Coordenadas:</strong> -22.9027, -43.1739</p><div id="monument-location-map"></div><script>
 const bounds = new L.LatLngBounds(
-	new L.LatLng(-22.9027 - 0.025, -43.1739 - 0.05),
-	new L.LatLng(-22.9027 + 0.025, -43.1739 + 0.05)
+	new L.LatLng(-22.927699999999998, -43.2239),
+	new L.LatLng(-22.8777, -43.123900000000006)
 );
 const map = L.map("monument-location-map", {
 	center: bounds.getCenter(),
@@ -259,7 +236,7 @@ L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
 }).addTo(map);
 L.marker([-22.9027, -43.1739], {
 	icon: L.icon({
-		iconUrl: `/assets/leaflet/images/phosphor-marker--chafariz.svg`,
+		iconUrl: "/assets/leaflet/images/phosphor-marker--chafariz.svg",
 		iconSize: [64, 64],
 		iconAnchor: [32, 64],
 		shadowUrl: "/assets/leaflet/images/marker-shadow.png",
@@ -267,8 +244,17 @@ L.marker([-22.9027, -43.1739], {
 		shadowAnchor: [13, 44],
 	})
 }).addTo(map);
-			</script>
-		</section>
+</script></section>
+<section class="more">
+	<h2>Leia mais</h2>
+	<ol>
+		<li>
+			Vera Dias (17 de maio de 2010). <a href="https://ashistoriasdosmonumentosdorio.blogspot.com/2010/05/chafariz-da-praca-xv-parte-da-historia.html">Chafariz
+			da Praça XV - Parte da história da Cidade</a>.
+			<i>As histórias dos monumentos do Rio de Janeiro</i>.
+		</li>
+	</ol>
+</section>
 
 </section>
 <aside>
@@ -298,7 +284,7 @@ L.marker([-22.9027, -43.1739], {
 			<dl>
 
 				<dt>Autores</dt>
-				<dd>Valentim da Fonseca e Silva</dd>
+				<dd><ul><li>Valentim da Fonseca e Silva</li></ul></dd>
 
 
 				<dt>Inauguração</dt>
@@ -363,7 +349,7 @@ L.marker([-22.9027, -43.1739], {
 					Feito com ♥︎&#xFE0E;<!--&#xFE0E;[Ref] stackoverflow.com/a/38452396/4824627-->
 					por <a href="https://avl.la/">Matheus Avellar</a><br>
 					Rio de Janeiro, RJ, Brasil
-				</p>
+				</p><br>
 				<p>
 					Sugestões, reclamações ou comentários?<br>
 					contato<svg class="heart-icon" viewBox="0 0 24 24" aria-label="@">

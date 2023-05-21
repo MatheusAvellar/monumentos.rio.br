@@ -8,7 +8,7 @@
 	<link rel="preconnect" href="https://cdn.avl.la">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="referrer" content="no-referrer">
-	<link rel="stylesheet" href="/assets/style.css?v=05-21">
+	<link rel="stylesheet" href="/assets/style.css?v=05-21b">
 	<script src="/assets/leaflet/leaflet.min.1.9.3.js"></script>
 </head>
 <body>
@@ -174,7 +174,7 @@
 <section>
 	<h1>Busto do Irmão Gonçalves Xavier</h1>
 
-	<div>
+	
 <figure>
 	<a href="photo.jpg" data-llb-src="href">
 		<img src="thumb.jpg">
@@ -192,34 +192,10 @@
 <section class="gallery">
 	<!-- <h2>Galeria</h2> -->
 </section>
-<section class="more">
-<!-- 	<h2>Leia mais</h2>
-	<ol></ol> -->
-</section>
-<section class="notes">
-	<h2>Notas</h2>
-	<p>
-		Encontrei pouquíssima informação sobre e fotos do busto. Praticamente só no
-		IMRJ.
-	</p>
-</section>
-</div>
-
-		<section class="location">
-			<h2>Localização</h2>
-			<p>
-
-				<strong>Localização:</strong>
-Praça Carlos Paolera, Tijuca
-<br>
-
-				<strong>Coordenadas:</strong> -22.921, -43.2233
-			</p>
-			<div id="monument-location-map"></div>
-			<script>
+<section class="location"><h2>Localização</h2><p><strong>Localização:</strong> Praça Carlos Paolera, Tijuca</p><p><strong>Coordenadas:</strong> -22.9210, -43.2233</p><div id="monument-location-map"></div><script>
 const bounds = new L.LatLngBounds(
-	new L.LatLng(-22.921 - 0.025, -43.2233 - 0.05),
-	new L.LatLng(-22.921 + 0.025, -43.2233 + 0.05)
+	new L.LatLng(-22.945999999999998, -43.2733),
+	new L.LatLng(-22.896, -43.173300000000005)
 );
 const map = L.map("monument-location-map", {
 	center: bounds.getCenter(),
@@ -234,7 +210,7 @@ L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
 }).addTo(map);
 L.marker([-22.921, -43.2233], {
 	icon: L.icon({
-		iconUrl: `/assets/leaflet/images/phosphor-marker--busto.svg`,
+		iconUrl: "/assets/leaflet/images/phosphor-marker--busto.svg",
 		iconSize: [64, 64],
 		iconAnchor: [32, 64],
 		shadowUrl: "/assets/leaflet/images/marker-shadow.png",
@@ -242,8 +218,18 @@ L.marker([-22.921, -43.2233], {
 		shadowAnchor: [13, 44],
 	})
 }).addTo(map);
-			</script>
-		</section>
+</script></section>
+<section class="more">
+<!-- 	<h2>Leia mais</h2>
+	<ol></ol> -->
+</section>
+<section class="notes">
+	<h2>Notas</h2>
+	<p>
+		Encontrei pouquíssima informação sobre e fotos do busto. Praticamente só no
+		IMRJ.
+	</p>
+</section>
 
 </section>
 <aside>
@@ -326,7 +312,7 @@ L.marker([-22.921, -43.2233], {
 					Feito com ♥︎&#xFE0E;<!--&#xFE0E;[Ref] stackoverflow.com/a/38452396/4824627-->
 					por <a href="https://avl.la/">Matheus Avellar</a><br>
 					Rio de Janeiro, RJ, Brasil
-				</p>
+				</p><br>
 				<p>
 					Sugestões, reclamações ou comentários?<br>
 					contato<svg class="heart-icon" viewBox="0 0 24 24" aria-label="@">

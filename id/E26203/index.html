@@ -8,7 +8,7 @@
 	<link rel="preconnect" href="https://cdn.avl.la">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="referrer" content="no-referrer">
-	<link rel="stylesheet" href="/assets/style.css?v=05-21">
+	<link rel="stylesheet" href="/assets/style.css?v=05-21b">
 	<script src="/assets/leaflet/leaflet.min.1.9.3.js"></script>
 </head>
 <body>
@@ -174,7 +174,7 @@
 <section>
 	<h1>Estátua equestre de D. Pedro I</h1>
 
-	<div>
+	
 <figure>
 	<a href="photo.jpg" data-llb-src="href">
 		<img src="thumb.jpg">
@@ -255,6 +255,33 @@
 		</figcaption>
 	</figure>
 </section>
+<section class="location"><h2>Localização</h2><p><strong>Localização:</strong> Praça Tiradentes, Centro</p><p><strong>Coordenadas:</strong> -22.9069, -43.1828</p><div id="monument-location-map"></div><script>
+const bounds = new L.LatLngBounds(
+	new L.LatLng(-22.9319, -43.2328),
+	new L.LatLng(-22.8819, -43.1328)
+);
+const map = L.map("monument-location-map", {
+	center: bounds.getCenter(),
+	zoom: 17,
+	maxBounds: bounds,
+	maxBoundsViscosity: .75
+})
+L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
+	minZoom: 15,
+	maxZoom: 19,
+	attribution: "&copy; <a href='http://www.openstreetmap.org/copyright'>OSM</a>"
+}).addTo(map);
+L.marker([-22.9069, -43.1828], {
+	icon: L.icon({
+		iconUrl: "/assets/leaflet/images/phosphor-marker--estatua.svg",
+		iconSize: [64, 64],
+		iconAnchor: [32, 64],
+		shadowUrl: "/assets/leaflet/images/marker-shadow.png",
+		shadowSize: [41, 41],
+		shadowAnchor: [13, 44],
+	})
+}).addTo(map);
+</script></section>
 <section class="more">
 	<h2>Leia mais</h2>
 	<ol>
@@ -271,48 +298,7 @@
 			Criativa do Rio de Janeiro</i>.
 		</li>
 	</ol>
-</section></div>
-
-		<section class="location">
-			<h2>Localização</h2>
-			<p>
-
-				<strong>Localização:</strong>
-Praça Tiradentes, Centro
-<br>
-
-				<strong>Coordenadas:</strong> -22.9069, -43.1828
-			</p>
-			<div id="monument-location-map"></div>
-			<script>
-const bounds = new L.LatLngBounds(
-	new L.LatLng(-22.9069 - 0.025, -43.1828 - 0.05),
-	new L.LatLng(-22.9069 + 0.025, -43.1828 + 0.05)
-);
-const map = L.map("monument-location-map", {
-	center: bounds.getCenter(),
-	zoom: 17,
-	maxBounds: bounds,
-	maxBoundsViscosity: .75
-})
-L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
-	minZoom: 15,
-	maxZoom: 19,
-	attribution: "&copy; <a href='http://www.openstreetmap.org/copyright'>OSM</a>"
-}).addTo(map);
-L.marker([-22.9069, -43.1828], {
-	icon: L.icon({
-		iconUrl: `/assets/leaflet/images/phosphor-marker--estatua.svg`,
-		iconSize: [64, 64],
-		iconAnchor: [32, 64],
-		shadowUrl: "/assets/leaflet/images/marker-shadow.png",
-		shadowSize: [41, 41],
-		shadowAnchor: [13, 44],
-	})
-}).addTo(map);
-			</script>
-		</section>
-
+</section>
 </section>
 <aside>
 	<em class="display-identifier">E26203</em>
@@ -339,7 +325,7 @@ L.marker([-22.9069, -43.1828], {
 			<dl>
 
 				<dt>Autores</dt>
-				<dd>Louis Rochet<br>João Maximiniano Mafra</dd>
+				<dd><ul><li>Louis Rochet</li><li>João Maximiniano Mafra</li></ul></dd>
 
 
 				<dt>Inauguração</dt>
@@ -424,7 +410,7 @@ L.marker([-22.9069, -43.1828], {
 					Feito com ♥︎&#xFE0E;<!--&#xFE0E;[Ref] stackoverflow.com/a/38452396/4824627-->
 					por <a href="https://avl.la/">Matheus Avellar</a><br>
 					Rio de Janeiro, RJ, Brasil
-				</p>
+				</p><br>
 				<p>
 					Sugestões, reclamações ou comentários?<br>
 					contato<svg class="heart-icon" viewBox="0 0 24 24" aria-label="@">

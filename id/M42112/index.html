@@ -8,7 +8,7 @@
 	<link rel="preconnect" href="https://cdn.avl.la">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="referrer" content="no-referrer">
-	<link rel="stylesheet" href="/assets/style.css?v=05-21">
+	<link rel="stylesheet" href="/assets/style.css?v=05-21b">
 	<script src="/assets/leaflet/leaflet.min.1.9.3.js"></script>
 </head>
 <body>
@@ -174,7 +174,7 @@
 <section>
 	<h1>Placa Expedição de Magalhães e Elcano (1519–1522)</h1>
 
-	<div>
+	
 <figure>
 	<a href="photo.jpg" data-llb-src="href">
 		<img src="thumb.jpg">
@@ -240,33 +240,10 @@ V centenario
 1ª vuelta al
 mundo</i></pre>
 </section>
-<section class="more">
-	<h2>Leia mais</h2>
-	<ol>
-		<li>
-			Pedro Zuazo (15 de dezembro de 2021), via
-			<a href="https://oglobo.globo.com/rio/orla-conde-ganha-placa-pelos-500-anos-da-circum-navegacao-feita-por-fernao-de-magalhaes-25320680">Orla
-			Conde ganha placa pelos 500 anos da circum-navegação feita por Fernão de
-			Magalhães</a>. <i>O Globo</i>.
-		</li>
-	</ol>
-</section></div>
-
-		<section class="location">
-			<h2>Localização</h2>
-			<p>
-
-				<strong>Localização:</strong>
-Orla Professor Luiz Paulo Conde, Centro
-<br>
-
-				<strong>Coordenadas:</strong> -22.8957, -43.1776
-			</p>
-			<div id="monument-location-map"></div>
-			<script>
+<section class="location"><h2>Localização</h2><p><strong>Localização:</strong> Orla Professor Luiz Paulo Conde, Centro</p><p><strong>Coordenadas:</strong> -22.8957, -43.1776</p><div id="monument-location-map"></div><script>
 const bounds = new L.LatLngBounds(
-	new L.LatLng(-22.8957 - 0.025, -43.1776 - 0.05),
-	new L.LatLng(-22.8957 + 0.025, -43.1776 + 0.05)
+	new L.LatLng(-22.9207, -43.227599999999995),
+	new L.LatLng(-22.870700000000003, -43.1276)
 );
 const map = L.map("monument-location-map", {
 	center: bounds.getCenter(),
@@ -281,7 +258,7 @@ L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
 }).addTo(map);
 L.marker([-22.8957, -43.1776], {
 	icon: L.icon({
-		iconUrl: `/assets/leaflet/images/phosphor-marker--marco.svg`,
+		iconUrl: "/assets/leaflet/images/phosphor-marker--marco.svg",
 		iconSize: [64, 64],
 		iconAnchor: [32, 64],
 		shadowUrl: "/assets/leaflet/images/marker-shadow.png",
@@ -289,9 +266,18 @@ L.marker([-22.8957, -43.1776], {
 		shadowAnchor: [13, 44],
 	})
 }).addTo(map);
-			</script>
-		</section>
-
+</script></section>
+<section class="more">
+	<h2>Leia mais</h2>
+	<ol>
+		<li>
+			Pedro Zuazo (15 de dezembro de 2021), via
+			<a href="https://oglobo.globo.com/rio/orla-conde-ganha-placa-pelos-500-anos-da-circum-navegacao-feita-por-fernao-de-magalhaes-25320680">Orla
+			Conde ganha placa pelos 500 anos da circum-navegação feita por Fernão de
+			Magalhães</a>. <i>O Globo</i>.
+		</li>
+	</ol>
+</section>
 </section>
 <aside>
 	<em class="display-identifier">M42112</em>
@@ -320,7 +306,7 @@ L.marker([-22.8957, -43.1776], {
 			<dl>
 
 				<dt>Autores</dt>
-				<dd>Embaixada da Espanha no Brasil</dd>
+				<dd><ul><li>Embaixada da Espanha no Brasil</li></ul></dd>
 
 
 				<dt>Inauguração</dt>
@@ -346,7 +332,7 @@ L.marker([-22.8957, -43.1776], {
 					Feito com ♥︎&#xFE0E;<!--&#xFE0E;[Ref] stackoverflow.com/a/38452396/4824627-->
 					por <a href="https://avl.la/">Matheus Avellar</a><br>
 					Rio de Janeiro, RJ, Brasil
-				</p>
+				</p><br>
 				<p>
 					Sugestões, reclamações ou comentários?<br>
 					contato<svg class="heart-icon" viewBox="0 0 24 24" aria-label="@">

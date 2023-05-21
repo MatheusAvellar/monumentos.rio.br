@@ -8,7 +8,7 @@
 	<link rel="preconnect" href="https://cdn.avl.la">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="referrer" content="no-referrer">
-	<link rel="stylesheet" href="/assets/style.css?v=05-21">
+	<link rel="stylesheet" href="/assets/style.css?v=05-21b">
 	<script src="/assets/leaflet/leaflet.min.1.9.3.js"></script>
 </head>
 <body>
@@ -174,7 +174,7 @@
 <section>
 	<h1>Efígie de Elias Reis e Silva</h1>
 
-	<div>
+	
 <figure>
 	<a href="photo.jpg" data-llb-src="href">
 		<img src="thumb.jpg">
@@ -255,27 +255,10 @@ Gre[mio] Lirico Reis e Silva
 
 12-12-1958</pre>
 </section>
-<section class="more">
-<!-- 	<h2>Leia mais</h2>
-	<ol></ol> -->
-</section>
-</div>
-
-		<section class="location">
-			<h2>Localização</h2>
-			<p>
-
-				<strong>Localização:</strong>
-Praça Paris, Glória
-<br>
-
-				<strong>Coordenadas:</strong> -22.915, -43.1757
-			</p>
-			<div id="monument-location-map"></div>
-			<script>
+<section class="location"><h2>Localização</h2><p><strong>Localização:</strong> Praça Paris, Glória</p><p><strong>Coordenadas:</strong> -22.9150, -43.1757</p><div id="monument-location-map"></div><script>
 const bounds = new L.LatLngBounds(
-	new L.LatLng(-22.915 - 0.025, -43.1757 - 0.05),
-	new L.LatLng(-22.915 + 0.025, -43.1757 + 0.05)
+	new L.LatLng(-22.939999999999998, -43.225699999999996),
+	new L.LatLng(-22.89, -43.1257)
 );
 const map = L.map("monument-location-map", {
 	center: bounds.getCenter(),
@@ -290,7 +273,7 @@ L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
 }).addTo(map);
 L.marker([-22.915, -43.1757], {
 	icon: L.icon({
-		iconUrl: `/assets/leaflet/images/phosphor-marker--busto.svg`,
+		iconUrl: "/assets/leaflet/images/phosphor-marker--busto.svg",
 		iconSize: [64, 64],
 		iconAnchor: [32, 64],
 		shadowUrl: "/assets/leaflet/images/marker-shadow.png",
@@ -298,8 +281,11 @@ L.marker([-22.915, -43.1757], {
 		shadowAnchor: [13, 44],
 	})
 }).addTo(map);
-			</script>
-		</section>
+</script></section>
+<section class="more">
+<!-- 	<h2>Leia mais</h2>
+	<ol></ol> -->
+</section>
 
 </section>
 <aside>
@@ -331,7 +317,7 @@ L.marker([-22.915, -43.1757], {
 			<dl>
 
 				<dt>Autores</dt>
-				<dd>Leonardo Lima</dd>
+				<dd><ul><li>Leonardo Lima</li></ul></dd>
 
 
 				<dt>Inauguração</dt>
@@ -371,7 +357,7 @@ L.marker([-22.915, -43.1757], {
 					Feito com ♥︎&#xFE0E;<!--&#xFE0E;[Ref] stackoverflow.com/a/38452396/4824627-->
 					por <a href="https://avl.la/">Matheus Avellar</a><br>
 					Rio de Janeiro, RJ, Brasil
-				</p>
+				</p><br>
 				<p>
 					Sugestões, reclamações ou comentários?<br>
 					contato<svg class="heart-icon" viewBox="0 0 24 24" aria-label="@">

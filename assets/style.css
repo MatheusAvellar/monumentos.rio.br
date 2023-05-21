@@ -181,7 +181,7 @@ main.monument {
 	gap: .75rem;
 }
 main.monument figure img {
-	max-width: 250px;
+	max-width: min(30vw, 250px);;
 }
 main p {
 	margin: 0;
@@ -207,8 +207,11 @@ footer {
 	background-image: url(/assets/fundo_seconserva.jpg);
 	background-repeat: repeat-x;
 }
+footer p {
+	margin: 0;
+}
 footer > section {
-	margin-top: .5rem;
+	margin-top: 1rem;
 }
 footer section.signature {
 	text-align: right;
@@ -241,6 +244,7 @@ footer nav {
 	display: flex;
 	flex-wrap: wrap;
 	gap: .5rem 1rem;
+	margin-top: 1rem;
 }
 footer nav ul {
 	width: 8.75rem;
@@ -279,7 +283,7 @@ strong {
 
 aside {
 	height: min-content;
-	width: 250px;
+	width: min(30vw, 250px);;
 	background-color: #fff;
 	padding: .75rem 1rem 1rem;
 	border: 1px solid #dfdfdf;
@@ -297,6 +301,13 @@ aside > dl > dd {
 }
 aside > dl > dd + dt {
 	margin-top: .5rem;
+}
+aside > dl > dd > ul {
+	padding: 0;
+	margin: 0;
+}
+aside > dl > dd > ul > li + li {
+	margin: 0;
 }
 aside abbr {
 	text-decoration: none;
@@ -451,20 +462,22 @@ hr.vertical {
 	text-align: center;
 	line-height: 1;
 	font-weight: bolder;
+	text-shadow: 4px 1px 0 #dfdfdf;
 }
 
 #home-categories-list {
 	display: grid;
 	grid-template-columns: 1fr 1fr;
-	gap: .5rem;
-	margin-top: .5rem;
+	gap: 1.5rem;
+	margin-top: 1.5rem;
 }
 #home-categories-list section.home-category > a[href] {
 	display: block;
+	position: relative;
 	height: 100px;
 	border: 1px solid #dfdfdf;
 	padding: 1rem;
-	padding-left: calc(140px + 1rem);
+	padding-left: calc(130px + 1rem);
 	background-color: #fff;
 	background-repeat: no-repeat;
 	background-position: center left;
@@ -472,12 +485,25 @@ hr.vertical {
 	color: #444;
 	text-decoration: none;
 }
+#home-categories-list section.home-category img {
+	position: absolute;
+	max-width: 130px;
+	max-height: calc(100% + 1rem);
+	left: 0;
+	bottom: 0;
+	filter: drop-shadow(6px 0 0 var(--accent));
+}
 #home-categories-list section.home-category > a[href]:is(:hover, :focus, :focus-within) {
 	background-color: #f2f2f2;
 	background-color: var(--accent, #f2f2f2);
 }
 #home-categories-list section.home-category h2 {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	height: 100%;
 	margin: 0;
+	text-wrap: balance;
 }
 
 #monument-location-map {
@@ -569,6 +595,7 @@ hr.vertical {
 	border: 1px solid #dfdfdf;
 	border-radius: 4px;
 	background-color: #fff;
+	white-space: pre-wrap;
 }
 
 .leaflet-container .leaflet-popup-content-wrapper {

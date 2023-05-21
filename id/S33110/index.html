@@ -8,7 +8,7 @@
 	<link rel="preconnect" href="https://cdn.avl.la">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="referrer" content="no-referrer">
-	<link rel="stylesheet" href="/assets/style.css?v=05-21">
+	<link rel="stylesheet" href="/assets/style.css?v=05-21b">
 	<script src="/assets/leaflet/leaflet.min.1.9.3.js"></script>
 </head>
 <body>
@@ -174,7 +174,7 @@
 <section>
 	<h1>Cristo Redentor</h1>
 
-	<div>
+	
 <figure>
 	<a href="photo.jpg" data-llb-src="href">
 		<img src="thumb.jpg">
@@ -190,7 +190,7 @@
 	</figcaption>
 </figure>
 <section class="description">
-	
+	<!-- <p></p> -->
 </section>
 <section class="gallery">
 	<h2>Galeria</h2>
@@ -207,29 +207,10 @@
 		</figcaption>
 	</figure>
 </section>
-<section class="more">
-<!-- 	<h2>Leia mais</h2>
-	<ul>
-		<li>
-		</li>
-	</ul> -->
-</section></div>
-
-		<section class="location">
-			<h2>Localização</h2>
-			<p>
-
-				<strong>Localização:</strong>
-Morro do Corcovado, Parque Nacional da Tijuca
-<br>
-
-				<strong>Coordenadas:</strong> -22.9519, -43.2105
-			</p>
-			<div id="monument-location-map"></div>
-			<script>
+<section class="location"><h2>Localização</h2><p><strong>Localização:</strong> Morro do Corcovado, Parque Nacional da Tijuca</p><p><strong>Coordenadas:</strong> -22.9519, -43.2105</p><div id="monument-location-map"></div><script>
 const bounds = new L.LatLngBounds(
-	new L.LatLng(-22.9519 - 0.025, -43.2105 - 0.05),
-	new L.LatLng(-22.9519 + 0.025, -43.2105 + 0.05)
+	new L.LatLng(-22.976899999999997, -43.2605),
+	new L.LatLng(-22.9269, -43.160500000000006)
 );
 const map = L.map("monument-location-map", {
 	center: bounds.getCenter(),
@@ -244,7 +225,7 @@ L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
 }).addTo(map);
 L.marker([-22.9519, -43.2105], {
 	icon: L.icon({
-		iconUrl: `/assets/leaflet/images/phosphor-marker--escultura.svg`,
+		iconUrl: "/assets/leaflet/images/phosphor-marker--escultura.svg",
 		iconSize: [64, 64],
 		iconAnchor: [32, 64],
 		shadowUrl: "/assets/leaflet/images/marker-shadow.png",
@@ -252,9 +233,10 @@ L.marker([-22.9519, -43.2105], {
 		shadowAnchor: [13, 44],
 	})
 }).addTo(map);
-			</script>
-		</section>
-
+</script></section>
+<section class="more">
+<!-- 	<h2>Leia mais</h2> -->
+</section>
 </section>
 <aside>
 	<em class="display-identifier">S33110</em>
@@ -285,7 +267,7 @@ L.marker([-22.9519, -43.2105], {
 			<dl>
 
 				<dt>Autores</dt>
-				<dd>Heitor da Silva Costa<br>Paul Landowski<br>Albert Caquot<br>Gheorghe Leonida</dd>
+				<dd><ul><li>Heitor da Silva Costa</li><li>Paul Landowski</li><li>Albert Caquot</li><li>Gheorghe Leonida</li></ul></dd>
 
 
 				<dt>Inauguração</dt>
@@ -369,7 +351,7 @@ L.marker([-22.9519, -43.2105], {
 					Feito com ♥︎&#xFE0E;<!--&#xFE0E;[Ref] stackoverflow.com/a/38452396/4824627-->
 					por <a href="https://avl.la/">Matheus Avellar</a><br>
 					Rio de Janeiro, RJ, Brasil
-				</p>
+				</p><br>
 				<p>
 					Sugestões, reclamações ou comentários?<br>
 					contato<svg class="heart-icon" viewBox="0 0 24 24" aria-label="@">

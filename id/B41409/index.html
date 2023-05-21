@@ -8,7 +8,7 @@
 	<link rel="preconnect" href="https://cdn.avl.la">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="referrer" content="no-referrer">
-	<link rel="stylesheet" href="/assets/style.css?v=05-21">
+	<link rel="stylesheet" href="/assets/style.css?v=05-21b">
 	<script src="/assets/leaflet/leaflet.min.1.9.3.js"></script>
 </head>
 <body>
@@ -174,7 +174,7 @@
 <section>
 	<h1>Busto de Rubens Paiva</h1>
 
-	<div>
+	
 <figure>
 	<a href="photo.jpg" data-llb-src="href">
 		<img src="thumb.jpg">
@@ -186,9 +186,7 @@
 	</figcaption>
 </figure>
 <section class="description">
-	<p>
-		
-	</p>
+	<!-- <p></p> -->
 </section>
 <section class="gallery">
 	<h2>Galeria</h2>
@@ -233,33 +231,10 @@ Sindicato dos Engenheiros no Estado do Rio de Janeiro
 Federal Interestadual de Sindicato de Engenheiros
 Apoio: Prefeitura Municipal da Cidade do Rio de Janeiro</pre>
 </section>
-<section class="more">
-	<h2>Leia mais</h2>
-	<ol>
-		<li>
-			Rafaela Marinho (12 de setembro de 2014). <a href="https://oglobo.globo.com/politica/comissao-da-verdade/busto-de-rubens-paiva-inaugurado-em-frente-ao-antigo-doi-codi-13923550">
-			Busto de Rubens Paiva é inaugurado em frente ao antigo DOI-Codi</a>.
-			<i>O Globo</i>.
-		</li>
-	</ol>
-</section>
-</div>
-
-		<section class="location">
-			<h2>Localização</h2>
-			<p>
-
-				<strong>Localização:</strong>
-Praça Lamartine Babo, Tijuca
-<br>
-
-				<strong>Coordenadas:</strong> -22.9243, -43.2367
-			</p>
-			<div id="monument-location-map"></div>
-			<script>
+<section class="location"><h2>Localização</h2><p><strong>Localização:</strong> Praça Lamartine Babo, Tijuca</p><p><strong>Coordenadas:</strong> -22.9243, -43.2367</p><div id="monument-location-map"></div><script>
 const bounds = new L.LatLngBounds(
-	new L.LatLng(-22.9243 - 0.025, -43.2367 - 0.05),
-	new L.LatLng(-22.9243 + 0.025, -43.2367 + 0.05)
+	new L.LatLng(-22.949299999999997, -43.286699999999996),
+	new L.LatLng(-22.8993, -43.1867)
 );
 const map = L.map("monument-location-map", {
 	center: bounds.getCenter(),
@@ -274,7 +249,7 @@ L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
 }).addTo(map);
 L.marker([-22.9243, -43.2367], {
 	icon: L.icon({
-		iconUrl: `/assets/leaflet/images/phosphor-marker--busto.svg`,
+		iconUrl: "/assets/leaflet/images/phosphor-marker--busto.svg",
 		iconSize: [64, 64],
 		iconAnchor: [32, 64],
 		shadowUrl: "/assets/leaflet/images/marker-shadow.png",
@@ -282,8 +257,17 @@ L.marker([-22.9243, -43.2367], {
 		shadowAnchor: [13, 44],
 	})
 }).addTo(map);
-			</script>
-		</section>
+</script></section>
+<section class="more">
+	<h2>Leia mais</h2>
+	<ol>
+		<li>
+			Rafaela Marinho (12 de setembro de 2014). <a href="https://oglobo.globo.com/politica/comissao-da-verdade/busto-de-rubens-paiva-inaugurado-em-frente-ao-antigo-doi-codi-13923550">
+			Busto de Rubens Paiva é inaugurado em frente ao antigo DOI-Codi</a>.
+			<i>O Globo</i>.
+		</li>
+	</ol>
+</section>
 
 </section>
 <aside>
@@ -315,7 +299,7 @@ L.marker([-22.9243, -43.2367], {
 			<dl>
 
 				<dt>Autores</dt>
-				<dd>Edgar Duvivier</dd>
+				<dd><ul><li>Edgar Duvivier</li></ul></dd>
 
 
 				<dt>Inauguração</dt>
@@ -358,7 +342,7 @@ L.marker([-22.9243, -43.2367], {
 					Feito com ♥︎&#xFE0E;<!--&#xFE0E;[Ref] stackoverflow.com/a/38452396/4824627-->
 					por <a href="https://avl.la/">Matheus Avellar</a><br>
 					Rio de Janeiro, RJ, Brasil
-				</p>
+				</p><br>
 				<p>
 					Sugestões, reclamações ou comentários?<br>
 					contato<svg class="heart-icon" viewBox="0 0 24 24" aria-label="@">
