@@ -180,9 +180,6 @@ main.monument {
 	grid-template-columns: 1fr auto;
 	gap: .75rem;
 }
-main.monument figure img {
-	max-width: min(30vw, 250px);;
-}
 main p {
 	margin: 0;
 	font-size: 1rem;
@@ -360,8 +357,14 @@ main section.gallery > figure {
 	float: none;
 	vertical-align: top;
 }
-main section.gallery img {
+main section.gallery > figure.sideways {
+	display: flex;
+	flex-direction: row;
+	gap: .5rem;
+}
+main section figure img {
 	max-height: 250px;
+	max-width: min(30vw, 250px);
 }
 
 main section.maxwidth {
@@ -471,11 +474,17 @@ hr.vertical {
 	gap: 1.5rem;
 	margin-top: 1.5rem;
 }
+#home-categories-list section.home-category {
+	border: 4px solid #dfdfdf;
+	border: 4px solid var(--accent, #dfdfdf);
+}
+#home-categories-list section.home-category:is(:hover, :focus, :focus-within) {
+	border-color: #444;
+}
 #home-categories-list section.home-category > a[href] {
 	display: block;
 	position: relative;
 	height: 100px;
-	border: 1px solid #dfdfdf;
 	padding: 1rem;
 	padding-left: calc(130px + 1rem);
 	background-color: #fff;
@@ -484,6 +493,8 @@ hr.vertical {
 	background-size: 140px;
 	color: #444;
 	text-decoration: none;
+	text-shadow: 3px 3px 0 #dfdfdf;
+	outline: 0;
 }
 #home-categories-list section.home-category img {
 	position: absolute;
@@ -496,6 +507,7 @@ hr.vertical {
 #home-categories-list section.home-category > a[href]:is(:hover, :focus, :focus-within) {
 	background-color: #f2f2f2;
 	background-color: var(--accent, #f2f2f2);
+	text-shadow: 3px 3px #f2f2f2;
 }
 #home-categories-list section.home-category h2 {
 	display: flex;
@@ -503,6 +515,7 @@ hr.vertical {
 	justify-content: center;
 	height: 100%;
 	margin: 0;
+	line-height: 1;
 	text-wrap: balance;
 }
 
@@ -690,7 +703,7 @@ h2 {
 		justify-content: space-between;
 	}
 	header > nav > details > ul {
-		right: 0;
+		right: 4px;
 	}
 	#home-categories-list {
 		display: grid;
