@@ -185,7 +185,7 @@ main p {
 	font-size: 1rem;
 	line-height: 1.25;
 }
-main p + p {
+main p:not(:empty) + p {
 	margin-top: .5rem;
 }
 main li+li {
@@ -318,6 +318,7 @@ aside abbr {
 }
 
 main figure {
+	position: relative;
 	float: left;
 	border: 1px solid #d8d8d8;
 	border-radius: 4px;
@@ -326,6 +327,7 @@ main figure {
 	width: min-content;
 	box-shadow: 2px 2px 5px #e5e5e5;
 	background-color: #fff;
+	z-index: 2;
 }
 figcaption .credits {
 	font-size: .75rem;
@@ -358,9 +360,10 @@ main section.gallery > figure {
 	vertical-align: top;
 }
 main section.gallery > figure.sideways {
-	display: flex;
+	display: inline-flex;
 	flex-direction: row;
 	gap: .5rem;
+	min-width: 14rem;
 }
 main section figure img {
 	max-height: 250px;

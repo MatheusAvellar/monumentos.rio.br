@@ -65,3 +65,7 @@ https://memoria.bn.br/DocReader/DocReader.aspx?bib=110523_06&pesq=%22chafariz%22
 chafariz na praça santos dumont
 set/1965
 https://memoria.bn.br/DocReader/DocReader.aspx?bib=110523_06&pesq=%22chafariz%22%20%22laranjeiras%22&pasta=ano%20196&hf=memoria.bn.br&pagfis=46977
+
+busto de tomaz delfino dos santos
+https://memoria.bn.br/DocReader/DocReader.aspx?bib=110523_05&pesq=%22Movimento%20Libertador%20da%20Terra%20Carioca%22&pasta=ano%20195&hf=memoria.bn.br&pagfis=31668
+https://memoria.bn.br/DocReader/DocReader.aspx?bib=110523_05&pesq=%22Movimento%20Libertador%20da%20Terra%20Carioca%22&pasta=ano%20195&hf=memoria.bn.br&pagfis=31801
