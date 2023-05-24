@@ -477,27 +477,29 @@ hr.vertical {
 	gap: 1.5rem;
 	margin-top: 1.5rem;
 }
-#home-categories-list section.home-category {
-	border: 4px solid #dfdfdf;
-	border: 4px solid var(--accent, #dfdfdf);
-}
-#home-categories-list section.home-category:is(:hover, :focus, :focus-within) {
-	border-color: #444;
-}
 #home-categories-list section.home-category > a[href] {
 	display: block;
 	position: relative;
-	height: 100px;
+	height: 108px;
 	padding: 1rem;
 	padding-left: calc(130px + 1rem);
 	background-color: #fff;
-	background-repeat: no-repeat;
-	background-position: center left;
-	background-size: 140px;
 	color: #444;
 	text-decoration: none;
-	text-shadow: 3px 3px 0 #dfdfdf;
 	outline: 0;
+	border: 4px solid #dfdfdf;
+	border: 4px solid var(--accent, #dfdfdf);
+}
+#home-categories-list section.home-category > a[href]:is(:hover, :focus, :focus-within) {
+	border-color: #444;
+	background-color: #dfdfdf;
+	background-color: var(--accent, #dfdfdf);
+	background-size: 10px;
+	background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 6 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='%23fff' fill-opacity='0.5' d='M5 0h1L0 6V5zM6 5v1H5z'/%3E%3C/svg%3E");
+	animation: scroll 1s linear infinite;
+}
+@keyframes scroll {
+	to { background-position: -10px -10px; }
 }
 #home-categories-list section.home-category img {
 	position: absolute;
@@ -505,12 +507,8 @@ hr.vertical {
 	max-height: calc(100% + 1rem);
 	left: 0;
 	bottom: 0;
-	filter: drop-shadow(6px 0 0 var(--accent));
-}
-#home-categories-list section.home-category > a[href]:is(:hover, :focus, :focus-within) {
-	background-color: #f2f2f2;
-	background-color: var(--accent, #f2f2f2);
-	text-shadow: 3px 3px #f2f2f2;
+	filter: drop-shadow(6px 0 0 #dfdfdf);
+	filter: drop-shadow(6px 0 0 var(--accent, #dfdfdf));
 }
 #home-categories-list section.home-category h2 {
 	display: flex;
@@ -520,6 +518,28 @@ hr.vertical {
 	margin: 0;
 	line-height: 1;
 	text-wrap: balance;
+	text-shadow: 3px 3px #dfdfdf;
+}
+#home-categories-list section.home-category > a[href]:is(:hover, :focus, :focus-within) h2 {
+	text-shadow: 3px 3px #fff;
+}
+#home-categories-list section.home-category .home-category-count {
+	position: absolute;
+	top: -.75rem;
+	right: -.75rem;
+	min-width: 3.55ch;
+	padding: .5rem;
+	background-color: #dfdfdf;
+	background-color: var(--accent, #dfdfdf);
+	text-align: center;
+	font-weight: 700;
+	font-size: 75%;
+	line-height: 1;
+	border-radius: 5rem;
+}
+#home-categories-list section.home-category > a[href]:is(:hover, :focus, :focus-within) .home-category-count {
+	color: #fff;
+	background-color: #444;
 }
 
 #monument-location-map {

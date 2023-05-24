@@ -7,6 +7,11 @@ const monument_count = monuments.length;
 
 const distinct_bairros = new Set();
 monuments.forEach(m => { distinct_bairros.add(m.data.bairro); });
+
+function countCategory(cat) {
+	return monuments.reduce((acc, file) => acc + (file.data.categoria === cat), 0);
+}
+%>
 %>
 <main>
 <section class="maxwidth indent-children">
@@ -41,47 +46,61 @@ monuments.forEach(m => { distinct_bairros.add(m.data.bairro); });
 			</span>
 		</div>
 	</div>
-	<br><hr><br>
-	<p>
-		Selecione "<strong>Inventário</strong>" no menu acima para ver a lista
-		completa de monumentos já catalogados. Ou, então, escolha uma das categorias
-		usadas para classificar cada monumento. Elas são as seguintes:
-	</p>
+	<br><hr>
 	<section id="home-categories-list">
+		<p style="text-indent:1rem">
+			Selecione <strong>Inventário</strong> para ver a lista completa de
+			monumentos já catalogados, ordenada alfabeticamente. Ou, então, escolha
+			uma das categorias abaixo, usadas para classificar cada monumento.
+		</p>
+		<section class="home-category">
+			<a href="/inventario">
+				<img src="/assets/home-categories/inventario.png">
+				<h2>Inventário</h2>
+				<span title="Número de monumentos no total" class="home-category-count"><%= monument_count %></span>
+			</a>
+		</section>
 		<section class="home-category <%= catToClass("obra") %>">
 			<a href="<%= catToHref("obra") %>">
 				<img src="/assets/home-categories/obra.png">
 				<h2>Obras públicas</h2>
+				<span title="Número de monumentos nessa categoria" class="home-category-count"><%= countCategory("obra") %></span>
 			</a>
 		</section>
 		<section class="home-category <%= catToClass("busto") %>">
 			<a href="<%= catToHref("busto") %>">
 				<img src="/assets/home-categories/busto.png">
 				<h2>Bustos e efígies</h2>
+				<span title="Número de monumentos nessa categoria" class="home-category-count"><%= countCategory("busto") %></span>
 			</a>
 		</section>
 		<section class="home-category <%= catToClass("chafariz") %>">
 			<a href="<%= catToHref("chafariz") %>">
+				<!-- Trocar por https://unsplash.com/photos/Ym1bPWvPA4U ? -->
 				<img src="/assets/home-categories/chafariz.png">
 				<h2>Chafarizes e fontes</h2>
+				<span title="Número de monumentos nessa categoria" class="home-category-count"><%= countCategory("chafariz") %></span>
 			</a>
 		</section>
 		<section class="home-category <%= catToClass("estátua") %>">
 			<a href="<%= catToHref("estátua") %>">
 				<img src="/assets/home-categories/estatua.png">
 				<h2>Estátuas</h2>
+				<span title="Número de monumentos nessa categoria" class="home-category-count"><%= countCategory("estátua") %></span>
 			</a>
 		</section>
 		<section class="home-category <%= catToClass("marco") %>">
 			<a href="<%= catToHref("marco") %>">
 				<img src="/assets/home-categories/marco.png">
 				<h2>Marcos</h2>
+				<span title="Número de monumentos nessa categoria" class="home-category-count"><%= countCategory("marco") %></span>
 			</a>
 		</section>
 		<section class="home-category <%= catToClass("escultura") %>">
 			<a href="<%= catToHref("escultura") %>">
 				<img src="/assets/home-categories/escultura.png">
 				<h2>Esculturas</h2>
+				<span title="Número de monumentos nessa categoria" class="home-category-count"><%= countCategory("escultura") %></span>
 			</a>
 		</section>
 	</section>
