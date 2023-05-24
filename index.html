@@ -8,7 +8,7 @@
 	<link rel="preconnect" href="https://cdn.avl.la">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="referrer" content="no-referrer">
-	<link rel="stylesheet" href="/assets/style.css?v=05-22">
+	<link rel="stylesheet" href="/assets/style.css?v=05-24">
 	<script src="/assets/leaflet/leaflet.min.1.9.3.js"></script>
 </head>
 <body>
@@ -169,6 +169,7 @@
 		</nav>
 	</header>
 	
+
 <main>
 <section class="maxwidth indent-children">
 	<p>
@@ -202,47 +203,61 @@
 			</span>
 		</div>
 	</div>
-	<br><hr><br>
-	<p>
-		Selecione "<strong>Inventário</strong>" no menu acima para ver a lista
-		completa de monumentos já catalogados. Ou, então, escolha uma das categorias
-		usadas para classificar cada monumento. Elas são as seguintes:
-	</p>
+	<br><hr>
 	<section id="home-categories-list">
+		<p style="text-indent:1rem">
+			Selecione <strong>Inventário</strong> para ver a lista completa de
+			monumentos já catalogados, ordenada alfabeticamente. Ou, então, escolha
+			uma das categorias abaixo, usadas para classificar cada monumento.
+		</p>
+		<section class="home-category">
+			<a href="/inventario">
+				<img src="/assets/home-categories/inventario.png">
+				<h2>Inventário</h2>
+				<span title="Número de monumentos no total" class="home-category-count">41</span>
+			</a>
+		</section>
 		<section class="home-category cat-obra">
 			<a href="/obras">
 				<img src="/assets/home-categories/obra.png">
 				<h2>Obras públicas</h2>
+				<span title="Número de monumentos nessa categoria" class="home-category-count">6</span>
 			</a>
 		</section>
 		<section class="home-category cat-busto">
 			<a href="/bustos">
 				<img src="/assets/home-categories/busto.png">
 				<h2>Bustos e efígies</h2>
+				<span title="Número de monumentos nessa categoria" class="home-category-count">12</span>
 			</a>
 		</section>
 		<section class="home-category cat-chafariz">
 			<a href="/chafarizes">
+				<!-- Trocar por https://unsplash.com/photos/Ym1bPWvPA4U ? -->
 				<img src="/assets/home-categories/chafariz.png">
 				<h2>Chafarizes e fontes</h2>
+				<span title="Número de monumentos nessa categoria" class="home-category-count">6</span>
 			</a>
 		</section>
 		<section class="home-category cat-estatua">
 			<a href="/estatuas">
 				<img src="/assets/home-categories/estatua.png">
 				<h2>Estátuas</h2>
+				<span title="Número de monumentos nessa categoria" class="home-category-count">5</span>
 			</a>
 		</section>
 		<section class="home-category cat-marco">
 			<a href="/marcos">
 				<img src="/assets/home-categories/marco.png">
 				<h2>Marcos</h2>
+				<span title="Número de monumentos nessa categoria" class="home-category-count">6</span>
 			</a>
 		</section>
 		<section class="home-category cat-escultura">
 			<a href="/esculturas">
 				<img src="/assets/home-categories/escultura.png">
 				<h2>Esculturas</h2>
+				<span title="Número de monumentos nessa categoria" class="home-category-count">6</span>
 			</a>
 		</section>
 	</section>
