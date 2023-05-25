@@ -74,6 +74,7 @@ function countCategory(cat) {
 		</section>
 	</section>
 	<div id="monument-location-map" class="big"></div>
+	<script src="/assets/leaflet/leaflet.min.1.9.3.js"></script>
 	<script>
 function toggleMarkers(cat, state) {
 	const markers = [...document.querySelectorAll(`.leaflet-container img.leaflet-marker-icon[src$="${cat}.svg"]`)];
