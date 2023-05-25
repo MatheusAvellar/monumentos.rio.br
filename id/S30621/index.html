@@ -9,7 +9,6 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="referrer" content="no-referrer">
 	<link rel="stylesheet" href="/assets/style.css?v=05-24">
-	<script src="/assets/leaflet/leaflet.min.1.9.3.js"></script>
 </head>
 <body>
 	<div hidden>
@@ -244,7 +243,7 @@
 	</p>
 	<pre class="inscription-text">Protecção</pre>
 </section>
-<section class="location"><h2>Localização</h2><p><strong>Localização:</strong> Jardim de Alah, Leblon</p><p><strong>Coordenadas:</strong> -22.9841, -43.2152</p><div id="monument-location-map"></div><script>
+<section class="location"><h2>Localização</h2><p><strong>Localização:</strong> Jardim de Alah, Leblon</p><p><strong>Coordenadas:</strong> -22.9841, -43.2152</p><div id="monument-location-map"></div><script src="/assets/leaflet/leaflet.min.1.9.3.js"></script><script>
 const bounds = new L.LatLngBounds(
 	new L.LatLng(-23.0091, -43.2652),
 	new L.LatLng(-22.959100000000003, -43.165200000000006)
@@ -455,7 +454,7 @@ L.marker([-22.9841, -43.2152], {
 	<link rel="stylesheet" href="https://cdn.avl.la/font/inter.css">
 	<!-- LiteLightbox -->
 	<link href="/assets/litelightbox.min.css" rel="stylesheet" type="text/css">
-	<script src="/assets/litelightbox.min.js"></script>
+	<script src="/assets/litelightbox.min.js?v=05-24"></script>
 	<!-- Leaflet Maps -->
 	<link href="/assets/leaflet/leaflet.css" rel="stylesheet" type="text/css">
 	<script src="/assets/details.js?v=05-21"></script>

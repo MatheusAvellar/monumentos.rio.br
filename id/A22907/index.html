@@ -9,7 +9,6 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="referrer" content="no-referrer">
 	<link rel="stylesheet" href="/assets/style.css?v=05-24">
-	<script src="/assets/leaflet/leaflet.min.1.9.3.js"></script>
 </head>
 <body>
 	<div hidden>
@@ -249,7 +248,7 @@
 		</figcaption>
 	</figure>
 </section>
-<section class="location"><h2>Localização</h2><p><strong>Localização:</strong> Ilha Rasa, Ipanema</p><p><strong>Coordenadas:</strong> -23.0639, -43.1459</p><div id="monument-location-map"></div><script>
+<section class="location"><h2>Localização</h2><p><strong>Localização:</strong> Ilha Rasa, Ipanema</p><p><strong>Coordenadas:</strong> -23.0639, -43.1459</p><div id="monument-location-map"></div><script src="/assets/leaflet/leaflet.min.1.9.3.js"></script><script>
 const bounds = new L.LatLngBounds(
 	new L.LatLng(-23.0889, -43.195899999999995),
 	new L.LatLng(-23.0389, -43.0959)
@@ -473,7 +472,7 @@ L.marker([-23.0639, -43.1459], {
 	<link rel="stylesheet" href="https://cdn.avl.la/font/inter.css">
 	<!-- LiteLightbox -->
 	<link href="/assets/litelightbox.min.css" rel="stylesheet" type="text/css">
-	<script src="/assets/litelightbox.min.js"></script>
+	<script src="/assets/litelightbox.min.js?v=05-24"></script>
 	<!-- Leaflet Maps -->
 	<link href="/assets/leaflet/leaflet.css" rel="stylesheet" type="text/css">
 	<script src="/assets/details.js?v=05-21"></script>

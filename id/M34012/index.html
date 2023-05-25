@@ -9,7 +9,6 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="referrer" content="no-referrer">
 	<link rel="stylesheet" href="/assets/style.css?v=05-24">
-	<script src="/assets/leaflet/leaflet.min.1.9.3.js"></script>
 </head>
 <body>
 	<div hidden>
@@ -228,7 +227,7 @@ Engº Edison Passos
 
         Fundição Americana – Rio</pre>
 </section>
-<section class="location"><h2>Localização</h2><p><strong>Localização:</strong> Alto da Boa Vista</p><p><strong>Coordenadas:</strong> -22.9517, -43.2602</p><div id="monument-location-map"></div><script>
+<section class="location"><h2>Localização</h2><p><strong>Localização:</strong> Alto da Boa Vista</p><p><strong>Coordenadas:</strong> -22.9517, -43.2602</p><div id="monument-location-map"></div><script src="/assets/leaflet/leaflet.min.1.9.3.js"></script><script>
 const bounds = new L.LatLngBounds(
 	new L.LatLng(-22.976699999999997, -43.310199999999995),
 	new L.LatLng(-22.9267, -43.2102)
@@ -446,7 +445,7 @@ L.marker([-22.9517, -43.2602], {
 	<link rel="stylesheet" href="https://cdn.avl.la/font/inter.css">
 	<!-- LiteLightbox -->
 	<link href="/assets/litelightbox.min.css" rel="stylesheet" type="text/css">
-	<script src="/assets/litelightbox.min.js"></script>
+	<script src="/assets/litelightbox.min.js?v=05-24"></script>
 	<!-- Leaflet Maps -->
 	<link href="/assets/leaflet/leaflet.css" rel="stylesheet" type="text/css">
 	<script src="/assets/details.js?v=05-21"></script>

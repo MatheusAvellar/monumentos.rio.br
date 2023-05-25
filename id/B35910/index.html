@@ -9,7 +9,6 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="referrer" content="no-referrer">
 	<link rel="stylesheet" href="/assets/style.css?v=05-24">
-	<script src="/assets/leaflet/leaflet.min.1.9.3.js"></script>
 </head>
 <body>
 	<div hidden>
@@ -263,7 +262,7 @@ das multidões
     e
 Cidade</pre>
 </section>
-<section class="location"><h2>Localização</h2><p><strong>Localização:</strong> Praça Orlando Silva, Cachambi</p><p><strong>Coordenadas:</strong> -22.8911, -43.2740</p><div id="monument-location-map"></div><script>
+<section class="location"><h2>Localização</h2><p><strong>Localização:</strong> Praça Orlando Silva, Cachambi</p><p><strong>Coordenadas:</strong> -22.8911, -43.2740</p><div id="monument-location-map"></div><script src="/assets/leaflet/leaflet.min.1.9.3.js"></script><script>
 const bounds = new L.LatLngBounds(
 	new L.LatLng(-22.9161, -43.324),
 	new L.LatLng(-22.866100000000003, -43.224000000000004)
@@ -481,7 +480,7 @@ L.marker([-22.8911, -43.274], {
 	<link rel="stylesheet" href="https://cdn.avl.la/font/inter.css">
 	<!-- LiteLightbox -->
 	<link href="/assets/litelightbox.min.css" rel="stylesheet" type="text/css">
-	<script src="/assets/litelightbox.min.js"></script>
+	<script src="/assets/litelightbox.min.js?v=05-24"></script>
 	<!-- Leaflet Maps -->
 	<link href="/assets/leaflet/leaflet.css" rel="stylesheet" type="text/css">
 	<script src="/assets/details.js?v=05-21"></script>
