@@ -560,6 +560,9 @@ hr.vertical {
 	gap: 1rem;
 	margin-top: 1rem;
 }
+.related .card-list {
+	grid-template-columns: 1fr 1fr;
+}
 .card {
 	display: grid;
 	grid-template-columns: 150px auto;
