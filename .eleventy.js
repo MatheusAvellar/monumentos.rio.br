@@ -83,7 +83,11 @@ module.exports = function(eleventyConfig) {
 	getYearFromDate = (date, circa) => {
 		const d = dateify(date);
 		if(!d) return "S.d.";
-		return (circa ? "c." : "") + d.getUTCFullYear();
+		// Se é só ano e aproximado, então "c.XXXX"
+		if(typeof date === "number" && circa)
+			return "c." + d.getUTCFullYear();
+		// Caso contrário, o ano é conhecido, então só "XXXX"
+		return d.getUTCFullYear();
 	};
 
 	/* Conversão de categorias (e.g. "estátua")

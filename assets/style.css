@@ -555,21 +555,19 @@ hr.vertical {
 }
 
 .card-list {
-	display: flex;
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
 	gap: 1rem;
-	flex-direction: row;
-	flex-wrap: wrap;
 	margin-top: 1rem;
 }
-
 .card {
 	display: grid;
-	grid-template-columns: 150px 150px;
+	grid-template-columns: 150px auto;
 	gap: .75rem;
 	background-color: #fff;
 	border: 1px solid #dfdfdf;
 	border-radius: 4px;
-	width: max-content;
+	width: 100%;
 	overflow: hidden;
 }
 .card-preview {
@@ -592,7 +590,6 @@ hr.vertical {
 	border-top: 1px solid #dfdfdf;
 	font-size: 75%;
 	color: #444;
-	width: calc(150px - 1rem);/* FIXME? */
 }
 .card-details > .neighborhood {
 	display: inline-block;
@@ -667,8 +664,10 @@ h2 {
 }
 #list-toc > div {
 	display: inline-block;
-	margin-left: .5rem;
 	font-size: 75%;
+	margin-left: .5rem;
+	max-height: min(14rem, 33vh);
+	overflow: auto;
 }
 #list-toc > div > * {
 	display: inline-block;
@@ -718,6 +717,11 @@ h2 {
 	}
 }
 
+@media screen and (max-width: 1050px) {
+	.card-list {
+		grid-template-columns: 1fr 1fr;
+	}
+}
 @media screen and (max-width: 700px) {
 	.mobile-hide {
 		display: none !important;
@@ -730,6 +734,9 @@ h2 {
 	}
 	#home-categories-list {
 		display: grid;
+		grid-template-columns: 1fr;
+	}
+	.card-list {
 		grid-template-columns: 1fr;
 	}
 }

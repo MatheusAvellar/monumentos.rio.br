@@ -8,7 +8,7 @@ eleventyComputed: {
 <%_ const monuments = collections.all.filter(file =>
 	file.filePathStem.startsWith("/id/") && file.data.categoria === tag_name
 );
-monuments.sort((a, b) => a.filePathStem.slice(4).localeCompare(b.filePathStem.slice(4)));
+monuments.sort((a, b) => a.data.name.localeCompare(b.data.name));
 const monument_count = monuments.length;
 %>
 
