@@ -2,7 +2,7 @@
 <html lang="pt-br">
 <head>
 	<meta charset="utf-8">
-	<title>Marcos — Monumentos Rio</title>
+	<title>Efígie de Aldir Blanc — Monumentos Rio</title>
 	<meta content="Matheus Avellar" name="author">
 	<!-- <meta name="description" content=""> -->
 	<link rel="preconnect" href="https://cdn.avl.la">
@@ -169,155 +169,187 @@
 	</header>
 	
 
+<main class="monument">
+<section>
+	<h1>Efígie de Aldir Blanc</h1>
 
-<main>
-	<h1>Marcos</h1>
-	<section class="indent-children maxwidth">
-		<p>
+	
+<figure>
+	<a href="photo.jpg" data-llb-src="href">
+		<img src="thumb.jpg">
+	</a>
+	<figcaption>
+		<p class="credits">
+			Foto: Matheus Avellar (5 de maio de 2023)
+		</p>
+	</figcaption>
+</figure>
+<section class="description">
+	<p>
+		Homenagem ao letrista e compositor Aldir Blanc (02/09/1946–04/05/2020),
+		inaugurada no 3º aniversário de seu falecimento.
+	</p>
+</section>
+<section class="gallery">
+	<h2>Galeria</h2>
+	<figure>
+		<a href="gallery-2023-full.jpg" data-llb-src="href">
+			<img src="gallery-2023.jpg">
+		</a>
+		<figcaption>
+			<p class="credits">
+				Foto: Matheus Avellar (5 de maio de 2023)
+			</p>
+		</figcaption>
+	</figure>
+</section>
+<section class="inscription">
+	<h2>Inscrição</h2>
+	<p>
+		Há uma placa no monumento, contendo o seguinte texto:
+	</p>
+	<pre class="inscription-text">
+ALDIR BLANC
+
+1946 - 2020
+"Eu gosto quando alvorece, porque parece que está anoitecendo
+E gosto quando anoitece, que só vendo, porque penso que alvorece"
+
+Aldir passou por aqui. Morou logo ali. Bebeu num bar que a gente
+vê daqui e seguiu um bloco que dobrou aquela esquina. Agora, olha ele aí:
+depois de alvorecer e anoitecer tantas ruas, depois de cantar sonhos
+nas avenidas, é nome de logradouro carioca.
+Cronista e poeta maior das calçadas, crises, declives e acidentes da cidade,
+árvore generosa que a música brasileira plantou no Rio e dela colheu
+centenas de canções, dezenas de parceiros, milhares de amigos e admiradores.
+Entre o Estácio, Vila Isabel, a Tijuca e a Muda correram, sempre margeando
+o Rio Maracanã, as veias vigorosas de Aldir Blanc.
+
+"Há quem não se importe, mas a Zona Norte é feito cigana, lendo a minha sorte"
+
+A infância da Maia de Lacerda pongou no bonde e, de sandálias de dedo,
+desceu na Rua dos Artistas, onde calçou sapatos. Morou numa casa com quintal
+cheio de árvores frutíferas – pertinho da flauta do mestre Benedito Lacerda.
+O quintal servia para reunir amigos e parentes em torno das panelas e dos
+pratos, do radinho de pilha contando o jogo do Vasco. A poesia desabrochando
+ali, à sombra das goiabeiras, laranjeiras, bananeiras, mangueiras, dos pés
+de abiu, sapoti, limões-bravos.
+Tudo isto muito antes de Aldir Blanc se tornar um dos maiores compositores da
+MPB, publicar crônicas imortais em jornais e revistas, em livros que ilustram
+estantes com o melhor da literatura carioca, ganhar tantas batalhas pela
+valorização e dignidade dos artistas e perder a guerra para um vírus indigno.
+Parodiando outro grande poeta, os vírus e os indignos passarão;
+Aldir passarinho, voando livre em sua Alameda.
+(Os versos transcritos foram musicados por João Bosco e Moacyr Luz)
+
+Luís Pimentel
+Jornalista e Escritor
+
+Mello Menezes
+Conjunto Escultórico e Escultura
+
+Eduardo Paes
+Prefeito da Cidade do Rio de Janeiro</pre>
+</section>
+<section class="location"><h2>Localização</h2><p><strong>Localização:</strong> Jardim Aldir Blanc, Tijuca</p><p><strong>Coordenadas:</strong> -22.9360, -43.2458</p><div id="monument-location-map"></div><script src="/assets/leaflet/leaflet.min.1.9.3.js"></script><script>
+const bounds = new L.LatLngBounds(
+	new L.LatLng(-22.961, -43.2958),
+	new L.LatLng(-22.911, -43.195800000000006)
+);
+const map = L.map("monument-location-map", {
+	center: bounds.getCenter(),
+	zoom: 17,
+	maxBounds: bounds,
+	maxBoundsViscosity: .75
+})
+L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
+	minZoom: 15,
+	maxZoom: 19,
+	attribution: "&copy; <a href='http://www.openstreetmap.org/copyright'>OSM</a>"
+}).addTo(map);
+L.marker([-22.936, -43.2458], {
+	icon: L.icon({
+		iconUrl: "/assets/leaflet/images/phosphor-marker--busto.svg",
+		iconSize: [64, 64],
+		iconAnchor: [32, 64],
+		shadowUrl: "/assets/leaflet/images/marker-shadow.png",
+		shadowSize: [41, 41],
+		shadowAnchor: [13, 44],
+	})
+}).addTo(map);
+</script></section>
+<section class="more">
+	<h2>Leia mais</h2>
+	<ol>
+		<li>
+			S.n. (4 de maio de 2023). <a href="https://prefeitura.rio/conservacao/prefeitura-inaugura-jardim-e-escultura-em-homenagem-ao-compositor-aldir-blanc/">
+			Prefeitura inaugura jardim e escultura em homenagem ao compositor Aldir
+			Blanc</a>. <i>Prefeitura do Rio</i>.
+		</li>
+	</ol>
+</section>
+
+</section>
+<aside>
+	<em class="display-identifier">B423</em>
+	<div class="tags-list">
+		<!-- Main category tag -->
+		<a class="tag" href="/bustos"><i class="category cat-busto">busto</i></a>
+		<details title="Ver tags" class="hidden-tags-list">
+			<summary>
+				<svg class="icon"><use href="#icon-tag"></use></svg>
+			</summary>
+			<div>
+			<!-- Assigned tags -->
+
+				<i class="category info-tag possui_escrita">possui escrita</i>
+
+			<!-- Auto-tags -->
 			
-Marcos são monumentos construídos em homenagem a um evento ou local.
-		</p>
-		<p>
-			Monumentos nesta categoria são marcados com a tag <i class="category cat-marco">marco</i>.
-			O inventário possui os seguintes <strong>6</strong>
-			monumentos nesta categoria:
-		</p>
-	</section>
-	<div class="card-list">
-
-			<div class="card" data-imrj >
-	<a href="/id/M373">
-		<div class="card-preview" style="background-image:url(/id/M373/thumb.jpg)"></div>
-	</a>
-	<div class="card-description">
-		<a href="/id/M373">
-			<p class="truncate" title="Cápsula do Tempo (1972–2022) na Quinta da Boa Vista">
-				<strong>Cápsula do Tempo (1972–2022) na Quinta da Boa Vista</strong>
-			</p>
-		</a>
-		<div class="card-details">
-			<span class="identifier">M373</span>
-			&middot;
-			<span>1973</span><br>
-			<span class="neighborhood">São Cristóvão</span>
-		</div>
-		<div class="card-tags">
-			<a class="tag" href="/marcos"><i class="category cat-marco">marco</i></a> 
-		</div>
+			
+			</div>
+		</details>
 	</div>
-</div>
 
-			<div class="card" data-no-imrj >
-	<a href="/id/M422">
-		<div class="card-preview" style="background-image:url(/id/M422/thumb.jpg)"></div>
-	</a>
-	<div class="card-description">
-		<a href="/id/M422">
-			<p class="truncate" title="Cápsula do Tempo (2022–2072) na Quinta da Boa Vista">
-				<strong>Cápsula do Tempo (2022–2072) na Quinta da Boa Vista</strong>
-			</p>
-		</a>
-		<div class="card-details">
-			<span class="identifier">M422</span>
-			&middot;
-			<span>2022</span><br>
-			<span class="neighborhood">São Cristóvão</span>
-		</div>
-		<div class="card-tags">
-			<a class="tag" href="/marcos"><i class="category cat-marco">marco</i></a> 
-		</div>
-	</div>
-</div>
 
-			<div class="card" data-imrj >
-	<a href="/id/M369">
-		<div class="card-preview" style="background-image:url(/id/M369/thumb.jpg)"></div>
-	</a>
-	<div class="card-description">
-		<a href="/id/M369">
-			<p class="truncate" title="Cápsula do Tempo da Federação de Bandeirantes">
-				<strong>Cápsula do Tempo da Federação de Bandeirantes</strong>
-			</p>
-		</a>
-		<div class="card-details">
-			<span class="identifier">M369</span>
-			&middot;
-			<span>1969</span><br>
-			<span class="neighborhood">Centro</span>
-		</div>
-		<div class="card-tags">
-			<a class="tag" href="/marcos"><i class="category cat-marco">marco</i></a> 
-		</div>
-	</div>
-</div>
+		<hr>
+		<p class="section-heading">Detalhes</p>
+			<dl>
 
-			<div class="card" data-imrj >
-	<a href="/id/M340">
-		<div class="card-preview" style="background-image:url(/id/M340/thumb.jpg)"></div>
-	</a>
-	<div class="card-description">
-		<a href="/id/M340">
-			<p class="truncate" title="Marco de Inauguração da Avenida Edson Passos">
-				<strong>Marco de Inauguração da Avenida Edson Passos</strong>
-			</p>
-		</a>
-		<div class="card-details">
-			<span class="identifier">M340</span>
-			&middot;
-			<span>1940</span><br>
-			<span class="neighborhood">Alto da Boa Vista</span>
-		</div>
-		<div class="card-tags">
-			<a class="tag" href="/marcos"><i class="category cat-marco">marco</i></a> 
-		</div>
-	</div>
-</div>
+				<dt>Autores</dt>
+				<dd><ul><li>Mello Menezes</li></ul></dd>
 
-			<div class="card" data-imrj >
-	<a href="/id/M420">
-		<div class="card-preview" style="background-image:url(/id/M420/thumb.jpg)"></div>
-	</a>
-	<div class="card-description">
-		<a href="/id/M420">
-			<p class="truncate" title="Monumento às Vítimas do Holocausto">
-				<strong>Monumento às Vítimas do Holocausto</strong>
-			</p>
-		</a>
-		<div class="card-details">
-			<span class="identifier">M420</span>
-			&middot;
-			<span>2020</span><br>
-			<span class="neighborhood">Botafogo</span>
-		</div>
-		<div class="card-tags">
-			<a class="tag" href="/marcos"><i class="category cat-marco">marco</i></a> 
-		</div>
-	</div>
-</div>
 
-			<div class="card" data-no-imrj >
-	<a href="/id/M421">
-		<div class="card-preview" style="background-image:url(/id/M421/thumb.jpg)"></div>
-	</a>
-	<div class="card-description">
-		<a href="/id/M421">
-			<p class="truncate" title="Placa Expedição de Magalhães e Elcano (1519–1522)">
-				<strong>Placa Expedição de Magalhães e Elcano (1519–1522)</strong>
-			</p>
-		</a>
-		<div class="card-details">
-			<span class="identifier">M421</span>
-			&middot;
-			<span>2021</span><br>
-			<span class="neighborhood">Centro</span>
-		</div>
-		<div class="card-tags">
-			<a class="tag" href="/marcos"><i class="category cat-marco">marco</i></a> 
-		</div>
-	</div>
-</div>
+				<dt>Inauguração</dt>
+				<dd>
+					4 de maio de 2023<br>
+					(0 ano atrás)
+				</dd>
 
-	</div>
+
+
+					<dt>Material</dt>
+					<dd>Concreto<br>Bronze</dd>
+
+			</dl>
+
+
+
+
+		<hr>
+		<p class="section-heading">Catálogos</p>
+		<dl>
+
+
+				<dt>Wikidata</dt>
+				<dd><a href="https://www.wikidata.org/wiki/Q118175724">Q118175724</a></dd>
+
+
+
+		</dl>
+
+
+</aside>
 </main>
 	<footer>
 		<section class="downsize">
