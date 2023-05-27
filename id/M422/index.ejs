@@ -148,12 +148,4 @@ Esta cápsula deve ser aberta em 2072</pre>
 		</li>
 	</ol>
 </section>
-<%_
-const monuments = collections.all.filter(file => file.filePathStem.startsWith("/id/"));
-const i = monuments.findIndex(m => m.data.internal_ref === "capsulamn1972");
-if(i >= 0) { %>
-<section class="related">
-	<h2>Monumentos relacionados</h2>
-	<div class="card-list"><%- makeCard(monuments[i]) %></div>
-</section>
-<%_ } %>
+<%- makeRelated([ "capsulamn1972" ], arguments[0]) %>

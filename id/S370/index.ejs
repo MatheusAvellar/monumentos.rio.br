@@ -1,6 +1,7 @@
 ---
 layout: monument.ejs
 name: Conjunto de Arte Naïf da Praça dos Bichinhos
+internal_ref: esculturasbichinhos
 categoria: escultura
 tags: []
 
@@ -71,7 +72,7 @@ hpip:
 		O IMRJ cataloga 52 esculturas; o Wikidata possui categorias para
 		49 esculturas:
 	</p>
-	<ul class="tight-list tabular-nums">
+	<ol class="tight-list tabular-nums">
 		<li><p>ID <a href="<%= IMRJ_URL %>723">723</a>; <a href="https://www.wikidata.org/wiki/Q67210543">Q67210543</a>: O Barco</p></li>
 		<li><p>ID <a href="<%= IMRJ_URL %>724">724</a>; <a href="https://www.wikidata.org/wiki/Q67210537">Q67210537</a>: A Baleia e Filhote</p></li>
 		<li><p>ID <a href="<%= IMRJ_URL %>725">725</a>; <a href="https://www.wikidata.org/wiki/Q67210547">Q67210547</a>: O Beija Flor</p></li>
@@ -124,7 +125,7 @@ hpip:
 		<li><p>ID <a href="<%= IMRJ_URL %>774">774</a>; <a href="https://www.wikidata.org/wiki/Q67210714">Q67210714</a>: A Vaca</p></li>
 		<li><p>ID <a href="<%= IMRJ_URL %>775">775</a>; <a href="https://www.wikidata.org/wiki/Q67210715">Q67210715</a>: O Visconde de Sabugosa</p></li>
 		<li><p>ID <a href="<%= IMRJ_URL %>776">776</a>; <a href="https://www.wikidata.org/wiki/Q67210716">Q67210716</a>: A Zebra</p></li>
-	</ul>
+	</ol>
 </section>
 <section class="gallery">
 	<h2>Galeria</h2>
@@ -189,3 +190,4 @@ hpip:
 <section class="more">
 <!-- 	<h2>Leia mais</h2> -->
 </section>
+<%- makeRelated([ "coretobichinhos" ], arguments[0]) %>

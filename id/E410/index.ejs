@@ -102,12 +102,4 @@ wikidata:
 		(álbum). <i>Flickr</i>.
 	</cite>
 </section>
-<%_
-const monuments = collections.all.filter(file => file.filePathStem.startsWith("/id/"));
-const i = monuments.findIndex(m => m.data.internal_ref === "mosaicomj2010");
-if(i >= 0) { %>
-<section class="related">
-	<h2>Monumentos relacionados</h2>
-	<div class="card-list"><%- makeCard(monuments[i]) %></div>
-</section>
-<%_ } %>
+<%- makeRelated([ "mosaicomj2010" ], arguments[0]) %>

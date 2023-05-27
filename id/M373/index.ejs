@@ -135,12 +135,4 @@ seu próprio futuro.
 <!-- 	<h2>Leia mais</h2>
 	<ol></ol> -->
 </section>
-<%_
-const monuments = collections.all.filter(file => file.filePathStem.startsWith("/id/"));
-const i = monuments.findIndex(m => m.data.internal_ref === "capsulamn2022");
-if(i >= 0) { %>
-<section class="related">
-	<h2>Monumentos relacionados</h2>
-	<div class="card-list"><%- makeCard(monuments[i]) %></div>
-</section>
-<%_ } %>
+<%- makeRelated([ "capsulamn2022" ], arguments[0]) %>

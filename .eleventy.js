@@ -218,4 +218,53 @@ L.marker([${lat}, ${lon}], {
 </script></section>`);
 		return out.join("");
 	};
+
+	makeRelated = (related_list, ctx) => {
+		const monuments = ctx.collections.all.filter(file => file.filePathStem.startsWith("/id/"));
+		const mon = monuments.filter(m => related_list.includes(m.data.internal_ref));
+		if(!mon.length)
+			return "";
+		const out = [];
+		out.push(`<section class="related"><h2>Monumentos relacionados</h2><div class="card-list">`);
+		for(let i = 0; i < mon.length; i++) {
+			out.push(makeCard(mon[i]));
+		}
+		out.push("</div></section>");
+		return out.join("");
+	};
+
+	makeOthersFromSeries = (ctx) => {
+		if(!("series" in ctx) || ![ctx.series].flat().length)
+			return "";
+		const series = [ctx.series].flat();
+
+		const monuments = ctx.collections.all.filter(file => file.filePathStem.startsWith("/id/"));
+		const thisFilePath = ctx.page.filePathStem;
+
+		const out = [];
+		out.push(`<section class="related">`);
+
+		for(let i = 0; i < series.length; i++) {
+			const mon = monuments.filter(m => {
+				if(!("data" in m) || !m.data)
+					return false;
+				if(!("series" in m.data) || !m.data.series)
+					return false;
+				if(![m.data.series].flat().includes(series[i]))
+					return false;
+				return m.filePathStem !== thisFilePath;
+			});
+			if(!mon.length)
+				continue;
+			const section = [];
+			section.push(`<h2>Mais da série '${series[i]}'</h2><div class="card-list">`);
+			for(let i = 0; i < mon.length; i++) {
+				section.push(makeCard(mon[i]));
+			}
+			section.push(`</div>`);
+			out.push(section.join(""));
+		}
+		out.push("</section>");
+		return out.join("");
+	};
 };
