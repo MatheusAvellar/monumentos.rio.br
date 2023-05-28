@@ -3,7 +3,7 @@ layout: default.ejs
 title: "Bairros — Monumentos Rio"
 ---
 <%_ const monuments = collections.all.filter(file => file.filePathStem.startsWith("/id/"));
-monuments.sort((a, b) => a.filePathStem.slice(4).localeCompare(b.filePathStem.slice(4)));
+monuments.sort((a, b) => a.data.name.localeCompare(b.data.name));
 const monument_count = monuments.length;
 
 const distinct_categories = new Set();

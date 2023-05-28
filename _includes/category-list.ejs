@@ -22,7 +22,9 @@ monuments.forEach(mon => {
 	}
 });
 // Make sure there's no undefined
+distinct_categories.delete("");
 distinct_categories.delete(undefined);
+distinct_categories.delete(null);
 
 const lists = [];
 const categories_list = [...distinct_categories];

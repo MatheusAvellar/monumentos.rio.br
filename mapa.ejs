@@ -158,14 +158,14 @@ m<%=i%>.addTo(map);<%_ } %>
 .control-panel > .inputs > label {
 	padding: .5rem;
 	border: 1px solid #dfdfdf;
-	background-color: #fff;
+	border: 1px solid var(--highlight, #dfdfdf);
+	background-color: var(--bg-alt, #fff);
 	border-radius: 4px;
 }
 .control-panel > .inputs > label:has(> input:checked) {
-	background-color: #ecf3ff;
+	background-color: rgba(141,183,255, .25);
 	border-color: #93baff;
 }
-
 .control-panel > .selections {
 	text-align: right;
 }
@@ -173,20 +173,27 @@ m<%=i%>.addTo(map);<%_ } %>
 	font: inherit;
 	font-size: 75%;
 	border: 2px solid #444;
+	border: 2px solid var(--text-alt-color, #444);
 	color: #444;
+	color: var(--text-alt-color, #444);
 	font-weight: 500;
 	border-radius: 50px;
 	padding: .5rem 1rem;
 	background-color: #fff;
+	background-color: var(--bg-alt, #fff);
 	cursor: pointer;
 }
 .control-panel button:is(:hover, :focus) {
 	background-color: #efefef;
+	background-color: var(--soft-highlight, #efefef);
 	color: #000;
+	color: var(--text-color, #000);
 }
 .control-panel button:active {
 	background-color: #444;
+	background-color: var(--text-alt-color, #444);
 	color: #fff;
+	color: var(--bg-alt, #fff);
 }
 
 #monument-location-map > .leaflet-pane > .leaflet-marker-pane > img.hidden-marker {

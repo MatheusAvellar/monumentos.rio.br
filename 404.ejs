@@ -1,0 +1,78 @@
+---
+layout: default.ejs
+title: 404 — Monumentos Rio
+permalink: "/404.html"
+---
+
+<main>
+	<section class="maxwidth">
+		<h1>404 – Não encontrado</h1>
+	</section>
+	<section class="color-wrapper">
+		<a title="<%= catToName("obra") %>"
+			href="<%= catToHref("obra") %>"
+			class="color-rectangle <%= catToClass("obra") %>"></a>
+		<a title="<%= catToName("busto") %>"
+			href="<%= catToHref("busto") %>"
+			class="color-rectangle <%= catToClass("busto") %>"></a>
+		<a title="<%= catToName("chafariz") %>"
+			href="<%= catToHref("chafariz") %>"
+			class="color-rectangle <%= catToClass("chafariz") %>"></a>
+		<a title="<%= catToName("estátua") %>"
+			href="<%= catToHref("estátua") %>"
+			class="color-rectangle <%= catToClass("estátua") %>"></a>
+		<a title="<%= catToName("marco") %>"
+			href="<%= catToHref("marco") %>"
+			class="color-rectangle <%= catToClass("marco") %>"></a>
+		<a title="<%= catToName("escultura") %>"
+			href="<%= catToHref("escultura") %>"
+			class="color-rectangle <%= catToClass("escultura") %>"></a>
+	</section>
+	<section class="indent-children maxwidth">
+		<p>
+			O link que você clicou não existe! Se você chegou aqui clicando em um link
+			neste website, me informe onde você clicou pelo endereço email no rodapé
+			da página! Caso contrário, você pode:
+		</p>
+		<ul>
+			<li>Verificar se o URL foi digitado corretamente;</li>
+			<li>Avisar a quem lhe enviou o link que ele não está funcionando;</li>
+			<li>Voltar para a <a href="/">página principal</a>.</li>
+		</ul>
+	</section>
+</main>
+<style>
+.color-wrapper {
+	display: flex;
+	gap: .5rem;
+	margin: 1rem auto 3.5rem;
+	width: fit-content;
+}
+.color-rectangle {
+	height: 1.5rem;
+	width: 1.5rem;
+	border-radius: 100%;
+	background-color: var(--accent);
+	animation: float 5s ease-in-out infinite;
+}
+.color-rectangle:nth-of-type(1) { animation-delay: -5s; }
+.color-rectangle:nth-of-type(2) { animation-delay: -4s; }
+.color-rectangle:nth-of-type(3) { animation-delay: -3s; }
+.color-rectangle:nth-of-type(4) { animation-delay: -2s; }
+.color-rectangle:nth-of-type(5) { animation-delay: -1s; }
+.color-rectangle:nth-of-type(6) { animation-delay: -0s; }
+@keyframes float {
+	0% {
+		transform: translatey(0);
+		box-shadow: 0 2.5rem 4px #f2f2f2;
+	}
+	50% {
+		transform: translatey(1rem);
+		box-shadow: 0 1.5rem 1px #efefef;
+	}
+	100% {
+		transform: translatey(0);
+		box-shadow: 0 2.5rem 4px #f2f2f2;
+	}
+}
+</style>
