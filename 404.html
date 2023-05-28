@@ -229,18 +229,27 @@
 	0% {
 		transform: translatey(0);
 		box-shadow: 0 2.5rem 4px #f2f2f2;
+		box-shadow: 0 2.5rem 4px var(--fg-light, #f2f2f2);
 	}
 	50% {
 		transform: translatey(1rem);
 		box-shadow: 0 1.5rem 1px #efefef;
+		box-shadow: 0 1.5rem 1px var(--soft-highlight, #efefef);
 	}
 	100% {
 		transform: translatey(0);
 		box-shadow: 0 2.5rem 4px #f2f2f2;
+		box-shadow: 0 2.5rem 4px var(--fg-light, #f2f2f2);
 	}
 }
 </style>
 	<footer>
+		<section hidden class="downsize">
+			<label id="dark-mode-wrapper">
+				<input id="dark-mode-toggle" type="checkbox">
+				<span id="dark-mode-text">Ligar modo escuro</span>
+			</label>
+		</section>
 		<section class="downsize">
 			<section class="signature">
 				<p>
@@ -362,6 +371,9 @@
 	<script src="/assets/litelightbox.min.js?v=05-24"></script>
 	<!-- Leaflet Maps -->
 	<link href="/assets/leaflet/leaflet.css" rel="stylesheet" type="text/css">
-	<script src="/assets/details.js?v=05-21"></script>
+	<!-- <details> navigation -->
+	<script src="/assets/details.js?v=05-28"></script>
+	<!-- Dark mode -->
+	<script src="/assets/darkmode.js?v=05-28"></script>
 </body>
 </html>
