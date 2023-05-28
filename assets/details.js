@@ -1,4 +1,4 @@
-// Lista de <details> in <nav>
+// Lista de <details> em <nav>
 const details = [...document.querySelectorAll("header > nav > details")];
 const main_footer = [
 	document.querySelector("main"),

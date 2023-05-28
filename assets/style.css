@@ -724,6 +724,9 @@ h2 {
 	.card-list {
 		grid-template-columns: 1fr 1fr;
 	}
+	.related .card-list {
+		grid-template-columns: 1fr;
+	}
 }
 @media screen and (max-width: 700px) {
 	.mobile-hide {
