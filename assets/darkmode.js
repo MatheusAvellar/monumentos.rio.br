@@ -18,11 +18,11 @@
 		// Liga o modo escuro
 		if(state) {
 			document.body.parentElement.classList.add("dark");
-			text.textContent = "Desligar modo escuro";
+			text.textContent = "Desativar modo escuro";
 		// Desliga o modo escuro
 		} else {
 			document.body.parentElement.classList.remove("dark");
-			text.textContent = "Ligar modo escuro";
+			text.textContent = "Ativar modo escuro";
 		}
 	}
 	function setLocalStorage(state) {
