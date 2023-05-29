@@ -7,8 +7,16 @@ title: Inventário — Monumentos Rio
 monuments.sort((a, b) => a.data.name.localeCompare(b.data.name));
 const monument_count = monuments.length;
 
+const alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ#".split("");
+
 const letters = new Set();
-monuments.forEach(mon => letters.add(mon.data.name[0]));
+monuments.forEach(mon => {
+	const letter = mon.data.name[0];
+	if(alphabet.includes(letter))
+		letters.add(letter);
+	else
+		letters.add("#");
+});
 
 const lists = [];
 const letters_list = [...letters];
@@ -34,8 +42,7 @@ letters_list.forEach(letter => {
 <details id="list-toc">
 	<summary>Pular para:</summary>
 	<div>
-	<%_ const alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
-	for(let i = 0; i < alphabet.length; i++) { %>
+	<%_ for(let i = 0; i < alphabet.length; i++) { %>
 		<%_ if(letters.has(alphabet[i])) { %>
 			<a href="#letra-<%= alphabet[i] %>"><%= alphabet[i] %></a>
 		<%_ } else { %>

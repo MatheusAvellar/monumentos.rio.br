@@ -46,6 +46,14 @@ tombado_url = doFallback("tombado_url");
 
 <main class="monument">
 <section>
+	<%_ if(tags.includes("preliminar")) { %>
+		<p class="note warning">
+			<strong>Nota:</strong>
+			Este item está marcado como <%- makeInfoTag("preliminar") %>. Isso
+			significa dizer que ele não possui um identificador permanente ainda.
+			Assim, o URL atual será alterado no futuro. Fique atento!
+		</p>
+	<%_ } %>
 	<h1><%= name %></h1>
 <%_ if(alt_names.length > 0) { %>
 	<p class="alt-names">

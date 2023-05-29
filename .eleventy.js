@@ -149,15 +149,17 @@ module.exports = function(eleventyConfig) {
 		const ID = getIDFromPath(item.filePathStem);
 		const data = item.data;
 		const hasIMRJ = (data.imrj && `${data.imrj}`.length > 0);
+		const isEarly = [data.tags].flat().includes("preliminar");
 		const hasMissing = [data.tags].flat().includes("removido");
-		return `<div class="card" data-${hasIMRJ ? "" : "no-"}imrj >
+		return `<div class="card" data-${hasIMRJ ? "" : "no-"}imrj ${isEarly ? "data-preliminar" : ""}>
 	<a href="/id/${ID}">
 		<div class="card-preview" style="background-image:url(/id/${ID}/thumb.jpg)"></div>
 	</a>
 	<div class="card-description">
 		<a href="/id/${ID}">
 			<p class="truncate" title="${data.name || "?"}">
-				<strong>${data.name || "?"}</strong>
+				<strong>
+				${isEarly ? "(" : ""}${data.name || "?"}${isEarly ? ")" : ""}</strong>
 			</p>
 		</a>
 		<div class="card-details">
@@ -167,7 +169,9 @@ module.exports = function(eleventyConfig) {
 			<span class="neighborhood">${data.bairro || "?"}</span>
 		</div>
 		<div class="card-tags">
-			${makeTag(data.categoria)} ${hasMissing ? makeInfoTag("removido") : ""}
+			${makeTag(data.categoria)}
+			${isEarly ? makeInfoTag("preliminar") : ""}
+			${hasMissing ? makeInfoTag("removido") : ""}
 		</div>
 	</div>
 </div>`;
@@ -186,7 +190,7 @@ module.exports = function(eleventyConfig) {
 		out.push(`<section class="location"><h2>Localização</h2>`);
 		if(local || bairro)
 			out.push(`<p><strong>Localização:</strong> ${location_text}</p>`);
-		out.push(`<p><strong>Coordenadas:</strong> ${lat.toFixed(4)}, ${lon.toFixed(4)}</p>`);
+		out.push(`<p><strong>Coordenadas:</strong> ${lat.toFixed(5)}, ${lon.toFixed(5)}</p>`);
 		out.push(`<div id="monument-location-map"></div>`);
 		out.push(`<script src="/assets/leaflet/leaflet.min.1.9.3.js"></script>`);
 		out.push(`<script>
