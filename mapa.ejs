@@ -74,15 +74,73 @@ function countCategory(cat) {
 		</section>
 	</section>
 	<div id="monument-location-map" class="big"></div>
-	<script src="/assets/leaflet/leaflet.min.1.9.3.js"></script>
+	<!-- [Ref] https://leafletjs.com/ -->
+	<link href="/assets/leaflet/leaflet.css" rel="stylesheet" type="text/css">
+	<script src="/assets/leaflet/leaflet.1.9.3.min.js"></script>
+	<!-- [Ref] https://github.com/mourner/rbush -->
+	<script src="/assets/leaflet/rbush.2.0.1.min.js"></script>
+	<script>window.RBush = rbush;</script>
+	<!-- [Ref] https://github.com/francoisromain/leaflet-markers-canvas -->
+	<script src="/assets/leaflet/leaflet-markers-canvas.2023-05-29.min.js"></script>
 	<script>
+const map = L.map("monument-location-map", {
+	center: [-22.9, -43.4],
+	zoom: 11,
+	maxBounds: new L.LatLngBounds(
+		new L.LatLng(-22.9 - 0.5, -43.4 - 0.8),
+		new L.LatLng(-22.9 + 0.5, -43.4 + 0.8)
+	),
+	maxBoundsViscosity: .75
+});
+
+L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
+	minZoom: 10,
+	maxZoom: 19,
+	preferCanvas: true,
+	attribution: "&copy; <a href='http://www.openstreetmap.org/copyright'>OSM</a>"
+}).addTo(map);
+
+const markersMap = new Map();
+markersMap.set("busto",     { lock: !1, list: [], canvas: new L.MarkersCanvas(), icon: L.icon(makeMarker("<%= catCleanup("busto")     %>")) } );
+markersMap.set("chafariz",  { lock: !1, list: [], canvas: new L.MarkersCanvas(), icon: L.icon(makeMarker("<%= catCleanup("chafariz")  %>")) } );
+markersMap.set("estátua",   { lock: !1, list: [], canvas: new L.MarkersCanvas(), icon: L.icon(makeMarker("<%= catCleanup("estátua")   %>")) } );
+markersMap.set("marco",     { lock: !1, list: [], canvas: new L.MarkersCanvas(), icon: L.icon(makeMarker("<%= catCleanup("marco")     %>")) } );
+markersMap.set("escultura", { lock: !1, list: [], canvas: new L.MarkersCanvas(), icon: L.icon(makeMarker("<%= catCleanup("escultura") %>")) } );
+markersMap.set("obra",      { lock: !1, list: [], canvas: new L.MarkersCanvas(), icon: L.icon(makeMarker("<%= catCleanup("obra")      %>")) } );
+
+for(const [key, obj] of [...markersMap]) {
+	obj.canvas.addTo(map);
+	// Seems to need a call to clear() before everything, otherwise it somehow
+	// makes every MarkersCanvas() instance reference the same RBush() tree
+	obj.canvas.clear();
+	obj.canvas._canvas.classList.add(`leaflet-canvas-${removeDiacritics(key)}`);
+	// Add a 100ms rate-limited event listener for `move` event
+	// so markers don't have to wait for `moveend` to update
+	map.on("move", function(evt) {
+		if(obj.lock) return;
+		obj.lock = true;
+		console.log(key);
+		obj.canvas._reset();
+		setTimeout(function() { obj.lock = false; }, 100);
+	}, obj.canvas);
+}
+
+function removeDiacritics(c) { return (c == "estátua") ? "estatua" : c; }
+function readdDiacritics(c) { return (c == "estatua") ? "estátua" : c; }
+
 function toggleMarkers(cat, state) {
-	const markers = [...document.querySelectorAll(`.leaflet-container img.leaflet-marker-icon[src$="${cat}.svg"]`)];
+	const markers = [...document.querySelectorAll(`.leaflet-container .leaflet-markers-canvas-layer.leaflet-canvas-${cat}`)];
 	markers.forEach(m => {
-		if(!state)
-			m.classList.add("hidden-marker");
-		else
-			m.classList.remove("hidden-marker");
+		const canvas = markersMap.get(readdDiacritics(cat)).canvas;
+		if(!state) {
+			m.classList.add("hidden-markers");
+			map.off("click", canvas._fire, canvas);
+			map.off("mousemove", canvas._fire, canvas);
+		} else {
+			m.classList.remove("hidden-markers");
+			map.on("click", canvas._fire, canvas);
+			map.on("mousemove", canvas._fire, canvas);
+		}
 	});
 }
 [...document.querySelectorAll(".control-panel input[type='checkbox']")].forEach(input => {
@@ -100,22 +158,6 @@ document.getElementById("deselect-all").addEventListener("click", function() {
 		if(input.checked) input.click();
 	});
 });
-	</script>
-	<script>
-const map = L.map("monument-location-map", {
-	center: [-22.9, -43.4],
-	zoom: 11,
-	maxBounds: new L.LatLngBounds(
-		new L.LatLng(-22.9 - 0.5, -43.4 - 0.8),
-		new L.LatLng(-22.9 + 0.5, -43.4 + 0.8)
-	),
-	maxBoundsViscosity: .75
-})
-L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
-	minZoom: 10,
-	maxZoom: 20,
-	attribution: "&copy; <a href='http://www.openstreetmap.org/copyright'>OSM</a>"
-}).addTo(map);
 
 function makeMarker(cat) {
 	return {
@@ -124,26 +166,25 @@ function makeMarker(cat) {
 		iconAnchor: [16, 32]
 	};
 }
-const markersMap = new Map();
-markersMap.set("busto",     L.icon(makeMarker("<%= catCleanup("busto")     %>")));
-markersMap.set("chafariz",  L.icon(makeMarker("<%= catCleanup("chafariz")  %>")));
-markersMap.set("estátua",   L.icon(makeMarker("<%= catCleanup("estátua")   %>")));
-markersMap.set("marco",     L.icon(makeMarker("<%= catCleanup("marco")     %>")));
-markersMap.set("escultura", L.icon(makeMarker("<%= catCleanup("escultura") %>")));
-markersMap.set("obra",      L.icon(makeMarker("<%= catCleanup("obra")      %>")));
 
 function generatePopup(id, name, data, bairro, extra) {
 	return `<a href="/id/${id}"><strong>${name}</strong></a><br>
-	<span class="identifier">${id}</span> &middot; <span>${data}</span><br>
-	<span class="neighborhood">${bairro}</span><br>${extra}`;
+<span class="identifier">${id}</span> &middot; <span>${data}</span><br>
+<span class="neighborhood">${bairro}</span><br>${extra}`;
 }
+const allMarkers = [];
+function markerOnClick(e) { this.openPopup(); }
 <%_ for(let i = 0; i < monument_count; i++) {
 	const lat = monuments[i].data.lat;
 	const lon = monuments[i].data.lon;
 	const ID = getIDFromPath(monuments[i].filePathStem); %>
-const m<%=i%> = L.marker([<%= lat %>, <%= lon %>], { icon: markersMap.get("<%= monuments[i].data.categoria %>") });
-m<%=i%>.bindPopup(generatePopup("<%= ID %>", "<%= monuments[i].data.name %>", "<%= (monuments[i].data.data_circa ? 'c.' : '') + getYearFromDate(monuments[i].data.data_inaug) %>", "<%= monuments[i].data.bairro %>", '<%- makeTag(monuments[i].data.categoria) %>'), { offset: [0, -24] }).openPopup();
-m<%=i%>.addTo(map);<%_ } %>
+const m<%=i%> = L.marker([<%= lat %>, <%= lon %>], { icon: markersMap.get("<%= monuments[i].data.categoria %>").icon });
+m<%=i%>.bindPopup(generatePopup("<%= ID %>", "<%= monuments[i].data.name %>", "<%= (monuments[i].data.data_circa ? 'c.' : '') + getYearFromDate(monuments[i].data.data_inaug) %>", "<%= monuments[i].data.bairro %>", '<%- makeTag(monuments[i].data.categoria) %>'), { offset: [0, -24] }).openPopup().on({ click: markerOnClick });
+markersMap.get("<%= monuments[i].data.categoria %>").list.push(m<%=i%>); <%_ } %>
+
+for(const [key, obj] of [...markersMap]) {
+	obj.canvas.addMarkers(obj.list);
+}
 	</script>
 	<style>
 .control-panel {
@@ -196,8 +237,12 @@ m<%=i%>.addTo(map);<%_ } %>
 	color: var(--bg-alt, #fff);
 }
 
-#monument-location-map > .leaflet-pane > .leaflet-marker-pane > img.hidden-marker {
+#monument-location-map .hidden-markers {
 	display: none;
+}
+
+.leaflet-zoom-anim .leaflet-zoom-animated {
+	transition: .15s;
 }
 	</style>
 </main>

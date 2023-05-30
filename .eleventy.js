@@ -192,7 +192,9 @@ module.exports = function(eleventyConfig) {
 			out.push(`<p><strong>Localização:</strong> ${location_text}</p>`);
 		out.push(`<p><strong>Coordenadas:</strong> ${lat.toFixed(5)}, ${lon.toFixed(5)}</p>`);
 		out.push(`<div id="monument-location-map"></div>`);
-		out.push(`<script src="/assets/leaflet/leaflet.min.1.9.3.js"></script>`);
+		out.push(`<!-- [Ref] https://leafletjs.com/ -->
+<link href="/assets/leaflet/leaflet.css" rel="stylesheet" type="text/css">
+<script src="/assets/leaflet/leaflet.1.9.3.min.js"></script>`);
 		out.push(`<script>
 const bounds = new L.LatLngBounds(
 	new L.LatLng(${lat-0.025}, ${lon-0.05}),
