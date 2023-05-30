@@ -243,7 +243,9 @@
 		</figcaption>
 	</figure>
 </section>
-<section class="location"><h2>Localização</h2><p><strong>Localização:</strong> Praça David Ben Gurion, Laranjeiras</p><p><strong>Coordenadas:</strong> -22.93830, -43.19060</p><div id="monument-location-map"></div><script src="/assets/leaflet/leaflet.min.1.9.3.js"></script><script>
+<section class="location"><h2>Localização</h2><p><strong>Localização:</strong> Praça David Ben Gurion, Laranjeiras</p><p><strong>Coordenadas:</strong> -22.93830, -43.19060</p><div id="monument-location-map"></div><!-- [Ref] https://leafletjs.com/ -->
+<link href="/assets/leaflet/leaflet.css" rel="stylesheet" type="text/css">
+<script src="/assets/leaflet/leaflet.1.9.3.min.js"></script><script>
 const bounds = new L.LatLngBounds(
 	new L.LatLng(-22.9633, -43.2406),
 	new L.LatLng(-22.913300000000003, -43.140600000000006)
@@ -473,8 +475,6 @@ L.marker([-22.9383, -43.1906], {
 	<!-- LiteLightbox -->
 	<link href="/assets/litelightbox.min.css" rel="stylesheet" type="text/css">
 	<script src="/assets/litelightbox.min.js?v=05-24"></script>
-	<!-- Leaflet Maps -->
-	<link href="/assets/leaflet/leaflet.css" rel="stylesheet" type="text/css">
 	<!-- <details> navigation -->
 	<script src="/assets/details.js?v=05-28"></script>
 	<!-- Dark mode -->

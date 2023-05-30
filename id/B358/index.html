@@ -263,7 +263,9 @@ Carmen Gomes
 05-03-1900
 12-07-1955</pre>
 </section>
-<section class="location"><h2>Localização</h2><p><strong>Localização:</strong> Praça Paris, Glória</p><p><strong>Coordenadas:</strong> -22.91680, -43.17590</p><div id="monument-location-map"></div><script src="/assets/leaflet/leaflet.min.1.9.3.js"></script><script>
+<section class="location"><h2>Localização</h2><p><strong>Localização:</strong> Praça Paris, Glória</p><p><strong>Coordenadas:</strong> -22.91680, -43.17590</p><div id="monument-location-map"></div><!-- [Ref] https://leafletjs.com/ -->
+<link href="/assets/leaflet/leaflet.css" rel="stylesheet" type="text/css">
+<script src="/assets/leaflet/leaflet.1.9.3.min.js"></script><script>
 const bounds = new L.LatLngBounds(
 	new L.LatLng(-22.941799999999997, -43.225899999999996),
 	new L.LatLng(-22.8918, -43.1259)
@@ -485,8 +487,6 @@ L.marker([-22.9168, -43.1759], {
 	<!-- LiteLightbox -->
 	<link href="/assets/litelightbox.min.css" rel="stylesheet" type="text/css">
 	<script src="/assets/litelightbox.min.js?v=05-24"></script>
-	<!-- Leaflet Maps -->
-	<link href="/assets/leaflet/leaflet.css" rel="stylesheet" type="text/css">
 	<!-- <details> navigation -->
 	<script src="/assets/details.js?v=05-28"></script>
 	<!-- Dark mode -->

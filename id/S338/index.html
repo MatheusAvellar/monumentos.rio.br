@@ -221,7 +221,9 @@
 		</figcaption>
 	</figure>
 </section>
-<section class="location"><h2>Localização</h2><p><strong>Localização:</strong> Jardim de Alah, Leblon</p><p><strong>Coordenadas:</strong> -22.98460, -43.21530</p><div id="monument-location-map"></div><script src="/assets/leaflet/leaflet.min.1.9.3.js"></script><script>
+<section class="location"><h2>Localização</h2><p><strong>Localização:</strong> Jardim de Alah, Leblon</p><p><strong>Coordenadas:</strong> -22.98460, -43.21530</p><div id="monument-location-map"></div><!-- [Ref] https://leafletjs.com/ -->
+<link href="/assets/leaflet/leaflet.css" rel="stylesheet" type="text/css">
+<script src="/assets/leaflet/leaflet.1.9.3.min.js"></script><script>
 const bounds = new L.LatLngBounds(
 	new L.LatLng(-23.0096, -43.265299999999996),
 	new L.LatLng(-22.959600000000002, -43.1653)
@@ -439,8 +441,6 @@ L.marker([-22.9846, -43.2153], {
 	<!-- LiteLightbox -->
 	<link href="/assets/litelightbox.min.css" rel="stylesheet" type="text/css">
 	<script src="/assets/litelightbox.min.js?v=05-24"></script>
-	<!-- Leaflet Maps -->
-	<link href="/assets/leaflet/leaflet.css" rel="stylesheet" type="text/css">
 	<!-- <details> navigation -->
 	<script src="/assets/details.js?v=05-28"></script>
 	<!-- Dark mode -->

@@ -207,7 +207,9 @@
 		</figcaption>
 	</figure>
 </section>
-<section class="location"><h2>Localização</h2><p><strong>Localização:</strong> Alto da Boa Vista</p><p><strong>Coordenadas:</strong> -22.95750, -43.26620</p><div id="monument-location-map"></div><script src="/assets/leaflet/leaflet.min.1.9.3.js"></script><script>
+<section class="location"><h2>Localização</h2><p><strong>Localização:</strong> Alto da Boa Vista</p><p><strong>Coordenadas:</strong> -22.95750, -43.26620</p><div id="monument-location-map"></div><!-- [Ref] https://leafletjs.com/ -->
+<link href="/assets/leaflet/leaflet.css" rel="stylesheet" type="text/css">
+<script src="/assets/leaflet/leaflet.1.9.3.min.js"></script><script>
 const bounds = new L.LatLngBounds(
 	new L.LatLng(-22.982499999999998, -43.316199999999995),
 	new L.LatLng(-22.9325, -43.2162)
@@ -428,8 +430,6 @@ L.marker([-22.9575, -43.2662], {
 	<!-- LiteLightbox -->
 	<link href="/assets/litelightbox.min.css" rel="stylesheet" type="text/css">
 	<script src="/assets/litelightbox.min.js?v=05-24"></script>
-	<!-- Leaflet Maps -->
-	<link href="/assets/leaflet/leaflet.css" rel="stylesheet" type="text/css">
 	<!-- <details> navigation -->
 	<script src="/assets/details.js?v=05-28"></script>
 	<!-- Dark mode -->

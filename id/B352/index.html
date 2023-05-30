@@ -285,7 +285,9 @@ A Comiss[ão?]
 Ariosto [Berna]
 Vict[or Mariano?]</pre>
 </section>
-<section class="location"><h2>Localização</h2><p><strong>Localização:</strong> Praça Saens Peña, Tijuca</p><p><strong>Coordenadas:</strong> -22.92470, -43.23310</p><div id="monument-location-map"></div><script src="/assets/leaflet/leaflet.min.1.9.3.js"></script><script>
+<section class="location"><h2>Localização</h2><p><strong>Localização:</strong> Praça Saens Peña, Tijuca</p><p><strong>Coordenadas:</strong> -22.92470, -43.23310</p><div id="monument-location-map"></div><!-- [Ref] https://leafletjs.com/ -->
+<link href="/assets/leaflet/leaflet.css" rel="stylesheet" type="text/css">
+<script src="/assets/leaflet/leaflet.1.9.3.min.js"></script><script>
 const bounds = new L.LatLngBounds(
 	new L.LatLng(-22.9497, -43.2831),
 	new L.LatLng(-22.899700000000003, -43.1831)
@@ -553,8 +555,6 @@ L.marker([-22.9247, -43.2331], {
 	<!-- LiteLightbox -->
 	<link href="/assets/litelightbox.min.css" rel="stylesheet" type="text/css">
 	<script src="/assets/litelightbox.min.js?v=05-24"></script>
-	<!-- Leaflet Maps -->
-	<link href="/assets/leaflet/leaflet.css" rel="stylesheet" type="text/css">
 	<!-- <details> navigation -->
 	<script src="/assets/details.js?v=05-28"></script>
 	<!-- Dark mode -->

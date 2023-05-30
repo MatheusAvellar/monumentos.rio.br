@@ -276,7 +276,9 @@ Escultor
 
 Rio de Janeiro, julho de 2022</pre>
 </section>
-<section class="location"><h2>Localização</h2><p><strong>Localização:</strong> Praça Mário Lago (ou Buraco do Lume), Centro</p><p><strong>Coordenadas:</strong> -22.90620, -43.17640</p><div id="monument-location-map"></div><script src="/assets/leaflet/leaflet.min.1.9.3.js"></script><script>
+<section class="location"><h2>Localização</h2><p><strong>Localização:</strong> Praça Mário Lago (ou Buraco do Lume), Centro</p><p><strong>Coordenadas:</strong> -22.90620, -43.17640</p><div id="monument-location-map"></div><!-- [Ref] https://leafletjs.com/ -->
+<link href="/assets/leaflet/leaflet.css" rel="stylesheet" type="text/css">
+<script src="/assets/leaflet/leaflet.1.9.3.min.js"></script><script>
 const bounds = new L.LatLngBounds(
 	new L.LatLng(-22.931199999999997, -43.2264),
 	new L.LatLng(-22.8812, -43.126400000000004)
@@ -525,8 +527,6 @@ L.marker([-22.9062, -43.1764], {
 	<!-- LiteLightbox -->
 	<link href="/assets/litelightbox.min.css" rel="stylesheet" type="text/css">
 	<script src="/assets/litelightbox.min.js?v=05-24"></script>
-	<!-- Leaflet Maps -->
-	<link href="/assets/leaflet/leaflet.css" rel="stylesheet" type="text/css">
 	<!-- <details> navigation -->
 	<script src="/assets/details.js?v=05-28"></script>
 	<!-- Dark mode -->

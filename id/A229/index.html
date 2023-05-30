@@ -249,7 +249,9 @@
 		</figcaption>
 	</figure>
 </section>
-<section class="location"><h2>Localização</h2><p><strong>Localização:</strong> Ilha Rasa, Ipanema</p><p><strong>Coordenadas:</strong> -23.06390, -43.14590</p><div id="monument-location-map"></div><script src="/assets/leaflet/leaflet.min.1.9.3.js"></script><script>
+<section class="location"><h2>Localização</h2><p><strong>Localização:</strong> Ilha Rasa, Ipanema</p><p><strong>Coordenadas:</strong> -23.06390, -43.14590</p><div id="monument-location-map"></div><!-- [Ref] https://leafletjs.com/ -->
+<link href="/assets/leaflet/leaflet.css" rel="stylesheet" type="text/css">
+<script src="/assets/leaflet/leaflet.1.9.3.min.js"></script><script>
 const bounds = new L.LatLngBounds(
 	new L.LatLng(-23.0889, -43.195899999999995),
 	new L.LatLng(-23.0389, -43.0959)
@@ -480,8 +482,6 @@ L.marker([-23.0639, -43.1459], {
 	<!-- LiteLightbox -->
 	<link href="/assets/litelightbox.min.css" rel="stylesheet" type="text/css">
 	<script src="/assets/litelightbox.min.js?v=05-24"></script>
-	<!-- Leaflet Maps -->
-	<link href="/assets/leaflet/leaflet.css" rel="stylesheet" type="text/css">
 	<!-- <details> navigation -->
 	<script src="/assets/details.js?v=05-28"></script>
 	<!-- Dark mode -->

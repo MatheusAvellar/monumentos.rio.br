@@ -182,7 +182,9 @@
 	<h1>Placa</h1>
 
 	
-<section class="location"><h2>Localização</h2><p><strong>Localização:</strong> Botafogo</p><p><strong>Coordenadas:</strong> -22.94924, -43.18047</p><div id="monument-location-map"></div><script src="/assets/leaflet/leaflet.min.1.9.3.js"></script><script>
+<section class="location"><h2>Localização</h2><p><strong>Localização:</strong> Botafogo</p><p><strong>Coordenadas:</strong> -22.94924, -43.18047</p><div id="monument-location-map"></div><!-- [Ref] https://leafletjs.com/ -->
+<link href="/assets/leaflet/leaflet.css" rel="stylesheet" type="text/css">
+<script src="/assets/leaflet/leaflet.1.9.3.min.js"></script><script>
 const bounds = new L.LatLngBounds(
 	new L.LatLng(-22.974239999999998, -43.23047),
 	new L.LatLng(-22.92424, -43.13047)
@@ -364,8 +366,6 @@ L.marker([-22.94924, -43.18047], {
 	<!-- LiteLightbox -->
 	<link href="/assets/litelightbox.min.css" rel="stylesheet" type="text/css">
 	<script src="/assets/litelightbox.min.js?v=05-24"></script>
-	<!-- Leaflet Maps -->
-	<link href="/assets/leaflet/leaflet.css" rel="stylesheet" type="text/css">
 	<!-- <details> navigation -->
 	<script src="/assets/details.js?v=05-28"></script>
 	<!-- Dark mode -->

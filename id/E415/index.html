@@ -251,7 +251,9 @@ Idealizada por BDF NIVEA BRASIL e Isobar Brasil
 Rio de Janeiro, junho de 2015
 </pre>
 </section>
-<section class="location"><h2>Localização</h2><p><strong>Localização:</strong> Praça Afonso Pena, Tijuca</p><p><strong>Coordenadas:</strong> -22.91780, -43.21800</p><div id="monument-location-map"></div><script src="/assets/leaflet/leaflet.min.1.9.3.js"></script><script>
+<section class="location"><h2>Localização</h2><p><strong>Localização:</strong> Praça Afonso Pena, Tijuca</p><p><strong>Coordenadas:</strong> -22.91780, -43.21800</p><div id="monument-location-map"></div><!-- [Ref] https://leafletjs.com/ -->
+<link href="/assets/leaflet/leaflet.css" rel="stylesheet" type="text/css">
+<script src="/assets/leaflet/leaflet.1.9.3.min.js"></script><script>
 const bounds = new L.LatLngBounds(
 	new L.LatLng(-22.9428, -43.268),
 	new L.LatLng(-22.8928, -43.168000000000006)
@@ -523,8 +525,6 @@ L.marker([-22.9178, -43.218], {
 	<!-- LiteLightbox -->
 	<link href="/assets/litelightbox.min.css" rel="stylesheet" type="text/css">
 	<script src="/assets/litelightbox.min.js?v=05-24"></script>
-	<!-- Leaflet Maps -->
-	<link href="/assets/leaflet/leaflet.css" rel="stylesheet" type="text/css">
 	<!-- <details> navigation -->
 	<script src="/assets/details.js?v=05-28"></script>
 	<!-- Dark mode -->

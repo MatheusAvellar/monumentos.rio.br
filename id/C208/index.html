@@ -252,7 +252,9 @@ Secretaria Municipal de Cultura
 Dep. Geral de Patrimônio Cultural
 </pre>
 </section>
-<section class="location"><h2>Localização</h2><p><strong>Localização:</strong> Rua das Laranjeiras, Cosme Velho</p><p><strong>Coordenadas:</strong> -22.94070, -43.19710</p><div id="monument-location-map"></div><script src="/assets/leaflet/leaflet.min.1.9.3.js"></script><script>
+<section class="location"><h2>Localização</h2><p><strong>Localização:</strong> Rua das Laranjeiras, Cosme Velho</p><p><strong>Coordenadas:</strong> -22.94070, -43.19710</p><div id="monument-location-map"></div><!-- [Ref] https://leafletjs.com/ -->
+<link href="/assets/leaflet/leaflet.css" rel="stylesheet" type="text/css">
+<script src="/assets/leaflet/leaflet.1.9.3.min.js"></script><script>
 const bounds = new L.LatLngBounds(
 	new L.LatLng(-22.9657, -43.247099999999996),
 	new L.LatLng(-22.9157, -43.1471)
@@ -494,8 +496,6 @@ L.marker([-22.9407, -43.1971], {
 	<!-- LiteLightbox -->
 	<link href="/assets/litelightbox.min.css" rel="stylesheet" type="text/css">
 	<script src="/assets/litelightbox.min.js?v=05-24"></script>
-	<!-- Leaflet Maps -->
-	<link href="/assets/leaflet/leaflet.css" rel="stylesheet" type="text/css">
 	<!-- <details> navigation -->
 	<script src="/assets/details.js?v=05-28"></script>
 	<!-- Dark mode -->

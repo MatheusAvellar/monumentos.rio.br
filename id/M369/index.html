@@ -316,7 +316,9 @@ que deverá ser aberta no dia 13 de agosto de 2019.
         Governo da Guanabara - 1969
 </pre>
 </section>
-<section class="location"><h2>Localização</h2><p><strong>Localização:</strong> Avenida Franklin Roosevelt, Centro</p><p><strong>Coordenadas:</strong> -22.90940, -43.16990</p><div id="monument-location-map"></div><script src="/assets/leaflet/leaflet.min.1.9.3.js"></script><script>
+<section class="location"><h2>Localização</h2><p><strong>Localização:</strong> Avenida Franklin Roosevelt, Centro</p><p><strong>Coordenadas:</strong> -22.90940, -43.16990</p><div id="monument-location-map"></div><!-- [Ref] https://leafletjs.com/ -->
+<link href="/assets/leaflet/leaflet.css" rel="stylesheet" type="text/css">
+<script src="/assets/leaflet/leaflet.1.9.3.min.js"></script><script>
 const bounds = new L.LatLngBounds(
 	new L.LatLng(-22.9344, -43.219899999999996),
 	new L.LatLng(-22.884400000000003, -43.1199)
@@ -563,8 +565,6 @@ L.marker([-22.9094, -43.1699], {
 	<!-- LiteLightbox -->
 	<link href="/assets/litelightbox.min.css" rel="stylesheet" type="text/css">
 	<script src="/assets/litelightbox.min.js?v=05-24"></script>
-	<!-- Leaflet Maps -->
-	<link href="/assets/leaflet/leaflet.css" rel="stylesheet" type="text/css">
 	<!-- <details> navigation -->
 	<script src="/assets/details.js?v=05-28"></script>
 	<!-- Dark mode -->
