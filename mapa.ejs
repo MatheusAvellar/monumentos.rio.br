@@ -119,9 +119,8 @@ for(const [key, obj] of [...markersMap]) {
 	map.on("move", function(evt) {
 		if(obj.lock) return;
 		obj.lock = true;
-		console.log(key);
 		obj.canvas._reset();
-		setTimeout(function() { obj.lock = false; }, 100);
+		setTimeout(function() { obj.lock = false; }, 16);
 	}, obj.canvas);
 }
 
