@@ -244,7 +244,7 @@ const map = L.map("monument-location-map", {
 L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
 	minZoom: 15,
 	maxZoom: 19,
-	attribution: "&copy; <a href='http://www.openstreetmap.org/copyright'>OSM</a>"
+	attribution: "&copy; <a href='http://www.openstreetmap.org/copyright'>OSMF</a>"
 }).addTo(map);
 L.marker([-22.9517, -43.2602], {
 	icon: L.icon({
@@ -278,34 +278,29 @@ L.marker([-22.9517, -43.2602], {
 				<i class="category info-tag possui_escrita">possui escrita</i>
 
 			<!-- Auto-tags -->
-			
+			<i class="category info-tag sem_autoria">sem autoria</i>
 			
 			</div>
 		</details>
 	</div>
 
-
 		<hr>
 		<p class="section-heading">Detalhes</p>
-			<dl>
-
-				<dt>Autores</dt>
-				<dd><ul><li>Fundição Americana</li></ul></dd>
+		<dl>
 
 
-				<dt>Inauguração</dt>
-				<dd>
-					21 de dezembro de 1940<br>
-					(83 anos atrás)
-				</dd>
+			<dt>Inauguração</dt>
+			<dd>
+				21 de dezembro de 1940<br>
+				(83 anos atrás)
+			</dd>
 
 
 
-					<dt>Material</dt>
-					<dd>Bronze<br>Granito</dd>
+				<dt>Material</dt>
+				<dd>Bronze<br>Granito</dd>
 
-			</dl>
-
+		</dl>
 
 
 
@@ -458,6 +453,6 @@ L.marker([-22.9517, -43.2602], {
 	<!-- <details> navigation -->
 	<script src="/assets/details.js?v=05-28"></script>
 	<!-- Dark mode -->
-	<script src="/assets/darkmode.js?v=05-29"></script>
+	<script src="/assets/darkmode.js?v=05-31"></script>
 </body>
 </html>

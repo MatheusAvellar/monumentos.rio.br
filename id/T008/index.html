@@ -175,13 +175,18 @@
 		<p class="note warning">
 			<strong>Nota:</strong>
 			Este item está marcado como <i class="category info-tag preliminar">preliminar</i>. Isso
-			significa dizer que ele não possui um identificador permanente ainda.
+			significa que ele não possui um identificador permanente ainda.
 			Assim, o URL atual será alterado no futuro. Fique atento!
 		</p>
 
 	<h1>Placa</h1>
 
 	
+<section class="description">
+	<p>
+		Removida em algum ponto entre abril de 2017 e fevereiro de 2018.
+	</p>
+</section>
 <section class="location"><h2>Localização</h2><p><strong>Localização:</strong> Botafogo</p><p><strong>Coordenadas:</strong> -22.94274, -43.18090</p><div id="monument-location-map"></div><!-- [Ref] https://leafletjs.com/ -->
 <link href="/assets/leaflet/leaflet.1.9.3.css" rel="stylesheet" type="text/css">
 <script src="/assets/leaflet/leaflet.1.9.3.min.js"></script><script>
@@ -198,7 +203,7 @@ const map = L.map("monument-location-map", {
 L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
 	minZoom: 15,
 	maxZoom: 19,
-	attribution: "&copy; <a href='http://www.openstreetmap.org/copyright'>OSM</a>"
+	attribution: "&copy; <a href='http://www.openstreetmap.org/copyright'>OSMF</a>"
 }).addTo(map);
 L.marker([-22.94274, -43.1809], {
 	icon: L.icon({
@@ -227,6 +232,10 @@ L.marker([-22.94274, -43.1809], {
 
 				<i class="category info-tag preliminar">preliminar</i>
 
+				<i class="category info-tag possui_escrita">possui escrita</i>
+
+				<i class="category info-tag escrita_ilegivel">escrita ilegível</i>
+
 				<i class="category info-tag removido">removido</i>
 
 			<!-- Auto-tags -->
@@ -235,6 +244,7 @@ L.marker([-22.94274, -43.1809], {
 			</div>
 		</details>
 	</div>
+
 
 
 
@@ -369,6 +379,6 @@ L.marker([-22.94274, -43.1809], {
 	<!-- <details> navigation -->
 	<script src="/assets/details.js?v=05-28"></script>
 	<!-- Dark mode -->
-	<script src="/assets/darkmode.js?v=05-29"></script>
+	<script src="/assets/darkmode.js?v=05-31"></script>
 </body>
 </html>
