@@ -50,7 +50,7 @@ tombado_url = doFallback("tombado_url");
 		<p class="note warning">
 			<strong>Nota:</strong>
 			Este item está marcado como <%- makeInfoTag("preliminar") %>. Isso
-			significa dizer que ele não possui um identificador permanente ainda.
+			significa que ele não possui um identificador permanente ainda.
 			Assim, o URL atual será alterado no futuro. Fique atento!
 		</p>
 	<%_ } %>
@@ -84,67 +84,65 @@ tombado_url = doFallback("tombado_url");
 			</div>
 		</details>
 	</div>
-	<%_ if(data_inaug || altura || largura || peso || material.length) { %>
-		<%_ if(autores.length || data_inaug || data_remov || material.length) { %>
+	<%_ if(autores.length || data_inaug || data_remov || material.length) { %>
 		<hr>
 		<p class="section-heading">Detalhes</p>
-			<dl>
-			<%_ if(autores.length) { %>
-				<dt>Autores</dt>
-				<dd><ul><%- autores.map(a=>`<li>${a}</li>`).join("") %></ul></dd>
-			<%_ } %>
-			<%_ if(data_inaug) { %>
-				<dt>Inauguração</dt>
-				<dd>
-					<%= formatDate(data_inaug, data_circa) %><br>
-					(<%= getYearsSince(data_inaug) %>)
-				</dd>
-			<%_ } %>
-			<%_ if(data_remov) { %>
-				<dt>Remoção</dt>
-				<dd>
-					<%= formatDate(data_remov) %><br>
-					(<%= getYearsSince(data_remov) %>)<br>
-					<%_ if(motiv_remov) { %>
-					<small><strong>Motivo:</strong> <%= motiv_remov %></small>
-					<%_ } %>
-				</dd>
-			<%_ } %>
-			<%_ if(material.length) { %>
-					<dt>Material</dt>
-					<dd><%- material.join("<br>") %></dd>
-			<%_ } %>
-			</dl>
+		<dl>
+		<%_ if(autores.length) { %>
+			<dt>Autores</dt>
+			<dd><ul><%- autores.map(a=>`<li>${a}</li>`).join("") %></ul></dd>
 		<%_ } %>
-		<%_ if(altura || largura || comprimento || peso) { %>
-			<hr>
-			<div class="description-size">
-				<%_ if(altura) { %>
-					<div>
-						<strong><%= altura %>&nbsp;m</strong>
-						<span class="description-size-label">Altura</span>
-					</div>
-				<%_ } %>
-				<%_ if(largura) { %>
-					<div>
-						<strong><%= largura %>&nbsp;m</strong>
-						<span class="description-size-label">Largura</span>
-					</div>
-				<%_ } %>
-				<%_ if(comprimento) { %>
-					<div>
-						<strong><%= comprimento %>&nbsp;m</strong>
-						<span class="description-size-label">Comprimento</span>
-					</div>
-				<%_ } %>
-				<%_ if(peso) { %>
-					<div>
-						<strong><%= peso %>&nbsp;kg</strong>
-						<span class="description-size-label">Peso</span>
-					</div>
-				<%_ } %>
-			</div>
+		<%_ if(data_inaug) { %>
+			<dt>Inauguração</dt>
+			<dd>
+				<%= formatDate(data_inaug, data_circa) %><br>
+				(<%= getYearsSince(data_inaug) %>)
+			</dd>
 		<%_ } %>
+		<%_ if(data_remov) { %>
+			<dt>Remoção</dt>
+			<dd>
+				<%= formatDate(data_remov) %><br>
+				(<%= getYearsSince(data_remov) %>)<br>
+				<%_ if(motiv_remov) { %>
+				<small><strong>Motivo:</strong> <%= motiv_remov %></small>
+				<%_ } %>
+			</dd>
+		<%_ } %>
+		<%_ if(material.length) { %>
+				<dt>Material</dt>
+				<dd><%- material.join("<br>") %></dd>
+		<%_ } %>
+		</dl>
+	<%_ } %>
+	<%_ if(altura || largura || comprimento || peso) { %>
+		<hr>
+		<div class="description-size">
+			<%_ if(altura) { %>
+				<div>
+					<strong><%= altura %>&nbsp;m</strong>
+					<span class="description-size-label">Altura</span>
+				</div>
+			<%_ } %>
+			<%_ if(largura) { %>
+				<div>
+					<strong><%= largura %>&nbsp;m</strong>
+					<span class="description-size-label">Largura</span>
+				</div>
+			<%_ } %>
+			<%_ if(comprimento) { %>
+				<div>
+					<strong><%= comprimento %>&nbsp;m</strong>
+					<span class="description-size-label">Comprimento</span>
+				</div>
+			<%_ } %>
+			<%_ if(peso) { %>
+				<div>
+					<strong><%= peso %>&nbsp;kg</strong>
+					<span class="description-size-label">Peso</span>
+				</div>
+			<%_ } %>
+		</div>
 	<%_ } %>
 	<%_ if(imrj || wikidata || structurae || cona) { %>
 		<hr>

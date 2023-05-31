@@ -209,7 +209,7 @@ const map = L.map("monument-location-map", {
 L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
 	minZoom: 15,
 	maxZoom: 19,
-	attribution: "&copy; <a href='http://www.openstreetmap.org/copyright'>OSM</a>"
+	attribution: "&copy; <a href='http://www.openstreetmap.org/copyright'>OSMF</a>"
 }).addTo(map);
 L.marker([${lat}, ${lon}], {
 	icon: L.icon({

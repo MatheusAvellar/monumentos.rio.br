@@ -13,7 +13,7 @@
 	const canLocalStorage = isLocalStorageAvailable();
 	function toggleDarkMode(state) {
 		state = !!state;
-		console.log(`toggleDarkMode ${state}`);
+		console.log(`[dark-mode] Called 'toggleDarkMode(${state})'`);
 		toggle.checked = state;
 		// Liga o modo escuro
 		if(state) {
@@ -27,10 +27,10 @@
 	}
 	function setLocalStorage(state) {
 		state = !!state;
-		console.log(`setLocalStorage ${state}`);
+		console.log(`[dark-mode] Called 'setLocalStorage(${state})'`);
 		// Se podemos usar o local storage pra salvar a preferência
 		if(canLocalStorage)
-			localStorage.setItem("dark-mode", !!Number(state));
+			localStorage.setItem("dark-mode", Number(state));
 	}
 
 	// Mostra botão de modo escuro, já que temos JS
@@ -46,17 +46,19 @@
 	////
 	matchMedia = "matchMedia" in window ? window.matchMedia : (()=>false);
 	const prefersDarkMode = matchMedia("(prefers-color-scheme: dark)").matches;
-	console.log(`prefersDarkMode ${prefersDarkMode}`);
+	console.log(`[dark-mode] Browser 'prefers-color-scheme: dark': ${prefersDarkMode}`);
 	// Se podemos conferir se há configuração salva
 	if(canLocalStorage) {
 		const previous = localStorage.getItem("dark-mode");
 		// Se não existe configuração salva
 		if(previous === null) {
+			console.log(`[dark-mode] No localStorage setting found`);
 			// Se o navegador possui preferência
 			if(prefersDarkMode) toggleDarkMode(true);
 			else toggleDarkMode(false);
 		// Se existe configuração salva
 		} else {
+			console.log(`[dark-mode] Found localStorage setting: ${previous} (${!!Number(previous)})`);
 			if(!!Number(previous)) toggleDarkMode(true);
 			else toggleDarkMode(false);
 		}
