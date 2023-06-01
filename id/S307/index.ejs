@@ -1,12 +1,17 @@
 ---
 layout: monument.ejs
 name: Proteção, o Cão e a Criança
+alt_names: [ Protection ]
 categoria: escultura
 tags: []
+series: [
+	"Pereira Passos",
+	"Praia de Botafogo"
+]
 
-data_inaug: 1906
+data_inaug: 1907-09
 data_circa: true
-altura: 
+altura: 1.5
 largura: 
 peso: 
 material: 
@@ -39,9 +44,16 @@ wikidata: Q67210132
 </figure>
 <section class="description">
 	<p>
-		Escultura de um cão protegendo um bebê. Segundo o IMRJ, foi inicialmente
-		instalada na Praia de Botafogo em 1906. Foi posteriormente movida para o
-		parque de Jardim de Alah na ocasião de sua inauguração, em 1938.<sup>1</sup>
+		Escultura de um cão protegendo um bebê, foi inicialmente instalada na Praia
+		de Botafogo. Foi posteriormente movida para o parque de Jardim de Alah na
+		ocasião de sua inauguração, em 1938.<sup>1</sup>
+	</p>
+	<p>
+		Foi parte das reformas na cidade do Rio de Janeiro pelo então
+		prefeito (1902–1906) Pereira Passos, inspirado por reformas em Paris da
+		época. Muitas esculturas foram encomendadas da França mas, devido a
+		atrasos,<sup>2,3</sup> nem todas puderam ser instaladas durante sua
+		administração.
 	</p>
 </section>
 <section class="refs">
@@ -51,17 +63,45 @@ wikidata: Q67210132
 			<a href="https://projetocolabora.com.br/ods11/rioerua-a-frustracao-do-jardim-de-alah/">#RioéRua:
 			a frustração do Jardim de Alah</a>. <i>#Colabora</i>.
 		</li>
+		<li>
+			S.n. (1 de setembro de 1907).
+			<a href="https://memoria.bn.br/DocReader/DocReader.aspx?bib=259764&pesq=weigele&pagfis=3247">Jardins
+			publics de Rio</a>. <i>L'Étoile du Sud</i>, p.2 [via Hemeroteca Digital da
+			Biblioteca Nacional].
+		</li>
+		<li>
+			S.n. (17 de agosto de 1907).
+			<a href="https://memoria.bn.br/DocReader/DocReader.aspx?bib=103730_04&pesq=crepuscule&pagfis=15450">As
+			Estatuas da Prefeitura</a>. <i>Gazeta de Noticias</i>, p.1 [via Hemeroteca
+			Digital da Biblioteca Nacional].
+		</li>
 	</ol>
 </section>
 <section class="gallery">
 	<h2>Galeria</h2>
+	<figure>
+		<a href="gallery-1907-full.jpg" data-llb-src="href">
+			<img src="gallery-1907.jpg">
+		</a>
+		<figcaption>
+			<p>
+				Estátua logo após instalação, na Praia de Botafogo, em 1907
+			</p>
+			<p class="credits">
+				Reportagem: "G." (dezembro de 1907).
+				<a href="https://memoria.bn.br/DocReader/DocReader.aspx?bib=146420&pagfis=2659">A
+				Estatuaria dos Jardins Publicos</a>. <i>Kósmos</i>, nº12, p.59 [via
+				Hemeroteca Digital da Biblioteca Nacional].
+			</p>
+		</figcaption>
+	</figure>
 	<figure>
 		<a href="gallery-1943-full.jpg" data-llb-src="href">
 			<img src="gallery-1943.jpg">
 		</a>
 		<figcaption>
 			<p>
-				Escultura em 1943
+				Escultura já no Jardim de Alah, em 1943
 			</p>
 			<p class="credits">
 				Foto: S.n./Agência Nacional (5 de abril de 1943),
@@ -97,3 +137,4 @@ wikidata: Q67210132
 <section class="more">
 <!-- 	<h2>Leia mais</h2> -->
 </section>
+<%- makeOthersFromSeries(arguments[0]) %>

@@ -1,24 +1,59 @@
 ---
 layout: monument.ejs
-name: Escultura
+name: Maternidade
 categoria: escultura
 tags: [
 	"preliminar"
+]
+series: [
+	"Praia de Botafogo"
 ]
 
 data_inaug: 
 altura: 
 largura: 
 material: 
-autores: 
+autores: [
+	Celso Antônio de Menezes
+]
 
 local: 
 bairro: Botafogo
 lat: -22.94344
 lon: -43.18148
 
-imrj: 
-wikidata: 
+imrj: 305
+wikidata: Q67203815
 ---
-
+<figure>
+	<a href="photo.jpg" data-llb-src="href">
+		<img src="thumb.jpg">
+	</a>
+	<figcaption>
+		<p class="credits">
+			Foto: Donatas Dabravolskas (5 de setembro de 2022),
+			<a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>,
+			via
+			<a href="https://commons.wikimedia.org/wiki/File:Maternidade_-_Rio_de_Janeiro_-_20220905160317.jpg">Wikimedia
+			Commons</a>.
+		</p>
+	</figcaption>
+</figure>
+<section class="description">
+	<!-- <p></p> -->
+</section>
+<section class="gallery"></section>
+<section class="inscription">
+	<h2>Inscrição</h2>
+	<p>
+		Há uma inscrição no próprio mármore contendo o seguinte texto:
+	</p>
+	<pre class="inscription-text">
+Celso Antonio
+1943</pre>
+</section>
 <%- makeMap(arguments[0]); %>
+<section class="more">
+	<!-- <h2>Leia mais</h2> -->
+</section>
+<%- makeOthersFromSeries(arguments[0]) %>

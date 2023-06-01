@@ -3,16 +3,23 @@ https://www.facebook.com/veradiashistorias
 Decretos
 http://wpro.rio.rj.gov.br/decretosmunicipais/
 
+Delimitação de bairros
+https://www.data.rio/datasets/PCRJ::limite-de-bairros/explore
+
+https://pt.wikipedia.org/wiki/Lista_de_bens_tombados_no_Rio_de_Janeiro_(cidade)
+
 fotos de estátuas no rio com uso permitido
 https://flickr.com/photos/riotur/albums/72157710599923058
 
+---
+Esculturas de Pereira Passos
+---
 fotos 1915 "Os marmores da cidade":
 - Dansarina
 - Um combate nos tempos prehistoricos
 - Panthera e flamingo
 - A Primavera, O Verão, O Outono, O Inverno
 - O Crepúsculo
-- Poesia das Ruínas
 - Fonte Ramos Pinto
 - Panthera caçando
 https://memoria.bn.br/DocReader/DocReader.aspx?bib=259063&pesq=botafogo%20magrou&pasta=ano%20191&hf=memoria.bn.br&pagfis=20499
@@ -20,10 +27,39 @@ https://memoria.bn.br/DocReader/DocReader.aspx?bib=259063&pesq=botafogo%20magrou
 https://memoria.bn.br/DocReader/DocReader.aspx?bib=259063&pesq=botafogo%20magrou&pasta=ano%20191&hf=memoria.bn.br&pagfis=20501
 https://memoria.bn.br/DocReader/DocReader.aspx?bib=259063&pesq=botafogo%20magrou&pasta=ano%20191&hf=memoria.bn.br&pagfis=20502
 
-Delimitação de bairros
-https://www.data.rio/datasets/PCRJ::limite-de-bairros/explore
+Estatuaria dos Jardins Publicos
+https://memoria.bn.br/DocReader/DocReader.aspx?bib=146420&Pesq=Darbefeuille&pagfis=2658
 
-https://pt.wikipedia.org/wiki/Lista_de_bens_tombados_no_Rio_de_Janeiro_(cidade)
+Reportagens sobre esculturas de Pereira Passos (agosto 1907):
+- A Primavera, O Outono (2.1m) - Gustavo/Gustave Michel
+- O Verão, O Inverno (2.1m) - Gasq
+- Lion debout (1.8m), Tigre a L'affut (1.7m), Panthére (1.5), Panthére (1.6m),
+Protection (1.5m), Combat prehistorique (2.2m) - Peyrol
+- Crepuscule (2m) - Weigele
+- Danseuse (2.5m) - Darbefeuille
+- L'oiseleur (1.1m) - Dominique Bianchi
+https://memoria.bn.br/DocReader/DocReader.aspx?bib=103730_04&pesq=crepuscule&pasta=ano%20190&hf=memoria.bn.br&pagfis=15450
+https://memoria.bn.br/DocReader/DocReader.aspx?bib=259764&pesq=weigele&pasta=ano%20190&hf=memoria.bn.br&pagfis=3247
+
+https://memoria.bn.br/DocReader/DocReader.aspx?bib=146420&pesq=Darbefeuille&pasta=ano%20190&hf=memoria.bn.br&pagfis=2660
+
+Foto da escultura do cara matando o bicho, abril 1908
+https://acervos.ims.com.br/portals/#/detailpage/104078
+
+Foto da escultura "Dansarina"
+https://brasilianafotografica.bn.gov.br/brasiliana/handle/20.500.12156.1/10094
+
+Foto da escultura da pantera? circa 1903
+https://acervos.ims.com.br/portals/#/detailpage/113421
+Parece a mesma escultura, 1928 (+ monumento ao Almirante Barroso)
+https://acervos.ims.com.br/portals/#/detailpage/105589
+----
+
+abril de 1950: Estátua do Trabalhador
+https://memoria.bn.br/DocReader/DocReader.aspx?bib=089842_06&pesq=%22Celso%20Antonio%22&pasta=ano%20195&hf=memoria.bn.br&pagfis=2036
+(tretas em 1951)
+https://memoria.bn.br/DocReader/DocReader.aspx?bib=089842_06&pesq=%22Celso%20Antonio%22&pasta=ano%20195&hf=memoria.bn.br&pagfis=7672
+https://memoria.bn.br/DocReader/DocReader.aspx?bib=154083_01&pesq=%22celso%20antonio%22%20%22botafogo%22%20%22maternidade%22&hf=memoria.bn.br&pagfis=6765
 
 20/12/1958 - Inauguração do Busto de Vera Janacópulos
 https://memoria.bn.br/DocReader/DocReader.aspx?bib=093718_03&pesq=%22Pra%C3%A7a%20Paris%22&pasta=ano%20195&hf=memoria.bn.br&pagfis=78837
