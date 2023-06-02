@@ -28,7 +28,7 @@ lon = doFallback("lon", 0);
 local = doFallback("local");
 bairro = doFallback("bairro");
 
-imrj = doFallback("imrj");
+imrj = [doFallback("imrj", [])].flat();
 wikidata = doFallback("wikidata");
 structurae = doFallback("structurae");
 cona = doFallback("cona");
@@ -144,14 +144,16 @@ tombado_url = doFallback("tombado_url");
 			<%_ } %>
 		</div>
 	<%_ } %>
-	<%_ if(imrj || wikidata || structurae || cona) { %>
+	<%_ if(imrj.length || wikidata || structurae || cona) { %>
 		<hr>
 		<p class="section-heading">Catálogos</p>
 		<dl>
-			<%_ if(imrj) { %>
+			<%_ if(imrj.length) { %>
 				<dt><abbr title="Inventário dos Monumentos RJ">IMRJ</abbr></dt>
 				<dd>
-					ID&nbsp;<a href="<%= IMRJ_URL %><%= imrj %>"><%= imrj %></a>
+					<%_ for(let i = 0; i < imrj.length; i++) { %>
+					ID&nbsp;<a href="<%= IMRJ_URL %><%= imrj[i] %>"><%= imrj[i] %></a><br>
+					<%_ } %>
 				</dd>
 			<%_ } %>
 			<%_ if(wikidata) { %>

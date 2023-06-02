@@ -5,6 +5,8 @@ title: Monumentos Rio
 <%_ const monuments = collections.all.filter(file => file.filePathStem.startsWith("/id/"));
 const monument_count = monuments.length;
 
+const finished_monument_count = monuments.filter(m => ![m.data.tags || []].flat().includes("preliminar")).length;
+
 const distinct_bairros = new Set();
 monuments.forEach(m => { distinct_bairros.add(m.data.bairro); });
 
@@ -46,7 +48,19 @@ function countCategory(cat) {
 			</span>
 		</div>
 	</div>
-	<br><hr>
+<%_ if(monument_count > finished_monument_count) { %>
+	<p>
+		Dos <strong><%= monument_count %></strong> monumentos catalogados,
+		<strong><%= finished_monument_count %></strong>
+		<small>(<%= ((finished_monument_count/monument_count)*100).toFixed(2) %>%)</small>
+		já possuem IDs permanentes e
+		<strong><%= (monument_count - finished_monument_count) %></strong>
+		<small>(<%= (((monument_count - finished_monument_count)/monument_count)*100).toFixed(2) %>%)</small>
+		<%_ if(monument_count - finished_monument_count >= 2)
+		{ %>são preliminares, só com coordenadas cadastradas.
+		<%_ } else { %>é preliminar, só com coordenadas cadastradas.<%_ } %>
+	</p>
+<%_ } %><br><hr>
 	<section id="home-categories-list">
 		<p style="text-indent:1rem">
 			Selecione <strong>Inventário</strong> para ver a lista completa de

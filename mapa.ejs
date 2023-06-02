@@ -100,6 +100,16 @@ L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
 	attribution: "&copy; <a href='http://www.openstreetmap.org/copyright'>OSMF</a>"
 }).addTo(map);
 
+function makeMarker(cat) {
+	return {
+		iconUrl: `<%= MARKER_PATH %>/phosphor-marker--${cat}.svg`,
+		iconSize: [32, 32],
+		iconAnchor: [16, 32]
+	};
+}
+
+const tempMarker = L.icon(makeMarker("temp"));
+
 const markersMap = new Map();
 markersMap.set("busto",     { lock: !1, list: [], canvas: new L.MarkersCanvas(), icon: L.icon(makeMarker("<%= catCleanup("busto")     %>")) } );
 markersMap.set("chafariz",  { lock: !1, list: [], canvas: new L.MarkersCanvas(), icon: L.icon(makeMarker("<%= catCleanup("chafariz")  %>")) } );
@@ -158,14 +168,6 @@ document.getElementById("deselect-all").addEventListener("click", function() {
 	});
 });
 
-function makeMarker(cat) {
-	return {
-		iconUrl: `<%= MARKER_PATH %>/phosphor-marker--${cat}.svg`,
-		iconSize: [32, 32],
-		iconAnchor: [16, 32]
-	};
-}
-
 function generatePopup(id, name, data, bairro, extra) {
 	return `<a href="/id/${id}"><strong>${name}</strong></a><br>
 <span class="identifier">${id}</span> &middot; <span>${data}</span><br>
@@ -176,11 +178,13 @@ function markerOnClick(e) { this.openPopup(); }
 <%_ for(let i = 0; i < monument_count; i++) {
 	const lat = monuments[i].data.lat;
 	const lon = monuments[i].data.lon;
-	const ID = getIDFromPath(monuments[i].filePathStem); %>
-const m<%=i%> = L.marker([<%= lat %>, <%= lon %>], { icon: markersMap.get("<%= monuments[i].data.categoria %>").icon });
-m<%=i%>.bindPopup(generatePopup("<%= ID %>", <%_
-	const isEarly = [monuments[i].data.tags].flat().includes("preliminar");
-%>"<%= isEarly ? "(" : "" %><%= monuments[i].data.name %><%= isEarly ? ")" : "" %>", "<%= (monuments[i].data.data_circa ? 'c.' : '') + getYearFromDate(monuments[i].data.data_inaug) %>", "<%= monuments[i].data.bairro %>", '<%- makeTag(monuments[i].data.categoria) %>'), { offset: [0, -24] }).openPopup().on({ click: markerOnClick });
+	const ID = getIDFromPath(monuments[i].filePathStem);
+	const isEarly = [monuments[i].data.tags].flat().includes("preliminar"); %>
+const m<%=i%> = L.marker([<%= lat %>, <%= lon %>], {<%_
+%>icon: <%-
+	isEarly ? "tempMarker" : `markersMap.get("${monuments[i].data.categoria}").icon`
+%>});
+m<%=i%>.bindPopup(generatePopup("<%= ID %>", "<%= isEarly ? "(" : "" %><%= monuments[i].data.name %><%= isEarly ? ")" : "" %>", "<%= (monuments[i].data.data_circa ? 'c.' : '') + getYearFromDate(monuments[i].data.data_inaug) %>", "<%= monuments[i].data.bairro %>", '<%- makeTag(monuments[i].data.categoria) %>'), { offset: [0, -24] }).openPopup().on({ click: markerOnClick });
 markersMap.get("<%= monuments[i].data.categoria %>").list.push(m<%=i%>); <%_ } %>
 
 for(const [key, obj] of [...markersMap]) {

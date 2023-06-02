@@ -145,7 +145,7 @@ module.exports = function(eleventyConfig) {
 		return "";
 	};
 
-	makeCard = (item) => {
+	makeCard = (item, hyperlink_tag=true) => {
 		const ID = getIDFromPath(item.filePathStem);
 		const data = item.data;
 		const hasIMRJ = (data.imrj && `${data.imrj}`.length > 0);
@@ -169,7 +169,7 @@ module.exports = function(eleventyConfig) {
 			<span class="neighborhood">${data.bairro || "?"}</span>
 		</div>
 		<div class="card-tags">
-			${makeTag(data.categoria)}
+			${makeTag(data.categoria, hyperlink_tag)}
 			${isEarly ? makeInfoTag("preliminar") : ""}
 			${hasMissing ? makeInfoTag("removido") : ""}
 		</div>
@@ -248,7 +248,7 @@ L.marker([${lat}, ${lon}], {
 		const thisFilePath = ctx.page.filePathStem;
 
 		const out = [];
-		out.push(`<section class="related">`);
+		out.push(`<section class="related"><h2>Monumentos relacionados</h2>`);
 
 		for(let i = 0; i < series.length; i++) {
 			const mon = monuments.filter(m => {
@@ -258,16 +258,18 @@ L.marker([${lat}, ${lon}], {
 					return false;
 				if(![m.data.series].flat().includes(series[i]))
 					return false;
-				return m.filePathStem !== thisFilePath;
+				return true;
 			});
 			if(!mon.length)
 				continue;
 			const section = [];
-			section.push(`<h2>Mais da série '${series[i]}'</h2><div class="card-list">`);
+			section.push(`<h3>Série '${series[i]}'</h3>
+<p><strong>${mon.length}</strong> monumento${(mon.length) < 2 ? "" : "s"}</p>
+<div class="card-list">`);
 			for(let i = 0; i < mon.length; i++) {
 				section.push(makeCard(mon[i]));
 			}
-			section.push(`</div>`);
+			section.push(`</div><hr>`);
 			out.push(section.join(""));
 		}
 		out.push("</section>");
