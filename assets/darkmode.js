@@ -11,6 +11,10 @@
 		}
 	}
 	const canLocalStorage = isLocalStorageAvailable();
+
+	const metaThemeColor = document.createElement("meta");
+	metaThemeColor.setAttribute("name", "theme-color");
+	document.head.appendChild(metaThemeColor);
 	function toggleDarkMode(state) {
 		state = !!state;
 		console.log(`[dark-mode] Called 'toggleDarkMode(${state})'`);
@@ -18,10 +22,12 @@
 		// Liga o modo escuro
 		if(state) {
 			document.body.parentElement.classList.add("dark");
+			metaThemeColor.setAttribute("content", "#393a47");
 			text.textContent = "Desativar modo escuro";
 		// Desliga o modo escuro
 		} else {
 			document.body.parentElement.classList.remove("dark");
+			metaThemeColor.setAttribute("content", "#fff");
 			text.textContent = "Ativar modo escuro";
 		}
 	}

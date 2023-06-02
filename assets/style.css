@@ -325,6 +325,9 @@ h2 {
 	margin-bottom: .5rem;
 	font-size: 1.75rem;
 }
+h3 {
+	margin-top: 1rem;
+}
 strong {
 	font-weight: 500;
 }
@@ -361,6 +364,8 @@ aside > dl > dt {
 }
 aside > dl > dd {
 	margin-left: 1rem;
+	max-height: 12.5rem;
+	overflow-y: auto;
 }
 aside > dl > dd + dt {
 	margin-top: .5rem;
@@ -550,7 +555,7 @@ hr.vertical {
 	display: flex;
 	align-items: center;
 	flex-direction: column;
-	flex-basis: 33%;
+	flex-basis: 30%;
 }
 .description-size .description-size-label,
 .statistics .stats-total {
@@ -899,4 +904,8 @@ h2 {
 	.desktop-hide {
 		display: none !important;
 	}
+}
+
+@media screen and (min-width: 601px) and (max-width: 870px) {
+	main figure { float: none; }
 }

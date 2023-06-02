@@ -8,7 +8,7 @@
 	<link rel="preconnect" href="https://cdn.avl.la">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="referrer" content="no-referrer">
-	<link rel="stylesheet" href="/assets/style.css?v=05-29">
+	<link rel="stylesheet" href="/assets/style.css?v=06-01">
 </head>
 <body>
 	<div hidden>
@@ -255,12 +255,12 @@ D. Leopoldina
     Brasil
  Independente</pre>
 </section>
-<section class="location"><h2>Localização</h2><p><strong>Localização:</strong> Quinta da Boa Vista, São Cristóvão</p><p><strong>Coordenadas:</strong> -22.90560, -43.22540</p><div id="monument-location-map"></div><!-- [Ref] https://leafletjs.com/ -->
+<section class="location"><h2>Localização</h2><p><strong>Localização:</strong> Quinta da Boa Vista, São Cristóvão</p><p><strong>Coordenadas:</strong> -22.90557, -43.22545</p><div id="monument-location-map"></div><!-- [Ref] https://leafletjs.com/ -->
 <link href="/assets/leaflet/leaflet.1.9.3.css" rel="stylesheet" type="text/css">
 <script src="/assets/leaflet/leaflet.1.9.3.min.js"></script><script>
 const bounds = new L.LatLngBounds(
-	new L.LatLng(-22.9306, -43.2754),
-	new L.LatLng(-22.8806, -43.1754)
+	new L.LatLng(-22.93057, -43.27545),
+	new L.LatLng(-22.880570000000002, -43.175450000000005)
 );
 const map = L.map("monument-location-map", {
 	center: bounds.getCenter(),
@@ -273,7 +273,7 @@ L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
 	maxZoom: 19,
 	attribution: "&copy; <a href='http://www.openstreetmap.org/copyright'>OSMF</a>"
 }).addTo(map);
-L.marker([-22.9056, -43.2254], {
+L.marker([-22.90557, -43.22545], {
 	icon: L.icon({
 		iconUrl: "/assets/leaflet/images/phosphor-marker--estatua.svg",
 		iconSize: [64, 64],
@@ -289,7 +289,32 @@ L.marker([-22.9056, -43.2254], {
 	<ol>
 	</ol> -->
 </section>
-<section class="related"><h2>Mais da série 'Quinta da Boa Vista'</h2><div class="card-list"><div class="card" data-imrj >
+<section class="related"><h2>Monumentos relacionados</h2><h3>Série 'Quinta da Boa Vista'</h3>
+<p><strong>3</strong> monumentos</p>
+<div class="card-list"><div class="card" data-imrj >
+	<a href="/id/E397">
+		<div class="card-preview" style="background-image:url(/id/E397/thumb.jpg)"></div>
+	</a>
+	<div class="card-description">
+		<a href="/id/E397">
+			<p class="truncate" title="Estátua de Imperatriz Leopoldina">
+				<strong>
+				Estátua de Imperatriz Leopoldina</strong>
+			</p>
+		</a>
+		<div class="card-details">
+			<span class="identifier">E397</span>
+			&middot;
+			<span>1997</span><br>
+			<span class="neighborhood">São Cristóvão</span>
+		</div>
+		<div class="card-tags">
+			<a class="tag" href="/estatuas"><i class="category cat-estatua">estátua</i></a>
+			
+			
+		</div>
+	</div>
+</div><div class="card" data-imrj >
 	<a href="/id/M373">
 		<div class="card-preview" style="background-image:url(/id/M373/thumb.jpg)"></div>
 	</a>
@@ -335,7 +360,7 @@ L.marker([-22.9056, -43.2254], {
 			
 		</div>
 	</div>
-</div></div></section>
+</div></div><hr></section>
 </section>
 <aside>
 	<em class="display-identifier">E397</em>
@@ -385,7 +410,9 @@ L.marker([-22.9056, -43.2254], {
 
 				<dt><abbr title="Inventário dos Monumentos RJ">IMRJ</abbr></dt>
 				<dd>
-					ID&nbsp;<a href="http://www.inventariodosmonumentosrj.com.br/index.asp?iMENU=catalogo&amp;iiCOD=655">655</a>
+
+					ID&nbsp;<a href="http://www.inventariodosmonumentosrj.com.br/index.asp?iMENU=catalogo&amp;iiCOD=655">655</a><br>
+
 				</dd>
 
 
@@ -528,6 +555,6 @@ L.marker([-22.9056, -43.2254], {
 	<!-- <details> navigation -->
 	<script src="/assets/details.js?v=05-28"></script>
 	<!-- Dark mode -->
-	<script src="/assets/darkmode.js?v=05-31"></script>
+	<script src="/assets/darkmode.js?v=06-01"></script>
 </body>
 </html>
