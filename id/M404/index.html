@@ -2,7 +2,7 @@
 <html lang="pt-br">
 <head>
 	<meta charset="utf-8">
-	<title>Chafariz do Almirante Tamandaré — Monumentos Rio</title>
+	<title>Marco de Inauguração do Espaço Pablo Neruda — Monumentos Rio</title>
 	<meta content="Matheus Avellar" name="author">
 	<meta name="description" content="Catálogo de monumentos da cidade do Rio de Janeiro">
 	<link rel="preconnect" href="https://cdn.avl.la">
@@ -172,22 +172,86 @@
 <main class="monument">
 <section>
 
-		<p class="note warning">
-			<strong>Nota:</strong>
-			Este item está marcado como <i class="category info-tag preliminar">preliminar</i>. Isso
-			significa que ele não possui um identificador permanente ainda.
-			Assim, o URL atual será alterado no futuro. Fique atento!
-		</p>
-
-	<h1>Chafariz do Almirante Tamandaré</h1>
+	<h1>Marco de Inauguração do Espaço Pablo Neruda</h1>
 
 	
-<section class="location"><h2>Localização</h2><p><strong>Localização:</strong> Botafogo</p><p><strong>Coordenadas:</strong> -22.94130, -43.17780</p><div id="monument-location-map"></div><!-- [Ref] https://leafletjs.com/ -->
+<figure>
+	<a href="photo.jpg" data-llb-src="href">
+		<img src="thumb.jpg">
+	</a>
+	<figcaption>
+		<p class="credits">
+			Foto: Matheus Avellar (2 de junho de 2023).
+		</p>
+	</figcaption>
+</figure>
+<section class="description">
+	<p>
+		Inaugurado em homenagem a Pablo Neruda (12/06/1904–23/09/1973), influente
+		poeta, senador e diplomata chileno que recebeu o Prêmio Nobel da Literatura
+		em 1971. O marco foi inaugurado alguns meses após o centenário de seu
+		nascimento, em 5 de novembro de 2004.<sup>1</sup>
+	</p>
+	<p>
+		A inauguração contou com a presença do então prefeito (2001–2009) Cesar Maia,
+		e do então presidente do Chile (2000–2006) Ricardo Lagos Escobar.<sup>1</sup>
+		Vera Dias, no IMRJ, possui algumas fotos da inauguração.
+	</p>
+	<p>
+		Baseado em imagens do Google Street View, verifica-se que a placa foi
+		removida em algum ponto entre abril de 2017 e fevereiro de 2018.<sup>2</sup>
+		Vera Dias data o desaparecimento como novembro de 2018 – provavelmente
+		querendo dizer novembro de 2017. A pedra, contudo, continua lá.
+	</p>
+</section>
+<section class="refs">
+	<ol>
+		<li>
+			S.n. (6 de novembro de 2004).
+			<a href="https://memoria.bn.br/DocReader/DocReader.aspx?bib=364568_19&pagfis=68175">Prefeitura
+			abre espaço ao poeta Pablo Neruda</a>.
+			<i>Jornal do Commercio</i>, p.A-17 [via Hemeroteca Digital da Biblioteca
+			Nacional].
+		</li>
+		<li>
+			S.n. (fevereiro de 2018).
+			<a href="https://www.google.com/maps/@-22.9427533,-43.1806027,3a,15y,276.05h,86.42t/data=!3m7!1e1!3m5!1s97yIulB3ovcxiHczRGCIMQ!2e0!5s20180201T000000!7i13312!8i6656">Google
+			Street View</a>.
+		</li>
+	</ol>
+</section>
+<section class="gallery">
+	<!-- <h2>Galeria</h2> -->
+</section>
+<section class="inscription">
+	<h2>Inscrição</h2>
+	<p>
+		Havia uma placa no marco contendo o seguinte texto:
+	</p>
+	<pre class="inscription-text">
+Prefeitura
+da Cidade
+do Rio de Janeiro
+
+Espaço Pablo Neruda
+
+No 5º dia do mês de novembro do ano de 2004,
+foi inaugurado o Espaço Pablo Neruda
+uma comemoração à passagem do centenário
+de nascimento (1904/2004) do poeta chileno,
+<small>pelo Presidente da República do Chile,</small> Ricardo Lagos Escobar
+<small>e pelo Prefeito da Cidade do Rio de Janeiro,</small> Cesar Maia
+Com a presença dos secretários municipais
+<small>de Meio Ambiente,</small> Ayrton Xerez
+<small>e das Culturas,</small> Ricardo Macieira.
+</pre>
+</section>
+<section class="location"><h2>Localização</h2><p><strong>Localização:</strong> Praia de Botafogo, Botafogo</p><p><strong>Coordenadas:</strong> -22.94274, -43.18090</p><div id="monument-location-map"></div><!-- [Ref] https://leafletjs.com/ -->
 <link href="/assets/leaflet/leaflet.1.9.3.css" rel="stylesheet" type="text/css">
 <script src="/assets/leaflet/leaflet.1.9.3.min.js"></script><script>
 const bounds = new L.LatLngBounds(
-	new L.LatLng(-22.966299999999997, -43.227799999999995),
-	new L.LatLng(-22.9163, -43.1278)
+	new L.LatLng(-22.96774, -43.2309),
+	new L.LatLng(-22.917740000000002, -43.130900000000004)
 );
 const map = L.map("monument-location-map", {
 	center: bounds.getCenter(),
@@ -200,9 +264,9 @@ L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
 	maxZoom: 19,
 	attribution: "&copy; <a href='http://www.openstreetmap.org/copyright'>OSMF</a>"
 }).addTo(map);
-L.marker([-22.9413, -43.1778], {
+L.marker([-22.94274, -43.1809], {
 	icon: L.icon({
-		iconUrl: "/assets/leaflet/images/phosphor-marker--chafariz.svg",
+		iconUrl: "/assets/leaflet/images/phosphor-marker--marco.svg",
 		iconSize: [64, 64],
 		iconAnchor: [32, 64],
 		shadowUrl: "/assets/leaflet/images/marker-shadow.png",
@@ -211,13 +275,272 @@ L.marker([-22.9413, -43.1778], {
 	})
 }).addTo(map);
 </script></section>
-
+<section class="more">
+<!-- 	<h2>Leia mais</h2>
+	<ol></ol> -->
+</section>
+<section class="related"><h2>Monumentos relacionados</h2><h3>Série 'Praia de Botafogo'</h3>
+<p><strong>11</strong> monumentos</p>
+<div class="card-list"><div class="card" data-imrj >
+	<a href="/id/B361">
+		<div class="card-preview" style="background-image:url(/id/B361/thumb.jpg)"></div>
+	</a>
+	<div class="card-description">
+		<a href="/id/B361">
+			<p class="truncate" title="Busto de Bartolomeu Mitre">
+				<strong>
+				Busto de Bartolomeu Mitre</strong>
+			</p>
+		</a>
+		<div class="card-details">
+			<span class="identifier">B361</span>
+			&middot;
+			<span>1961</span><br>
+			<span class="neighborhood">Botafogo</span>
+		</div>
+		<div class="card-tags">
+			<a class="tag" href="/bustos"><i class="category cat-busto">busto</i></a>
+			
+			
+		</div>
+	</div>
+</div><div class="card" data-imrj >
+	<a href="/id/C329">
+		<div class="card-preview" style="background-image:url(/id/C329/thumb.jpg)"></div>
+	</a>
+	<div class="card-description">
+		<a href="/id/C329">
+			<p class="truncate" title="Chafariz Estrela">
+				<strong>
+				Chafariz Estrela</strong>
+			</p>
+		</a>
+		<div class="card-details">
+			<span class="identifier">C329</span>
+			&middot;
+			<span>1929</span><br>
+			<span class="neighborhood">Botafogo</span>
+		</div>
+		<div class="card-tags">
+			<a class="tag" href="/chafarizes"><i class="category cat-chafariz">chafariz</i></a>
+			
+			
+		</div>
+	</div>
+</div><div class="card" data-imrj >
+	<a href="/id/E337">
+		<div class="card-preview" style="background-image:url(/id/E337/thumb.jpg)"></div>
+	</a>
+	<div class="card-description">
+		<a href="/id/E337">
+			<p class="truncate" title="Monumento ao Almirante Tamandaré">
+				<strong>
+				Monumento ao Almirante Tamandaré</strong>
+			</p>
+		</a>
+		<div class="card-details">
+			<span class="identifier">E337</span>
+			&middot;
+			<span>1937</span><br>
+			<span class="neighborhood">Botafogo</span>
+		</div>
+		<div class="card-tags">
+			<a class="tag" href="/estatuas"><i class="category cat-estatua">estátua</i></a>
+			
+			
+		</div>
+	</div>
+</div><div class="card" data-imrj >
+	<a href="/id/M404">
+		<div class="card-preview" style="background-image:url(/id/M404/thumb.jpg)"></div>
+	</a>
+	<div class="card-description">
+		<a href="/id/M404">
+			<p class="truncate" title="Marco de Inauguração do Espaço Pablo Neruda">
+				<strong>
+				Marco de Inauguração do Espaço Pablo Neruda</strong>
+			</p>
+		</a>
+		<div class="card-details">
+			<span class="identifier">M404</span>
+			&middot;
+			<span>2004</span><br>
+			<span class="neighborhood">Botafogo</span>
+		</div>
+		<div class="card-tags">
+			<a class="tag" href="/marcos"><i class="category cat-marco">marco</i></a>
+			
+			<i class="category info-tag removido">removido</i>
+		</div>
+	</div>
+</div><div class="card" data-imrj >
+	<a href="/id/S308">
+		<div class="card-preview" style="background-image:url(/id/S308/thumb.jpg)"></div>
+	</a>
+	<div class="card-description">
+		<a href="/id/S308">
+			<p class="truncate" title="Crepúsculo">
+				<strong>
+				Crepúsculo</strong>
+			</p>
+		</a>
+		<div class="card-details">
+			<span class="identifier">S308</span>
+			&middot;
+			<span>1907</span><br>
+			<span class="neighborhood">Botafogo</span>
+		</div>
+		<div class="card-tags">
+			<a class="tag" href="/esculturas"><i class="category cat-escultura">escultura</i></a>
+			
+			
+		</div>
+	</div>
+</div><div class="card" data-imrj >
+	<a href="/id/S311">
+		<div class="card-preview" style="background-image:url(/id/S311/thumb.jpg)"></div>
+	</a>
+	<div class="card-description">
+		<a href="/id/S311">
+			<p class="truncate" title="Poesia em Ruínas">
+				<strong>
+				Poesia em Ruínas</strong>
+			</p>
+		</a>
+		<div class="card-details">
+			<span class="identifier">S311</span>
+			&middot;
+			<span>1911</span><br>
+			<span class="neighborhood">Botafogo</span>
+		</div>
+		<div class="card-tags">
+			<a class="tag" href="/esculturas"><i class="category cat-escultura">escultura</i></a>
+			
+			
+		</div>
+	</div>
+</div><div class="card" data-imrj data-preliminar>
+	<a href="/id/T005">
+		<div class="card-preview" style="background-image:url(/id/T005/thumb.jpg)"></div>
+	</a>
+	<div class="card-description">
+		<a href="/id/T005">
+			<p class="truncate" title="Maternidade">
+				<strong>
+				(Maternidade)</strong>
+			</p>
+		</a>
+		<div class="card-details">
+			<span class="identifier">T005</span>
+			&middot;
+			<span>S.d.</span><br>
+			<span class="neighborhood">Botafogo</span>
+		</div>
+		<div class="card-tags">
+			<a class="tag" href="/esculturas"><i class="category cat-escultura">escultura</i></a>
+			<i class="category info-tag preliminar">preliminar</i>
+			
+		</div>
+	</div>
+</div><div class="card" data-imrj data-preliminar>
+	<a href="/id/T011">
+		<div class="card-preview" style="background-image:url(/id/T011/thumb.jpg)"></div>
+	</a>
+	<div class="card-description">
+		<a href="/id/T011">
+			<p class="truncate" title="Chafariz do Vaso">
+				<strong>
+				(Chafariz do Vaso)</strong>
+			</p>
+		</a>
+		<div class="card-details">
+			<span class="identifier">T011</span>
+			&middot;
+			<span>S.d.</span><br>
+			<span class="neighborhood">Botafogo</span>
+		</div>
+		<div class="card-tags">
+			<a class="tag" href="/chafarizes"><i class="category cat-chafariz">chafariz</i></a>
+			<i class="category info-tag preliminar">preliminar</i>
+			
+		</div>
+	</div>
+</div><div class="card" data-imrj data-preliminar>
+	<a href="/id/T013">
+		<div class="card-preview" style="background-image:url(/id/T013/thumb.jpg)"></div>
+	</a>
+	<div class="card-description">
+		<a href="/id/T013">
+			<p class="truncate" title="Estátua de Oswaldo Cruz">
+				<strong>
+				(Estátua de Oswaldo Cruz)</strong>
+			</p>
+		</a>
+		<div class="card-details">
+			<span class="identifier">T013</span>
+			&middot;
+			<span>S.d.</span><br>
+			<span class="neighborhood">Botafogo</span>
+		</div>
+		<div class="card-tags">
+			<a class="tag" href="/estatuas"><i class="category cat-estatua">estátua</i></a>
+			<i class="category info-tag preliminar">preliminar</i>
+			
+		</div>
+	</div>
+</div><div class="card" data-imrj data-preliminar>
+	<a href="/id/T014">
+		<div class="card-preview" style="background-image:url(/id/T014/thumb.jpg)"></div>
+	</a>
+	<div class="card-description">
+		<a href="/id/T014">
+			<p class="truncate" title="Estátua de Carlos Chagas">
+				<strong>
+				(Estátua de Carlos Chagas)</strong>
+			</p>
+		</a>
+		<div class="card-details">
+			<span class="identifier">T014</span>
+			&middot;
+			<span>S.d.</span><br>
+			<span class="neighborhood">Botafogo</span>
+		</div>
+		<div class="card-tags">
+			<a class="tag" href="/estatuas"><i class="category cat-estatua">estátua</i></a>
+			<i class="category info-tag preliminar">preliminar</i>
+			
+		</div>
+	</div>
+</div><div class="card" data-imrj data-preliminar>
+	<a href="/id/T015">
+		<div class="card-preview" style="background-image:url(/id/T015/thumb.jpg)"></div>
+	</a>
+	<div class="card-description">
+		<a href="/id/T015">
+			<p class="truncate" title="Chafariz da Praça Nicarágua">
+				<strong>
+				(Chafariz da Praça Nicarágua)</strong>
+			</p>
+		</a>
+		<div class="card-details">
+			<span class="identifier">T015</span>
+			&middot;
+			<span>S.d.</span><br>
+			<span class="neighborhood">Botafogo</span>
+		</div>
+		<div class="card-tags">
+			<a class="tag" href="/chafarizes"><i class="category cat-chafariz">chafariz</i></a>
+			<i class="category info-tag preliminar">preliminar</i>
+			
+		</div>
+	</div>
+</div></div><hr></section>
 </section>
 <aside>
-	<em class="display-identifier">T012</em>
+	<em class="display-identifier">M404</em>
 	<div class="tags-list">
 		<!-- Main category tag -->
-		<a class="tag" href="/chafarizes"><i class="category cat-chafariz">chafariz</i></a>
+		<a class="tag" href="/marcos"><i class="category cat-marco">marco</i></a>
 		<details title="Ver tags" class="hidden-tags-list">
 			<summary>
 				<svg class="icon"><use href="#icon-tag"></use></svg>
@@ -225,14 +548,40 @@ L.marker([-22.9413, -43.1778], {
 			<div>
 			<!-- Assigned tags -->
 
-				<i class="category info-tag preliminar">preliminar</i>
+				<i class="category info-tag possui_escrita">possui escrita</i>
+
+				<i class="category info-tag removido">removido</i>
 
 			<!-- Auto-tags -->
 			<i class="category info-tag sem_autoria">sem autoria</i>
-			<i class="category info-tag data_imprecisa">data imprecisa</i>
+			
 			</div>
 		</details>
 	</div>
+
+		<hr>
+		<p class="section-heading">Detalhes</p>
+		<dl>
+
+
+			<dt>Inauguração</dt>
+			<dd>
+				5 de novembro de 2004<br>
+				(19 anos atrás)
+			</dd>
+
+
+			<dt>Remoção</dt>
+			<dd>
+				c.2018<br>
+				(5 anos atrás)<br>
+
+				<small><strong>Motivo:</strong> furtado</small>
+
+			</dd>
+
+
+		</dl>
 
 
 
@@ -243,7 +592,7 @@ L.marker([-22.9413, -43.1778], {
 				<dt><abbr title="Inventário dos Monumentos RJ">IMRJ</abbr></dt>
 				<dd>
 
-					ID&nbsp;<a href="http://www.inventariodosmonumentosrj.com.br/index.asp?iMENU=catalogo&amp;iiCOD=310">310</a><br>
+					ID&nbsp;<a href="http://www.inventariodosmonumentosrj.com.br/index.asp?iMENU=catalogo&amp;iiCOD=285">285</a><br>
 
 				</dd>
 
