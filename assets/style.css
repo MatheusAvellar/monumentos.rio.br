@@ -471,6 +471,10 @@ blockquote {
 	text-indent: 1rem;
 	font-size: 85%;
 	margin: .5rem .5rem 0;
+	/* Fix `overflow-y: auto` showing scrollbar on <aside>
+	 * due to blockquote::before being taller than the 
+	 * <blockquote> itself */
+	min-height: 24px;
 	color: #444;
 	color: var(--text-alt-color, #444);
 	z-index: 1;

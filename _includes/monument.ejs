@@ -13,6 +13,7 @@ tags = [doFallback("tags", [])].flat();
 data_inaug = doFallback("data_inaug");
 data_circa = doFallback("data_circa");
 data_remov = doFallback("data_remov");
+data_remov_circa = doFallback("data_remov", false);
 motiv_remov = doFallback("motiv_remov");
 
 altura = doFallback("altura", 0);
@@ -29,7 +30,7 @@ local = doFallback("local");
 bairro = doFallback("bairro");
 
 imrj = [doFallback("imrj", [])].flat();
-wikidata = doFallback("wikidata");
+wikidata = [doFallback("wikidata", [])].flat();
 structurae = doFallback("structurae");
 cona = doFallback("cona");
 
@@ -102,7 +103,7 @@ tombado_url = doFallback("tombado_url");
 		<%_ if(data_remov) { %>
 			<dt>Remoção</dt>
 			<dd>
-				<%= formatDate(data_remov) %><br>
+				<%= formatDate(data_remov, data_remov_circa) %><br>
 				(<%= getYearsSince(data_remov) %>)<br>
 				<%_ if(motiv_remov) { %>
 				<small><strong>Motivo:</strong> <%= motiv_remov %></small>
@@ -144,7 +145,7 @@ tombado_url = doFallback("tombado_url");
 			<%_ } %>
 		</div>
 	<%_ } %>
-	<%_ if(imrj.length || wikidata || structurae || cona) { %>
+	<%_ if(imrj.length || wikidata.length || structurae || cona) { %>
 		<hr>
 		<p class="section-heading">Catálogos</p>
 		<dl>
@@ -156,9 +157,13 @@ tombado_url = doFallback("tombado_url");
 					<%_ } %>
 				</dd>
 			<%_ } %>
-			<%_ if(wikidata) { %>
+			<%_ if(wikidata.length) { %>
 				<dt>Wikidata</dt>
-				<dd><a href="<%= WIKIDATA_URL %><%= wikidata %>"><%= wikidata %></a></dd>
+				<dd>
+					<%_ for(let i = 0; i < wikidata.length; i++) { %>
+					<a href="<%= WIKIDATA_URL %><%= wikidata[i] %>"><%= wikidata[i] %></a><br>
+					<%_ } %>
+				</dd>
 			<%_ } %>
 			<%_ if(structurae) { %>
 				<dt>Structurae</dt>
