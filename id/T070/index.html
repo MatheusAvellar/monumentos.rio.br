@@ -2,7 +2,7 @@
 <html lang="pt-br">
 <head>
 	<meta charset="utf-8">
-	<title>Monumentos Rio</title>
+	<title>Baleia de Lixo — Monumentos Rio</title>
 	<meta content="Matheus Avellar" name="author">
 	<meta name="description" content="Catálogo de monumentos da cidade do Rio de Janeiro">
 	<link rel="preconnect" href="https://cdn.avl.la">
@@ -169,109 +169,289 @@
 	</header>
 	
 
-<main>
-<section class="maxwidth indent-children">
-	<p>
-		Bem-vindo ao <strong>monumentos.rio.br</strong>!
-		Este website tem como objetivo formar um inventário de <em>todos</em> os
-		monumentos da cidade do Rio de Janeiro.
-	</p>
-	<p class="noindent">
-		Essas são as estatísticas atuais:
-	</p>
-	<div class="statistics">
-		<div>
-			<div>
-				<strong class="stats-value">119</strong>
-				<span>monumentos</span>
-			</div>
-			<span class="stats-total">
-				de ~<strong>1400</strong><br>
-				(8.50%)
-			</span>
+<main class="monument">
+<section>
+
+		<p class="note warning">
+			<strong>Nota:</strong>
+			Este item está marcado como <i class="category info-tag preliminar">preliminar</i>. Isso
+			significa que ele não possui um identificador permanente ainda.
+			Assim, o URL atual será alterado no futuro. Fique atento!
+		</p>
+
+	<h1>Baleia de Lixo</h1>
+
+	
+<figure>
+	<a href="photo.jpg" data-llb-src="href">
+		<img src="thumb.jpg">
+	</a>
+	<figcaption>
+		<p class="credits">
+			Foto: Matheus Avellar (4 de junho de 2023),
+			via
+			<a href="https://commons.wikimedia.org/wiki/File:Baleia_do_Projeto_Rio_ao_Mar.jpg">Wikimedia
+			Commons</a>.
+		</p>
+	</figcaption>
+</figure>
+<section class="description">
+	<blockquote>
+		Rio ao Mar é um projeto Id Cultural de ação e conscientização sobre o
+		descarte incorreto de lixo que e como isso afeta o mar da nossa cidade.<br>
+		Na última edição foram coletados 493,32 Kg de lixo nas praias do Rio e o
+		material foi transformado em lindas esculturas em formato de animais
+		marinhos, produzidas pelo artista plástico Clécio Regis.<br>
+		As belas esculturas foram expostas no AquaRio durante a Semana da Criança
+		de 2020 e doadas para a Prefeitura.<br>
+		Hoje podem ser apreciadas no Parque Natural Bosque da Barra, na Barra da
+		Tijuca.
+	</blockquote>
+	<cite>
+		— "ID Cultural" (circa julho de 2022).
+		<a href="https://br.linkedin.com/company/id-cultural">Sem título</a>.
+		<i>LinkedIn</i> (<a href="https://archive.ph/8tkuO#85%">arquivado</a>).
+	</cite>
+</section>
+<section class="gallery">
+	<!-- <h2>Galeria</h2> -->
+</section>
+<section class="location"><h2>Localização</h2><p><strong>Localização:</strong> Bosque da Barra, Barra da Tijuca</p><p><strong>Coordenadas:</strong> -22.99557, -43.36811</p><div id="monument-location-map"></div><!-- [Ref] https://leafletjs.com/ -->
+<link href="/assets/leaflet/leaflet.1.9.3.css" rel="stylesheet" type="text/css">
+<script src="/assets/leaflet/leaflet.1.9.3.min.js"></script><script>
+const bounds = new L.LatLngBounds(
+	new L.LatLng(-23.020574179999997, -43.418114319999994),
+	new L.LatLng(-22.97057418, -43.31811432)
+);
+const map = L.map("monument-location-map", {
+	center: bounds.getCenter(),
+	zoom: 17,
+	maxBounds: bounds,
+	maxBoundsViscosity: .75
+})
+L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
+	minZoom: 15,
+	maxZoom: 19,
+	attribution: "&copy; <a href='http://www.openstreetmap.org/copyright'>OSMF</a>"
+}).addTo(map);
+L.marker([-22.99557418, -43.36811432], {
+	icon: L.icon({
+		iconUrl: "/assets/leaflet/images/phosphor-marker--escultura.svg",
+		iconSize: [64, 64],
+		iconAnchor: [32, 64],
+		shadowUrl: "/assets/leaflet/images/marker-shadow.png",
+		shadowSize: [41, 41],
+		shadowAnchor: [13, 44],
+	})
+}).addTo(map);
+</script></section>
+<section class="more">
+	<h2>Leia mais</h2>
+	<ol>
+		<li>
+			Natasha Olsen (9 de outubro de 2020).
+			<a href="https://ciclovivo.com.br/fique-ligado/eventos/aquario-expoe-esculturas-gigantes-feitas-com-lixo-das-praias-cariocas/">AquaRio
+			expõe esculturas gigantes feitas com lixo das praias cariocas</a>.
+			<i>CicloVivo</i>.
+		</li>
+		<li>
+			<strong>Vídeo:</strong>
+			"Vamos Fugir" (14 de novembro de 2021).
+			<a href="https://youtu.be/HutMf9DE7Bo?t=625">O que fazer no Rio de Janeiro
+			(Bosque da Barra)</a>. <i>YouTube</i>.
+		</li>
+	</ol>
+</section>
+<section class="related"><h2>Monumentos relacionados</h2><h3>Série 'Rio ao Mar'</h3>
+<p><strong>2</strong> monumentos</p>
+<div class="card-list"><div class="card" data-no-imrj data-preliminar>
+	<a href="/id/T069">
+		<div class="card-preview" style="background-image:url(/id/T069/thumb.jpg)"></div>
+	</a>
+	<div class="card-description">
+		<a href="/id/T069">
+			<p class="truncate" title="Cavalo Marinho de Lixo">
+				<strong>
+				(Cavalo Marinho de Lixo)</strong>
+			</p>
+		</a>
+		<div class="card-details">
+			<span class="identifier">T069</span>
+			&middot;
+			<span>2021</span><br>
+			<span class="neighborhood">Barra da Tijuca</span>
 		</div>
-		<hr class="vertical">
-		<div>
-			<div>
-				<strong class="stats-value">24</strong>
-				<span>bairros</span>
-			</div>
-			<span class="stats-total">
-				de <strong>164</strong><br>
-				(14.63%)
-			</span>
+		<div class="card-tags">
+			<a class="tag" href="/esculturas"><i class="category cat-escultura">escultura</i></a>
+			<i class="category info-tag preliminar">preliminar</i>
+			
 		</div>
 	</div>
-
-	<p>
-		Dos <strong>119</strong> monumentos catalogados,
-		<strong>57</strong>
-		<small>(47.90%)</small>
-		já possuem IDs permanentes e
-		<strong>62</strong>
-		<small>(52.10%)</small>
-são preliminares, só com coordenadas cadastradas.
-
-	</p>
-<br><hr>
-	<section id="home-categories-list">
-		<p style="text-indent:1rem">
-			Selecione <strong>Inventário</strong> para ver a lista completa de
-			monumentos já catalogados, ordenada alfabeticamente. Ou, então, escolha
-			uma das categorias abaixo, usadas para classificar cada monumento.
-		</p>
-		<section class="home-category">
-			<a href="/inventario">
-				<img src="/assets/home-categories/inventario.png">
-				<h2>Inventário</h2>
-				<span title="Número de monumentos no total" class="home-category-count">119</span>
-			</a>
-		</section>
-		<section class="home-category cat-obra">
-			<a href="/obras">
-				<img src="/assets/home-categories/obra.png">
-				<h2>Obras públicas</h2>
-				<span title="Número de monumentos nessa categoria" class="home-category-count">14</span>
-			</a>
-		</section>
-		<section class="home-category cat-busto">
-			<a href="/bustos">
-				<img src="/assets/home-categories/busto.png">
-				<h2>Bustos e efígies</h2>
-				<span title="Número de monumentos nessa categoria" class="home-category-count">22</span>
-			</a>
-		</section>
-		<section class="home-category cat-chafariz">
-			<a href="/chafarizes">
-				<!-- Trocar por https://unsplash.com/photos/Ym1bPWvPA4U ? -->
-				<img src="/assets/home-categories/chafariz.png">
-				<h2>Chafarizes e fontes</h2>
-				<span title="Número de monumentos nessa categoria" class="home-category-count">18</span>
-			</a>
-		</section>
-		<section class="home-category cat-estatua">
-			<a href="/estatuas">
-				<img src="/assets/home-categories/estatua.png">
-				<h2>Estátuas</h2>
-				<span title="Número de monumentos nessa categoria" class="home-category-count">21</span>
-			</a>
-		</section>
-		<section class="home-category cat-marco">
-			<a href="/marcos">
-				<img src="/assets/home-categories/marco.png">
-				<h2>Marcos</h2>
-				<span title="Número de monumentos nessa categoria" class="home-category-count">15</span>
-			</a>
-		</section>
-		<section class="home-category cat-escultura">
-			<a href="/esculturas">
-				<img src="/assets/home-categories/escultura.png">
-				<h2>Esculturas</h2>
-				<span title="Número de monumentos nessa categoria" class="home-category-count">29</span>
-			</a>
-		</section>
-	</section>
+</div><div class="card" data-no-imrj data-preliminar>
+	<a href="/id/T070">
+		<div class="card-preview" style="background-image:url(/id/T070/thumb.jpg)"></div>
+	</a>
+	<div class="card-description">
+		<a href="/id/T070">
+			<p class="truncate" title="Baleia de Lixo">
+				<strong>
+				(Baleia de Lixo)</strong>
+			</p>
+		</a>
+		<div class="card-details">
+			<span class="identifier">T070</span>
+			&middot;
+			<span>2021</span><br>
+			<span class="neighborhood">Barra da Tijuca</span>
+		</div>
+		<div class="card-tags">
+			<a class="tag" href="/esculturas"><i class="category cat-escultura">escultura</i></a>
+			<i class="category info-tag preliminar">preliminar</i>
+			
+		</div>
+	</div>
+</div></div><hr><h3>Série 'Bosque da Barra'</h3>
+<p><strong>4</strong> monumentos</p>
+<div class="card-list"><div class="card" data-no-imrj data-preliminar>
+	<a href="/id/T067">
+		<div class="card-preview" style="background-image:url(/id/T067/thumb.jpg)"></div>
+	</a>
+	<div class="card-description">
+		<a href="/id/T067">
+			<p class="truncate" title="Marco do Início das Obras do Bosque da Barra">
+				<strong>
+				(Marco do Início das Obras do Bosque da Barra)</strong>
+			</p>
+		</a>
+		<div class="card-details">
+			<span class="identifier">T067</span>
+			&middot;
+			<span>1979</span><br>
+			<span class="neighborhood">Barra da Tijuca</span>
+		</div>
+		<div class="card-tags">
+			<a class="tag" href="/marcos"><i class="category cat-marco">marco</i></a>
+			<i class="category info-tag preliminar">preliminar</i>
+			
+		</div>
+	</div>
+</div><div class="card" data-no-imrj data-preliminar>
+	<a href="/id/T068">
+		<div class="card-preview" style="background-image:url(/id/T068/thumb.jpg)"></div>
+	</a>
+	<div class="card-description">
+		<a href="/id/T068">
+			<p class="truncate" title="Marco de Inauguração do Bosque da Barra">
+				<strong>
+				(Marco de Inauguração do Bosque da Barra)</strong>
+			</p>
+		</a>
+		<div class="card-details">
+			<span class="identifier">T068</span>
+			&middot;
+			<span>1981</span><br>
+			<span class="neighborhood">Barra da Tijuca</span>
+		</div>
+		<div class="card-tags">
+			<a class="tag" href="/marcos"><i class="category cat-marco">marco</i></a>
+			<i class="category info-tag preliminar">preliminar</i>
+			
+		</div>
+	</div>
+</div><div class="card" data-no-imrj data-preliminar>
+	<a href="/id/T069">
+		<div class="card-preview" style="background-image:url(/id/T069/thumb.jpg)"></div>
+	</a>
+	<div class="card-description">
+		<a href="/id/T069">
+			<p class="truncate" title="Cavalo Marinho de Lixo">
+				<strong>
+				(Cavalo Marinho de Lixo)</strong>
+			</p>
+		</a>
+		<div class="card-details">
+			<span class="identifier">T069</span>
+			&middot;
+			<span>2021</span><br>
+			<span class="neighborhood">Barra da Tijuca</span>
+		</div>
+		<div class="card-tags">
+			<a class="tag" href="/esculturas"><i class="category cat-escultura">escultura</i></a>
+			<i class="category info-tag preliminar">preliminar</i>
+			
+		</div>
+	</div>
+</div><div class="card" data-no-imrj data-preliminar>
+	<a href="/id/T070">
+		<div class="card-preview" style="background-image:url(/id/T070/thumb.jpg)"></div>
+	</a>
+	<div class="card-description">
+		<a href="/id/T070">
+			<p class="truncate" title="Baleia de Lixo">
+				<strong>
+				(Baleia de Lixo)</strong>
+			</p>
+		</a>
+		<div class="card-details">
+			<span class="identifier">T070</span>
+			&middot;
+			<span>2021</span><br>
+			<span class="neighborhood">Barra da Tijuca</span>
+		</div>
+		<div class="card-tags">
+			<a class="tag" href="/esculturas"><i class="category cat-escultura">escultura</i></a>
+			<i class="category info-tag preliminar">preliminar</i>
+			
+		</div>
+	</div>
+</div></div><hr></section>
 </section>
+<aside>
+	<em class="display-identifier">T070</em>
+	<div class="tags-list">
+		<!-- Main category tag -->
+		<a class="tag" href="/esculturas"><i class="category cat-escultura">escultura</i></a>
+		<details title="Ver tags" class="hidden-tags-list">
+			<summary>
+				<svg class="icon"><use href="#icon-tag"></use></svg>
+			</summary>
+			<div>
+			<!-- Assigned tags -->
+
+				<i class="category info-tag preliminar">preliminar</i>
+
+			<!-- Auto-tags -->
+			
+			<i class="category info-tag data_imprecisa">data imprecisa</i>
+			</div>
+		</details>
+	</div>
+
+		<hr>
+		<p class="section-heading">Detalhes</p>
+		<dl>
+
+			<dt>Autores</dt>
+			<dd><ul><li>Clécio Regis</li></ul></dd>
+
+
+			<dt>Inauguração</dt>
+			<dd>
+				Circa junho de 2021<br>
+				(2 anos atrás)
+			</dd>
+
+
+
+				<dt>Material</dt>
+				<dd>Metalon<br>Lixo</dd>
+
+		</dl>
+
+
+
+
+</aside>
 </main>
 	<footer>
 		<section hidden class="downsize">

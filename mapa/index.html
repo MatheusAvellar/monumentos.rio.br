@@ -213,7 +213,7 @@
 				<span>
 					<strong>Marcos</strong><br>
 					<i class="category cat-marco">marco</i>
-					<small>(13 itens)</small>
+					<small>(15 itens)</small>
 				</span>
 			</label>
 			<label>
@@ -221,7 +221,7 @@
 				<span>
 					<strong>Esculturas</strong><br>
 					<i class="category cat-escultura">escultura</i>
-					<small>(27 itens)</small>
+					<small>(29 itens)</small>
 				</span>
 			</label>
 		</section>
@@ -836,6 +836,18 @@ markersMap.get("obra").list.push(m113);
 const m114 = L.marker([-22.92649, -43.17546], {icon: tempMarker});
 m114.bindPopup(generatePopup("T066", "(Gruta do Palácio do Catete)", "S.d.", "Flamengo", '<a class="tag" href="/obras"><i class="category cat-obra">obra</i></a>'), { offset: [0, -24] }).openPopup().on({ click: markerOnClick });
 markersMap.get("obra").list.push(m114);
+const m115 = L.marker([-22.99738695, -43.36810819], {icon: tempMarker});
+m115.bindPopup(generatePopup("T067", "(Marco do Início das Obras do Bosque da Barra)", "1979", "Barra da Tijuca", '<a class="tag" href="/marcos"><i class="category cat-marco">marco</i></a>'), { offset: [0, -24] }).openPopup().on({ click: markerOnClick });
+markersMap.get("marco").list.push(m115);
+const m116 = L.marker([-22.99962443, -43.37166283], {icon: tempMarker});
+m116.bindPopup(generatePopup("T068", "(Marco de Inauguração do Bosque da Barra)", "1981", "Barra da Tijuca", '<a class="tag" href="/marcos"><i class="category cat-marco">marco</i></a>'), { offset: [0, -24] }).openPopup().on({ click: markerOnClick });
+markersMap.get("marco").list.push(m116);
+const m117 = L.marker([-22.9996697, -43.37146447], {icon: tempMarker});
+m117.bindPopup(generatePopup("T069", "(Cavalo Marinho de Lixo)", "2021", "Barra da Tijuca", '<a class="tag" href="/esculturas"><i class="category cat-escultura">escultura</i></a>'), { offset: [0, -24] }).openPopup().on({ click: markerOnClick });
+markersMap.get("escultura").list.push(m117);
+const m118 = L.marker([-22.99557418, -43.36811432], {icon: tempMarker});
+m118.bindPopup(generatePopup("T070", "(Baleia de Lixo)", "2021", "Barra da Tijuca", '<a class="tag" href="/esculturas"><i class="category cat-escultura">escultura</i></a>'), { offset: [0, -24] }).openPopup().on({ click: markerOnClick });
+markersMap.get("escultura").list.push(m118);
 
 for(const [key, obj] of [...markersMap]) {
 	obj.canvas.addMarkers(obj.list);
