@@ -15,20 +15,22 @@
 	const metaThemeColor = document.createElement("meta");
 	metaThemeColor.setAttribute("name", "theme-color");
 	document.head.appendChild(metaThemeColor);
-	function toggleDarkMode(state) {
+
+	function toggleDarkMode(state, element) {
 		state = !!state;
 		console.log(`[dark-mode] Called 'toggleDarkMode(${state})'`);
-		toggle.checked = state;
+		if(element) element.checked = state;
+		const text = document.getElementById("dark-mode-text");
 		// Liga o modo escuro
 		if(state) {
 			document.body.parentElement.classList.add("dark");
 			metaThemeColor.setAttribute("content", "#393a47");
-			text.textContent = "Desativar modo escuro";
+			if(text) text.textContent = "Desativar modo escuro";
 		// Desliga o modo escuro
 		} else {
 			document.body.parentElement.classList.remove("dark");
 			metaThemeColor.setAttribute("content", "#fff");
-			text.textContent = "Ativar modo escuro";
+			if(text) text.textContent = "Ativar modo escuro";
 		}
 	}
 	function setLocalStorage(state) {
@@ -39,17 +41,6 @@
 			localStorage.setItem("dark-mode", Number(state));
 	}
 
-	// Mostra botão de modo escuro, já que temos JS
-	const wrapper = document.getElementById("dark-mode-wrapper");
-	wrapper.parentElement.removeAttribute("hidden");
-	const text = document.getElementById("dark-mode-text");
-	// Escuta por cliques no checkbox de modo escuro
-	const toggle = document.getElementById("dark-mode-toggle");
-	toggle.addEventListener("change", function(e) {
-		toggleDarkMode(toggle.checked);
-		setLocalStorage(toggle.checked);
-	});
-	////
 	matchMedia = "matchMedia" in window ? window.matchMedia : (()=>false);
 	const prefersDarkMode = matchMedia("(prefers-color-scheme: dark)").matches;
 	console.log(`[dark-mode] Browser 'prefers-color-scheme: dark': ${prefersDarkMode}`);
@@ -74,4 +65,21 @@
 		if(prefersDarkMode) toggleDarkMode(true);
 		else toggleDarkMode(false);
 	}
+
+	////
+	addEventListener("DOMContentLoaded", (event) => {
+		// Mostra botão de modo escuro, já que temos JS
+		const wrapper = document.getElementById("dark-mode-wrapper");
+		wrapper.parentElement.removeAttribute("hidden");
+		// Escuta por cliques no checkbox de modo escuro
+		const toggle = document.getElementById("dark-mode-toggle");
+		toggle.checked = document.body.parentElement.classList.contains("dark");
+		const text = document.getElementById("dark-mode-text");
+		text.textContent = toggle.checked ? "Desativar modo escuro" : "Ativar modo escuro";
+		toggle.addEventListener("change", function(e) {
+			toggleDarkMode(toggle.checked);
+			setLocalStorage(toggle.checked);
+		});
+	});
+	////
 })();
