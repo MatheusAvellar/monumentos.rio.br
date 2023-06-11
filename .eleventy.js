@@ -266,10 +266,14 @@ L.marker([${lat}, ${lon}], {
 			section.push(`<h3>Série '${series[i]}'</h3>
 <p><strong>${mon.length}</strong> monumento${(mon.length) < 2 ? "" : "s"}</p>
 <div class="card-list">`);
-			for(let i = 0; i < mon.length; i++) {
-				section.push(makeCard(mon[i]));
+			for(let j = 0; j < mon.length; j++) {
+				section.push(makeCard(mon[j]));
 			}
-			section.push(`</div><hr>`);
+			section.push(`</div>`);
+			// Se não é o último
+			if(i !== series.length - 1) {
+				section.push(`<hr>`);
+			}
 			out.push(section.join(""));
 		}
 		out.push("</section>");
