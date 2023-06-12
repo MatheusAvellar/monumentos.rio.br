@@ -245,6 +245,7 @@ L.marker([${lat}, ${lon}], {
 		const series = [ctx.series].flat();
 
 		const monuments = ctx.collections.all.filter(file => file.filePathStem.startsWith("/id/"));
+		monuments.sort((a, b) => a.data.name.localeCompare(b.data.name));
 		const thisFilePath = ctx.page.filePathStem;
 
 		const out = [];
