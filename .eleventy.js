@@ -15,6 +15,7 @@ module.exports = function(eleventyConfig) {
 	// [Ref] https://github.com/11ty/eleventy/issues/2461#issuecomment-1238279042
 	eleventyConfig.addPassthroughCopy("{,!(_site)/**/}*.png");
 	eleventyConfig.addPassthroughCopy("{,!(_site)/**/}*.jpg");
+	eleventyConfig.addPassthroughCopy("{,!(_site)/**/}*.pdf");
 
 	website_domain = "monumentos.rio.br";
 
@@ -278,6 +279,31 @@ L.marker([${lat}, ${lon}], {
 			out.push(section.join(""));
 		}
 		out.push("</section>");
+		return out.join("");
+	};
+
+	makePanorama = (ctx, filePath, title, authorDate) => {
+		filePath = (filePath||"").replace('"', '\\"');
+		title = (title||"").replace('"', '\\"');
+		authorDate = (authorDate||"").replace('"', '\\"');
+
+		const out = [];
+		out.push(`<section class="panorama">`);
+		out.push(`<h2>Panorama</h2>`);
+		out.push(`<link rel="stylesheet" href="/assets/pannellum.2.5.6.css"/>`);
+		out.push(`<script type="text/javascript" src="/assets/pannellum.2.5.6.js"></script>`);
+		out.push(`<figure id="panorama-viewer" style="height:min(400px,max(50vw,250px))"></figure>`);
+		out.push(`<script>
+pannellum.viewer("panorama-viewer", {
+	"type": "equirectangular",
+	"panorama": "${filePath}",
+	"title": "${title}",
+	"author": "${authorDate}",
+	"previewAuthor": "${authorDate}",
+	"hfov": 150
+});
+</script>`);
+		out.push(`</section>`);
 		return out.join("");
 	};
 };

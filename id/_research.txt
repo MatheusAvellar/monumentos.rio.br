@@ -19,10 +19,10 @@ Esculturas de Pereira Passos
 ---
 fotos 1915 "Os marmores da cidade":
 - Dansarina
-- Um combate nos tempos prehistoricos
+✓ Um combate nos tempos prehistoricos
 - Panthera e flamingo
 - A Primavera, O Verão, O Outono, O Inverno
-- O Crepúsculo
+✓ O Crepúsculo
 - Fonte Ramos Pinto
 - Panthera caçando
 https://memoria.bn.br/DocReader/DocReader.aspx?bib=259063&pesq=botafogo%20magrou&pasta=ano%20191&hf=memoria.bn.br&pagfis=20499
@@ -31,23 +31,24 @@ https://memoria.bn.br/DocReader/DocReader.aspx?bib=259063&pesq=botafogo%20magrou
 https://memoria.bn.br/DocReader/DocReader.aspx?bib=259063&pesq=botafogo%20magrou&pasta=ano%20191&hf=memoria.bn.br&pagfis=20502
 
 Estatuaria dos Jardins Publicos
+- O Estio (Gasq)
+- O Inverno (Gasq)
+✓ Protecção (Peyrol)
+✓ Crepusculo (Weegèle)
+- Dançarina (Dominique Bianchi)
+- Primavera (G. Michel)
 https://memoria.bn.br/DocReader/DocReader.aspx?bib=146420&Pesq=Darbefeuille&pagfis=2658
 
 Reportagens sobre esculturas de Pereira Passos (agosto 1907):
 - A Primavera, O Outono (2.1m) - Gustavo/Gustave Michel
 - O Verão, O Inverno (2.1m) - Gasq
-- Lion debout (1.8m), Tigre a L'affut (1.7m), Panthére (1.5), Panthére (1.6m),
-Protection (1.5m), Combat prehistorique (2.2m) - Peyrol
-- Crepuscule (2m) - Weigele
+- Lion debout (1.8m), Tigre a L'affut (1.7m), Panthére (1.5), Panthére (1.6m) - Peyrol
+✓ Protection (1.5m), Combat prehistorique (2.2m) - Peyrol
+✓ Crepuscule (2m) - Weigele
 - Danseuse (2.5m) - Darbefeuille
 - L'oiseleur (1.1m) - Dominique Bianchi
 https://memoria.bn.br/DocReader/DocReader.aspx?bib=103730_04&pesq=crepuscule&pasta=ano%20190&hf=memoria.bn.br&pagfis=15450
 https://memoria.bn.br/DocReader/DocReader.aspx?bib=259764&pesq=weigele&pasta=ano%20190&hf=memoria.bn.br&pagfis=3247
-
-https://memoria.bn.br/DocReader/DocReader.aspx?bib=146420&pesq=Darbefeuille&pasta=ano%20190&hf=memoria.bn.br&pagfis=2660
-
-Foto da escultura do cara matando o bicho, abril 1908
-https://acervos.ims.com.br/portals/#/detailpage/104078
 
 Foto da escultura "Dansarina"
 https://brasilianafotografica.bn.gov.br/brasiliana/handle/20.500.12156.1/10094
@@ -132,7 +133,6 @@ https://memoria.bn.br/DocReader/DocReader.aspx?bib=110523_06&pesq=%22chafariz%22
 busto de tomaz delfino dos santos
 https://memoria.bn.br/DocReader/DocReader.aspx?bib=110523_05&pesq=%22Movimento%20Libertador%20da%20Terra%20Carioca%22&pasta=ano%20195&hf=memoria.bn.br&pagfis=31668
 https://memoria.bn.br/DocReader/DocReader.aspx?bib=110523_05&pesq=%22Movimento%20Libertador%20da%20Terra%20Carioca%22&pasta=ano%20195&hf=memoria.bn.br&pagfis=31801
-
 
 Espelho d'água parque lage
 https://unsplash.com/photos/09pysVkpNik

@@ -422,10 +422,7 @@ main figure {
 figcaption .credits {
 	font-size: .75rem;
 }
-main section.refs,
-main section.more,
-main section.gallery,
-main section.location {
+main.monument > section > section:not(.description) {
 	clear: both;
 }
 main section.description {
@@ -456,6 +453,9 @@ main section.gallery > figure.sideways {
 	flex-direction: row;
 	gap: .5rem;
 	min-width: 14rem;
+}
+#panorama-viewer {
+	float: none;
 }
 main section figure img {
 	max-height: 250px;
@@ -789,6 +789,9 @@ hr.vertical {
 .leaflet-container .leaflet-escultura-pane,
 .leaflet-container .leaflet-obra-pane {
 	z-index: 601;
+}
+.leaflet-container .leaflet-overlay-pane > svg {
+	z-index: 100;
 }
 
 h2 {
