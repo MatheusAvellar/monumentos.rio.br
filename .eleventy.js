@@ -282,8 +282,7 @@ L.marker([${lat}, ${lon}], {
 		return out.join("");
 	};
 
-	makePanorama = (ctx, filePath, title, authorDate) => {
-		filePath = (filePath||"").replace('"', '\\"');
+	makePanorama = (ctx, title, authorDate) => {
 		title = (title||"").replace('"', '\\"');
 		authorDate = (authorDate||"").replace('"', '\\"');
 
@@ -295,12 +294,19 @@ L.marker([${lat}, ${lon}], {
 		out.push(`<figure id="panorama-viewer" style="height:min(400px,max(50vw,250px))"></figure>`);
 		out.push(`<script>
 pannellum.viewer("panorama-viewer", {
-	"type": "equirectangular",
-	"panorama": "${filePath}",
 	"title": "${title}",
 	"author": "${authorDate}",
 	"previewAuthor": "${authorDate}",
-	"hfov": 150
+	"hfov": 100,
+	"type": "multires",
+	"multiRes": {
+		"path": "panorama/%l/%s%y_%x",
+		"fallbackPath": "panorama/fallback/%s",
+		"extension": "jpg",
+		"tileResolution": 512,
+		"maxLevel": 4,
+		"cubeResolution": 2768
+	}
 });
 </script>`);
 		out.push(`</section>`);
