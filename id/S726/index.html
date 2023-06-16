@@ -246,12 +246,19 @@
 </section>
 <section class="panorama"><h2>Panorama</h2><link rel="stylesheet" href="/assets/pannellum.2.5.6.css"/><script type="text/javascript" src="/assets/pannellum.2.5.6.js"></script><figure id="panorama-viewer" style="height:min(400px,max(50vw,250px))"></figure><script>
 pannellum.viewer("panorama-viewer", {
-	"type": "equirectangular",
-	"panorama": "photosphere-2023-full.jpg",
 	"title": "Praça da Incerteza",
 	"author": "Matheus Avellar (15 de junho de 2023)",
 	"previewAuthor": "Matheus Avellar (15 de junho de 2023)",
-	"hfov": 150
+	"hfov": 100,
+	"type": "multires",
+	"multiRes": {
+		"path": "panorama/%l/%s%y_%x",
+		"fallbackPath": "panorama/fallback/%s",
+		"extension": "jpg",
+		"tileResolution": 512,
+		"maxLevel": 4,
+		"cubeResolution": 2768
+	}
 });
 </script></section>
 <section class="inscription">
