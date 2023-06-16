@@ -1,0 +1,62 @@
+---
+layout: monument.ejs
+name: Vértebra III
+alt_names: []
+categoria: escultura
+tags: [
+	"sem descrição",
+	"sem galeria"
+]
+series: [
+	"PUC-Rio"
+]
+
+data_inaug: 1996
+altura: 
+largura: 
+material: 
+
+autores: [ Marcio Mattar ]
+
+local: PUC-Rio
+bairro: Gávea
+lat: -22.97968
+lon: -43.23309
+
+imrj: 
+wikidata: 
+---
+
+<figure>
+	<a href="photo.jpg" data-llb-src="href">
+		<img src="thumb.jpg">
+	</a>
+	<figcaption>
+		<p class="credits">
+			Foto: Victor Toscano (16 de junho de 2023).
+			<a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>.
+			Arquivo pessoal.
+		</p>
+	</figcaption>
+</figure>
+<section class="description">
+	<p>
+		Costumava ser vermelha, mas foi pintada de amarelo em algum ponto.
+	</p>
+</section>
+<section class="gallery">
+	<!-- <h2>Galeria</h2> -->
+</section>
+<section class="inscription">
+<!-- 	<h2>Inscrição</h2>
+	<p>
+		Há uma placa próxima ao monumento contendo o seguinte texto:
+	</p>
+	<pre class="inscription-text"></pre> -->
+</section>
+<%- makeMap(arguments[0]); %>
+<section class="more">
+<!-- 	<h2>Leia mais</h2>
+	<ol></ol> -->
+</section>
+<%- makeOthersFromSeries(arguments[0]); %>

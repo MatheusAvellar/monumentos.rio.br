@@ -7,7 +7,7 @@ title: Inventário — Monumentos Rio
 monuments.sort((a, b) => a.data.name.localeCompare(b.data.name));
 const monument_count = monuments.length;
 
-const alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ#".split("");
+const alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
 
 const letters = new Set();
 monuments.forEach(mon => {
@@ -22,7 +22,11 @@ const lists = [];
 const letters_list = [...letters];
 letters_list.forEach(letter => {
 	lists.push(monuments.reduce((acc, file) => {
-		if(letter === file.data.name[0])
+		let current_first_letter = file.data.name[0].toUpperCase();
+		if(!alphabet.includes(current_first_letter))
+			current_first_letter = '#';
+
+		if(letter === current_first_letter)
 			acc.push(file);
 		return acc;
 	}, []));
