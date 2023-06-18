@@ -16,6 +16,7 @@ module.exports = function(eleventyConfig) {
 	eleventyConfig.addPassthroughCopy("{,!(_site)/**/}*.png");
 	eleventyConfig.addPassthroughCopy("{,!(_site)/**/}*.jpg");
 	eleventyConfig.addPassthroughCopy("{,!(_site)/**/}*.pdf");
+	eleventyConfig.addPassthroughCopy("{,!(_site)/**/}*.svg");
 
 	website_domain = "monumentos.rio.br";
 

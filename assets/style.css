@@ -168,6 +168,15 @@ header > nav > details ul > li:is(:hover, :active, :focus, :focus-within):not(.m
 	background-color: #f2f2f2;
 	background-color: var(--accent, var(--fg-light, #f2f2f2));
 }
+#logo {
+	display: grid;
+	padding: 0 1rem;
+}
+#logo > svg {
+	fill: var(--text-color);
+	width: 8rem;
+	margin: auto;
+}
 
 .cat-obra      { --accent: var(--color-obra     ); }
 .cat-busto     { --accent: var(--color-busto    ); }
@@ -915,4 +924,19 @@ h2 {
 
 @media screen and (min-width: 601px) and (max-width: 870px) {
 	main figure { float: none; }
+}
+
+/* Bigger navbar font size on tall screens */
+@media screen and (min-height: 700px) and (max-aspect-ratio: 5/7) {
+	header > nav {
+		font-size: 1.35rem;
+	}
+	header > nav > * {
+		height: 3.625rem;
+	}
+}
+@media screen and (min-height: 700px) and (max-aspect-ratio: 5/7) and (max-width: 800px) {
+	header > nav > details > ul {
+		right: 4px;
+	}
 }
