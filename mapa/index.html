@@ -8,7 +8,7 @@
 	<link rel="preconnect" href="https://cdn.avl.la">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="referrer" content="no-referrer">
-	<link rel="stylesheet" href="/assets/style.css?v=06-16">
+	<link rel="stylesheet" href="/assets/style.css?v=06-17">
 </head>
 <body>
 	<!-- Dark mode -->
@@ -51,7 +51,11 @@
 	</div>
 	<header>
 		<nav class="downsize">
-			<a id="logo" href="/">monumentos.rio.br</a>
+			<a id="logo" href="/">
+				<svg title="monumentos.rio.br" viewBox="0 0 302.76 71.23">
+					<use href="/assets/logo.svg#logo"/>
+				</svg>
+			</a>
 			<a class="mobile-hide" href="/inventario">
 				<svg class="icon"><use href="#icon-list"/></svg>
 				<span>Inventário</span>
@@ -508,7 +512,7 @@ markersMap.get("obra").list.push(m3);
 const m4 = L.marker([-22.97965, -43.23316], {icon: markersMap.get("obra").icon});
 m4.bindPopup(generatePopup("A397", "O Tempo Não Passa", "1997", "Gávea", '<a class="tag" href="/obras"><i class="category cat-obra">obra</i></a>'), { offset: [0, -24] }).openPopup().on({ click: markerOnClick });
 markersMap.get("obra").list.push(m4);
-const m5 = L.marker([-22.99977885, -43.37167598], {icon: markersMap.get("obra").icon});
+const m5 = L.marker([-22.99978, -43.37168], {icon: markersMap.get("obra").icon});
 m5.bindPopup(generatePopup("A400", "Mosaico do Bosque da Barra", "2000", "Barra da Tijuca", '<a class="tag" href="/obras"><i class="category cat-obra">obra</i></a>'), { offset: [0, -24] }).openPopup().on({ click: markerOnClick });
 markersMap.get("obra").list.push(m5);
 const m6 = L.marker([-22.947, -43.1947], {icon: markersMap.get("obra").icon});

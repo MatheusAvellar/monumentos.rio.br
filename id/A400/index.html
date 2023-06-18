@@ -8,7 +8,7 @@
 	<link rel="preconnect" href="https://cdn.avl.la">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="referrer" content="no-referrer">
-	<link rel="stylesheet" href="/assets/style.css?v=06-16">
+	<link rel="stylesheet" href="/assets/style.css?v=06-17">
 </head>
 <body>
 	<!-- Dark mode -->
@@ -51,7 +51,11 @@
 	</div>
 	<header>
 		<nav class="downsize">
-			<a id="logo" href="/">monumentos.rio.br</a>
+			<a id="logo" href="/">
+				<svg title="monumentos.rio.br" viewBox="0 0 302.76 71.23">
+					<use href="/assets/logo.svg#logo"/>
+				</svg>
+			</a>
 			<a class="mobile-hide" href="/inventario">
 				<svg class="icon"><use href="#icon-list"/></svg>
 				<span>Inventário</span>
@@ -234,8 +238,8 @@ Parque Natural Municipal
 <link href="/assets/leaflet/leaflet.1.9.3.css" rel="stylesheet" type="text/css">
 <script src="/assets/leaflet/leaflet.1.9.3.min.js"></script><script>
 const bounds = new L.LatLngBounds(
-	new L.LatLng(-23.024778849999997, -43.421675979999996),
-	new L.LatLng(-22.97477885, -43.32167598)
+	new L.LatLng(-23.02478, -43.421679999999995),
+	new L.LatLng(-22.974780000000003, -43.32168)
 );
 const map = L.map("monument-location-map", {
 	center: bounds.getCenter(),
@@ -248,7 +252,7 @@ L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
 	maxZoom: 19,
 	attribution: "&copy; <a href='http://www.openstreetmap.org/copyright'>OSMF</a>"
 }).addTo(map);
-L.marker([-22.99977885, -43.37167598], {
+L.marker([-22.99978, -43.37168], {
 	icon: L.icon({
 		iconUrl: "/assets/leaflet/images/phosphor-marker--obra.svg",
 		iconSize: [64, 64],
@@ -462,6 +466,13 @@ L.marker([-22.99977885, -43.37167598], {
 
 				</dd>
 
+
+				<dt>Wikidata</dt>
+				<dd>
+
+					<a href="https://www.wikidata.org/wiki/Q67210657">Q67210657</a><br>
+
+				</dd>
 
 
 
