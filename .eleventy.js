@@ -263,7 +263,7 @@ L.marker([${lat}, ${lon}], {
 					return false;
 				return true;
 			});
-			if(!mon.length)
+			if(mon.length <= 1)
 				continue;
 			const section = [];
 			section.push(`<h3>Série '${series[i]}'</h3>
@@ -280,6 +280,7 @@ L.marker([${lat}, ${lon}], {
 			out.push(section.join(""));
 		}
 		out.push("</section>");
+		if(out.length <= 2) return "";
 		return out.join("");
 	};
 

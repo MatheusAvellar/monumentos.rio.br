@@ -1,0 +1,70 @@
+---
+layout: monument.ejs
+name: Marco Rotário de Laranjeiras
+categoria: marco
+tags: [
+	"preliminar"
+]
+series: [
+	Praça Duque Costa,
+	Rotary Club
+]
+
+data_inaug: 2014
+data_circa: true
+altura: 
+largura: 
+material: 
+
+autores: [  ]
+
+local: Praça Duque Costa
+bairro: Laranjeiras
+lat: -22.93491
+lon: -43.18448
+
+imrj: 
+wikidata: 
+---
+
+<figure>
+	<!-- <a href="photo.jpg" data-llb-src="href"> -->
+		<img src="thumb.jpg">
+	<!-- </a> -->
+	<figcaption>
+		<p class="credits">
+			Foto: <a href="https://goo.gl/maps/U2hKLeeAWEA6WHCH6">Google Street
+			View</a>.
+		</p>
+	</figcaption>
+</figure>
+<section class="description">
+</section>
+<section class="gallery">
+	<!-- <h2>Galeria</h2> -->
+</section>
+<section class="inscription">
+	<h2>Inscrição</h2>
+	<p>
+		Há uma inscrição no monumento contendo o seguinte texto:
+	</p>
+	<pre class="inscription-text">
+Rotary Club RJ-Laranjeiras
+Rotary
+International</pre>
+	<p>
+		Há também uma placa com o seguinte texto:
+	</p>
+	<pre class="inscription-text">
+Rotary Club RJ Laranjeiras
+
+Fundado em Junho de 1990
+
+www.rotarylaranjeiras.com.br</pre>
+</section>
+<%- makeMap(arguments[0]); %>
+<section class="more">
+<!-- 	<h2>Leia mais</h2>
+	<ol></ol> -->
+</section>
+<%- makeOthersFromSeries(arguments[0]); %>
