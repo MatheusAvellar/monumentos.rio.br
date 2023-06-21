@@ -1,0 +1,93 @@
+---
+layout: monument.ejs
+name: Águia e Serpente
+categoria: chafariz
+tags: [
+	"preliminar"
+]
+series: [
+	Casa de Rui Barbosa
+]
+
+data_inaug: 1893
+data_circa: true
+altura: 
+largura: 
+material: [
+	Concreto,
+	Ferro
+]
+autores: [  ]
+
+local: Casa de Rui Barbosa
+bairro: Botafogo
+lat: -22.94935
+lon: -43.18695
+
+imrj: 
+wikidata: 
+---
+
+<figure>
+	<a href="photo.jpg" data-llb-src="href">
+		<img src="thumb.jpg">
+	</a>
+	<figcaption>
+		<p class="credits">
+			Foto: Matheus Avellar (9 de junho de 2023).
+		</p>
+	</figcaption>
+</figure>
+<section class="description">
+	<p>
+		Chafariz com escultura de uma água lutando contra uma serpente. Já estava
+		presente no jardim da casa ao ser adquirida por Rui Barbosa em 1893.
+	</p>
+	<blockquote>
+		Em 1930 o engenheiro Vittorio Miglietta apresentou um relatório sobre o que
+		chamou de reconstrução do jardim da Casa de Rui Barbosa. [...] Na listagem
+		dos serviços, [...] conserto da águia da frente do jardim.<br>
+		[...]<br>
+		A escultura em concreto e metal: uma águia de asas espalmadas vence
+		uma serpente de cuja boca sai um esguicho d'água que cai em jato curvo no
+		lago fronteiro.
+	</blockquote>
+	<cite>
+		— Cláudia Barbosa Reis (18 de abril de 2012).
+		<a href="http://antigo.casaruibarbosa.gov.br/dados/DOC/artigos/o-z/FCRB_ClaudiaReis_A_aguia_ea_serpente_A_memoria_do_jardim_de_rui.pdf">A
+		águia e a serpente: a memória do jardim de Rui</a>. <i>Fundação Casa de Rui
+		Barbosa</i>.
+	</cite>
+</section>
+<section class="gallery">
+	<h2>Galeria</h2>
+	<figure>
+		<a href="gallery-2023-full.jpg" data-llb-src="href">
+			<img src="gallery-2023.jpg">
+		</a>
+		<figcaption>
+			<p class="credits">
+				Foto: Matheus Avellar (9 de junho de 2023).
+			</p>
+		</figcaption>
+	</figure>
+</section>
+<section class="inscription">
+<!-- 	<h2>Inscrição</h2>
+	<p>
+		Há uma placa no pedestal do monumento contendo o seguinte texto:
+	</p>
+	<pre class="inscription-text"></pre> -->
+</section>
+<%- makeMap(arguments[0]); %>
+<section class="more">
+	<h2>Leia mais</h2>
+	<ol>
+		<li>
+			S.n. (10 de julho de 2015).
+			<a href="http://antigo.casaruibarbosa.gov.br/conservacaopreventiva/jardim/?p=284">A
+			escultura Águia e Serpente</a>. Fundação Casa de Rui Barbosa</i>.
+		</li>
+	</ol>
+</section>
+<%- makeOthersFromSeries(arguments[0]); %>

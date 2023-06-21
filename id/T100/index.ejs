@@ -1,0 +1,76 @@
+---
+layout: monument.ejs
+name: Busto de Rui Barbosa
+categoria: busto
+tags: [
+	"preliminar"
+]
+series: [
+	Casa de Rui Barbosa
+]
+
+data_inaug: 1933-08-11
+altura: 
+largura: 
+material: [
+	Mármore
+]
+autores: [
+	Rodolfo Pinto do Couto
+]
+
+local: Casa de Rui Barbosa
+bairro: Botafogo
+lat: -22.94921
+lon: -43.18681
+
+imrj: 
+wikidata: 
+---
+
+<figure>
+	<a href="photo.jpg" data-llb-src="href">
+		<img src="thumb.jpg">
+	</a>
+	<figcaption>
+		<p class="credits">
+			Foto: Matheus Avellar (9 de junho de 2023).
+		</p>
+	</figcaption>
+</figure>
+<section class="description">
+</section>
+<section class="gallery">
+	<h2>Galeria</h2>
+	<figure>
+		<a href="gallery-2023-full.jpg" data-llb-src="href">
+			<img src="gallery-2023.jpg">
+		</a>
+		<figcaption>
+			<p class="credits">
+				Foto: Matheus Avellar (9 de junho de 2023).
+			</p>
+		</figcaption>
+	</figure>
+</section>
+<section class="inscription">
+	<h2>Inscrição</h2>
+	<p>
+		Há uma inscrição no pedestal do monumento contendo o seguinte texto:
+	</p>
+	<pre class="inscription-text">
+A Ruy Barbosa
+
+Herma oferecida
+em nome da Bahia
+pelo seu interventor
+Cap Juracy Magalhaes
+
+11 de agosto 1933</pre>
+</section>
+<%- makeMap(arguments[0]); %>
+<section class="more">
+<!-- 	<h2>Leia mais</h2>
+	<ol></ol> -->
+</section>
+<%- makeOthersFromSeries(arguments[0]); %>
