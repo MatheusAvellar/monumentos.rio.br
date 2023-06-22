@@ -15,6 +15,7 @@ module.exports = function(eleventyConfig) {
 	// [Ref] https://github.com/11ty/eleventy/issues/2461#issuecomment-1238279042
 	eleventyConfig.addPassthroughCopy("{,!(_site)/**/}*.png");
 	eleventyConfig.addPassthroughCopy("{,!(_site)/**/}*.jpg");
+	eleventyConfig.addPassthroughCopy("{,!(_site)/**/}*.avif");
 	eleventyConfig.addPassthroughCopy("{,!(_site)/**/}*.pdf");
 	eleventyConfig.addPassthroughCopy("{,!(_site)/**/}*.svg");
 
@@ -153,9 +154,14 @@ module.exports = function(eleventyConfig) {
 		const hasIMRJ = (data.imrj && `${data.imrj}`.length > 0);
 		const isEarly = [data.tags].flat().includes("preliminar");
 		const hasMissing = [data.tags].flat().includes("removido");
+		const bairro = data.bairro instanceof Array
+			? data.bairro.join(" / ")
+			: data.bairro || "?";
 		return `<div class="card" data-${hasIMRJ ? "" : "no-"}imrj ${isEarly ? "data-preliminar" : ""}>
 	<a href="/id/${ID}">
-		<div class="card-preview" style="background-image:url(/id/${ID}/thumb.jpg)"></div>
+		<div class="card-preview">
+			<img src="/id/${ID}/thumb.jpg" decoding="async" loading="lazy">
+		</div>
 	</a>
 	<div class="card-description">
 		<a href="/id/${ID}">
@@ -168,7 +174,7 @@ module.exports = function(eleventyConfig) {
 			<span class="identifier">${ID}</span>
 			&middot;
 			<span>${getYearFromDate(data.data_inaug, data.data_circa)}</span><br>
-			<span class="neighborhood">${data.bairro || "?"}</span>
+			<span class="neighborhood">${bairro}</span>
 		</div>
 		<div class="card-tags">
 			${makeTag(data.categoria, hyperlink_tag)}
@@ -183,7 +189,9 @@ module.exports = function(eleventyConfig) {
 		const lat = item.lat;
 		const lon = item.lon;
 		const local = item.local;
-		const bairro = item.bairro;
+		const bairro = item.bairro instanceof Array
+			? item.bairro.join(" / ")
+			: item.bairro || "?";
 		const categoria = item.categoria;
 		if(!(lat && lon)) return "";
 

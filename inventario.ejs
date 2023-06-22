@@ -9,9 +9,13 @@ const monument_count = monuments.length;
 
 const alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
 
+function normalize(str) {
+	return str.normalize("NFD").replace(/\p{Diacritic}/gu, "").trim();
+}
+
 const letters = new Set();
 monuments.forEach(mon => {
-	const letter = mon.data.name[0];
+	const letter = normalize(mon.data.name)[0];
 	if(alphabet.includes(letter))
 		letters.add(letter);
 	else
@@ -22,7 +26,7 @@ const lists = [];
 const letters_list = [...letters];
 letters_list.forEach(letter => {
 	lists.push(monuments.reduce((acc, file) => {
-		let current_first_letter = file.data.name[0].toUpperCase();
+		let current_first_letter = normalize(file.data.name)[0].toUpperCase();
 		if(!alphabet.includes(current_first_letter))
 			current_first_letter = '#';
 

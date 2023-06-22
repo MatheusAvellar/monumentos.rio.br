@@ -46,23 +46,6 @@ tombado_url = doFallback("tombado_url");
 %>
 
 <main class="monument">
-<section>
-	<%_ if(tags.includes("preliminar")) { %>
-		<p class="note warning">
-			<strong>Nota:</strong>
-			Este item está marcado como <%- makeInfoTag("preliminar") %>. Isso
-			significa que ele não possui um identificador permanente ainda.
-			Assim, o URL atual será alterado no futuro. Fique atento!
-		</p>
-	<%_ } %>
-	<h1><%= name %></h1>
-<%_ if(alt_names.length > 0) { %>
-	<p class="alt-names">
-		Também conhecido como <%= alt_names.map(n => `"${n}"`).join(", ") %>.
-	</p>
-<%_ } %>
-	<%- content %>
-</section>
 <aside>
 	<em class="display-identifier"><%= page.fileSlug %></em>
 	<div class="tags-list">
@@ -93,13 +76,11 @@ tombado_url = doFallback("tombado_url");
 			<dt>Autores</dt>
 			<dd><ul><%- autores.map(a=>`<li>${a}</li>`).join("") %></ul></dd>
 		<%_ } %>
-		<%_ if(data_inaug) { %>
-			<dt>Inauguração</dt>
-			<dd>
-				<%= formatDate(data_inaug, data_circa) %><br>
-				(<%= getYearsSince(data_inaug) %>)
-			</dd>
-		<%_ } %>
+		<dt>Inauguração</dt>
+		<dd>
+			<%= formatDate(data_inaug, data_circa) %><br>
+			<%_ if(data_inaug) { %>(<%= getYearsSince(data_inaug) %>)<%_ } %>
+		</dd>
 		<%_ if(data_remov) { %>
 			<dt>Remoção</dt>
 			<dd>
@@ -222,4 +203,21 @@ tombado_url = doFallback("tombado_url");
 		</dl>
 	<%_ } %>
 </aside>
+<section>
+	<%_ if(tags.includes("preliminar")) { %>
+		<p class="note warning">
+			<strong>Nota:</strong>
+			Este item está marcado como <%- makeInfoTag("preliminar") %>. Isso
+			significa que ele não possui um identificador permanente ainda.
+			Assim, o URL atual será alterado no futuro. Fique atento!
+		</p>
+	<%_ } %>
+	<h1><%= name %></h1>
+<%_ if(alt_names.length > 0) { %>
+	<p class="alt-names">
+		Também conhecido como <%= alt_names.map(n => `"${n}"`).join(", ") %>.
+	</p>
+<%_ } %>
+	<%- content %>
+</section>
 </main>

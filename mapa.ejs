@@ -342,7 +342,11 @@ const m<%=i%> = L.marker([<%= lat %>, <%= lon %>], {<%_
 %>icon: <%-
 	isEarly ? "tempMarker" : `markersMap.get("${monuments[i].data.categoria}").icon`
 %>});
-m<%=i%>.bindPopup(generatePopup("<%= ID %>", "<%= isEarly ? "(" : "" %><%= monuments[i].data.name %><%= isEarly ? ")" : "" %>", "<%= getYearFromDate(monuments[i].data.data_inaug, monuments[i].data.data_circa) %>", "<%= monuments[i].data.bairro %>", '<%- makeTag(monuments[i].data.categoria) %>'), { offset: [0, -24] }).openPopup().on({ click: markerOnClick });
+m<%=i%>.bindPopup(generatePopup("<%= ID %>", "<%= isEarly ? "(" : "" %><%= monuments[i].data.name %><%= isEarly ? ")" : "" %>", "<%= getYearFromDate(monuments[i].data.data_inaug, monuments[i].data.data_circa) %>", "<%=
+(monuments[i].data.bairro instanceof Array)
+	? monuments[i].data.bairro.join(" / ")
+	: monuments[i].data.bairro
+%>", '<%- makeTag(monuments[i].data.categoria) %>'), { offset: [0, -24] }).openPopup().on({ click: markerOnClick });
 markersMap.get("<%= monuments[i].data.categoria %>").list.push(m<%=i%>); <%_ } %>
 
 for(const [key, obj] of [...markersMap]) {

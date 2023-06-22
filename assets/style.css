@@ -48,7 +48,7 @@ html.dark {
 	--text-color: #fff;
 	--text-alt-color: #d6d6d6;
 	--text-ref-color: #b4bdd1;
-	--soft-highlight: #2f2f38;
+	--soft-highlight: #434351;
 	--highlight: #585e6e;
 	--href-color: #9ce0ff;
 	--ribbon-color: #4f668a;
@@ -234,9 +234,9 @@ details.hidden-tags-list > summary:hover svg {
 	transform: scale(.75);
 }
 main {
-	padding: 2rem 1rem 5rem;
+	padding: 1rem 1rem 5rem;
 }
-main, .downsize {
+main, .downsize, #options-bar {
 	width: 100%;
 	max-width: 1200px;
 	margin-left: auto;
@@ -244,8 +244,8 @@ main, .downsize {
 }
 main.monument {
 	display: grid;
-	grid-template-columns: 1fr auto;
-	gap: .75rem;
+	grid-template-columns: min(30vw, 250px) auto;
+	gap: 1rem;
 }
 main p {
 	margin: 0;
@@ -318,6 +318,11 @@ footer nav ul {
 	margin: 0;
 	padding: 0;
 	list-style-type: none;
+}
+footer .footer-logo {
+	fill: #444;
+	fill: var(--text-alt-color, #444);
+	max-width: 250px;
 }
 
 h1, h2, h3 {
@@ -702,11 +707,14 @@ hr.vertical {
 	overflow: hidden;
 }
 .card-preview {
+	display: block;
 	width: 150px;
 	height: 150px;
-	background-position: center;
-	background-size: cover;
-	background-repeat: no-repeat;
+}
+.card-preview img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
 }
 .card-description {
 	padding: .75rem .75rem .75rem 0;
@@ -756,8 +764,11 @@ hr.vertical {
 .card[data-preliminar] {
 	opacity: 0.7;
 	border-style: dashed;
-	border-color: #fde099;
-	border-color: var(--warning-color, #fde099);
+	border-color: #d8d8d8;
+	border-color: var(--border-color, #d8d8d8);
+	background-size: 10px;
+	background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 6 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='%23b0b0b0' fill-opacity='0.1' d='M5 0h1L0 6V5zM6 5v1H5z'/%3E%3C/svg%3E");
+
 }
 
 .inscription-text {
@@ -839,18 +850,23 @@ h2 {
 	color: var(--text-alt-color, #444);
 }
 
+#options-bar {
+	padding-right: 1rem;
+	margin-top: .5rem;
+	margin-bottom: .5rem;
+}
 #dark-mode-wrapper {
-	display: inline-flex;
+	display: block;
 	position: relative;
-	flex-direction: row;
-	align-items: center;
-	gap: .5rem;
+	float: right;
+	width: 2.5rem;
+	height: 2.5rem;
 	padding: .5rem .5rem .5rem 2.25rem;
 	outline: 2px solid transparent;
 	border-radius: 4px;
 	background-color: var(--soft-highlight);
 	background-repeat: no-repeat;
-	background-position: .5rem center;
+	background-position: center;
 	background-size: 18px;
 	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23444'%3E%3Cpath d='M3.55 19.09l1.41 1.41 1.8-1.79-1.42-1.42m6.66-11.29c-3.31 0-6 2.69-6 6s2.69 6 6 6 6-2.69 6-6c0-3.32-2.69-6-6-6m8 7h3v-2h-3m-2.76 7.71 1.8 1.79 1.41-1.41-1.79-1.8m1.79-12.29-1.41-1.4-1.8 1.79 1.42 1.42m-5.66-5.81h-2v3h2m-6.24 1.39-1.8-1.79-1.41 1.4 1.79 1.81 1.42-1.42m-5.76 7.61h3v-2h-3m12 9h-2v3h2'/%3E%3C/svg%3E");
 }
@@ -872,7 +888,7 @@ h2 {
 @media screen and (max-width: 600px) {
 	main.monument {
 		display: flex;
-		flex-direction: column-reverse;
+		flex-direction: column;
 	}
 	aside {
 		width: 100%;
