@@ -20,17 +20,14 @@
 		state = !!state;
 		console.log(`[dark-mode] Called 'toggleDarkMode(${state})'`);
 		if(element) element.checked = state;
-		const text = document.getElementById("dark-mode-text");
 		// Liga o modo escuro
 		if(state) {
 			document.body.parentElement.classList.add("dark");
 			metaThemeColor.setAttribute("content", "#393a47");
-			if(text) text.textContent = "Desativar modo escuro";
 		// Desliga o modo escuro
 		} else {
 			document.body.parentElement.classList.remove("dark");
 			metaThemeColor.setAttribute("content", "#fff");
-			if(text) text.textContent = "Ativar modo escuro";
 		}
 	}
 	function setLocalStorage(state) {
@@ -74,9 +71,9 @@
 		// Escuta por cliques no checkbox de modo escuro
 		const toggle = document.getElementById("dark-mode-toggle");
 		toggle.checked = document.body.parentElement.classList.contains("dark");
-		const text = document.getElementById("dark-mode-text");
-		text.textContent = toggle.checked ? "Desativar modo escuro" : "Ativar modo escuro";
+		toggle.title = toggle.checked ? "Desativar modo escuro" : "Ativar modo escuro";
 		toggle.addEventListener("change", function(e) {
+			toggle.title = toggle.checked ? "Desativar modo escuro" : "Ativar modo escuro";
 			toggleDarkMode(toggle.checked);
 			setLocalStorage(toggle.checked);
 		});

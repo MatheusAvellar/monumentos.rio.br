@@ -8,11 +8,11 @@
 	<link rel="preconnect" href="https://cdn.avl.la">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="referrer" content="no-referrer">
-	<link rel="stylesheet" href="/assets/style.css?v=06-17">
+	<link rel="stylesheet" href="/assets/style.css?v=06-21">
 </head>
 <body>
 	<!-- Dark mode -->
-	<script src="/assets/darkmode.js?v=06-08"></script>
+	<script src="/assets/darkmode.js?v=06-21"></script>
 	<div hidden>
 		<svg viewBox="0 0 24 24">
 			<!-- Michael Irigoyen (Pictogrammers – Apache License 2.0) -->
@@ -173,6 +173,12 @@
 			</details>
 		</nav>
 	</header>
+	<div id="options-bar">
+		<label id="dark-mode-wrapper">
+			<input id="dark-mode-toggle" type="checkbox">
+			<span id="dark-mode-text"></span>
+		</label>
+	</div>
 	
 <main>
 	<section class="maxwidth indent-children">
@@ -231,14 +237,11 @@
 	</section>
 </main>
 	<footer>
-		<section hidden class="downsize">
-			<label id="dark-mode-wrapper">
-				<input id="dark-mode-toggle" type="checkbox">
-				<span id="dark-mode-text"></span>
-			</label>
-		</section>
 		<section class="downsize">
 			<section class="signature">
+				<svg class="footer-logo" title="monumentos.rio.br" viewBox="0 0 302.76 71.23">
+					<use href="/assets/logo.svg#logo"/>
+				</svg>
 				<p>
 					Feito com ♥︎&#xFE0E;<!--&#xFE0E;[Ref] stackoverflow.com/a/38452396/4824627-->
 					por <a href="https://avl.la/">Matheus Avellar</a><br>

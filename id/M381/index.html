@@ -8,11 +8,11 @@
 	<link rel="preconnect" href="https://cdn.avl.la">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="referrer" content="no-referrer">
-	<link rel="stylesheet" href="/assets/style.css?v=06-17">
+	<link rel="stylesheet" href="/assets/style.css?v=06-21">
 </head>
 <body>
 	<!-- Dark mode -->
-	<script src="/assets/darkmode.js?v=06-08"></script>
+	<script src="/assets/darkmode.js?v=06-21"></script>
 	<div hidden>
 		<svg viewBox="0 0 24 24">
 			<!-- Michael Irigoyen (Pictogrammers – Apache License 2.0) -->
@@ -173,9 +173,55 @@
 			</details>
 		</nav>
 	</header>
+	<div id="options-bar">
+		<label id="dark-mode-wrapper">
+			<input id="dark-mode-toggle" type="checkbox">
+			<span id="dark-mode-text"></span>
+		</label>
+	</div>
 	
 
 <main class="monument">
+<aside>
+	<em class="display-identifier">M381</em>
+	<div class="tags-list">
+		<!-- Main category tag -->
+		<a class="tag" href="/marcos"><i class="category cat-marco">marco</i></a>
+		<details title="Ver tags" class="hidden-tags-list">
+			<summary>
+				<svg class="icon"><use href="#icon-tag"></use></svg>
+			</summary>
+			<div>
+			<!-- Assigned tags -->
+
+				<i class="category info-tag possui_escrita">possui escrita</i>
+
+				<i class="category info-tag sem_galeria">sem galeria</i>
+
+			<!-- Auto-tags -->
+			<i class="category info-tag sem_autoria">sem autoria</i>
+			
+			</div>
+		</details>
+	</div>
+
+		<hr>
+		<p class="section-heading">Detalhes</p>
+		<dl>
+
+		<dt>Inauguração</dt>
+		<dd>
+			20 de janeiro de 1981<br>
+(42 anos atrás)
+		</dd>
+
+
+		</dl>
+
+
+
+
+</aside>
 <section>
 
 	<h1>Marco de Inauguração do Bosque da Barra</h1>
@@ -273,7 +319,9 @@ L.marker([-22.99962443, -43.37166283], {
 <p><strong>5</strong> monumentos</p>
 <div class="card-list"><div class="card" data-no-imrj >
 	<a href="/id/S421">
-		<div class="card-preview" style="background-image:url(/id/S421/thumb.jpg)"></div>
+		<div class="card-preview">
+			<img src="/id/S421/thumb.jpg" decoding="async" loading="lazy">
+		</div>
 	</a>
 	<div class="card-description">
 		<a href="/id/S421">
@@ -296,7 +344,9 @@ L.marker([-22.99962443, -43.37166283], {
 	</div>
 </div><div class="card" data-no-imrj >
 	<a href="/id/S921">
-		<div class="card-preview" style="background-image:url(/id/S921/thumb.jpg)"></div>
+		<div class="card-preview">
+			<img src="/id/S921/thumb.jpg" decoding="async" loading="lazy">
+		</div>
 	</a>
 	<div class="card-description">
 		<a href="/id/S921">
@@ -319,7 +369,9 @@ L.marker([-22.99962443, -43.37166283], {
 	</div>
 </div><div class="card" data-no-imrj >
 	<a href="/id/M381">
-		<div class="card-preview" style="background-image:url(/id/M381/thumb.jpg)"></div>
+		<div class="card-preview">
+			<img src="/id/M381/thumb.jpg" decoding="async" loading="lazy">
+		</div>
 	</a>
 	<div class="card-description">
 		<a href="/id/M381">
@@ -342,7 +394,9 @@ L.marker([-22.99962443, -43.37166283], {
 	</div>
 </div><div class="card" data-no-imrj >
 	<a href="/id/M379">
-		<div class="card-preview" style="background-image:url(/id/M379/thumb.jpg)"></div>
+		<div class="card-preview">
+			<img src="/id/M379/thumb.jpg" decoding="async" loading="lazy">
+		</div>
 	</a>
 	<div class="card-description">
 		<a href="/id/M379">
@@ -365,7 +419,9 @@ L.marker([-22.99962443, -43.37166283], {
 	</div>
 </div><div class="card" data-imrj >
 	<a href="/id/A400">
-		<div class="card-preview" style="background-image:url(/id/A400/thumb.jpg)"></div>
+		<div class="card-preview">
+			<img src="/id/A400/thumb.jpg" decoding="async" loading="lazy">
+		</div>
 	</a>
 	<div class="card-description">
 		<a href="/id/A400">
@@ -388,58 +444,13 @@ L.marker([-22.99962443, -43.37166283], {
 	</div>
 </div></div></section>
 </section>
-<aside>
-	<em class="display-identifier">M381</em>
-	<div class="tags-list">
-		<!-- Main category tag -->
-		<a class="tag" href="/marcos"><i class="category cat-marco">marco</i></a>
-		<details title="Ver tags" class="hidden-tags-list">
-			<summary>
-				<svg class="icon"><use href="#icon-tag"></use></svg>
-			</summary>
-			<div>
-			<!-- Assigned tags -->
-
-				<i class="category info-tag possui_escrita">possui escrita</i>
-
-				<i class="category info-tag sem_galeria">sem galeria</i>
-
-			<!-- Auto-tags -->
-			<i class="category info-tag sem_autoria">sem autoria</i>
-			
-			</div>
-		</details>
-	</div>
-
-		<hr>
-		<p class="section-heading">Detalhes</p>
-		<dl>
-
-
-			<dt>Inauguração</dt>
-			<dd>
-				20 de janeiro de 1981<br>
-				(42 anos atrás)
-			</dd>
-
-
-
-		</dl>
-
-
-
-
-</aside>
 </main>
 	<footer>
-		<section hidden class="downsize">
-			<label id="dark-mode-wrapper">
-				<input id="dark-mode-toggle" type="checkbox">
-				<span id="dark-mode-text"></span>
-			</label>
-		</section>
 		<section class="downsize">
 			<section class="signature">
+				<svg class="footer-logo" title="monumentos.rio.br" viewBox="0 0 302.76 71.23">
+					<use href="/assets/logo.svg#logo"/>
+				</svg>
 				<p>
 					Feito com ♥︎&#xFE0E;<!--&#xFE0E;[Ref] stackoverflow.com/a/38452396/4824627-->
 					por <a href="https://avl.la/">Matheus Avellar</a><br>
