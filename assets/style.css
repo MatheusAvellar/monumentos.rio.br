@@ -417,6 +417,17 @@ aside abbr {
 	text-transform: uppercase;
 	margin-bottom: .5rem;
 }
+aside .metadata {
+	font-size: 65%;
+	color: #444;
+	color: var(--text-alt-color, #444);
+}
+aside .metadata dt {
+	font-weight: 600;
+}
+aside .metadata dd {
+	margin: 0;
+}
 
 main figure {
 	position: relative;
