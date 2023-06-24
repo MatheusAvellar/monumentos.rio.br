@@ -204,7 +204,10 @@ module.exports = function(eleventyConfig) {
 		out.push(`<div id="monument-location-map"></div>`);
 		out.push(`<!-- [Ref] https://leafletjs.com/ -->
 <link href="/assets/leaflet/leaflet.1.9.3.css" rel="stylesheet" type="text/css">
-<script src="/assets/leaflet/leaflet.1.9.3.min.js"></script>`);
+<script src="/assets/leaflet/leaflet.1.9.3.min.js"></script>
+<!-- [Ref] https://github.com/Leaflet/Leaflet.fullscreen -->
+<link href="/assets/leaflet/leaflet.fullscreen.1.0.1.css" rel="stylesheet" type="text/css">
+<script src="/assets/leaflet/leaflet.fullscreen.1.0.1.js"></script>`);
 		out.push(`<script>
 const bounds = new L.LatLngBounds(
 	new L.LatLng(${lat-0.025}, ${lon-0.05}),
@@ -214,7 +217,8 @@ const map = L.map("monument-location-map", {
 	center: bounds.getCenter(),
 	zoom: 17,
 	maxBounds: bounds,
-	maxBoundsViscosity: .75
+	maxBoundsViscosity: .75,
+	fullscreenControl: true
 })
 L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
 	minZoom: 15,

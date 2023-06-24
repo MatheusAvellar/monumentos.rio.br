@@ -136,6 +136,9 @@ function countCategory(cat) {
 	<!-- [Ref] https://leafletjs.com/ -->
 	<link href="/assets/leaflet/leaflet.1.9.3.css" rel="stylesheet" type="text/css">
 	<script src="/assets/leaflet/leaflet.1.9.3.min.js"></script>
+	<!-- [Ref] https://github.com/Leaflet/Leaflet.fullscreen -->
+	<link href="/assets/leaflet/leaflet.fullscreen.1.0.1.css" rel="stylesheet" type="text/css">
+	<script src="/assets/leaflet/leaflet.fullscreen.1.0.1.js"></script>
 	<!-- [Ref] https://github.com/mourner/rbush -->
 	<script src="/assets/leaflet/rbush.2.0.1.min.js"></script>
 	<script>window.RBush = rbush;</script>
@@ -149,7 +152,8 @@ const map = L.map("monument-location-map", {
 		new L.LatLng(-22.9 - 0.5, -43.4 - 0.8),
 		new L.LatLng(-22.9 + 0.5, -43.4 + 0.8)
 	),
-	maxBoundsViscosity: .75
+	maxBoundsViscosity: .75,
+	fullscreenControl: true
 });
 
 L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
