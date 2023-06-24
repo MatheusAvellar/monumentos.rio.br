@@ -248,15 +248,6 @@
 		</dl>
 
 
-	<div hidden>
-		<hr>
-		<dl class="metadata">
-			<dt>Criado em</dt>
-			<dd>24 de junho de 2023</dd>
-			<dt>Modificado em</dt>
-			<dd>24 de junho de 2023</dd>
-		</dl>
-	</div>
 </aside>
 <section>
 
@@ -332,7 +323,10 @@ simples, firme e equilibrada.</pre>
 </section>
 <section class="location"><h2>Localização</h2><p><strong>Localização:</strong> Praça Nossa Senhora da Paz, Ipanema</p><p><strong>Coordenadas:</strong> -22.98370, -43.20600</p><div id="monument-location-map"></div><!-- [Ref] https://leafletjs.com/ -->
 <link href="/assets/leaflet/leaflet.1.9.3.css" rel="stylesheet" type="text/css">
-<script src="/assets/leaflet/leaflet.1.9.3.min.js"></script><script>
+<script src="/assets/leaflet/leaflet.1.9.3.min.js"></script>
+<!-- [Ref] https://github.com/Leaflet/Leaflet.fullscreen -->
+<link href="/assets/leaflet/leaflet.fullscreen.1.0.1.css" rel="stylesheet" type="text/css">
+<script src="/assets/leaflet/leaflet.fullscreen.1.0.1.js"></script><script>
 const bounds = new L.LatLngBounds(
 	new L.LatLng(-23.008699999999997, -43.256),
 	new L.LatLng(-22.9587, -43.156000000000006)
@@ -341,7 +335,8 @@ const map = L.map("monument-location-map", {
 	center: bounds.getCenter(),
 	zoom: 17,
 	maxBounds: bounds,
-	maxBoundsViscosity: .75
+	maxBoundsViscosity: .75,
+	fullscreenControl: true
 })
 L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
 	minZoom: 15,

@@ -261,15 +261,6 @@
 		</dl>
 
 
-	<div hidden>
-		<hr>
-		<dl class="metadata">
-			<dt>Criado em</dt>
-			<dd>24 de junho de 2023</dd>
-			<dt>Modificado em</dt>
-			<dd>24 de junho de 2023</dd>
-		</dl>
-	</div>
 </aside>
 <section>
 
@@ -428,7 +419,10 @@ tradicionais da escultura.</pre>
 </section>
 <section class="location"><h2>Localização</h2><p><strong>Localização:</strong> Parque da Catacumba, Lagoa</p><p><strong>Coordenadas:</strong> -22.97235, -43.20302</p><div id="monument-location-map"></div><!-- [Ref] https://leafletjs.com/ -->
 <link href="/assets/leaflet/leaflet.1.9.3.css" rel="stylesheet" type="text/css">
-<script src="/assets/leaflet/leaflet.1.9.3.min.js"></script><script>
+<script src="/assets/leaflet/leaflet.1.9.3.min.js"></script>
+<!-- [Ref] https://github.com/Leaflet/Leaflet.fullscreen -->
+<link href="/assets/leaflet/leaflet.fullscreen.1.0.1.css" rel="stylesheet" type="text/css">
+<script src="/assets/leaflet/leaflet.fullscreen.1.0.1.js"></script><script>
 const bounds = new L.LatLngBounds(
 	new L.LatLng(-22.997349999999997, -43.25302),
 	new L.LatLng(-22.94735, -43.153020000000005)
@@ -437,7 +431,8 @@ const map = L.map("monument-location-map", {
 	center: bounds.getCenter(),
 	zoom: 17,
 	maxBounds: bounds,
-	maxBoundsViscosity: .75
+	maxBoundsViscosity: .75,
+	fullscreenControl: true
 })
 L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
 	minZoom: 15,

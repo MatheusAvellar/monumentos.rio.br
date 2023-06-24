@@ -222,15 +222,6 @@
 		</dl>
 
 
-	<div hidden>
-		<hr>
-		<dl class="metadata">
-			<dt>Criado em</dt>
-			<dd>24 de junho de 2023</dd>
-			<dt>Modificado em</dt>
-			<dd>24 de junho de 2023</dd>
-		</dl>
-	</div>
 </aside>
 <section>
 
@@ -246,7 +237,10 @@
 	
 <section class="location"><h2>Localização</h2><p><strong>Localização:</strong> Flamengo</p><p><strong>Coordenadas:</strong> -22.93440, -43.17410</p><div id="monument-location-map"></div><!-- [Ref] https://leafletjs.com/ -->
 <link href="/assets/leaflet/leaflet.1.9.3.css" rel="stylesheet" type="text/css">
-<script src="/assets/leaflet/leaflet.1.9.3.min.js"></script><script>
+<script src="/assets/leaflet/leaflet.1.9.3.min.js"></script>
+<!-- [Ref] https://github.com/Leaflet/Leaflet.fullscreen -->
+<link href="/assets/leaflet/leaflet.fullscreen.1.0.1.css" rel="stylesheet" type="text/css">
+<script src="/assets/leaflet/leaflet.fullscreen.1.0.1.js"></script><script>
 const bounds = new L.LatLngBounds(
 	new L.LatLng(-22.9594, -43.2241),
 	new L.LatLng(-22.9094, -43.124100000000006)
@@ -255,7 +249,8 @@ const map = L.map("monument-location-map", {
 	center: bounds.getCenter(),
 	zoom: 17,
 	maxBounds: bounds,
-	maxBoundsViscosity: .75
+	maxBoundsViscosity: .75,
+	fullscreenControl: true
 })
 L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
 	minZoom: 15,
