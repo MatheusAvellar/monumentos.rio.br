@@ -1,0 +1,55 @@
+---
+layout: monument.ejs
+name: Escultura
+categoria: escultura
+tags: [
+	"preliminar"
+]
+series: [
+	Praça Paris
+]
+
+data_inaug: 
+altura: 
+largura: 
+material: []
+autores: []
+
+local: Praça Paris
+bairro: Glória
+lat: -22.91553
+lon: -43.17573
+
+imrj: 
+wikidata: 
+---
+
+<figure>
+	<!-- <a href="photo.jpg" data-llb-src="href"> -->
+		<img src="thumb.jpg">
+	<!-- </a> -->
+	<figcaption>
+		<p class="credits">
+			Foto: <a href="https://goo.gl/maps/5zE15NFYoTXo6qhx9">Google Street View</a>
+			(maio de 2016).
+		</p>
+	</figcaption>
+</figure>
+<section class="description">
+</section>
+<section class="gallery">
+	<!-- <h2>Galeria</h2> -->
+</section>
+<section class="inscription">
+<!-- 	<h2>Inscrição</h2>
+	<p>
+		Há uma inscrição no pedestal do monumento contendo o seguinte texto:
+	</p>
+	<pre class="inscription-text"></pre> -->
+</section>
+<%- makeMap(arguments[0]); %>
+<section class="more">
+<!-- 	<h2>Leia mais</h2>
+	<ol></ol> -->
+</section>
+<%- makeOthersFromSeries(arguments[0]); %>

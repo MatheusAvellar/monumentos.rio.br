@@ -202,6 +202,15 @@ tombado_url = doFallback("tombado_url");
 			<%_ } %>
 		</dl>
 	<%_ } %>
+	<div hidden>
+		<hr>
+		<dl class="metadata">
+			<dt>Criado em</dt>
+			<dd><%= formatDate(eleventyComputed.created(arguments[0])) %></dd>
+			<dt>Modificado em</dt>
+			<dd><%= formatDate(eleventyComputed.modified(arguments[0])) %></dd>
+		</dl>
+	</div>
 </aside>
 <section>
 	<%_ if(tags.includes("preliminar")) { %>
