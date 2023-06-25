@@ -1,24 +1,111 @@
 ---
 layout: monument.ejs
-name: Busto
+name: Busto de Manoel du Bocage
 categoria: busto
 tags: [
-	"preliminar"
+	"preliminar",
+	possui escrita
 ]
 
-data_inaug: 
+data_inaug: 1965-12-21
 altura: 
 largura: 
-material: 
-autores: 
+material: [ Mármore ]
+autores: [ Joaquim Correia ]
 
-local: 
+local: Praça Bariloche
 bairro: Botafogo
 lat: -22.9423
 lon: -43.18236
 
-imrj: 
-wikidata: 
+imrj: 289
+wikidata: Q67204719
+
+tombado_nome: Decreto 22.221/2002
+tombado_desc: "Art. 9º Ficam tombados, provisoriamente [...] \
+	os seguintes bens culturais localizados no bairro de Botafogo: [...] \
+	b) BUSTO - 01. BOCCAGE - situada na Praça Bariloche"
+tombado_quote: true
+tombado_url: http://www0.rio.rj.gov.br/patrimonio/pastas/legislacao/botafogo_dec22221_02_apac_botafogo.pdf
 ---
 
+<figure>
+	<!-- <a href="photo.jpg" data-llb-src="href"> -->
+		<img src="thumb.jpg">
+	<!-- </a> -->
+	<figcaption>
+		<p class="credits">
+			Foto: <a href="https://goo.gl/maps/tGBqdysB3iFkSTae7">Google Street
+			View</a> (julho de 2019).
+		</p>
+	</figcaption>
+</figure>
+<section class="description">
+	<p>
+		Busto em homenagem a Manuel Maria Barbosa du Bocage (15/09/1765–21/12/1805),
+		influente poeta português, inaugurado exatos 160 anos após sua morte, no
+		IV Centenário da Cidade do Rio de Janeiro. Era inicialmente planejado para o
+		Passeio Público, mas foi instalado em uma praça construída às pressas na Rua
+		Fernando Ferrari, então nomeada em homenagem ao poeta, e atualmente
+		considerada parte da Praça Bariloche.
+	</p>
+	<blockquote>
+		Um busto do poeta Bocage, oferecido pelo Govêrno português à Guanabara em
+		homenagem ao Centenário de Olavo Bilac, será inaugurado na próxima
+		segunda-feira, no Passeio Público [...]. O busto foi executado em pedra
+		pelo escultor Joaquim Correia [...]. O busto de Bocage ora ofertado pelo
+		Govêrno português, é uma retribuição a uma homenagem do Govêrno brasileiro,
+		que por ocasião do II Centenário do poeta português fez uma doação do busto
+		de Bilac à cidade de Setúbal.
+	</blockquote>
+	<cite>
+		— S.n. (17 de dezembro de 1965).
+		<a href="https://memoria.bn.br/DocReader/DocReader.aspx?bib=089842_07&pagfis=67518">Passeio
+		terá busto de Bocage</a>. <i>Correio da Manhã</i>, p.5 [via Hemeroteca
+		Digital da Biblioteca Nacional].
+	</cite>
+</section>
+<section class="refs">
+</section>
+<section class="gallery">
+	<figure>
+		<a href="gallery-1965-full.jpg" data-llb-src="href">
+			<img src="gallery-1965.jpg">
+		</a>
+		<figcaption>
+			<p>
+				Inauguração do busto em 1965
+			</p>
+			<p class="credits">
+				Reportagem: S.n. (22 de dezembro de 1965).
+				<a href="https://memoria.bn.br/DocReader/DocReader.aspx?bib=030678&pagfis=32010">Bocage
+				na Praça</a>. <i>Luta Democrática</i>, p.5 [via Hemeroteca Digital da
+				Biblioteca Nacional].
+			</p>
+		</figcaption>
+	</figure>
+</section>
+<section class="inscription">
+	<h2>Inscrição</h2>
+	<p>
+		Havia uma placa no pedestal do monumento contendo o seguinte texto:
+	</p>
+	<pre class="inscription-text">
+O Poeta
+Bocage
+1765–1965</pre>
+</section>
 <%- makeMap(arguments[0]); %>
+<section class="more">
+	<h2>Veja mais</h2>
+	<ol>
+		<li>
+			<strong>Vídeo:</strong><br>
+			S.n. (9 de novembro de 1965).
+			<a href="https://arquivos.rtp.pt/conteudos/visita-de-inocencio-galvao-teles-ao-atelier-de-joaquim-correia/">Visita
+			de Inocêncio Galvão Teles ao atelier de Joaquim Correia</a>. <i>Arquivos
+			da Rádio e Televisão de Portugal</i>.
+		</li>
+	</ol>
+</section>
+<%- makeOthersFromSeries(arguments[0]); %>
