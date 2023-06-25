@@ -8,7 +8,7 @@
 	<link rel="preconnect" href="https://cdn.avl.la">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="referrer" content="no-referrer">
-	<link rel="stylesheet" href="/assets/style.css?v=06-21">
+	<link rel="stylesheet" href="/assets/style.css?v=06-24">
 </head>
 <body>
 	<!-- Dark mode -->
@@ -201,7 +201,7 @@
 				<span>
 					<strong>Bustos e efígies</strong><br>
 					<i class="category cat-busto">busto</i>
-					<small>(56 itens)</small>
+					<small>(57 itens)</small>
 				</span>
 			</label>
 			<label>
@@ -1119,7 +1119,7 @@ markersMap.get("escultura").list.push(m202);
 const m203 = L.marker([-22.91148, -43.17568], {icon: tempMarker});
 m203.bindPopup(generatePopup("T143", "(Busto de Paulo de Frontin)", "S.d.", "Centro", '<a class="tag" href="/bustos"><i class="category cat-busto">busto</i></a>'), { offset: [0, -24] }).openPopup().on({ click: markerOnClick });
 markersMap.get("busto").list.push(m203);
-const m204 = L.marker([-22.9124, -43.1755], {icon: tempMarker});
+const m204 = L.marker([-22.91244, -43.17546], {icon: tempMarker});
 m204.bindPopup(generatePopup("T144", "(Chafariz do Monroe)", "S.d.", "Centro", '<a class="tag" href="/chafarizes"><i class="category cat-chafariz">chafariz</i></a>'), { offset: [0, -24] }).openPopup().on({ click: markerOnClick });
 markersMap.get("chafariz").list.push(m204);
 const m205 = L.marker([-22.91227, -43.17572], {icon: tempMarker});
@@ -1128,6 +1128,9 @@ markersMap.get("busto").list.push(m205);
 const m206 = L.marker([-22.91214, -43.17544], {icon: tempMarker});
 m206.bindPopup(generatePopup("T146", "(Busto de Evaristo de Morais)", "S.d.", "Centro", '<a class="tag" href="/bustos"><i class="category cat-busto">busto</i></a>'), { offset: [0, -24] }).openPopup().on({ click: markerOnClick });
 markersMap.get("busto").list.push(m206);
+const m207 = L.marker([-22.92238, -43.23114], {icon: tempMarker});
+m207.bindPopup(generatePopup("T147", "(Efígie de Almirante Cochrane)", "S.d.", "Centro", '<a class="tag" href="/bustos"><i class="category cat-busto">busto</i></a>'), { offset: [0, -24] }).openPopup().on({ click: markerOnClick });
+markersMap.get("busto").list.push(m207);
 
 for(const [key, obj] of [...markersMap]) {
 	obj.canvas.addMarkers(obj.list);

@@ -8,7 +8,7 @@
 	<link rel="preconnect" href="https://cdn.avl.la">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="referrer" content="no-referrer">
-	<link rel="stylesheet" href="/assets/style.css?v=06-21">
+	<link rel="stylesheet" href="/assets/style.css?v=06-24">
 </head>
 <body>
 	<!-- Dark mode -->
@@ -268,15 +268,15 @@
 	</p>
 	<pre class="inscription-text"></pre> -->
 </section>
-<section class="location"><h2>Localização</h2><p><strong>Localização:</strong> Praça Mahatma Gandhi, Centro</p><p><strong>Coordenadas:</strong> -22.91240, -43.17550</p><div id="monument-location-map"></div><!-- [Ref] https://leafletjs.com/ -->
+<section class="location"><h2>Localização</h2><p><strong>Localização:</strong> Praça Mahatma Gandhi, Centro</p><p><strong>Coordenadas:</strong> -22.91244, -43.17546</p><div id="monument-location-map"></div><!-- [Ref] https://leafletjs.com/ -->
 <link href="/assets/leaflet/leaflet.1.9.3.css" rel="stylesheet" type="text/css">
 <script src="/assets/leaflet/leaflet.1.9.3.min.js"></script>
 <!-- [Ref] https://github.com/Leaflet/Leaflet.fullscreen -->
 <link href="/assets/leaflet/leaflet.fullscreen.1.0.1.css" rel="stylesheet" type="text/css">
 <script src="/assets/leaflet/leaflet.fullscreen.1.0.1.js"></script><script>
 const bounds = new L.LatLngBounds(
-	new L.LatLng(-22.9374, -43.2255),
-	new L.LatLng(-22.887400000000003, -43.1255)
+	new L.LatLng(-22.93744, -43.22546),
+	new L.LatLng(-22.88744, -43.125460000000004)
 );
 const map = L.map("monument-location-map", {
 	center: bounds.getCenter(),
@@ -290,7 +290,7 @@ L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
 	maxZoom: 19,
 	attribution: "&copy; <a href='http://www.openstreetmap.org/copyright'>OSMF</a>"
 }).addTo(map);
-L.marker([-22.9124, -43.1755], {
+L.marker([-22.91244, -43.17546], {
 	icon: L.icon({
 		iconUrl: "/assets/leaflet/images/phosphor-marker--chafariz.svg",
 		iconSize: [64, 64],
