@@ -1,0 +1,58 @@
+---
+layout: monument.ejs
+name: Busto de Chico Mendes
+categoria: busto
+tags: [
+	"preliminar"
+]
+series: [
+	Parque Natural Municipal Chico Mendes
+]
+
+data_inaug: 
+altura: 
+largura: 
+material: []
+autores: []
+
+local: Parque Natural Municipal Chico Mendes
+bairro: Recreio dos Bandeirantes
+lat: -23.02256
+lon: -43.47192
+
+imrj: 
+wikidata: 
+---
+
+<figure>
+	<a href="photo.jpg" data-llb-src="href">
+		<img src="thumb.jpg">
+	</a>
+	<figcaption>
+		<p class="credits">
+			Foto: Marcelo Calvet (31 de maio de 2014),
+			<a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>,
+			via
+			<a href="https://commons.wikimedia.org/wiki/File:BustoParque.jpg">Wikimedia
+			Commons</a>.
+		</p>
+	</figcaption>
+</figure>
+<section class="description">
+</section>
+<section class="gallery">
+	<!-- <h2>Galeria</h2> -->
+</section>
+<section class="inscription">
+<!-- 	<h2>Inscrição</h2>
+	<p>
+		Há uma inscrição no pedestal do monumento contendo o seguinte texto:
+	</p>
+	<pre class="inscription-text"></pre> -->
+</section>
+<%- makeMap(arguments[0]); %>
+<section class="more">
+<!-- 	<h2>Leia mais</h2>
+	<ol></ol> -->
+</section>
+<%- makeOthersFromSeries(arguments[0]); %>
