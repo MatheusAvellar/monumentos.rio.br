@@ -2,7 +2,7 @@
 <html lang="pt-br">
 <head>
 	<meta charset="utf-8">
-	<title>Estruturas da Praça Carlo Del Prete — Monumentos Rio</title>
+	<title>Busto de Chico Mendes — Monumentos Rio</title>
 	<meta content="Matheus Avellar" name="author">
 	<meta name="description" content="Catálogo de monumentos da cidade do Rio de Janeiro">
 	<link rel="preconnect" href="https://cdn.avl.la">
@@ -183,10 +183,10 @@
 
 <main class="monument">
 <aside>
-	<em class="display-identifier">T035</em>
+	<em class="display-identifier">T148</em>
 	<div class="tags-list">
 		<!-- Main category tag -->
-		<a class="tag" href="/obras"><i class="category cat-obra">obra</i></a>
+		<a class="tag" href="/bustos"><i class="category cat-busto">busto</i></a>
 		<details title="Ver tags" class="hidden-tags-list">
 			<summary>
 				<svg class="icon"><use href="#icon-tag"></use></svg>
@@ -197,47 +197,13 @@
 				<i class="category info-tag preliminar">preliminar</i>
 
 			<!-- Auto-tags -->
-			
-			
+			<i class="category info-tag sem_autoria">sem autoria</i>
+			<i class="category info-tag data_imprecisa">data imprecisa</i>
 			</div>
 		</details>
 	</div>
 
-		<hr>
-		<p class="section-heading">Detalhes</p>
-		<dl>
 
-			<dt>Autores</dt>
-			<dd><ul><li>Alfredo Britto</li></ul></dd>
-
-		<dt>Inauguração</dt>
-		<dd>
-			24 de novembro de 1999<br>
-(24 anos atrás)
-		</dd>
-
-
-		</dl>
-
-
-
-		<hr>
-		<p class="section-heading">Catálogos</p>
-		<dl>
-
-				<dt><abbr title="Inventário dos Monumentos RJ">IMRJ</abbr></dt>
-				<dd>
-
-					ID&nbsp;<a href="http://www.inventariodosmonumentosrj.com.br/index.asp?iMENU=catalogo&amp;iiCOD=427">427</a><br>
-
-					ID&nbsp;<a href="http://www.inventariodosmonumentosrj.com.br/index.asp?iMENU=catalogo&amp;iiCOD=428">428</a><br>
-
-				</dd>
-
-
-
-
-		</dl>
 
 
 </aside>
@@ -250,25 +216,44 @@
 			Assim, o URL atual será alterado no futuro. Fique atento!
 		</p>
 
-	<h1>Estruturas da Praça Carlo Del Prete</h1>
+	<h1>Busto de Chico Mendes</h1>
 
 	
+<figure>
+	<a href="photo.jpg" data-llb-src="href">
+		<img src="thumb.jpg">
+	</a>
+	<figcaption>
+		<p class="credits">
+			Foto: Marcelo Calvet (31 de maio de 2014),
+			<a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>,
+			via
+			<a href="https://commons.wikimedia.org/wiki/File:BustoParque.jpg">Wikimedia
+			Commons</a>.
+		</p>
+	</figcaption>
+</figure>
 <section class="description">
-	<p>
-		Portais e caramanchão da Praça Carlo Del Prete. Presentes separadamente no
-		IMRJ com identificadores <a href="http://www.inventariodosmonumentosrj.com.br/index.asp?iMENU=catalogo&iiCOD=427">427</a>
-		e <a href="http://www.inventariodosmonumentosrj.com.br/index.asp?iMENU=catalogo&iiCOD=428">428</a>.
-	</p>
 </section>
-<section class="location"><h2>Localização</h2><p><strong>Localização:</strong> Praça Carlo Del Prete, Laranjeiras</p><p><strong>Coordenadas:</strong> -22.93303, -43.18441</p><div id="monument-location-map"></div><!-- [Ref] https://leafletjs.com/ -->
+<section class="gallery">
+	<!-- <h2>Galeria</h2> -->
+</section>
+<section class="inscription">
+<!-- 	<h2>Inscrição</h2>
+	<p>
+		Há uma inscrição no pedestal do monumento contendo o seguinte texto:
+	</p>
+	<pre class="inscription-text"></pre> -->
+</section>
+<section class="location"><h2>Localização</h2><p><strong>Localização:</strong> Parque Natural Municipal Chico Mendes, Recreio dos Bandeirantes</p><p><strong>Coordenadas:</strong> -23.02256, -43.47192</p><div id="monument-location-map"></div><!-- [Ref] https://leafletjs.com/ -->
 <link href="/assets/leaflet/leaflet.1.9.3.css" rel="stylesheet" type="text/css">
 <script src="/assets/leaflet/leaflet.1.9.3.min.js"></script>
 <!-- [Ref] https://github.com/Leaflet/Leaflet.fullscreen -->
 <link href="/assets/leaflet/leaflet.fullscreen.1.0.1.css" rel="stylesheet" type="text/css">
 <script src="/assets/leaflet/leaflet.fullscreen.1.0.1.js"></script><script>
 const bounds = new L.LatLngBounds(
-	new L.LatLng(-22.958029999999997, -43.23441),
-	new L.LatLng(-22.90803, -43.13441)
+	new L.LatLng(-23.047559999999997, -43.521919999999994),
+	new L.LatLng(-22.99756, -43.42192)
 );
 const map = L.map("monument-location-map", {
 	center: bounds.getCenter(),
@@ -282,9 +267,9 @@ L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
 	maxZoom: 19,
 	attribution: "&copy; <a href='http://www.openstreetmap.org/copyright'>OSMF</a>"
 }).addTo(map);
-L.marker([-22.93303, -43.18441], {
+L.marker([-23.02256, -43.47192], {
 	icon: L.icon({
-		iconUrl: "/assets/leaflet/images/phosphor-marker--obra.svg",
+		iconUrl: "/assets/leaflet/images/phosphor-marker--busto.svg",
 		iconSize: [64, 64],
 		iconAnchor: [32, 64],
 		shadowUrl: "/assets/leaflet/images/marker-shadow.png",
@@ -293,79 +278,58 @@ L.marker([-22.93303, -43.18441], {
 	})
 }).addTo(map);
 </script></section>
-<section class="related"><h2>Monumentos relacionados</h2><h3>Série 'Rio Cidade Laranjeiras'</h3>
-<p><strong>3</strong> monumentos</p>
-<div class="card-list"><div class="card" data-imrj >
-	<a href="/id/S399">
+<section class="more">
+<!-- 	<h2>Leia mais</h2>
+	<ol></ol> -->
+</section>
+<section class="related"><h2>Monumentos relacionados</h2><h3>Série 'Parque Natural Municipal Chico Mendes'</h3>
+<p><strong>2</strong> monumentos</p>
+<div class="card-list"><div class="card" data-no-imrj data-preliminar>
+	<a href="/id/T149">
 		<div class="card-preview">
-			<img src="/id/S399/thumb.jpg" decoding="async" loading="lazy">
+			<img src="/id/T149/thumb.jpg" decoding="async" loading="lazy">
 		</div>
 	</a>
 	<div class="card-description">
-		<a href="/id/S399">
-			<p class="truncate" title="Avião Savoia-Marchetti S.64">
+		<a href="/id/T149">
+			<p class="truncate" title="Busto">
 				<strong>
-				Avião Savoia-Marchetti S.64</strong>
+				(Busto)</strong>
 			</p>
 		</a>
 		<div class="card-details">
-			<span class="identifier">S399</span>
+			<span class="identifier">T149</span>
 			&middot;
-			<span>1999</span><br>
-			<span class="neighborhood">Laranjeiras</span>
+			<span>S.d.</span><br>
+			<span class="neighborhood">Recreio dos Bandeirantes</span>
 		</div>
 		<div class="card-tags">
-			<a class="tag" href="/esculturas"><i class="category cat-escultura">escultura</i></a>
-			
+			<a class="tag" href="/bustos"><i class="category cat-busto">busto</i></a>
+			<i class="category info-tag preliminar">preliminar</i>
 			
 		</div>
 	</div>
-</div><div class="card" data-imrj >
-	<a href="/id/E399">
+</div><div class="card" data-no-imrj data-preliminar>
+	<a href="/id/T148">
 		<div class="card-preview">
-			<img src="/id/E399/thumb.jpg" decoding="async" loading="lazy">
+			<img src="/id/T148/thumb.jpg" decoding="async" loading="lazy">
 		</div>
 	</a>
 	<div class="card-description">
-		<a href="/id/E399">
-			<p class="truncate" title="Estátua de Carlo Del Prete">
+		<a href="/id/T148">
+			<p class="truncate" title="Busto de Chico Mendes">
 				<strong>
-				Estátua de Carlo Del Prete</strong>
+				(Busto de Chico Mendes)</strong>
 			</p>
 		</a>
 		<div class="card-details">
-			<span class="identifier">E399</span>
+			<span class="identifier">T148</span>
 			&middot;
-			<span>1999</span><br>
-			<span class="neighborhood">Laranjeiras</span>
+			<span>S.d.</span><br>
+			<span class="neighborhood">Recreio dos Bandeirantes</span>
 		</div>
 		<div class="card-tags">
-			<a class="tag" href="/estatuas"><i class="category cat-estatua">estátua</i></a>
-			
-			
-		</div>
-	</div>
-</div><div class="card" data-imrj data-preliminar>
-	<a href="/id/T035">
-		<div class="card-preview">
-			<img src="/id/T035/thumb.jpg" decoding="async" loading="lazy">
-		</div>
-	</a>
-	<div class="card-description">
-		<a href="/id/T035">
-			<p class="truncate" title="Estruturas da Praça Carlo Del Prete">
-				<strong>
-				(Estruturas da Praça Carlo Del Prete)</strong>
-			</p>
-		</a>
-		<div class="card-details">
-			<span class="identifier">T035</span>
-			&middot;
-			<span>1999</span><br>
-			<span class="neighborhood">Laranjeiras</span>
-		</div>
-		<div class="card-tags">
-			<a class="tag" href="/obras"><i class="category cat-obra">obra</i></a>
+			<a class="tag" href="/bustos"><i class="category cat-busto">busto</i></a>
 			<i class="category info-tag preliminar">preliminar</i>
 			
 		</div>
