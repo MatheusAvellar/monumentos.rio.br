@@ -2,13 +2,13 @@
 <html lang="pt-br">
 <head>
 	<meta charset="utf-8">
-	<title>Esculutra — Monumentos Rio</title>
+	<title>Fonte do Menino — Monumentos Rio</title>
 	<meta content="Matheus Avellar" name="author">
 	<meta name="description" content="Catálogo de monumentos da cidade do Rio de Janeiro">
 	<link rel="preconnect" href="https://cdn.avl.la">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="referrer" content="no-referrer">
-	<link rel="stylesheet" href="/assets/style.css?v=06-24">
+	<link rel="stylesheet" href="/assets/style.css?v=06-26">
 </head>
 <body>
 	<!-- Dark mode -->
@@ -174,10 +174,11 @@
 		</nav>
 	</header>
 	<div id="options-bar">
-		<label id="dark-mode-wrapper">
-			<input id="dark-mode-toggle" type="checkbox">
-			<span id="dark-mode-text"></span>
-		</label>
+		<div class="downsize">
+			<label id="dark-mode-wrapper">
+				<input id="dark-mode-toggle" type="checkbox">
+			</label>
+		</div>
 	</div>
 	
 
@@ -186,7 +187,7 @@
 	<em class="display-identifier">T123</em>
 	<div class="tags-list">
 		<!-- Main category tag -->
-		<a class="tag" href="/esculturas"><i class="category cat-escultura">escultura</i></a>
+		<a class="tag" href="/chafarizes"><i class="category cat-chafariz">chafariz</i></a>
 		<details title="Ver tags" class="hidden-tags-list">
 			<summary>
 				<svg class="icon"><use href="#icon-tag"></use></svg>
@@ -199,26 +200,67 @@
 				<i class="category info-tag removido">removido</i>
 
 			<!-- Auto-tags -->
-			<i class="category info-tag sem_autoria">sem autoria</i>
+			
 			<i class="category info-tag data_imprecisa">data imprecisa</i>
 			</div>
 		</details>
 	</div>
 
+		<hr>
+		<p class="section-heading">Detalhes</p>
+		<dl>
 
+			<dt>Autores</dt>
+			<dd><ul><li>Valentim da Fonseca e Silva</li></ul></dd>
+
+		<dt>Inauguração</dt>
+		<dd>
+			S.d.<br>
+
+		</dd>
+
+
+		</dl>
+
+
+
+		<hr>
+		<p class="section-heading">Catálogos</p>
+		<dl>
+
+				<dt><abbr title="Inventário dos Monumentos RJ">IMRJ</abbr></dt>
+				<dd>
+
+					ID&nbsp;<a href="http://www.inventariodosmonumentosrj.com.br/index.asp?iMENU=catalogo&amp;iiCOD=197">197</a><br>
+
+					ID&nbsp;<a href="http://www.inventariodosmonumentosrj.com.br/index.asp?iMENU=catalogo&amp;iiCOD=1391">1391</a><br>
+
+				</dd>
+
+
+				<dt>Wikidata</dt>
+				<dd>
+
+					<a href="https://www.wikidata.org/wiki/Q61773654">Q61773654</a><br>
+
+				</dd>
+
+
+
+		</dl>
 
 
 </aside>
 <section>
 
-		<p class="note warning">
+		<p class="note warning cutout-width-limit">
 			<strong>Nota:</strong>
 			Este item está marcado como <i class="category info-tag preliminar">preliminar</i>. Isso
 			significa que ele não possui um identificador permanente ainda.
 			Assim, o URL atual será alterado no futuro. Fique atento!
 		</p>
 
-	<h1>Esculutra</h1>
+	<h1>Fonte do Menino</h1>
 
 	
 <figure>
@@ -236,7 +278,12 @@
 </section>
 <section class="gallery">
 	<!-- <h2>Galeria</h2> -->
-	<!-- https://www.reddit.com/r/brasil/comments/dfpary/as_pir%C3%A2mides_e_o_menino_da_bica_no_passeio/ -->
+<!--
+https://www.reddit.com/r/brasil/comments/dfpary/as_pir%C3%A2mides_e_o_menino_da_bica_no_passeio/
+http://www.inventariodosmonumentosrj.com.br/index.asp?iMENU=catalogo&iiCOD=1391&iMONU=Fonte%20do%20Menino%20(%20original)%20-%20dep%C3%B3sito
+http://www.inventariodosmonumentosrj.com.br/index.asp?iMENU=catalogo&iiCOD=197&iMONU=Fonte%20do%20Menino%20(reprodu%C3%A7%C3%A3o)%20-%20dep%C3%B3sito
+http://www.passeiopublico.com/htm/acervo.asp
+-->
 </section>
 <section class="inscription">
 <!-- 	<h2>Inscrição</h2>
@@ -269,7 +316,7 @@ L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
 }).addTo(map);
 L.marker([-22.91381, -43.17593], {
 	icon: L.icon({
-		iconUrl: "/assets/leaflet/images/phosphor-marker--escultura.svg",
+		iconUrl: "/assets/leaflet/images/phosphor-marker--chafariz.svg",
 		iconSize: [64, 64],
 		iconAnchor: [32, 64],
 		shadowUrl: "/assets/leaflet/images/marker-shadow.png",
@@ -609,7 +656,7 @@ L.marker([-22.91381, -43.17593], {
 			
 		</div>
 	</div>
-</div><div class="card" data-no-imrj data-preliminar>
+</div><div class="card" data-imrj data-preliminar>
 	<a href="/id/T119">
 		<div class="card-preview">
 			<img src="/id/T119/thumb.jpg" decoding="async" loading="lazy">
@@ -635,31 +682,6 @@ L.marker([-22.91381, -43.17593], {
 		</div>
 	</div>
 </div><div class="card" data-no-imrj data-preliminar>
-	<a href="/id/T123">
-		<div class="card-preview">
-			<img src="/id/T123/thumb.jpg" decoding="async" loading="lazy">
-		</div>
-	</a>
-	<div class="card-description">
-		<a href="/id/T123">
-			<p class="truncate" title="Esculutra">
-				<strong>
-				(Esculutra)</strong>
-			</p>
-		</a>
-		<div class="card-details">
-			<span class="identifier">T123</span>
-			&middot;
-			<span>S.d.</span><br>
-			<span class="neighborhood">Lapa</span>
-		</div>
-		<div class="card-tags">
-			<a class="tag" href="/esculturas"><i class="category cat-escultura">escultura</i></a>
-			<i class="category info-tag preliminar">preliminar</i>
-			<i class="category info-tag removido">removido</i>
-		</div>
-	</div>
-</div><div class="card" data-no-imrj data-preliminar>
 	<a href="/id/T124">
 		<div class="card-preview">
 			<img src="/id/T124/thumb.jpg" decoding="async" loading="lazy">
@@ -682,6 +704,31 @@ L.marker([-22.91381, -43.17593], {
 			<a class="tag" href="/esculturas"><i class="category cat-escultura">escultura</i></a>
 			<i class="category info-tag preliminar">preliminar</i>
 			
+		</div>
+	</div>
+</div><div class="card" data-imrj data-preliminar>
+	<a href="/id/T123">
+		<div class="card-preview">
+			<img src="/id/T123/thumb.jpg" decoding="async" loading="lazy">
+		</div>
+	</a>
+	<div class="card-description">
+		<a href="/id/T123">
+			<p class="truncate" title="Fonte do Menino">
+				<strong>
+				(Fonte do Menino)</strong>
+			</p>
+		</a>
+		<div class="card-details">
+			<span class="identifier">T123</span>
+			&middot;
+			<span>S.d.</span><br>
+			<span class="neighborhood">Lapa</span>
+		</div>
+		<div class="card-tags">
+			<a class="tag" href="/chafarizes"><i class="category cat-chafariz">chafariz</i></a>
+			<i class="category info-tag preliminar">preliminar</i>
+			<i class="category info-tag removido">removido</i>
 		</div>
 	</div>
 </div><div class="card" data-imrj data-preliminar>

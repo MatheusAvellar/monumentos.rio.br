@@ -8,7 +8,7 @@
 	<link rel="preconnect" href="https://cdn.avl.la">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="referrer" content="no-referrer">
-	<link rel="stylesheet" href="/assets/style.css?v=06-24">
+	<link rel="stylesheet" href="/assets/style.css?v=06-26">
 </head>
 <body>
 	<!-- Dark mode -->
@@ -174,15 +174,16 @@
 		</nav>
 	</header>
 	<div id="options-bar">
-		<label id="dark-mode-wrapper">
-			<input id="dark-mode-toggle" type="checkbox">
-			<span id="dark-mode-text"></span>
-		</label>
+		<div class="downsize">
+			<label id="dark-mode-wrapper">
+				<input id="dark-mode-toggle" type="checkbox">
+			</label>
+		</div>
 	</div>
 	
 
 <main>
-	<h1>Mapa dos monumentos</h1>
+	<h1 class="cutout-width-limit">Mapa dos monumentos</h1>
 	<p>
 		<strong>Filtros:</strong>
 	</p>
@@ -209,7 +210,7 @@
 				<span>
 					<strong>Chafarizes e fontes</strong><br>
 					<i class="category cat-chafariz">chafariz</i>
-					<small>(24 itens)</small>
+					<small>(25 itens)</small>
 				</span>
 			</label>
 			<label>
@@ -1057,8 +1058,8 @@ const m182 = L.marker([-22.91368, -43.17679], {icon: tempMarker});
 m182.bindPopup(generatePopup("T122", "(Busto de Gonçalves Dias)", "S.d.", "Lapa", '<a class="tag" href="/bustos"><i class="category cat-busto">busto</i></a>'), { offset: [0, -24] }).openPopup().on({ click: markerOnClick });
 markersMap.get("busto").list.push(m182);
 const m183 = L.marker([-22.91381, -43.17593], {icon: tempMarker});
-m183.bindPopup(generatePopup("T123", "(Esculutra)", "S.d.", "Lapa", '<a class="tag" href="/esculturas"><i class="category cat-escultura">escultura</i></a>'), { offset: [0, -24] }).openPopup().on({ click: markerOnClick });
-markersMap.get("escultura").list.push(m183);
+m183.bindPopup(generatePopup("T123", "(Fonte do Menino)", "S.d.", "Lapa", '<a class="tag" href="/chafarizes"><i class="category cat-chafariz">chafariz</i></a>'), { offset: [0, -24] }).openPopup().on({ click: markerOnClick });
+markersMap.get("chafariz").list.push(m183);
 const m184 = L.marker([-22.91374, -43.17669], {icon: tempMarker});
 m184.bindPopup(generatePopup("T124", "(Esculutra)", "S.d.", "Lapa", '<a class="tag" href="/esculturas"><i class="category cat-escultura">escultura</i></a>'), { offset: [0, -24] }).openPopup().on({ click: markerOnClick });
 markersMap.get("escultura").list.push(m184);
@@ -1137,6 +1138,9 @@ markersMap.get("busto").list.push(m208);
 const m209 = L.marker([-23.02266, -43.47174], {icon: tempMarker});
 m209.bindPopup(generatePopup("T149", "(Busto)", "S.d.", "Recreio dos Bandeirantes", '<a class="tag" href="/bustos"><i class="category cat-busto">busto</i></a>'), { offset: [0, -24] }).openPopup().on({ click: markerOnClick });
 markersMap.get("busto").list.push(m209);
+const m210 = L.marker([-22.8978, -43.35206], {icon: tempMarker});
+m210.bindPopup(generatePopup("T150", "(Diana de Gabies)", "S.d.", "Praça Seca", '<a class="tag" href="/esculturas"><i class="category cat-escultura">escultura</i></a>'), { offset: [0, -24] }).openPopup().on({ click: markerOnClick });
+markersMap.get("escultura").list.push(m210);
 
 for(const [key, obj] of [...markersMap]) {
 	obj.canvas.addMarkers(obj.list);
