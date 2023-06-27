@@ -1,0 +1,90 @@
+---
+layout: monument.ejs
+name: Diana de Gabies
+alt_names: [
+	Diana de Gabi, Diana de Gabii,
+	Ártemis de Gabies, Ártemis de Gabi, Ártemis de Gabii
+]
+categoria: escultura
+tags: [
+	"preliminar"
+]
+series: []
+
+data_inaug: 
+altura: 
+largura: 
+material: Ferro
+autores: []
+
+local: Praça Seca
+bairro: Praça Seca
+lat: -22.89780
+lon: -43.35206
+
+imrj: 1052
+wikidata: Q67204166
+
+tombado_nome: Decreto 19.011/2000
+tombado_desc: "Art. 1º Ficam tombados definitivamente [...] \
+	elementos decorativos de ferro fundido: [...] \
+	PRAÇA SECA - 1 estátua: Diana de Gabies, cópia da Antigüidade"
+tombado_quote: true
+tombado_url: https://www.rio.rj.gov.br/dlstatic/10112/4722991/4121993/180DECRETO19011ConjuntodePecasdeArtedeFerroFundido.pdf
+---
+
+<figure>
+	<!-- <a href="photo.jpg" data-llb-src="href"> -->
+		<img src="thumb.jpg">
+	<!-- </a> -->
+	<figcaption>
+		<p class="credits">
+			Foto: <a href="https://goo.gl/maps/awVorSrgrXnW89BH9">Google Street
+			View</a> (fevereiro de 2022).
+		</p>
+	</figcaption>
+</figure>
+<section class="description">
+	<p>
+		É uma cópia de uma escultura de mármore descoberta em 1792 em território
+		que pertencia à antiga cidade de Gabies (ou Gabii, ou Gabi), na Itália.
+		Possivelmente representa a deusa da mitologia grega, Ártemis.
+	</p>
+</section>
+<section class="gallery">
+	<h2>Galeria</h2>
+	<figure>
+		<a href="gallery-c1885-full.jpg" data-llb-src="href">
+			<img src="gallery-c1885.jpg">
+		</a>
+		<figcaption>
+			<p>
+				Escultura nos jardins do Passeio Público, circa 1885
+			</p>
+			<p class="credits">
+				Foto: Marc Ferrez (circa 1885).
+				<a href="https://acervos.ims.com.br/portals/#/detailpage/102549">Passeio
+				Público</a> [via Instituto Moreira Salles].
+			</p>
+		</figcaption>
+	</figure>
+</section>
+<section class="inscription">
+<!-- 	<h2>Inscrição</h2>
+	<p>
+		Há uma inscrição no pedestal do monumento contendo o seguinte texto:
+	</p>
+	<pre class="inscription-text"></pre> -->
+</section>
+<%- makeMap(arguments[0]); %>
+<section class="more">
+	<h2>Leia mais</h2>
+	<ol>
+		<li>
+			A Wikipedia possui um artigo dedicado à estátua de mármore, da qual esta
+			é uma cópia:
+			<a href="https://en.wikipedia.org/wiki/Diana_of_Gabii">Diana of Gabii</a>.
+		</li>
+	</ol>
+</section>
+<%- makeOthersFromSeries(arguments[0]); %>

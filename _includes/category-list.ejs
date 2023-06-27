@@ -6,7 +6,7 @@ eleventyComputed: {
 ---
 
 <%_ const monuments = collections.all.filter(file => file.filePathStem.startsWith("/id/"));
-monuments.sort((a, b) => a.filePathStem.slice(4).localeCompare(b.filePathStem.slice(4)));
+monuments.sort((a, b) => a.data.name.localeCompare(b.data.name));
 const monument_count = monuments.length;
 
 const distinct_categories = new Set();
@@ -51,7 +51,7 @@ categories_list.forEach(cat => {
 %>
 
 <main>
-	<h1><%= heading %></h1>
+	<h1 class="cutout-width-limit"><%= heading %></h1>
 	<section class="indent-children maxwidth">
 		<p><%- content %></p>
 	</section>
