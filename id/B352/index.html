@@ -364,15 +364,15 @@ A Comiss[ão?]
 Ariosto [Berna]
 Vict[or Mariano?]</pre>
 </section>
-<section class="location"><h2>Localização</h2><p><strong>Localização:</strong> Praça Saens Peña, Tijuca</p><p><strong>Coordenadas:</strong> -22.92470, -43.23310</p><div id="monument-location-map"></div><!-- [Ref] https://leafletjs.com/ -->
+<section class="location"><h2>Localização</h2><p><strong>Localização:</strong> Praça Saens Peña, Tijuca</p><p><strong>Coordenadas:</strong> -22.92470, -43.23307</p><div id="monument-location-map"></div><!-- [Ref] https://leafletjs.com/ -->
 <link href="/assets/leaflet/leaflet.1.9.3.css" rel="stylesheet" type="text/css">
 <script src="/assets/leaflet/leaflet.1.9.3.min.js"></script>
 <!-- [Ref] https://github.com/Leaflet/Leaflet.fullscreen -->
 <link href="/assets/leaflet/leaflet.fullscreen.1.0.1.css" rel="stylesheet" type="text/css">
 <script src="/assets/leaflet/leaflet.fullscreen.1.0.1.js"></script><script>
 const bounds = new L.LatLngBounds(
-	new L.LatLng(-22.9497, -43.2831),
-	new L.LatLng(-22.899700000000003, -43.1831)
+	new L.LatLng(-22.9497, -43.283069999999995),
+	new L.LatLng(-22.899700000000003, -43.18307)
 );
 const map = L.map("monument-location-map", {
 	center: bounds.getCenter(),
@@ -386,7 +386,7 @@ L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
 	maxZoom: 19,
 	attribution: "&copy; <a href='http://www.openstreetmap.org/copyright'>OSMF</a>"
 }).addTo(map);
-L.marker([-22.9247, -43.2331], {
+L.marker([-22.9247, -43.23307], {
 	icon: L.icon({
 		iconUrl: "/assets/leaflet/images/phosphor-marker--busto.svg",
 		iconSize: [64, 64],

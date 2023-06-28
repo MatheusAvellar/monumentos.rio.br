@@ -371,15 +371,15 @@
 	</p>
 	<pre class="inscription-text">Protecção</pre>
 </section>
-<section class="location"><h2>Localização</h2><p><strong>Localização:</strong> Jardim de Alah, Leblon</p><p><strong>Coordenadas:</strong> -22.98410, -43.21520</p><div id="monument-location-map"></div><!-- [Ref] https://leafletjs.com/ -->
+<section class="location"><h2>Localização</h2><p><strong>Localização:</strong> Jardim de Alah, Leblon</p><p><strong>Coordenadas:</strong> -22.98415, -43.21518</p><div id="monument-location-map"></div><!-- [Ref] https://leafletjs.com/ -->
 <link href="/assets/leaflet/leaflet.1.9.3.css" rel="stylesheet" type="text/css">
 <script src="/assets/leaflet/leaflet.1.9.3.min.js"></script>
 <!-- [Ref] https://github.com/Leaflet/Leaflet.fullscreen -->
 <link href="/assets/leaflet/leaflet.fullscreen.1.0.1.css" rel="stylesheet" type="text/css">
 <script src="/assets/leaflet/leaflet.fullscreen.1.0.1.js"></script><script>
 const bounds = new L.LatLngBounds(
-	new L.LatLng(-23.0091, -43.2652),
-	new L.LatLng(-22.959100000000003, -43.165200000000006)
+	new L.LatLng(-23.009149999999998, -43.265179999999994),
+	new L.LatLng(-22.95915, -43.16518)
 );
 const map = L.map("monument-location-map", {
 	center: bounds.getCenter(),
@@ -393,7 +393,7 @@ L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
 	maxZoom: 19,
 	attribution: "&copy; <a href='http://www.openstreetmap.org/copyright'>OSMF</a>"
 }).addTo(map);
-L.marker([-22.9841, -43.2152], {
+L.marker([-22.98415, -43.21518], {
 	icon: L.icon({
 		iconUrl: "/assets/leaflet/images/phosphor-marker--escultura.svg",
 		iconSize: [64, 64],
