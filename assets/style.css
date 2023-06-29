@@ -493,6 +493,8 @@ main section figure img {
 
 main section.maxwidth {
 	max-width: 800px;
+}
+.maxwidth.center {
 	margin-left: auto;
 	margin-right: auto;
 }
