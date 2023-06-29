@@ -7,7 +7,7 @@ title: Inventário — Monumentos Rio
 monuments.sort((a, b) => {
 	const aName = ("sortby" in a.data) ? a.data.sortby : a.data.name;
 	const bName = ("sortby" in b.data) ? b.data.sortby : b.data.name;
-	return aName.localeCompare(b.Name);
+	return aName.localeCompare(bName);
 });
 const monument_count = monuments.length;
 
