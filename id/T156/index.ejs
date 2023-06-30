@@ -1,0 +1,73 @@
+---
+layout: monument.ejs
+name: Busto de Alberto Luiz Coimbra
+categoria: busto
+tags: [
+	"preliminar"
+]
+series: [
+	"UFRJ"
+]
+
+data_inaug: 2018-11-14
+altura: 
+largura: 
+material: Aço
+autores: [
+	Casanova (Oséias Nunes Ferreira)
+]
+
+local: Centro de Tecnologia
+bairro: Cidade Universitária
+lat: -22.86134
+lon: -43.22873
+
+imrj: 
+wikidata: 
+---
+
+<figure>
+	<!-- <a href="photo.jpg" data-llb-src="href"> -->
+		<img src="thumb.jpg">
+	<!-- </a> -->
+	<figcaption>
+		<p class="credits">
+			Foto: <a href="https://goo.gl/maps/QwKjtBVgErJrUsLg7">Google Street
+			View</a> (outubro de 2021).
+		</p>
+	</figcaption>
+</figure>
+<section class="description">
+	<p>
+		Homenagem a Alberto Luiz Galvão Coimbra (30/08/1923–16/05/2018), fundador
+		da primeira pós-graduação em Engenharia do Brasil, a Coppe/UFRJ.
+	</p>
+</section>
+<section class="gallery">
+	<!-- <h2>Galeria</h2> -->
+</section>
+<section class="inscription">
+<!-- 	<h2>Inscrição</h2>
+	<p>
+		Há uma inscrição no pedestal do monumento contendo o seguinte texto:
+	</p>
+	<pre class="inscription-text"></pre> -->
+</section>
+<%- makeMap(arguments[0]); %>
+<section class="more">
+	<h2>Leia mais</h2>
+	<ol>
+		<li>
+			S.n. (16 de novembro de 2018).
+			<a href="https://www.coppe.ufrj.br/pt-br/planeta-coppe-noticias/noticias/coppe-homenageia-o-seu-criador">Coppe
+			presta homenagem ao seu criador, Alberto Luiz Coimbra</a>. <i>Planeta
+			COPPE Notícias</i>.
+		</li>
+		<li>
+			S.n. (29 de janeiro de 2019).
+			<a href="https://www.coppe.ufrj.br/pt-br/planeta-coppe-noticias/noticias/professor-coimbra-o-eterno-rosto-da-coppe">Professor
+			Coimbra: o eterno rosto da Coppe</a>. <i>Planeta COPPE Notícias</i>.
+		</li>
+	</ol>
+</section>
+<%- makeOthersFromSeries(arguments[0]); %>

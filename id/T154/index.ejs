@@ -1,0 +1,63 @@
+---
+layout: monument.ejs
+name: Busto de Alexandre Fleming
+categoria: busto
+tags: [
+	"preliminar",
+	possui escrita
+]
+series: [
+	"UFRJ"
+]
+
+data_inaug: 
+altura: 
+largura: 
+material: 
+autores: []
+
+local: Centro de Ciências da Saúde
+bairro: Cidade Universitária
+lat: -22.84259
+lon: -43.23419
+
+imrj: 
+wikidata: 
+---
+
+<figure>
+	<a href="photo.jpg" data-llb-src="href">
+		<img src="thumb.jpg">
+	</a>
+	<figcaption>
+		<p class="credits">
+			Foto: Eduardo de Oliveira / Radis Comunicação e Saúde (30 de setembro de 2019),
+			<a href="https://creativecommons.org/licenses/by-nc-sa/2.0/">CC BY-NC-SA 2.0</a>,
+			via <a href="https://www.flickr.com/photos/radiscomunicacaoesaude/48832509653/">Flickr</a>.
+		</p>
+	</figcaption>
+</figure>
+<section class="description">
+	<p></p>
+</section>
+<section class="gallery">
+	<!-- <h2>Galeria</h2> -->
+</section>
+<section class="inscription">
+	<h2>Inscrição</h2>
+	<p>
+		Há uma inscrição no pedestal do monumento contendo o seguinte texto:
+	</p>
+	<pre class="inscription-text">
+         A
+Alexandre Fleming
+   Homenagem
+        do
+      Brasil</pre>
+</section>
+<%- makeMap(arguments[0]); %>
+<section class="more">
+<!-- 	<h2>Leia mais</h2>
+	<ol></ol> -->
+</section>
+<%- makeOthersFromSeries(arguments[0]); %>

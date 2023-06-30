@@ -1,0 +1,65 @@
+---
+layout: monument.ejs
+name: Escultura sem título de Jorge dos Anjos
+categoria: escultura
+tags: []
+
+data_inaug: 2011-03-30
+altura: 2.5
+largura: 2.5
+comprimento: 5
+peso: 4000
+material: Aço
+autores: Jorge dos Anjos
+
+local: Praia do Flamengo
+bairro: Flamengo
+lat: -22.93441
+lon: -43.17405
+
+imrj: 1351
+wikidata: Q67210612
+---
+
+<figure>
+	<a href="photo.jpg" data-llb-src="href">
+		<img src="thumb.jpg">
+	</a>
+	<figcaption>
+		<p class="credits">
+			Foto: Donatas Dabravolskas (5 de setembro de 2022),
+			<a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>,
+			via
+			<a href="https://commons.wikimedia.org/wiki/File:Escultura_da_Praia_do_Flamengo_-_Rio_de_Janeiro_-_20220905165404.jpg">Wikimedia
+			Commons</a>.
+		</p>
+	</figcaption>
+</figure>
+<section class="description">
+	<p>
+		Originalmente parte da exposição gratuita de Jorge dos Anjos "Pedra, Ferro e
+		Fogo", que durou de 30 de março a 28 de maio de 2011, na galeria
+		Coleção de Arte.
+	</p>
+</section>
+<section class="gallery">
+	<h2>Galeria</h2>
+	<figure>
+		<a href="gallery-2011.jpg" data-llb-src="href">
+			<img src="gallery-2011.jpg">
+		</a>
+		<figcaption>
+			<p class="credits">
+				Reportagem: Catharina Wrede, Suzana Velasco (28 de março de 2011).
+				"<i>Agenda</i>". <i>O Globo</i>, Segundo Caderno, p.4
+				[via <a href="https://oglobo.globo.com/acervo/">Acervo O Globo</a>].
+			</p>
+		</figcaption>
+	</figure>
+</section>
+<%- makeMap(arguments[0]); %>
+<section class="more">
+<!-- 	<h2>Leia mais</h2>
+	<ol></ol> -->
+</section>
+<%- makeOthersFromSeries(arguments[0]); %>
