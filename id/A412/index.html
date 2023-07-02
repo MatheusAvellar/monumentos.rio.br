@@ -8,7 +8,7 @@
 	<link rel="preconnect" href="https://cdn.avl.la">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="referrer" content="no-referrer">
-	<link rel="stylesheet" href="/assets/style.css?v=06-28">
+	<link rel="stylesheet" href="/assets/style.css?v=06-30">
 </head>
 <body>
 	<!-- Dark mode -->
@@ -296,15 +296,15 @@
 <section class="gallery">
 <!-- 	<h2>Galeria</h2> -->
 </section>
-<section class="location"><h2>Localização</h2><p><strong>Localização:</strong> Ponte do Saber, Cidade Universitária</p><p><strong>Coordenadas:</strong> -22.86630, -43.23160</p><div id="monument-location-map"></div><!-- [Ref] https://leafletjs.com/ -->
+<section class="location"><h2>Localização</h2><p><strong>Localização:</strong> Ponte do Saber, Cidade Universitária</p><p><strong>Coordenadas:</strong> -22.86598, -43.23119</p><div id="monument-location-map"></div><!-- [Ref] https://leafletjs.com/ -->
 <link href="/assets/leaflet/leaflet.1.9.3.css" rel="stylesheet" type="text/css">
 <script src="/assets/leaflet/leaflet.1.9.3.min.js"></script>
 <!-- [Ref] https://github.com/Leaflet/Leaflet.fullscreen -->
 <link href="/assets/leaflet/leaflet.fullscreen.1.0.1.css" rel="stylesheet" type="text/css">
 <script src="/assets/leaflet/leaflet.fullscreen.1.0.1.js"></script><script>
 const bounds = new L.LatLngBounds(
-	new L.LatLng(-22.891299999999998, -43.2816),
-	new L.LatLng(-22.8413, -43.1816)
+	new L.LatLng(-22.89098, -43.281189999999995),
+	new L.LatLng(-22.840980000000002, -43.18119)
 );
 const map = L.map("monument-location-map", {
 	center: bounds.getCenter(),
@@ -318,7 +318,7 @@ L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
 	maxZoom: 19,
 	attribution: "&copy; <a href='http://www.openstreetmap.org/copyright'>OSMF</a>"
 }).addTo(map);
-L.marker([-22.8663, -43.2316], {
+L.marker([-22.86598, -43.23119], {
 	icon: L.icon({
 		iconUrl: "/assets/leaflet/images/phosphor-marker--obra.svg",
 		iconSize: [64, 64],
@@ -337,34 +337,9 @@ L.marker([-22.8663, -43.2316], {
 		</li>
 	</ol> -->
 </section>
-<section class="related"><h2>Monumentos relacionados</h2><h3>Série 'UFRJ'</h3>
+<section class="related"><h2>Monumentos relacionados</h2><h3>Série 'UFRJ (Ilha do Fundão)'</h3>
 <p><strong>9</strong> monumentos</p>
 <div class="card-list"><div class="card" data-no-imrj data-preliminar>
-	<a href="/id/T153">
-		<div class="card-preview">
-			<img src="/id/T153/thumb.jpg" decoding="async" loading="lazy">
-		</div>
-	</a>
-	<div class="card-description">
-		<a href="/id/T153">
-			<p class="truncate" title="Busto">
-				<strong>
-				(Busto)</strong>
-			</p>
-		</a>
-		<div class="card-details">
-			<span class="identifier">T153</span>
-			&middot;
-			<span>S.d.</span><br>
-			<span class="neighborhood">Cidade Universitária</span>
-		</div>
-		<div class="card-tags">
-			<a class="tag" href="/bustos"><i class="category cat-busto">busto</i></a>
-			<i class="category info-tag preliminar">preliminar</i>
-			
-		</div>
-	</div>
-</div><div class="card" data-no-imrj data-preliminar>
 	<a href="/id/T156">
 		<div class="card-preview">
 			<img src="/id/T156/thumb.jpg" decoding="async" loading="lazy">
@@ -411,6 +386,31 @@ L.marker([-22.8663, -43.2316], {
 		<div class="card-tags">
 			<a class="tag" href="/bustos"><i class="category cat-busto">busto</i></a>
 			<i class="category info-tag preliminar">preliminar</i>
+			
+		</div>
+	</div>
+</div><div class="card" data-no-imrj >
+	<a href="/id/B346">
+		<div class="card-preview">
+			<img src="/id/B346/thumb.jpg" decoding="async" loading="lazy">
+		</div>
+	</a>
+	<div class="card-description">
+		<a href="/id/B346">
+			<p class="truncate" title="Busto de Carlos Chagas">
+				<strong>
+				Busto de Carlos Chagas</strong>
+			</p>
+		</a>
+		<div class="card-details">
+			<span class="identifier">B346</span>
+			&middot;
+			<span>1946</span><br>
+			<span class="neighborhood">Cidade Universitária</span>
+		</div>
+		<div class="card-tags">
+			<a class="tag" href="/bustos"><i class="category cat-busto">busto</i></a>
+			
 			
 		</div>
 	</div>

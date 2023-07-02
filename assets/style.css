@@ -219,9 +219,28 @@ details.hidden-tags-list > summary {
 	cursor: pointer;
 	background: none;
 }
-
 details.hidden-tags-list > summary:hover svg {
 	rotate: 15deg;
+}
+.id-tag {
+	display: inline-block;
+	position: relative;
+	background-color: var(--soft-highlight);
+	padding: .125rem .25rem;
+	padding-left: .75rem;
+	border-radius: 4px;
+	font-size: 75%;
+}
+.id-tag::before {
+	content: "";
+	position: absolute;
+	display: block;
+	height: 4px;
+	width: 4px;
+	background: white;
+	left: 0.3rem;
+	top: 0.5rem;
+	border-radius: 4px;
 }
 
 .icon {
@@ -831,6 +850,10 @@ hr.vertical {
 }
 .leaflet-container .leaflet-overlay-pane > svg {
 	z-index: 100;
+}
+.leaflet-control-zoom-in, .leaflet-control-zoom-out {
+	font-family: inherit !important;
+	font-weight: normal !important;
 }
 
 h2 {
