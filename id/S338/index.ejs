@@ -3,6 +3,9 @@ layout: monument.ejs
 name: A Mulher e o Felino
 categoria: escultura
 tags: []
+series: [
+	Jardim de Alah
+]
 
 data_inaug: 1938
 data_circa: true
@@ -11,9 +14,7 @@ largura:
 peso: 
 material: 
 
-autores: [
-	Hippolyte Peyrol
-]
+autores: []
 
 local: Jardim de Alah
 bairro: Leblon
@@ -69,8 +70,28 @@ wikidata: Q67210131
 			</p>
 		</figcaption>
 	</figure>
+	<figure>
+		<a href="gallery-2021-full.jpg" data-llb-src="href">
+			<img src="gallery-2021.jpg">
+		</a>
+		<figcaption>
+			<p>
+				Pedestal originalmente em uso pela escultura "Combate nos Tempos
+				Pré-Históricos", <%- refID("S907") %>.
+			</p>
+			<p class="credits">
+				Foto: "Boaventuravinicius" (15 de outubro de 2021),
+				<a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>,
+				via
+				<a href="https://commons.wikimedia.org/wiki/File:Mulher_e_o_Felino_em_2021.jpg">Wikimedia
+				Commons</a>.
+			</p>
+		</figcaption>
+	</figure>
 </section>
+<%- makePanorama(arguments[0], "Jardim de Alah", "Matheus Avellar (1 de julho de 2023)") %>
 <%- makeMap(arguments[0]); %>
 <section class="more">
 <!-- 	<h2>Leia mais</h2> -->
 </section>
+<%- makeOthersFromSeries(arguments[0]) %>

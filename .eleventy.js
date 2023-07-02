@@ -326,4 +326,8 @@ pannellum.viewer("panorama-viewer", {
 		out.push(`</section>`);
 		return out.join("");
 	};
+
+	refID = (id) => {
+		return `<a class="id-tag" href="/id/${id}">${id}</a>`;
+	};
 };

@@ -1,6 +1,7 @@
 ---
 layout: monument.ejs
 name: Marco de Inauguração do Parque do Cantagalo
+internal_ref: marcoparquecantagalo
 categoria: marco
 tags: [
 	possui escrita,
@@ -85,4 +86,5 @@ Capitulina Fernandes Vaz</pre>
 <!-- 	<h2>Leia mais</h2>
 	<ol></ol> -->
 </section>
+<%- makeRelated([ "marcoparquecatacumba" ], arguments[0]) %>
 <%- makeOthersFromSeries(arguments[0]); %>

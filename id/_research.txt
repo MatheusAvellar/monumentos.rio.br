@@ -18,25 +18,36 @@ https://memoria.bn.br/DocReader/DocReader.aspx?bib=025909_02&pagfis=18659
 Esculturas de Pereira Passos
 ---
 fotos 1915 "Os marmores da cidade":
-- Dansarina
-✓ Um combate nos tempos prehistoricos
-- Panthera e flamingo
-- A Primavera, O Verão, O Outono, O Inverno
-✓ O Crepúsculo
-- Fonte Ramos Pinto
-- Panthera caçando
+- Dansarina (Paul Danlefeuille)
+✓ Um combate nos tempos prehistoricos (H. Peyrol)
+- Panthera e flamingo (H. Peyrol)
+✓ Poesia das Ruinas (Jean Magrou)
+- A Primavera (G. Michel)
+- O Verão (P. Gasq)
+- O Outono (G. Michel)
+- O Inverno (P. Gasq)
+✓ O Crepúsculo (Weigèle)
+- Fonte Ramos Pinto (Eugène (?)hivier)
+- Panthera caçando (H. Peyrol)
 https://memoria.bn.br/DocReader/DocReader.aspx?bib=259063&pesq=botafogo%20magrou&pasta=ano%20191&hf=memoria.bn.br&pagfis=20499
 https://memoria.bn.br/DocReader/DocReader.aspx?bib=259063&pesq=botafogo%20magrou&pasta=ano%20191&hf=memoria.bn.br&pagfis=20500
 https://memoria.bn.br/DocReader/DocReader.aspx?bib=259063&pesq=botafogo%20magrou&pasta=ano%20191&hf=memoria.bn.br&pagfis=20501
 https://memoria.bn.br/DocReader/DocReader.aspx?bib=259063&pesq=botafogo%20magrou&pasta=ano%20191&hf=memoria.bn.br&pagfis=20502
 
-Estatuaria dos Jardins Publicos
+Estatuaria dos Jardins Publicos (1907)
 - O Estio (Gasq)
 - O Inverno (Gasq)
 ✓ Protecção (Peyrol)
 ✓ Crepusculo (Weegèle)
 - Dançarina (Dominique Bianchi)
 - Primavera (G. Michel)
+- Leão erguido (Peyrol)
+- Tigre (Peyrol)
+- Panthera (Peyrol)
+- Outra panthera (Peyrol)
+✓ Combate nos tempos prehistoricos
+- Passarinhador (Darbefeuille)
+- Dançarina (Dominique Bianchi)
 https://memoria.bn.br/DocReader/DocReader.aspx?bib=146420&Pesq=Darbefeuille&pagfis=2658
 
 Reportagens sobre esculturas de Pereira Passos (agosto 1907):
@@ -50,6 +61,24 @@ Reportagens sobre esculturas de Pereira Passos (agosto 1907):
 https://memoria.bn.br/DocReader/DocReader.aspx?bib=103730_04&pesq=crepuscule&pasta=ano%20190&hf=memoria.bn.br&pagfis=15450
 https://memoria.bn.br/DocReader/DocReader.aspx?bib=259764&pesq=weigele&pasta=ano%20190&hf=memoria.bn.br&pagfis=3247
 
+"Já está sendo feito [...] o embazamento para as estátuas decorativas, ultimamente
+recebidas da Europa pela Municipalidade e que vão ser brevemente collocadas
+em vários logradouros desta capital" (18/09/1907)
+- Combate aos tempos prehistoricos
+- O caçador de pássaros
+- Crepusculo
+- A panthera e o passarinho
+- A panthera caçando
+- O Verão
+- O Inverno
+- A Primavera
+- O Outono
+- Dansarina
+- Protecção
+- Tigre de emboscada
+- Leão de pé
+https://memoria.bn.br/DocReader/DocReader.aspx?bib=030015_02&pesq=%22h%20peyrol%22&pasta=ano%20190&hf=memoria.bn.br&pagfis=23863
+
 Foto da escultura "Dansarina"
 https://brasilianafotografica.bn.gov.br/brasiliana/handle/20.500.12156.1/10094
 
@@ -58,6 +87,14 @@ https://acervos.ims.com.br/portals/#/detailpage/113421
 Parece a mesma escultura, 1928 (+ monumento ao Almirante Barroso)
 https://acervos.ims.com.br/portals/#/detailpage/105589
 ----
+
+"Lá se foi o João Caetano para o Campo de Sant'Anna"
+"Teixeira de Freitas [de bronze] [...] estava na praça São Domingos (que passou a ser praça
+Teixeira de Freitas) [...] arranjaram meios e modos de tocar p'ra fóra o grupo
+da Luta Primitiva, de Peyrol, que occupava o extremo de uma pelousse da
+Avenida Beira-Mar, em frente ao Syllogeu, e lá metteram o Teixeira de Freitas."
+(1910)
+https://memoria.bn.br/DocReader/DocReader.aspx?bib=259063&pesq=%22h%20peyrol%22&pasta=ano%20191&hf=memoria.bn.br&pagfis=4262
 
 Foto da inauguração do Monumento a Machado de Assis
 https://memoria.bn.br/DocReader/DocReader.aspx?bib=083712&pasta=ano%20192&pagfis=44026
