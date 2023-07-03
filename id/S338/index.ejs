@@ -2,7 +2,13 @@
 layout: monument.ejs
 name: A Mulher e o Felino
 categoria: escultura
-tags: []
+tags: [
+	possui escrita,
+	possui panorama,
+	"animal:felino",
+	"pessoa:mulher",
+	"objeto:vaso"
+]
 series: [
 	Jardim de Alah
 ]
@@ -31,18 +37,21 @@ wikidata: Q67210131
 	</a>
 	<figcaption>
 		<p class="credits">
-			Foto: Boaventuravinicius (15 de outubro de 2021),
-			<a href="https://creativecommons.org/licenses/by-sa/4.0/deed.en">CC-BY-SA-4.0</a>,
-			via <a href="https://commons.wikimedia.org/wiki/File:Mulher_e_o_Felino_no_Jardim_de_Alah_em_2021.jpg">Wikimedia
+			Foto: Matheus Avellar (1 de julho de 2023),
+			via <a href="https://commons.wikimedia.org/wiki/File:A_Mulher_e_o_Felino_(julho_2023),_Jardim_de_Alah_(frontal).jpg">Wikimedia
 			Commons</a>.
 		</p>
 	</figcaption>
 </figure>
 <section class="description">
 	<p>
-		Inaugurada junto com o parque, em 1938.<sup>1</sup> Foi colocada em um
-		pedestal em algum ponto entre 2010 e 2011; ficava diretamente sobre a grama
-		anteriormente.
+		Obra de autor desconhecido, foi inaugurada junto com o parque, em
+		1938.<sup>1</sup>
+	</p>
+	<p>
+		Em algum ponto entre 2010 e 2011, a escultura foi colocada em um pedestal
+		que pertencia a outra escultura, "Combate nos Tempos Pré-Históricos".
+		Anteriormente, ela ficava diretamente sobre a grama.
 	</p>
 </section>
 <section class="refs">
@@ -71,6 +80,21 @@ wikidata: Q67210131
 		</figcaption>
 	</figure>
 	<figure>
+		<a href="gallery-2023-full.jpg" data-llb-src="href">
+			<img src="gallery-2023.jpg">
+		</a>
+		<figcaption>
+			<p>
+				Inscrição na parte traseira da escultura
+			</p>
+			<p class="credits">
+				Foto: Matheus Avellar (15 de outubro de 2021), via
+				<a href="https://commons.wikimedia.org/wiki/File:A_Mulher_e_o_Felino_(julho_2023),_Jardim_de_Alah_(inscri%C3%A7%C3%A3o).jpg">Wikimedia
+				Commons</a>.
+			</p>
+		</figcaption>
+	</figure>
+	<figure>
 		<a href="gallery-2021-full.jpg" data-llb-src="href">
 			<img src="gallery-2021.jpg">
 		</a>
@@ -90,6 +114,20 @@ wikidata: Q67210131
 	</figure>
 </section>
 <%- makePanorama(arguments[0], "Jardim de Alah", "Matheus Avellar (1 de julho de 2023)") %>
+<section class="inscription">
+	<h2>Inscrição</h2>
+	<p>
+		Há uma inscrição no monumento contendo o seguinte texto:
+	</p>
+	<pre class="inscription-text">
+[Prof. L. Gege?]</pre>
+	<p>
+		Além disso, há uma inscrição no pedestal do monumento contendo o seguinte
+		texto:
+	</p>
+	<pre class="inscription-text">
+Combate Pre-Historico</pre>
+</section>
 <%- makeMap(arguments[0]); %>
 <section class="more">
 <!-- 	<h2>Leia mais</h2> -->
