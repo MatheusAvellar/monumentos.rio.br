@@ -330,4 +330,29 @@ pannellum.viewer("panorama-viewer", {
 	refID = (id) => {
 		return `<a class="id-tag" href="/id/${id}">${id}</a>`;
 	};
+
+	generateCards = (ctx) => {
+		const isMonument = (ctx.page.url.indexOf("/id/") >= 0);
+		let name = ctx?.name || ctx?.title || "Monumentos Rio";
+		if("tags" in ctx && [ctx.tags].flat().includes("preliminar"))
+			name = `${name} (preliminar)`;
+		const url = `https://${website_domain}${ctx.page.url}`;
+		let image_url = `${url}thumb.jpg`;
+		if(!isMonument) {
+			image_url = `https://${website_domain}/thumb.jpg`;
+		}
+		let description = (isMonument)
+			? "Monumento da cidade do Rio de Janeiro."
+			: "Catálogo de monumentos da cidade do Rio de Janeiro.";
+
+		return `<meta property="og:type" content="website">
+<meta property="og:title" content="${name}">
+<meta property="og:description" content="${description}">
+<meta property="og:image" content="${image_url}">
+<meta property="og:url" content="${url}">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="${name}">
+<meta name="twitter:description" content="${description}">
+<meta name="twitter:image" content="${image_url}">`;
+	};
 };
