@@ -331,9 +331,10 @@ document.getElementById("deselect-all").addEventListener("click", function() {
 });
 
 function generatePopup(id, name, data, bairro, extra) {
-	return `<a href="/id/${id}"><strong>${name}</strong></a><br>
+	return `<img src="/id/${id}/thumb.jpg">
+<div><a href="/id/${id}"><strong>${name}</strong></a><br>
 <span class="identifier">${id}</span> &middot; <span>${data}</span><br>
-<span class="neighborhood">${bairro}</span><br>${extra}`;
+<span class="neighborhood">${bairro}</span><br>${extra}</div>`;
 }
 const allMarkers = [];
 function markerOnClick(e) { this.openPopup(); }

@@ -834,9 +834,18 @@ hr.vertical {
 	color: var(--text-color, #000);
 }
 .leaflet-container .leaflet-popup-content {
+	display: grid;
+	grid-template-columns: min-content auto;
+	gap: .5rem;
 	margin: .75rem 1rem;
+	min-width: 12rem;
+	max-width: 14rem;
 }
-.leaflet-container .leaflet-popup-content > :not(a[href]) {
+.leaflet-container .leaflet-popup-content > img {
+	max-width: 80px;
+	max-height: 80px;
+}
+.leaflet-container .leaflet-popup-content > div > :not(a[href]) {
 	cursor: text;
 }
 
