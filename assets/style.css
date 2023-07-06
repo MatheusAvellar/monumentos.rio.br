@@ -338,9 +338,10 @@ footer nav ul {
 	list-style-type: none;
 }
 footer .footer-logo {
-	fill: #444;
-	fill: var(--text-alt-color, #444);
 	max-width: 250px;
+}
+.dark #logo > img, .dark footer .footer-logo {
+	filter: invert(1);
 }
 
 h1, h2, h3 {
