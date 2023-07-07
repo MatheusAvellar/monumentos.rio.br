@@ -1,0 +1,115 @@
+---
+layout: default.ejs
+title: IMRJ — Monumentos Rio
+---
+
+<%_ const monuments = collections.all.filter(file => file.filePathStem.startsWith("/id/"));
+monuments.sort((a, b) => {
+	const aName = ("sortby" in a.data) ? a.data.sortby : a.data.name;
+	const bName = ("sortby" in b.data) ? b.data.sortby : b.data.name;
+	return aName.localeCompare(bName);
+});
+const monument_count = monuments.length;
+
+const id_list = new Map();
+monuments.forEach(mon => {
+	const imrj = "imrj" in mon.data ? [mon.data.imrj].flat() : [];
+	imrj.forEach(i => {
+		i = +i;
+		if(!i) return;
+		if(!id_list.has(i))
+			id_list.set(i, []);
+		const existing = id_list.get(i);
+		existing.push([
+			mon.data.name,
+			mon.url
+		]);
+		id_list.set(i, existing);
+	});
+});
+%>
+<main>
+<h1>IMRJ</h1>
+<section>
+	<p>
+		Lista de monumentos catalogados no IMRJ, e seu status de cadastro aqui. Esta
+		é uma página de manutenção.
+	</p>
+	<p>
+		Em termos de monumentos já no IMRJ, este website já cadastrou:
+<%_ const count = imrj_ids.reduce((acc, arr) => (id_list.has(arr[0])) ? acc+1 : acc, 0); %>
+		<strong><%= count %></strong> / <%= imrj_ids.length %>
+		<small>(<%= Math.round((count/imrj_ids.length)*10000)/100 %>%)</small>.
+	</p>
+</section>
+<ol class="list">
+<%_ imrj_ids.forEach(arr => {
+	const id = arr[0];
+	if(!id_list.has(id)) { %>
+	<%- `<li class="no"><a href="${IMRJ_URL}${id}">${(""+id).padStart(4, 0)}</a> -` %>
+	<%= ` ${arr[1].trim()}` %>
+	<%- `</li>` %>
+<%_ } else { %>
+	<%- id_list.get(id).map(m => {
+		const identif = m[1].slice(4,8);
+		const out = [];
+		if(identif.startsWith("T"))
+			out.push(`<li class="temp">`);
+		else
+			out.push(`<li class="yes">`);
+		out.push(`${(""+id).padStart(4, 0)} (<a href="${m[1]}">${identif}</a>) - ${m[0]}</li>`);
+		return out.join("");
+	}).join(""); %>
+<%_ }}); %>
+</ol>
+<section>
+	<p>
+		Lista de monumentos catalogados aqui, mas não no IMRJ
+<%_ const count2 = 
+	monuments.reduce((acc, mon) =>
+		(!("imrj" in mon.data) || !mon.data.imrj || mon.data.imrj.length <= 0) ? acc+1 : acc,
+	0); %>
+		(<strong><%= count2 %></strong>):
+	</p>
+</section>
+<ul class="list">
+<%_
+	monuments.forEach(mon => {
+		const m0 = mon.data.name;
+		const m1 = mon.url;
+		const identif = m1.slice(4,8);
+		if(!("imrj" in mon.data) || !mon.data.imrj || mon.data.imrj.length <= 0) { %>
+			<%- `<li class="${identif.startsWith("T") ? "temp" : "yes"}">`
+			+ `XXXX (<a href="${m1}">${identif}</a>) - ${m0}`
+			+ `</li>` %>
+		<%_ }
+	});
+%>
+</ul>
+<style>
+.list {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: .25rem;
+	padding: 0;
+	margin-top: .5rem;
+	list-style-type: none;
+	max-height: 90vh;
+	overflow: auto;
+	font-size: 85%;
+}
+.list > li {
+	margin: 0;
+	font-variant-numeric: tabular-nums;
+}
+.list .no {
+	background-color: #ffe3e3;
+}
+.list .yes {
+	background-color: #daeac7;
+}
+.list .temp {
+	background-color: #f5eed4;
+}
+</style>
+</main>

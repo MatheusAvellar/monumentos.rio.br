@@ -9,6 +9,9 @@ module.exports = function(eleventyConfig) {
 		"http://portal.iphan.gov.br/uploads/ckfinder/arquivos/Lista_bens_tombados_processos_andamento_2018");
 	const MARKER_PATH = "/assets/leaflet/images";
 	eleventyConfig.addGlobalData("MARKER_PATH", MARKER_PATH);
+	eleventyConfig.addGlobalData("cross", "✝&#xFE0E;");
+
+	website_domain = "monumentos.rio.br";
 
 	eleventyConfig.addPassthroughCopy("assets");
 	eleventyConfig.addPassthroughCopy("CNAME");
@@ -18,8 +21,6 @@ module.exports = function(eleventyConfig) {
 	eleventyConfig.addPassthroughCopy("{,!(_site)/**/}*.avif");
 	eleventyConfig.addPassthroughCopy("{,!(_site)/**/}*.pdf");
 	eleventyConfig.addPassthroughCopy("{,!(_site)/**/}*.svg");
-
-	website_domain = "monumentos.rio.br";
 
 	fallback = function(obj, key, if_false="") {
 		if(!(key in obj)) return if_false;

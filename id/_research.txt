@@ -245,10 +245,6 @@ https://unsplash.com/photos/Nq_9SuuOB6s
 Igreja de Nossa Senhora da Candelária
 https://unsplash.com/photos/UIg4DhENy4g
 
-Calçada de Copacabana
-https://unsplash.com/photos/DEnsSdJHVkk
-https://unsplash.com/photos/XOdnwqE3Knw
-
 Escadaria Selarón
 https://unsplash.com/photos/qYIzb3p8eck
 https://unsplash.com/photos/TsvVizFJpfc
@@ -279,3 +275,13 @@ https://memoria.bn.br/DocReader/DocReader.aspx?bib=089842_07&pesq=%22busto%22%20
 Projeto Memórias do Boto (UFRJ)
 https://intervencoestemporarias.com.br/intervencao/memorias-do-boto/
 https://web.archive.org/web/20190110223956/http://memoriasdoboto.parque.ufrj.br/
+
+Fontes na Floresta da Tijuca
+https://goo.gl/maps/TtMWXdGAGQ7tpPZz6
+
+
+Marco Rotário, Galeão
+-22.79493523725744, -43.211169919002785
+
+Avião na Praça do Avião, Galeão
+-22.81561538430707, -43.22181429865293
