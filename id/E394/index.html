@@ -342,15 +342,15 @@ aqui as curas milagrosas que realizou
 em outros países.
                    Rio de Janeiro, 16-10-1994.</pre>
 </section>
-<section class="location"><h2>Localização</h2><p><strong>Localização:</strong> Praça São Charbel, Tijuca</p><p><strong>Coordenadas:</strong> -22.92870, -43.23990</p><div id="monument-location-map"></div><!-- [Ref] https://leafletjs.com/ -->
+<section class="location"><h2>Localização</h2><p><strong>Localização:</strong> Praça São Charbel, Tijuca</p><p><strong>Coordenadas:</strong> -22.92871, -43.23982</p><div id="monument-location-map"></div><!-- [Ref] https://leafletjs.com/ -->
 <link href="/assets/leaflet/leaflet.1.9.3.css" rel="stylesheet" type="text/css">
 <script src="/assets/leaflet/leaflet.1.9.3.min.js"></script>
 <!-- [Ref] https://github.com/Leaflet/Leaflet.fullscreen -->
 <link href="/assets/leaflet/leaflet.fullscreen.1.0.1.css" rel="stylesheet" type="text/css">
 <script src="/assets/leaflet/leaflet.fullscreen.1.0.1.js"></script><script>
 const bounds = new L.LatLngBounds(
-	new L.LatLng(-22.953699999999998, -43.289899999999996),
-	new L.LatLng(-22.9037, -43.1899)
+	new L.LatLng(-22.953709999999997, -43.28982),
+	new L.LatLng(-22.90371, -43.189820000000005)
 );
 const map = L.map("monument-location-map", {
 	center: bounds.getCenter(),
@@ -364,7 +364,7 @@ L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
 	maxZoom: 19,
 	attribution: "&copy; <a href='http://www.openstreetmap.org/copyright'>OSMF</a>"
 }).addTo(map);
-L.marker([-22.9287, -43.2399], {
+L.marker([-22.92871, -43.23982], {
 	icon: L.icon({
 		iconUrl: "/assets/leaflet/images/phosphor-marker--estatua.svg",
 		iconSize: [64, 64],
