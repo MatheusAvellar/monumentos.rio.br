@@ -1,0 +1,20 @@
+- `details[open] summary` das tags, no mobile, aparece a setinha ainda
+- Página de estatísticas?
+	- total de bairros, % de bairros
+	- qtd + % de cada categoria (e.x. 20% são estátuas)
+	- qtd + % em cada década
+- Usar fonte diferente para headings?
+- Explicação dos critérios para 'monumentude' no /sobre
+	- Relevância cultural e histórica
+	- Feito por humanos (exceção: M319)
+	- Não inclui, pelo menos por ora, gradis e corrimões históricos
+	- Não inclui grafites, isso seria um outro projeto absurdamente grande (exceção: A416)
+	- etc
+- Página de recursos e bibliografia (talvez junto do /creditos)
+	- https://www.data.rio/datasets/PCRJ::logradouros/explore
+	- https://www.data.rio/datasets/PCRJ::limite-de-bairros/explore
+	- https://memoria.bn.br/
+	- https://acervos.ims.com.br/
+	- https://oglobo.globo.com/acervo/
+	- https://compressjpeg.com/
+	- etc
