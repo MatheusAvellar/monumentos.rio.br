@@ -1,0 +1,72 @@
+---
+layout: monument.ejs
+name: Leão em Guaratiba
+categoria: escultura
+tags: [
+	"preliminar"
+]
+series: [
+	Lions Clube
+]
+
+data_inaug: 2008
+data_circa: true
+altura: 
+largura: 
+material: 
+autores: []
+
+local: 
+bairro: Guaratiba
+lat: -23.0127
+lon: -43.53978
+
+imrj: 
+wikidata: 
+---
+
+<figure>
+	<!-- <a href="photo.jpg" data-llb-src="href"> -->
+		<img src="thumb.jpg">
+	<!-- </a> -->
+	<figcaption>
+		<p class="credits">
+			Foto: <a href="https://goo.gl/maps/XLPLZFWB2JdSmWHH7">Google Street
+			View</a> (dezembro de 2022).
+		</p>
+	</figcaption>
+</figure>
+<section class="description">
+	<p>
+		Escultura de leão da sede de Guaratiba do Lions Clube RJ.
+		Provavelmente inaugurada na data indicada na placa, 2008.
+	</p>
+</section>
+<section class="gallery">
+	<!-- <h2>Galeria</h2> -->
+</section>
+<section class="inscription">
+	<h2>Inscrição</h2>
+	<p>
+		Havia uma placa ao lado do monumento contendo o seguinte texto:
+	</p>
+	<pre class="inscription-text">
+Lions
+Clube RJ
+Guaratiba
+
+1997 - 2008</pre>
+</section>
+<%- makeMap(arguments[0]); %>
+<section class="more">
+	<h2>Veja mais</h2>
+	<ol>
+		<li>
+			<strong>Fotografia antiga:</strong><br>
+			S.n. (1 de junho de 2014).
+			<a href="https://www.facebook.com/photo/?fbid=867206296627473&set=a.462479615907972">Sem
+			título</a>. <i>Lions Clube RJ Guaratiba</i> [via Facebook].
+		</li>
+	</ol>
+</section>
+<%- makeOthersFromSeries(arguments[0]); %>

@@ -1,0 +1,69 @@
+---
+layout: monument.ejs
+name: Marco do Campo de Provas da Marambaia
+categoria: marco
+tags: [
+	"preliminar"
+]
+series: []
+
+data_inaug: 
+altura: 
+largura: 
+material: 
+autores: []
+
+local: Praça Doutor Augusto José Ribeiro
+bairro: Barra de Guaratiba
+lat: -23.06311
+lon: -43.56581
+
+imrj: 1029
+wikidata: Q67205319
+---
+
+<figure>
+	<!-- <a href="photo.jpg" data-llb-src="href"> -->
+		<img src="thumb.jpg">
+	<!-- </a> -->
+	<figcaption>
+		<p class="credits">
+			Foto: <a href="https://goo.gl/maps/YZuF7rsME45gohE48">Google Street
+			View</a> (outubro de 2021).
+		</p>
+	</figcaption>
+</figure>
+<section class="description">
+	<p></p>
+</section>
+<section class="gallery">
+	<!-- <h2>Galeria</h2> -->
+</section>
+<section class="inscription">
+	<h2>Inscrição</h2>
+	<p>
+		Há uma placa de cada lado do monumento. A face norte contém o seguinte texto:
+	</p>
+	<pre class="inscription-text">
+Ministério da Guerra
+       Campo
+          de
+       Provas
+          da
+     Marambaia</pre>
+	<p>
+		A face sul contém o seguinte texto:
+	</p>
+	<pre class="inscription-text">
+[?]
+    da
+Marambaia
+[?]
+[?] Gonzaga [?]</pre>
+</section>
+<%- makeMap(arguments[0]); %>
+<section class="more">
+<!-- 	<h2>Leia mais</h2>
+	<ol></ol> -->
+</section>
+<%- makeOthersFromSeries(arguments[0]); %>
