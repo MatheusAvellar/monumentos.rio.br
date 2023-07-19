@@ -1,0 +1,89 @@
+---
+layout: monument.ejs
+name: O quadro que não está na parede
+categoria: escultura
+tags: [
+	"imagem não-livre"
+]
+series: [
+	"UFRJ (Ilha do Fundão)"
+]
+
+data_inaug: 2010-10-21
+altura: 
+largura: 
+material: [
+	Azulejo,
+	Granito,
+	Mármore,
+	Vidro
+]
+autores: Julie Brazil
+
+local: Praça Samira Nahid Mesquita
+bairro: Cidade Universitária
+lat: -22.86269
+lon: -43.22593
+
+imrj: 
+wikidata: 
+---
+
+<figure>
+	<!-- <a href="photo.jpg" data-llb-src="href"> -->
+		<img src="thumb.jpg">
+	<!-- </a> -->
+	<figcaption>
+		<p class="credits">
+			Foto: <a href="https://goo.gl/maps/M3Zh9xaELeQAUTDR7">Google Street
+			View</a> (fevereiro de 2022).
+		</p>
+	</figcaption>
+</figure>
+<section class="description">
+	<p>
+		Mural de mosaico em homenagem a Samira Nahid Mesquita
+		(16/12/1926–13/08/1994), professora e primeira decana do Centro de Letras e
+		Artes, na UFRJ.
+	</p>
+	<p>
+		A obra recebeu o nome devido à descrição de Samira pelo professor
+		Edwaldo Cafezeiro, após seu falecimento:
+	</p>
+	<blockquote>
+		Samira é e não é. Nenhuma falta ela nos faz, porque está presente desde que
+		se foi. É uma figura no espaço como um quadro que não está na parede
+	</blockquote>
+	<cite>
+		— Kelvin Melo (14 de novembro de 2019).
+		<a href="https://adufrj.org.br/index.php/pt-br/noticias/arquivo/81-antigas/2705-samira-mesquita-firmeza-com-docura">Samira
+		Mesquita: firmeza com doçura</a>. <i>Associação de Docentes da UFRJ</i>.
+	</cite>
+</section>
+<section class="gallery">
+	<!-- <h2>Galeria</h2> -->
+</section>
+<section class="inscription">
+<!-- 	<h2>Inscrição</h2>
+	<p>
+		Há uma inscrição no pedestal do monumento contendo o seguinte texto:
+	</p>
+	<pre class="inscription-text"></pre> -->
+</section>
+<%- makeMap(arguments[0]); %>
+<section class="more">
+	<h2>Leia mais</h2>
+	<ol>
+		<li>
+			S.n. (20 de outubro de 2010).
+			<a href="https://conexao.ufrj.br/2010/10/o-quadro-que-nao-esta-na-parede/">O
+			quadro que não está na parede</a>. <i>Conexão UFRJ</i>.
+		</li>
+		<li>
+			Kelvin Melo (14 de novembro de 2019).
+			<a href="https://adufrj.org.br/index.php/pt-br/noticias/arquivo/81-antigas/2705-samira-mesquita-firmeza-com-docura">Samira
+			Mesquita: firmeza com doçura</a>. <i>Associação de Docentes da UFRJ</i>.
+		</li>
+	</ol>
+</section>
+<%- makeOthersFromSeries(arguments[0]); %>
