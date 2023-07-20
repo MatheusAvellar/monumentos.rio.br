@@ -4,58 +4,171 @@ title: Sobre — Monumentos Rio
 ---
 
 <main>
-	<section class="maxwidth center indent-children">
-		<h1 class="cutout-width-limit">Sobre o projeto</h1>
-		<p>
-			Este projeto tem como objetivo agregar, catalogar e listar todos os
-			monumentos da cidade do Rio de Janeiro. Ele é desenvolvido e mantido de
-			forma voluntária e independente, sem associação ao governo da cidade do
-			Rio de Janeiro.
-		</p>
-		<p>
-			Não é a primeira vez que alguém tenta esse feito. Há uma lista de projetos
-			similares anteriores no menu de navegação acima.
-		</p>
-		<p>
-			O objetivo desse projeto não é ser "<em>melhor</em>" que qualquer um dos
-			projetos anteriores, nem substituí-los eventualmente. Pelo contrário, é
-			agregar ao inventariado já construído pelos outros websites de forma
-			cooperativa. Caso alguma informação esteja faltando ou incorreta em um dos
-			projetos, os outros servem para complementá-lo e corrigí-lo.
-		</p>
-		<h2>Sobre os identificadores</h2>
-		<p>
-			Por enquanto, o site ainda está em beta. Portanto, os identificadores
-			(como, por exemplo, "<span class="identifier">B372</span>") ainda não são
-			permanentes, e podem mudar.
-		</p>
-		<p>
-			A filosofia atual é:
-		</p>
-		<ul>
-			<li>
-				<p>
-					O identificador é uma sequência de uma letra seguida de três dígitos.
-					As letras representam a categoria do monumento: B para "Bustos", C
-					para "Chafarizes e fontes", e assim por diante.
-				</p>
-			</li>
-			<li>
-				<p>
-					Os dígitos, a princípio, são números aleatórios entre 000 e 999,
-					inclusive. Valores entre 000 e 099 são reservados para caso sejam
-					necessários no futuro.
-				</p>
-				<p>
-					Isso significa que cada categoria possui um limite teórico de mil
-					monumentos – por ora, deve ser suficiente.
-				</p>
-			</li>
-		</ul>
-		<p>
-			Assim que houver uma decisão final sobre a mecânica dos identificadores,
-			eles serão permanentes e imutáveis para facilitar as referências e evitar
-			<i>bitrot</i>. Isso será marcado pela saída do website da versão beta.
-		</p>
+	<section class="maxwidth center">
+		<h1>Sobre</h1>
+		<article class="indent-children">
+			<h2>O projeto</h2>
+			<p>
+				Este projeto, iniciado em maio de 2023, tem como objetivo agregar,
+				catalogar e listar todos os monumentos da cidade do Rio de Janeiro. Ele é
+				desenvolvido e mantido de forma voluntária e independente, por ora
+				inteiramente por mim, Matheus Avellar, e sem qualquer associação ao
+				governo da cidade do Rio de Janeiro.
+			</p>
+			<p>
+				Não é a primeira vez que alguém tenta esse feito. Há uma lista de projetos
+				anteriores no menu de navegação acima, em "<b>Projetos similares</b>".
+			</p>
+			<p>
+				O objetivo desse projeto não é ser "<em>melhor</em>" que qualquer um dos
+				projetos anteriores, nem substituí-los eventualmente. Pelo contrário: é
+				agregar ao inventariado já construído pelos outros websites de forma
+				cooperativa. Caso alguma informação esteja faltando ou incorreta em um
+				dos projetos, os outros servem para complementá-lo e corrigí-lo.
+			</p>
+		</article>
+		<article class="indent-children">
+			<h2>Os monumentos</h2>
+			<p>
+				Ainda que, de início, a tarefa de determinar a <i>monumentude</i> de uma
+				estrutura pareça fácil, ela não é nada trivial. A inclusão não pode
+				depender somente do <i lang="en">status</i> como patrimônio da obra –
+				até porque há prédios (que muitos não considerariam como monumentos)
+				tombados, e esculturas monumentais ainda não tombadas.
+			</p>
+			<p>
+				Não há como depender exclusivamente do IMRJ, construído pela maravilhosa
+				Vera Dias. Ainda que um incrível recurso, ele lista todas as obras sob
+				responsabilidade da Secretaria de Conservação da Prefeitura. Isso
+				significa que estão incluídas estruturas como "Banco de Pedra de
+				Paquetá" (ID <a href="<%= IMRJ_URL %>1140">1140</a>) e, ao mesmo tempo,
+				o catálogo não possui a estátua de Michael Jackson <%- refID("E410") %>.
+			</p>
+			<p>
+				Portanto, muitos dos monumentos listados aqui também estarão presentes
+				no IMRJ, mas não serão todos, e nem todos de lá estarão presentes aqui.
+				Os monumentos daqui serão incluídos com base nas seguintes diretrizes:
+			</p>
+			<ul>
+				<li>
+					<p>
+						Possui relevância cultural e/ou histórica;
+					</p>
+				</li>
+				<li>
+					<p>
+						Foi feito por humanos (isto é, não é natural);<br>
+						(exceção exemplo: Meteorito de Santa Luzia <%- refID("M319") %>)
+					</p>
+				</li>
+				<li>
+					<p>
+						Não inclui grafites – isso requer outro projeto igualmente grande;<br>
+						(exceção exemplo: Mural Etnias <%- refID("A416") %>)
+					</p>
+				</li>
+				<li>
+					<p>
+						Não inclui gradis, guarda-corpos e corrimões
+						históricos, pelo menos por ora.
+					</p>
+				</li>
+			</ul>
+			<p>
+				Adicionalmente, ainda que alguns chafarizes possuam esculturas
+				tecnicamente distintas da bacia em seu topo, estas são incluídas sob um
+				único identificador aqui. O IMRJ faz a distinção, por exemplo, entre a
+				escultura de Nossa Senhora da Imaculada Conceição (ID
+				<a href="<%= IMRJ_URL %>277">277</a>) do chafariz sobre a qual ela está
+				instalada (ID <a href="<%= IMRJ_URL %>280">280</a>). Aqui, ambos estão
+				listados sob <%- refID("C354") %>.
+			</p>
+		</article>
+		<article class="indent-children">
+			<h2>Os identificadores</h2>
+			<p>
+				Os identificadores associados aos monumentos são, na medida do possível,
+				permanentes e imutáveis. Eles são construídos da seguinte forma:
+			</p>
+			<ul>
+				<li>
+					<p>
+						O identificador é uma sequência de uma letra seguida de três dígitos.
+						Por exemplo, <strong class="identificador">A999</strong>.
+					</p>
+				</li>
+				<li>
+					<p>
+						A letra representa a categoria do monumento:
+					</p>
+					<ul>
+						<li>
+							<strong>A</strong> para "<strong>Obras públicas</strong>",
+							marcados com a tag <%- makeTag("obra") %>;
+						</li>
+						<li>
+							<strong>B</strong> para "<strong>Bustos e efígies</strong>",
+							marcados com a tag <%- makeTag("busto") %>;
+						</li>
+						<li>
+							<strong>C</strong> para "<strong>Chafarizes e fontes</strong>",
+							marcados com a tag <%- makeTag("chafariz") %>;
+						</li>
+						<li>
+							<strong>E</strong> para "<strong>Estátuas</strong>",
+							marcados com a tag <%- makeTag("estátua") %>;
+						</li>
+						<li>
+							<strong>M</strong> para "<strong>Marcos</strong>",
+							marcados com a tag <%- makeTag("marco") %>;
+						</li>
+						<li>
+							<strong>S</strong> para "<strong>Esculturas</strong>",
+							marcados com a tag <%- makeTag("escultura") %>;
+						</li>
+						<li>
+							<strong>T</strong> é uma letra especial, reservada para
+							monumentos em estado preliminar, marcados com a tag
+							<%- makeInfoTag("preliminar") %>. Estes normalmente são
+							monumentos dos quais o nome ou data de inauguração ainda não
+							são sabidos. Identificadores iniciados em T serão apagados
+							eventualmente, quando seus monumentos saírem do estado preliminar.
+						</li>
+					</ul>
+				</li>
+				<li>
+					<p>
+						Os dígitos variam entre 000 e 999 (inclusive). Isso significa que
+						cada categoria possui um limite teórico de mil monumentos.
+					</p>
+				</li>
+				<li>
+					<p>
+						Quando possível, eles possuem alguma lógica por trás de sua
+						designação:
+					</p>
+					<ul>
+						<li>
+							Quando disponível, os dígitos representam o ano de inauguração
+							subtraído de 1600. Assim, se um monumento foi inaugurado em 1943,
+							seus dígitos seriam "343".
+						</li>
+						<li>
+							Em algumas ocasiões, quando há coesão entre diferentes monumentos
+							– como, por exemplo, se foram instalados em um mesmo espaço – eles
+							receberão identificadores similares. Por exemplo, monumentos no
+							Parque da Catacumba têm nos identificadores seus números do parque:
+							Incerteza, de número 26, possui identificador <%- refID("S726") %>.
+						</li>
+					</ul>
+				</li>
+				<li>
+					<p>
+						Valores entre 000 e 099, por ora, são reservados para caso sejam
+						necessários no futuro.
+					</p>
+				</li>
+			</ul>
+		</article>
 	</section>
 </main>
