@@ -229,6 +229,7 @@ details.hidden-tags-list > summary:hover svg {
 	padding-left: .75rem;
 	border-radius: 4px;
 	font-size: 75%;
+	text-indent: 0;
 }
 .id-tag::before {
 	content: "";
@@ -365,7 +366,7 @@ h2 {
 h3 {
 	margin-top: 1rem;
 }
-strong {
+b, strong {
 	font-weight: 500;
 }
 :is(main, footer) a[href]:not([class^="leaflet"]) {
