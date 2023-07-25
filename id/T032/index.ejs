@@ -1,9 +1,12 @@
 ---
 layout: monument.ejs
-name: Placa
+name: Placa da Praça Chaim Weizmann
 categoria: marco
 tags: [
 	"preliminar"
+]
+series: [
+	Praça Chaim Weizmann
 ]
 
 data_inaug: 
@@ -12,7 +15,7 @@ largura:
 material: 
 autores: 
 
-local: 
+local: Praça Chaim Weizmann
 bairro: Botafogo
 lat: -22.94164
 lon: -43.18174
@@ -21,4 +24,31 @@ imrj:
 wikidata: 
 ---
 
+<figure>
+	<!-- <a href="photo.jpg" data-llb-src="href"> -->
+		<img src="thumb.jpg">
+	<!-- </a> -->
+	<figcaption>
+		<p class="credits">
+			Foto: Google Street View.
+		</p>
+	</figcaption>
+</figure>
+<section class="description">
+</section>
+<section class="gallery">
+	<!-- <h2>Galeria</h2> -->
+</section>
+<section class="inscription">
+<!-- 	<h2>Inscrição</h2>
+	<p>
+		Há uma inscrição no pedestal do monumento contendo o seguinte texto:
+	</p>
+	<pre class="inscription-text"></pre> -->
+</section>
 <%- makeMap(arguments[0]); %>
+<section class="more">
+<!-- 	<h2>Leia mais</h2>
+	<ol></ol> -->
+</section>
+<%- makeOthersFromSeries(arguments[0]); %>

@@ -1,0 +1,63 @@
+---
+layout: monument.ejs
+name: Chafariz Escultórico do Jardim Oceânico
+categoria: chafariz
+tags: [
+	"preliminar",
+	"possui escrita"
+]
+series: []
+
+data_inaug: 
+altura: 
+largura: 
+material: 
+autores: Leilah Costa
+
+local: Jardim Oceânico
+bairro: Barra da Tijuca
+lat: -23.00732
+lon: -43.31135
+
+imrj: 1104
+wikidata: Q67204028
+---
+
+<figure>
+	<a href="photo.jpg" data-llb-src="href">
+		<img src="thumb.jpg">
+	</a>
+	<figcaption>
+		<p class="credits">
+			Foto: Matheus Avellar (4 de junho de 2023).
+		</p>
+	</figcaption>
+</figure>
+<section class="description">
+</section>
+<section class="gallery">
+	<h2>Galeria</h2>
+	<figure>
+		<a href="gallery-2023-full.jpg" data-llb-src="href">
+			<img src="gallery-2023.jpg">
+		</a>
+		<figcaption>
+			<p class="credits">
+				Foto: Matheus Avellar (4 de junho de 2023).
+			</p>
+		</figcaption>
+	</figure>
+</section>
+<section class="inscription">
+	<h2>Inscrição</h2>
+	<p>
+		Há uma assinatura no pedestal do monumento contendo o seguinte texto:
+	</p>
+	<pre class="inscription-text">Leilah Costa</pre>
+</section>
+<%- makeMap(arguments[0]); %>
+<section class="more">
+<!-- 	<h2>Leia mais</h2>
+	<ol></ol> -->
+</section>
+<%- makeOthersFromSeries(arguments[0]); %>

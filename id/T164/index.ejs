@@ -1,24 +1,25 @@
 ---
 layout: monument.ejs
-name: Placa da Praça Paris
+name: Placa no Aeroporto do Galeão
 categoria: marco
 tags: [
-	"preliminar"
+	"preliminar",
+	"possui escrita"
 ]
 series: [
-	Praça Paris
+	Aeroporto Internacional Tom Jobim
 ]
 
 data_inaug: 
 altura: 
 largura: 
-material: []
+material: 
 autores: []
 
-local: Praça Paris
-bairro: Glória
-lat: -22.91724
-lon: -43.17578
+local:
+bairro: Galeão
+lat: -22.81237
+lon: -43.24811
 
 imrj: 
 wikidata: 
@@ -30,12 +31,13 @@ wikidata:
 	<!-- </a> -->
 	<figcaption>
 		<p class="credits">
-			Foto: <a href="https://goo.gl/maps/b1xGKnkMQWLPCmfv8">Google Street View</a>
-			(maio de 2016).
+			Foto: <a href="https://goo.gl/maps/QK1VDHwc52Rc5pCB9">Google Street
+			View</a> (maio de 2021).
 		</p>
 	</figcaption>
 </figure>
 <section class="description">
+	<!-- <p></p> -->
 </section>
 <section class="gallery">
 	<!-- <h2>Galeria</h2> -->
@@ -43,13 +45,13 @@ wikidata:
 <section class="inscription">
 <!-- 	<h2>Inscrição</h2>
 	<p>
-		Há uma inscrição no pedestal do monumento contendo o seguinte texto:
+		Há uma placa no monumento contendo o seguinte texto:
 	</p>
 	<pre class="inscription-text"></pre> -->
 </section>
 <%- makeMap(arguments[0]); %>
 <section class="more">
-<!-- 	<h2>Leia mais</h2>
+<!-- 	<h2>Veja mais</h2>
 	<ol></ol> -->
 </section>
 <%- makeOthersFromSeries(arguments[0]); %>
