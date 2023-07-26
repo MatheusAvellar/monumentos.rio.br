@@ -18,7 +18,6 @@ module.exports = function(eleventyConfig) {
 	// [Ref] https://github.com/11ty/eleventy/issues/2461#issuecomment-1238279042
 	eleventyConfig.addPassthroughCopy("{,!(_site)/**/}*.png");
 	eleventyConfig.addPassthroughCopy("{,!(_site)/**/}*.jpg");
-	eleventyConfig.addPassthroughCopy("{,!(_site)/**/}*.avif");
 	eleventyConfig.addPassthroughCopy("{,!(_site)/**/}*.pdf");
 	eleventyConfig.addPassthroughCopy("{,!(_site)/**/}*.svg");
 
