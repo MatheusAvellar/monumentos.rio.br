@@ -243,7 +243,7 @@
 				<span>
 					<strong>Esculturas</strong><br>
 					<i class="category cat-escultura">escultura</i>
-					<small>(58 itens)</small>
+					<small>(59 itens)</small>
 				</span>
 			</label>
 		</section>
@@ -633,7 +633,7 @@ const m37 = L.marker([-22.93601, -43.24578], {icon: markersMap.get("busto").icon
 m37.bindPopup(generatePopup("B423", "Efígie de Aldir Blanc", "2023", "Tijuca", '<a class="tag" href="/bustos"><i class="category cat-busto">busto</i></a>'), { offset: [0, -24] }).openPopup().on({ click: markerOnClick });
 markersMap.get("busto").list.push(m37);
 const m38 = L.marker([-22.84259, -43.23419], {icon: markersMap.get("busto").icon});
-m38.bindPopup(generatePopup("B556", "Busto de Alexandre Fleming", "1956", "Cidade Universitária", '<a class="tag" href="/bustos"><i class="category cat-busto">busto</i></a>'), { offset: [0, -24] }).openPopup().on({ click: markerOnClick });
+m38.bindPopup(generatePopup("B556", "Busto de Alexander Fleming", "1956", "Cidade Universitária", '<a class="tag" href="/bustos"><i class="category cat-busto">busto</i></a>'), { offset: [0, -24] }).openPopup().on({ click: markerOnClick });
 markersMap.get("busto").list.push(m38);
 const m39 = L.marker([-22.94921, -43.18681], {icon: markersMap.get("busto").icon});
 m39.bindPopup(generatePopup("B850", "Busto de Rui Barbosa", "1933", "Botafogo", '<a class="tag" href="/bustos"><i class="category cat-busto">busto</i></a>'), { offset: [0, -24] }).openPopup().on({ click: markerOnClick });
@@ -1262,6 +1262,9 @@ markersMap.get("busto").list.push(m246);
 const m247 = L.marker([-23.00732, -43.31135], {icon: tempMarker});
 m247.bindPopup(generatePopup("T169", "(Chafariz Escultórico do Jardim Oceânico)", "S.d.", "Barra da Tijuca", '<a class="tag" href="/chafarizes"><i class="category cat-chafariz">chafariz</i></a>'), { offset: [0, -24] }).openPopup().on({ click: markerOnClick });
 markersMap.get("chafariz").list.push(m247);
+const m248 = L.marker([-22.86023, -43.22575], {icon: tempMarker});
+m248.bindPopup(generatePopup("T170", "(Escultura na Faculdade de Letras/UFRJ)", "S.d.", "Cidade Universitária", '<a class="tag" href="/esculturas"><i class="category cat-escultura">escultura</i></a>'), { offset: [0, -24] }).openPopup().on({ click: markerOnClick });
+markersMap.get("escultura").list.push(m248);
 
 for(const [key, obj] of [...markersMap]) {
 	obj.canvas.addMarkers(obj.list);
