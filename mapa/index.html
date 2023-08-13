@@ -203,7 +203,7 @@
 				<span>
 					<strong>Obras públicas</strong><br>
 					<i class="category cat-obra">obra</i>
-					<small>(24 itens)</small>
+					<small>(26 itens)</small>
 				</span>
 			</label>
 			<label>
@@ -211,7 +211,7 @@
 				<span>
 					<strong>Bustos e efígies</strong><br>
 					<i class="category cat-busto">busto</i>
-					<small>(72 itens)</small>
+					<small>(73 itens)</small>
 				</span>
 			</label>
 			<label>
@@ -219,7 +219,7 @@
 				<span>
 					<strong>Chafarizes e fontes</strong><br>
 					<i class="category cat-chafariz">chafariz</i>
-					<small>(26 itens)</small>
+					<small>(29 itens)</small>
 				</span>
 			</label>
 			<label>
@@ -235,7 +235,7 @@
 				<span>
 					<strong>Marcos</strong><br>
 					<i class="category cat-marco">marco</i>
-					<small>(44 itens)</small>
+					<small>(47 itens)</small>
 				</span>
 			</label>
 			<label>
@@ -243,7 +243,7 @@
 				<span>
 					<strong>Esculturas</strong><br>
 					<i class="category cat-escultura">escultura</i>
-					<small>(59 itens)</small>
+					<small>(62 itens)</small>
 				</span>
 			</label>
 		</section>
@@ -1265,6 +1265,42 @@ markersMap.get("chafariz").list.push(m247);
 const m248 = L.marker([-22.86023, -43.22575], {icon: tempMarker});
 m248.bindPopup(generatePopup("T170", "(Escultura na Faculdade de Letras/UFRJ)", "S.d.", "Cidade Universitária", '<a class="tag" href="/esculturas"><i class="category cat-escultura">escultura</i></a>'), { offset: [0, -24] }).openPopup().on({ click: markerOnClick });
 markersMap.get("escultura").list.push(m248);
+const m249 = L.marker([-23.00705, -43.30466], {icon: tempMarker});
+m249.bindPopup(generatePopup("T171", "(Escultura sob a Ponte Estaiada da Barra)", "S.d.", "Barra da Tijuca", '<a class="tag" href="/esculturas"><i class="category cat-escultura">escultura</i></a>'), { offset: [0, -24] }).openPopup().on({ click: markerOnClick });
+markersMap.get("escultura").list.push(m249);
+const m250 = L.marker([-23.00725, -43.30466], {icon: tempMarker});
+m250.bindPopup(generatePopup("T172", "(Monumento às Três Américas)", "1996", "Barra da Tijuca", '<a class="tag" href="/esculturas"><i class="category cat-escultura">escultura</i></a>'), { offset: [0, -24] }).openPopup().on({ click: markerOnClick });
+markersMap.get("escultura").list.push(m250);
+const m251 = L.marker([-23.01033, -43.29714], {icon: tempMarker});
+m251.bindPopup(generatePopup("T173", "(Placa da Praça Desembargador Araújo Jorge)", "S.d.", "Barra da Tijuca", '<a class="tag" href="/marcos"><i class="category cat-marco">marco</i></a>'), { offset: [0, -24] }).openPopup().on({ click: markerOnClick });
+markersMap.get("marco").list.push(m251);
+const m252 = L.marker([-22.96617, -43.27749], {icon: tempMarker});
+m252.bindPopup(generatePopup("T174", "(Lampião Grande)", "S.d.", "Alto da Boa Vista", '<a class="tag" href="/obras"><i class="category cat-obra">obra</i></a>'), { offset: [0, -24] }).openPopup().on({ click: markerOnClick });
+markersMap.get("obra").list.push(m252);
+const m253 = L.marker([-22.96664, -43.27757], {icon: tempMarker});
+m253.bindPopup(generatePopup("T175", "(Fonte na Estrada da Vista Chinesa)", "S.d.", "Alto da Boa Vista", '<a class="tag" href="/chafarizes"><i class="category cat-chafariz">chafariz</i></a>'), { offset: [0, -24] }).openPopup().on({ click: markerOnClick });
+markersMap.get("chafariz").list.push(m253);
+const m254 = L.marker([-22.97432, -43.28578], {icon: tempMarker});
+m254.bindPopup(generatePopup("T176", "(Placa na Estrada das Furnas)", "S.d.", "Alto da Boa Vista", '<a class="tag" href="/marcos"><i class="category cat-marco">marco</i></a>'), { offset: [0, -24] }).openPopup().on({ click: markerOnClick });
+markersMap.get("marco").list.push(m254);
+const m255 = L.marker([-23.01446, -43.29771], {icon: tempMarker});
+m255.bindPopup(generatePopup("T177", "(Sereia na Praia da Barra)", "c.2017", "Barra da Tijuca", '<a class="tag" href="/esculturas"><i class="category cat-escultura">escultura</i></a>'), { offset: [0, -24] }).openPopup().on({ click: markerOnClick });
+markersMap.get("escultura").list.push(m255);
+const m256 = L.marker([-23.01435, -43.29797], {icon: tempMarker});
+m256.bindPopup(generatePopup("T178", "(Busto de Maria Augusta)", "2000", "Barra da Tijuca", '<a class="tag" href="/bustos"><i class="category cat-busto">busto</i></a>'), { offset: [0, -24] }).openPopup().on({ click: markerOnClick });
+markersMap.get("busto").list.push(m256);
+const m257 = L.marker([-23.01275, -43.31789], {icon: tempMarker});
+m257.bindPopup(generatePopup("T179", "(Placa da Praça São Perpétuo)", "S.d.", "Barra da Tijuca", '<a class="tag" href="/marcos"><i class="category cat-marco">marco</i></a>'), { offset: [0, -24] }).openPopup().on({ click: markerOnClick });
+markersMap.get("marco").list.push(m257);
+const m258 = L.marker([-22.95734, -43.26858], {icon: tempMarker});
+m258.bindPopup(generatePopup("T180", "(Chafariz na Avenida Edson Passos)", "S.d.", "Alto da Boa Vista", '<a class="tag" href="/chafarizes"><i class="category cat-chafariz">chafariz</i></a>'), { offset: [0, -24] }).openPopup().on({ click: markerOnClick });
+markersMap.get("chafariz").list.push(m258);
+const m259 = L.marker([-22.95699, -43.26536], {icon: tempMarker});
+m259.bindPopup(generatePopup("T181", "(Lanterna Japonesa I do Alto da Boa Vista)", "1957", "Alto da Boa Vista", '<a class="tag" href="/obras"><i class="category cat-obra">obra</i></a>'), { offset: [0, -24] }).openPopup().on({ click: markerOnClick });
+markersMap.get("obra").list.push(m259);
+const m260 = L.marker([-22.95843, -43.26537], {icon: tempMarker});
+m260.bindPopup(generatePopup("T182", "(Fonte na Avenida Edson Passos)", "S.d.", "Alto da Boa Vista", '<a class="tag" href="/chafarizes"><i class="category cat-chafariz">chafariz</i></a>'), { offset: [0, -24] }).openPopup().on({ click: markerOnClick });
+markersMap.get("chafariz").list.push(m260);
 
 for(const [key, obj] of [...markersMap]) {
 	obj.canvas.addMarkers(obj.list);
