@@ -1,0 +1,61 @@
+---
+layout: monument.ejs
+name: Lanterna Japonesa I do Alto da Boa Vista
+categoria: obra
+tags: [
+	"preliminar"
+]
+series: []
+
+data_inaug: 1957-05-15
+altura: 
+largura: 
+material: 
+autores: 
+
+local: 
+bairro: Alto da Boa Vista
+lat: -22.95699
+lon: -43.26536
+
+imrj: 800
+wikidata: Q67204840
+---
+
+<figure>
+	<!-- <a href="photo.jpg" data-llb-src="href"> -->
+		<img src="thumb.jpg">
+	<!-- </a> -->
+	<figcaption>
+		<p class="credits">
+			Foto: <a herf="https://goo.gl/maps/rfBqdwsirzi9jnV26">Google Street View</a>
+			(março de 2022).
+		</p>
+	</figcaption>
+</figure>
+<section class="description">
+	<!-- <p></p> -->
+</section>
+<section class="gallery">
+	<!-- <h2>Galeria</h2> -->
+</section>
+<section class="inscription">
+<!-- 	<h2>Inscrição</h2>
+	<p>
+		Há três placas ao redor do monumento contendo o seguinte texto:
+	</p>
+	<pre class="inscription-text"></pre> -->
+</section>
+<%- makeMap(arguments[0]); %>
+<section class="more">
+	<h2>Leia mais</h2>
+	<ol>
+		<li>
+			Mauricio Peixoto (18 de fevereiro de 2015).
+			<a href="https://oglobo.globo.com/rio/bairros/presente-do-governo-japones-em-1957-monumento-no-alto-da-boa-vista-esta-abandonado-15369972">Presente
+			do governo japonês em 1957, monumento no Alto da Boa Vista está
+			abandonado</a>. <i>O Globo</i>.
+		</li>
+	</ol>
+</section>
+<%- makeOthersFromSeries(arguments[0]); %>

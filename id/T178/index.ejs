@@ -1,0 +1,76 @@
+---
+layout: monument.ejs
+name: Busto de Maria Augusta
+categoria: busto
+tags: [
+	"preliminar"
+]
+series: []
+
+data_inaug: 2000-09-23
+altura: 
+largura: 
+material: Bronze
+autores: [ Marli Mazeredo ]
+
+local: Píer Maria Augusta
+bairro: Barra da Tijuca
+lat: -23.01435
+lon: -43.29797
+
+imrj: 1082
+wikidata: Q67203986
+---
+
+<figure>
+	<!-- <a href="photo.jpg" data-llb-src="href"> -->
+		<img src="thumb.jpg">
+	<!-- </a> -->
+	<figcaption>
+		<p class="credits">
+			Foto: <a href="https://goo.gl/maps/JJnChnFLQpfjebcp8">Google Street
+			View</a> (março de 2022).
+		</p>
+	</figcaption>
+</figure>
+<section class="description">
+	<p>
+		A obra possuía uma estrutura triangular vermelha, removida em algum ponto
+		entre novembro de 2021 e março de 2022.
+	</p>
+</section>
+<section class="gallery">
+	<h2>Galeria</h2>
+	<figure>
+		<a href="gallery-2000-full.jpg" data-llb-src="href">
+			<img src="gallery-2000.jpg">
+		</a>
+		<figcaption>
+			<p class="credits">
+				Foto: André Teixeira (s.d.).
+				Reportagem: S.n. (1 de outubro de 2000).
+				"<i>Homenagem em bronze para vendedora pioneira</i>". <i>O Globo</i>,
+				§ Barra, p.4
+				[via <a href="https://oglobo.globo.com/acervo/">Acervo O Globo</a>].
+			</p>
+		</figcaption>
+	</figure>
+</section>
+<section class="inscription">
+<!-- 	<h2>Inscrição</h2>
+	<p>
+		Há três placas ao redor do monumento contendo o seguinte texto:
+	</p>
+	<pre class="inscription-text"></pre> -->
+</section>
+<%- makeMap(arguments[0]); %>
+<section class="more">
+	<h2>Leia mais</h2>
+	<ol>
+		<li>
+			João Piedras (5 de fevereiro de 2021). <a href="https://orlario.com.vc/home/imortalizados-na-orla-tia-augusta/">Imortalizados
+			na orla: Tia Augusta</a>. <i>Orla Rio</i>.
+		</li>
+	</ol>
+</section>
+<%- makeOthersFromSeries(arguments[0]); %>

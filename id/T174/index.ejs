@@ -1,0 +1,73 @@
+---
+layout: monument.ejs
+name: Lampião Grande
+categoria: obra
+tags: [
+	"preliminar",
+	"removido"
+]
+series: []
+
+data_inaug: 
+altura: 
+largura: 
+material: 
+autores: 
+
+local: 
+bairro: Alto da Boa Vista
+lat: -22.96617
+lon: -43.27749
+
+imrj: 
+wikidata: 
+---
+
+<figure>
+	<!-- <a href="photo.jpg" data-llb-src="href"> -->
+		<img src="thumb.jpg">
+	<!-- </a> -->
+	<figcaption>
+		<p class="credits">
+			Foto: <a href="https://goo.gl/maps/L4YCzCfh13JDWoo3A">Google Street
+			View</a> (abril de 2016).
+		</p>
+	</figcaption>
+</figure>
+<section class="description">
+	<p>
+		Foi trocado circa 1990. Foi removido em algum ponto entre julho de 2022 e
+		julho de 2023.
+	</p>
+</section>
+<section class="gallery">
+	<!-- <h2>Galeria</h2> -->
+<!--
+Fotos antigas; credita o Arquivo Nacional, mas eu não consegui achar
+https://rioquepassou.com.br/2017/12/26/alto-da-boa-vista-lampiao-grande/ -->
+</section>
+<section class="inscription">
+	<h2>Inscrição</h2>
+	<p>
+		Há três placas ao redor do monumento contendo o seguinte texto:
+	</p>
+	<pre class="inscription-text">
+Estrada
+da Vista Chinesa</pre>
+	<pre class="inscription-text">
+Lampião Grande
+1950</pre>
+	<pre class="inscription-text">
+Estrada das Furnas
+Alargamento e Pavimentação
+de Concreto
+Prefeito
+General Ângelo Mendes de Moraes
+1948</pre>
+</section>
+<%- makeMap(arguments[0]); %>
+<section class="more">
+<!-- 	<h2>Leia mais</h2>
+	<ol></ol> -->
+</section>
+<%- makeOthersFromSeries(arguments[0]); %>
