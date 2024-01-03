@@ -1,6 +1,6 @@
 module.exports = function(eleventyConfig) {
 	eleventyConfig.addGlobalData("IMRJ_URL",
-		"http://www.inventariodosmonumentosrj.com.br/index.asp?iMENU=catalogo&iiCOD=");
+		"https://web.archive.org/web/0/http://www.inventariodosmonumentosrj.com.br/index.asp?iMENU=catalogo&iiCOD=");
 	eleventyConfig.addGlobalData("HPIP_URL", "https://hpip.org/pt/heritage/details/");
 	eleventyConfig.addGlobalData("WIKIDATA_URL", "https://www.wikidata.org/wiki/");
 	eleventyConfig.addGlobalData("STRUCTURAE_URL", "https://structurae.net/structures/");

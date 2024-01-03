@@ -130,19 +130,20 @@ tombado_url = doFallback("tombado_url");
 		<hr>
 		<p class="section-heading">Catálogos</p>
 		<dl>
-			<%_ if(imrj.length) { %>
-				<dt><abbr title="Inventário dos Monumentos RJ">IMRJ</abbr></dt>
-				<dd>
-					<%_ for(let i = 0; i < imrj.length; i++) { %>
-					ID&nbsp;<a href="<%= IMRJ_URL %><%= imrj[i] %>"><%= imrj[i] %></a><br>
-					<%_ } %>
-				</dd>
-			<%_ } %>
 			<%_ if(wikidata.length) { %>
 				<dt>Wikidata</dt>
 				<dd>
 					<%_ for(let i = 0; i < wikidata.length; i++) { %>
 					<a href="<%= WIKIDATA_URL %><%= wikidata[i] %>"><%= wikidata[i] %></a><br>
+					<%_ } %>
+				</dd>
+			<%_ } %>
+			<%_ if(imrj.length) { %>
+				<dt><abbr title="Inventário dos Monumentos RJ">IMRJ</abbr></dt>
+				<dd>
+					<%_ for(let i = 0; i < imrj.length; i++) { %>
+					ID&nbsp;<%= imrj[i] %><br>
+					<small>(offline desde 27/10/23; confira no <a href="<%= IMRJ_URL %><%= imrj[i] %>">Wayback Machine</a>)</small><br>
 					<%_ } %>
 				</dd>
 			<%_ } %>
