@@ -1,0 +1,85 @@
+---
+layout: monument.ejs
+name: Estátua de Tom Jobim
+categoria: estátua
+tags: [
+	"sem descrição",
+	"sem galeria",
+	"possui escrita"
+]
+series: [
+	Praia de Ipanema
+]
+
+data_inaug: 2014-12-08
+altura: 
+largura: 
+material: [ Bronze ]
+autores: [ Christina Motta ]
+
+local: Praia de Ipanema
+bairro: Ipanema
+lat: -22.98801
+lon: -43.19447
+
+imrj: 365
+wikidata: Q67205555
+---
+<!-- 
+https://agenciabrasil.ebc.com.br/cultura/noticia/2014-12/tom-jobim-ganha-estatua-de-bronze-na-praia-de-ipanema
+https://g1.globo.com/rio-de-janeiro/noticia/2014/12/estatua-em-homenagem-tom-jobim-e-inaugurada-na-orla-de-ipanema-rio.html
+https://g1.globo.com/rj/rio-de-janeiro/noticia/2023/10/10/estatua-de-tom-jobim-ganha-restauracao-e-fica-com-roupas-novas.ghtml
+ -->
+<figure>
+	<a href="photo.jpg" data-llb-src="href">
+		<img src="thumb.jpg">
+	</a>
+	<figcaption>
+		<p class="credits">
+			Foto: Matheus Avellar (19 de agosto de 2023).
+		</p>
+	</figcaption>
+</figure>
+<section class="description">
+	<!-- <p></p> -->
+</section>
+<section class="refs">
+	<!-- <ol></ol> -->
+</section>
+<section class="gallery">
+	<!-- <h2>Galeria</h2> -->
+</section>
+<section class="inscription">
+	<h2>Inscrição</h2>
+	<p>
+		Há uma placa próxima ao monumento contendo o seguinte texto:
+	</p>
+	<pre class="inscription-text">
+Prefeitura
+da Cidade do Rio de Janeiro
+
+TOM JOBIM
+
+Antônio Carlos Brasileiro de Almeida Jobim
+(1927 - 1994)
+"Minha alma canta, vejo o Rio de Janeiro..."
+
+Prefeito da Cidade do Rio de Janeiro
+Eduardo Paes
+
+Secretário Especial de Turismo
+Antonio Pedro Viegas Figueira de Mello
+
+Secretário Municipal de Conservação
+Marcus Belchior
+
+Escultura: Christina Motta
+
+Rio de Janeiro, Dezembro de 2014</pre>
+</section>
+<%- makeMap(arguments[0]); %>
+<section class="more">
+<!-- 	<h2>Leia mais</h2>
+	<ol></ol> -->
+</section>
+<%- makeOthersFromSeries(arguments[0]); %>

@@ -1,0 +1,92 @@
+---
+layout: monument.ejs
+name: Busto de Józef Piłsudski
+categoria: busto
+tags: [
+	"sem descrição",
+	"possui escrita"
+]
+series: [
+	Praia de Ipanema
+]
+
+data_inaug: 1967-12-18
+altura: 
+largura: 
+material: 
+autores: []
+
+local: Praia de Ipanema
+bairro: Ipanema
+lat: -22.98685
+lon: -43.19891
+
+imrj: 364
+wikidata: Q67204837
+---
+
+<figure>
+	<a href="photo.jpg" data-llb-src="href">
+		<img src="thumb.jpg">
+	</a>
+	<figcaption>
+		<p class="credits">
+			Foto: Matheus Avellar (19 de agosto de 2023).
+		</p>
+	</figcaption>
+</figure>
+<section class="description">
+	<!-- <p></p> -->
+</section>
+<section class="refs">
+	<!-- <ol></ol> -->
+</section>
+<section class="gallery">
+	<h2>Galeria</h2>
+	<figure>
+		<a href="gallery-1967-full.jpg" data-llb-src="href">
+			<img src="gallery-1967.jpg">
+		</a>
+		<figcaption>
+			<p>
+				Inauguração do busto em 1967
+			</p>
+			<p class="credits">
+				Reportagem: S.n. (19 de dezembro de 1967).
+				<a href="http://memoria.bn.br/DocReader/093718_04/71357">Símbolo Eterno
+				da Liberdade</a>. <i>Diário de Notícias</i>, p.2 [via Hemeroteca Digital
+				da Biblioteca Nacional].
+			</p>
+		</figcaption>
+	</figure>
+</section>
+<section class="inscription">
+	<h2>Inscrição</h2>
+	<p>
+		Há uma placa no monumento contendo o seguinte texto:
+	</p>
+	<pre class="inscription-text">
+No Centenário do
+   Nascimento
+
+do Herói Nacional e
+     Libertador
+da Polônia em 1918
+
+      Marechal
+
+JÓZEF PIŁSUDSKI
+   1867 - 1935
+
+A Comunidade Polonesa
+  Oferece à Cidade
+           do
+    Rio de Janeiro
+</pre>
+</section>
+<%- makeMap(arguments[0]); %>
+<section class="more">
+<!-- 	<h2>Leia mais</h2>
+	<ol></ol> -->
+</section>
+<%- makeOthersFromSeries(arguments[0]); %>
