@@ -203,7 +203,7 @@
 				<span>
 					<strong>Obras públicas</strong><br>
 					<i class="category cat-obra">obra</i>
-					<small>(28 itens)</small>
+					<small>(29 itens)</small>
 				</span>
 			</label>
 			<label>
@@ -235,7 +235,7 @@
 				<span>
 					<strong>Marcos</strong><br>
 					<i class="category cat-marco">marco</i>
-					<small>(52 itens)</small>
+					<small>(53 itens)</small>
 				</span>
 			</label>
 			<label>
@@ -1349,6 +1349,12 @@ markersMap.get("chafariz").list.push(m275);
 const m276 = L.marker([-22.96123, -43.2734], {icon: tempMarker});
 m276.bindPopup(generatePopup("T190", "(Chafariz de Grandjean de Montigny)", "c.1842", "Alto da Boa Vista", '<a class="tag" href="/chafarizes"><i class="category cat-chafariz">chafariz</i></a>'), { offset: [0, -24] }).openPopup().on({ click: markerOnClick });
 markersMap.get("chafariz").list.push(m276);
+const m277 = L.marker([-22.97097, -43.70998], {icon: tempMarker});
+m277.bindPopup(generatePopup("T191", "(Placa na Praça Washington Luiz)", "S.d.", "Sepetiba", '<a class="tag" href="/marcos"><i class="category cat-marco">marco</i></a>'), { offset: [0, -24] }).openPopup().on({ click: markerOnClick });
+markersMap.get("marco").list.push(m277);
+const m278 = L.marker([-22.97096, -43.72029], {icon: tempMarker});
+m278.bindPopup(generatePopup("T192", "(Molhe Imperial de Pedra)", "1884", "Sepetiba", '<a class="tag" href="/obras"><i class="category cat-obra">obra</i></a>'), { offset: [0, -24] }).openPopup().on({ click: markerOnClick });
+markersMap.get("obra").list.push(m278);
 
 for(const [key, obj] of [...markersMap]) {
 	obj.canvas.addMarkers(obj.list);
