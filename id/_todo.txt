@@ -6,3 +6,10 @@
 - Usar fonte diferente para headings?
 	- https://fonts.google.com/specimen/Limelight ?
 	- Com text-shadow: -3px 3px var(--color-obra);?
+
+
+-22.97080, -43.70963 - Placa na Praça Washington Luis, Sepetiba
+-22.97096, -43.70992 - Placa na Praça Washington Luis, Sepetiba
+-22.97085, -43.70981 - Coreto na Praça Washington Luis, Sepetiba
+-22.98624, -43.69528 - Yemanjá na Baía de Sepetiba (tem placa), Sepetiba
+-22.98684, -43.69261 - Placa na Baía de Sepetiba, Sepetiba
