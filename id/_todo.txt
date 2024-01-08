@@ -13,3 +13,8 @@
 -22.97085, -43.70981 - Coreto na Praça Washington Luis, Sepetiba
 -22.98624, -43.69528 - Yemanjá na Baía de Sepetiba (tem placa), Sepetiba
 -22.98684, -43.69261 - Placa na Baía de Sepetiba, Sepetiba
+
+-22.97446, -43.2265 - Estátua na Praça Santos Dumont, Gávea
+-22.97396, -43.2263 - Busto na Praça Santos Dumont, Gávea
+-22.97387, -43.22644 - Chafariz na Praça Santos Dumont, Gávea
+-22.97319, -43.22559 - Busto na Praça Santos Dumont, Gávea
