@@ -1,0 +1,59 @@
+---
+layout: monument.ejs
+name: Escultura na Praia do Leblon
+categoria: escultura
+tags: [
+	"preliminar",
+	"possui escrita",
+	"sem descrição"
+]
+series: []
+
+data_inaug: 
+altura: 
+largura: 
+material: 
+autores: []
+
+local: Praia do Leblon
+bairro: Leblon
+lat: -22.98852
+lon: -43.22766
+
+imrj: 
+wikidata: 
+---
+
+<figure>
+	<!-- <a href="photo.jpg" data-llb-src="href"> -->
+		<img src="thumb.jpg">
+	<!-- </a> -->
+	<figcaption>
+		<p class="credits">
+			Foto: <a href="https://maps.app.goo.gl/38vKJDUWEAfzz9Nx8">Google Street View</a>
+			(novembro de 2022).
+		</p>
+	</figcaption>
+</figure>
+<section class="description">
+	<!-- <p></p> -->
+</section>
+<section class="refs">
+	<!-- <ol></ol> -->
+</section>
+<section class="gallery">
+	<!-- <h2>Galeria</h2> -->
+</section>
+<section class="inscription">
+<!-- 	<h2>Inscrição</h2>
+	<p>
+		Há uma placa no monumento contendo o seguinte texto:
+	</p>
+	<pre class="inscription-text"></pre> -->
+</section>
+<%- makeMap(arguments[0]); %>
+<section class="more">
+<!-- 	<h2>Leia mais</h2>
+	<ol></ol> -->
+</section>
+<%- makeOthersFromSeries(arguments[0]); %>
