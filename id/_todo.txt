@@ -13,3 +13,16 @@
 -22.97085, -43.70981 - Coreto na Praça Washington Luis, Sepetiba
 -22.98624, -43.69528 - Yemanjá na Baía de Sepetiba (tem placa), Sepetiba
 -22.98684, -43.69261 - Placa na Baía de Sepetiba, Sepetiba
+-22.89943, -43.20156 - Chafariz, Praça Santo Cristo(?), Santo Cristo
+-22.90689, -43.19647 - Praça Onze de Junho, Zumbi dos Palmares, Centro
+-22.91089, -43.20645 - Chafariz das Ninfas, Cidade Nova
+-22.91046, -43.20508 - ruffles branca, Cidade Nova
+-22.90407, -43.18923 - pantheon de caxias
+-22.90119, -43.17886 - Busto de Pereira Passos
+-22.90059, -43.17703 - chafariz da candelária
+-22.90064, -43.17720 - cruz na candelária
+-22.90018, -43.17596 - pira olímpica
+-22.90164, -43.17578 - escultura
+-22.90317, -43.17459 - estátua de general osório
+-22.90422, -43.17091 - âncora
+-22.89890, -43.17614 - muro
