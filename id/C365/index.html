@@ -266,9 +266,10 @@
 	</a>
 	<figcaption>
 		<p class="credits">
-			Foto: Eduardo Pazos (25 de fevereiro de 2013),
-			<a href="https://creativecommons.org/licenses/by-sa/3.0/deed.en">CC-BY-SA-3.0</a>,
-			via <a href="https://commons.wikimedia.org/wiki/File:Pra%C3%A7a_David_Ben_Gurion.JPG">Wikimedia
+			Foto: Donatas Dabravolskas (21 de agosto de 2023),
+			<a href="https://creativecommons.org/licenses/by-sa/4.0/deed.en">CC BY-SA 4.0</a>,
+			via
+			<a href="https://commons.wikimedia.org/wiki/File:Chafariz_Concha_-_Rio_de_Janeiro_-_20230821165826.jpg">Wikimedia
 			Commons</a>.
 		</p>
 	</figcaption>
@@ -327,16 +328,65 @@
 			</p>
 		</figcaption>
 	</figure>
+	<figure>
+		<a href="gallery-2023-full.jpg" data-llb-src="href">
+			<img src="gallery-2023.jpg">
+		</a>
+		<figcaption>
+			<p>Placa ao lado do chafariz</p>
+			<p class="credits">
+				Foto: Donatas Dabravolskas (21 de agosto de 2023),
+				<a href="https://creativecommons.org/licenses/by-sa/4.0/deed.en">CC BY-SA 4.0</a>,
+				via
+				<a href="https://commons.wikimedia.org/wiki/File:Chafariz_Concha_-_Rio_de_Janeiro_-_20230821165948.jpg">Wikimedia
+				Commons</a>.
+			</p>
+		</figcaption>
+	</figure>
+	<figure>
+		<a href="gallery-2024-full.jpg" data-llb-src="href">
+			<img src="gallery-2024.jpg">
+		</a>
+		<figcaption>
+			<p>Placa em frente ao chafariz</p>
+			<p class="credits">
+				Foto: Matheus Avellar (12 de janeiro de 2024)..
+			</p>
+		</figcaption>
+	</figure>
 </section>
-<section class="location"><h2>Localização</h2><p><strong>Localização:</strong> Praça David Ben Gurion, Laranjeiras</p><p><strong>Coordenadas:</strong> -22.93830, -43.19060</p><div id="monument-location-map"></div><!-- [Ref] https://leafletjs.com/ -->
+<section class="inscription">
+	<h2>Inscrição</h2>
+	<p>
+		Há uma placa ao lado do monumento contendo o seguinte texto:
+	</p>
+	<pre class="inscription-text">
+À
+Cidade do Rio de Janeiro
+no ano de seu IV Centenario
+Homenagem da
+Shell Brasil S.A (Petroleo)</pre>
+	<p>
+		Há uma placa em frente ao monumento contendo o seguinte texto:
+	</p>
+	<pre class="inscription-text">
+A memoria de
+David Ben Gurion
+Fundador do Estado de Israel:
+"Ir a Lua e florescer o deserto são
+proezas semelhantes."
+1887 — 1987
+Organização Sionista Unificada do RJ</pre>
+</section>
+<section class="location"><h2>Localização</h2><p><strong>Localização:</strong> Praça David Ben Gurion, Laranjeiras</p><p><strong>Coordenadas:</strong> -22.93832, -43.19061</p><div id="monument-location-map"></div><!-- [Ref] https://leafletjs.com/ -->
 <link href="/assets/leaflet/leaflet.1.9.3.css" rel="stylesheet" type="text/css">
 <script src="/assets/leaflet/leaflet.1.9.3.min.js"></script>
 <!-- [Ref] https://github.com/Leaflet/Leaflet.fullscreen -->
 <link href="/assets/leaflet/leaflet.fullscreen.1.0.1.css" rel="stylesheet" type="text/css">
 <script src="/assets/leaflet/leaflet.fullscreen.1.0.1.js"></script><script>
 const bounds = new L.LatLngBounds(
-	new L.LatLng(-22.9633, -43.2406),
-	new L.LatLng(-22.913300000000003, -43.140600000000006)
+	new L.LatLng(-22.96332, -43.24061),
+	new L.LatLng(-22.913320000000002, -43.14061)
 );
 const map = L.map("monument-location-map", {
 	center: bounds.getCenter(),
@@ -350,7 +400,7 @@ L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
 	maxZoom: 19,
 	attribution: "&copy; <a href='http://www.openstreetmap.org/copyright'>OSMF</a>"
 }).addTo(map);
-L.marker([-22.9383, -43.1906], {
+L.marker([-22.93832, -43.19061], {
 	icon: L.icon({
 		iconUrl: "/assets/leaflet/images/phosphor-marker--chafariz.svg",
 		iconSize: [64, 64],
