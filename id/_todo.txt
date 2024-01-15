@@ -44,3 +44,8 @@
 -22.90693, -43.17193 - monumento a rui barbosa
 -22.90421, -43.17433 - monumento a tiradentes
 -22.90316, -43.17459 - monumento a general osório
+
+Afonso Pena
+-22.91769, -43.21822 - (removido) placa? talvez um livro via L2832/1999
+-22.91758, -43.21787 - busto
+-22.91785, -43.21849 - efígie

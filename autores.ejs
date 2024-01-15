@@ -1,9 +1,82 @@
 ---
-layout: category-list.ejs
-heading: Monumentos por autor
-name: Autores
-property: autores
+layout: default.ejs
+title: "Autores — Monumentos Rio"
 ---
+<%_ const monuments = collections.all.filter(file => file.filePathStem.startsWith("/id/"));
+monuments.sort((a, b) => a.data.name.localeCompare(b.data.name));
+const monument_count = monuments.length;
 
-Esta é uma lista de todos os monumentos catalogados, organizados pelos
-nomes de seus criadores.
+const distinct_categories = new Set();
+monuments.forEach(mon => {
+	if(!("autores" in mon.data))
+		return;
+	// If property is an array
+	if(mon.data.autores instanceof Array) {
+		mon.data.autores.forEach(val => {
+			if(val)
+				distinct_categories.add(val);
+		});
+	} else {
+		// Otherwise, if it's a simple value, add it
+		if(mon.data.autores)
+			distinct_categories.add(mon.data.autores);
+	}
+});
+
+const lists = [];
+const categories_list = [...distinct_categories];
+categories_list.sort((a, b) => a.localeCompare(b));
+
+categories_list.forEach(cat => {
+	lists.push(monuments.reduce((acc, file) => {
+		if(!("autores" in file.data))
+			return acc;
+		// If property is an array
+		if(file.data.autores instanceof Array) {
+			// Check if array includes this category
+			if(file.data.autores.includes(cat)) {
+				// Add it to the list
+				acc.push(file);
+			}
+		} else {
+			// Otherwise, if it's a simple value
+			// Check if it matches
+			if(cat === file.data.autores)
+				acc.push(file);
+		}
+		return acc;
+	}, []));
+});
+%>
+
+<main>
+<h1 class="cutout-width-limit">Monumentos por autor</h1>
+<section class="indent-children maxwidth">
+	<p>
+		Esta é uma lista de todos os monumentos catalogados, organizados pelos
+		nomes de seus criadores.
+	</p>
+</section>
+<details id="list-toc">
+	<summary>Pular para:</summary>
+	<div>
+	<%_ for(let i = 0; i < categories_list.length; i++) { %>
+		<a href="#<%= normalize(categories_list[i]) %>"><%= categories_list[i] %></a>
+	<%_ } %>
+	</div>
+</details>
+<%_ for(let c = 0; c < lists.length; c++) {
+	const current_autor = categories_list[c];
+	const autor_count = lists[c].length; %>
+	<h2 id="<%= normalize(current_autor) %>"><%- current_autor %></h2>
+	<p><%-
+		`<strong>${autor_count}</strong> monumento`
+		+ (autor_count < 2 ? "" : "s")
+	%></p>
+	<div class="card-list">
+	<%_ for(let i = 0; i < lists[c].length; i++) {
+		%><%- makeCard(lists[c][i]) %><%_
+	} %>
+	</div>
+<%_ } %>
+</main>
