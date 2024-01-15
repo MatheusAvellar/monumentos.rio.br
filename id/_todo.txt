@@ -26,3 +26,21 @@
 -22.90317, -43.17459 - estátua de general osório
 -22.90422, -43.17091 - âncora
 -22.89890, -43.17614 - muro
+
+-22.90512, -43.18085 - josé bonifácio
+-22.90588, -43.18206 - retângulo vazado, largo alexandre herculano
+-22.90558, -43.18209 - busto de camões, largo alexandre herculano
+-22.90750, -43.18096 - retângulos vermelhos?
+-22.90762, -43.18140 - estátuas / esculturas na praça joão calvino?
+-22.91006, -43.17603 - monumento a floriano peixoto
+-22.91220, -43.17600 - monumento a gandhi
+-22.91272, -43.17478 - obelisco
+-22.91270, -43.17412 - estátua de francisco de paula santander, centro
+-22.91198, -43.17349 - monumento à amizade entre povos
+-22.91102, -43.17156 - escultura para o Rio, duas colunas que saem do chão
+-22.90995, -43.17241 - escultura na Praça Poeta Manuel Bandeira (tem mais duas estátuas nessa praça)
+-22.90909, -43.16963 - estátua de teixeira de freitas
+-22.90655, -43.17211 - monumento ao barão do rio branco
+-22.90693, -43.17193 - monumento a rui barbosa
+-22.90421, -43.17433 - monumento a tiradentes
+-22.90316, -43.17459 - monumento a general osório

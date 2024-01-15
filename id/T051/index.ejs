@@ -1,9 +1,12 @@
 ---
 layout: monument.ejs
-name: Busto
+name: Busto na Praça Luis de Camões
 categoria: busto
 tags: [
 	"preliminar"
+]
+series: [
+	"Praça Luis de Camões"
 ]
 
 data_inaug: 
@@ -13,7 +16,7 @@ material:
 
 autores: []
 
-local: 
+local: Praça Luis de Camões
 bairro: Glória
 lat: -22.92075
 lon: -43.17443
@@ -22,16 +25,16 @@ imrj:
 wikidata: 
 ---
 
-<!-- <figure>
-	<a href="photo.jpg" data-llb-src="href">
+<figure>
+	<!-- <a href="photo.jpg" data-llb-src="href"> -->
 		<img src="thumb.jpg">
-	</a>
+	<!-- </a> -->
 	<figcaption>
 		<p class="credits">
-			Foto: .
+			Foto: Google Street View.
 		</p>
 	</figcaption>
-</figure> -->
+</figure>
 <section class="description">
 </section>
 <section class="gallery">
@@ -49,3 +52,4 @@ wikidata:
 <!-- 	<h2>Leia mais</h2>
 	<ol></ol> -->
 </section>
+<%- makeOthersFromSeries(arguments[0]); %>
