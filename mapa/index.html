@@ -211,7 +211,7 @@
 				<span>
 					<strong>Bustos e efígies</strong><br>
 					<i class="category cat-busto">busto</i>
-					<small>(79 itens)</small>
+					<small>(81 itens)</small>
 				</span>
 			</label>
 			<label>
@@ -243,7 +243,7 @@
 				<span>
 					<strong>Esculturas</strong><br>
 					<i class="category cat-escultura">escultura</i>
-					<small>(65 itens)</small>
+					<small>(66 itens)</small>
 				</span>
 			</label>
 		</section>
@@ -1406,6 +1406,15 @@ markersMap.get("obra").list.push(m294);
 const m295 = L.marker([-22.91533, -43.17401], {icon: tempMarker});
 m295.bindPopup(generatePopup("T205", "(Busto de Eduardo Gomes)", "S.d.", "Glória", '<a class="tag" href="/bustos"><i class="category cat-busto">busto</i></a>'), { offset: [0, -24] }).openPopup().on({ click: markerOnClick });
 markersMap.get("busto").list.push(m295);
+const m296 = L.marker([-22.91809, -43.21799], {icon: tempMarker});
+m296.bindPopup(generatePopup("T206", "(Fidelidade na Praça Afonso Pena)", "1957", "Tijuca", '<a class="tag" href="/esculturas"><i class="category cat-escultura">escultura</i></a>'), { offset: [0, -24] }).openPopup().on({ click: markerOnClick });
+markersMap.get("escultura").list.push(m296);
+const m297 = L.marker([-22.92213, -43.17292], {icon: tempMarker});
+m297.bindPopup(generatePopup("T207", "(Busto de Lasar Segall)", "S.d.", "Glória", '<a class="tag" href="/bustos"><i class="category cat-busto">busto</i></a>'), { offset: [0, -24] }).openPopup().on({ click: markerOnClick });
+markersMap.get("busto").list.push(m297);
+const m298 = L.marker([-22.92195, -43.17305], {icon: tempMarker});
+m298.bindPopup(generatePopup("T208", "(Busto de Alberto de Oliveira)", "S.d.", "Glória", '<a class="tag" href="/bustos"><i class="category cat-busto">busto</i></a>'), { offset: [0, -24] }).openPopup().on({ click: markerOnClick });
+markersMap.get("busto").list.push(m298);
 
 for(const [key, obj] of [...markersMap]) {
 	obj.canvas.addMarkers(obj.list);
