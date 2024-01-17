@@ -337,21 +337,28 @@ function generatePopup(id, name, data, bairro, extra) {
 <span class="neighborhood">${bairro}</span><br>${extra}</div>`;
 }
 const allMarkers = [];
+const F = [0, -24];
 function markerOnClick(e) { this.openPopup(); }
 <%_ for(let i = 0; i < monument_count; i++) {
 	const lat = monuments[i].data.lat;
 	const lon = monuments[i].data.lon;
 	const ID = getIDFromPath(monuments[i].filePathStem);
-	const isEarly = [monuments[i].data.tags].flat().includes("preliminar"); %>
-const m<%=i%> = L.marker([<%= lat %>, <%= lon %>], {<%_
-%>icon: <%-
+	const isEarly = [monuments[i].data.tags].flat().includes("preliminar");
+	const hasMissing = [monuments[i].data.tags].flat().includes("removido"); %>
+const m<%=i%> = L.marker([<%= lat %>,<%= lon %>],{icon:<%-
 	isEarly ? "tempMarker" : `markersMap.get("${monuments[i].data.categoria}").icon`
 %>});
-m<%=i%>.bindPopup(generatePopup("<%= ID %>", "<%= isEarly ? "(" : "" %><%= monuments[i].data.name %><%= isEarly ? ")" : "" %>", "<%= getYearFromDate(monuments[i].data.data_inaug, monuments[i].data.data_circa) %>", "<%=
+m<%=i%>.bindPopup(generatePopup("<%=
+	ID %>", "<%= isEarly ? "(" : "" %><%= monuments[i].data.name %><%= isEarly ? ")" : "" %>", "<%=
+	getYearFromDate(monuments[i].data.data_inaug, monuments[i].data.data_circa) %>", "<%=
 (monuments[i].data.bairro instanceof Array)
 	? monuments[i].data.bairro.join(" / ")
 	: monuments[i].data.bairro
-%>", '<%- makeTag(monuments[i].data.categoria) %>'), { offset: [0, -24] }).openPopup().on({ click: markerOnClick });
+%>", '<%-
+makeTag(monuments[i].data.categoria)
++ (isEarly ? " "+makeInfoTag("preliminar") : "")
++ (hasMissing ? " "+makeInfoTag("removido") : "")
+%>'),{offset:F}).openPopup().on({click:markerOnClick});
 markersMap.get("<%= monuments[i].data.categoria %>").list.push(m<%=i%>); <%_ } %>
 
 for(const [key, obj] of [...markersMap]) {

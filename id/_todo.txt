@@ -33,7 +33,6 @@
 -22.90750, -43.18096 - retângulos vermelhos?
 -22.90762, -43.18140 - estátuas / esculturas na praça joão calvino?
 -22.91006, -43.17603 - monumento a floriano peixoto
--22.91220, -43.17600 - monumento a gandhi
 -22.91272, -43.17478 - obelisco
 -22.91270, -43.17412 - estátua de francisco de paula santander, centro
 -22.91198, -43.17349 - monumento à amizade entre povos
