@@ -206,6 +206,8 @@
 
 				<i class="category info-tag possui_escrita">possui escrita</i>
 
+				<i class="category info-tag sem_descricao">sem descrição</i>
+
 				<i class="category info-tag objeto:microfone">objeto:microfone</i>
 
 			<!-- Auto-tags -->
@@ -291,8 +293,11 @@
 	</a>
 	<figcaption>
 		<p class="credits">
-			Foto: Alexandre Macieira / Riotur (4 de março de 2016), via
-			<a href="https://flickr.com/photos/riotur/28711390046/">Flickr</a>.
+			Foto: Estela Neto (19 de setembro de 2023),
+			<a href="https://creativecommons.org/licenses/by-sa/4.0/deed.en">CC BY-SA 4.0</a>,
+			via
+			<a href="https://commons.wikimedia.org/wiki/File:Tim_Maia_-_Rio_de_Janeiro_-_20230919082747.jpg">Wikimedia
+			Commons</a>.
 		</p>
 	</figcaption>
 </figure>
@@ -330,7 +335,7 @@
 <section class="inscription">
 	<h2>Inscrição</h2>
 	<p>
-		Há uma placa próxima ao monumento contendo o seguinte texto:
+		Havia uma placa próxima ao monumento contendo o seguinte texto:
 	</p>
 	<pre class="inscription-text">
 Escultura "Tim Maia"
@@ -361,15 +366,15 @@ Idealizada por BDF NIVEA BRASIL e Isobar Brasil
 Rio de Janeiro, junho de 2015
 </pre>
 </section>
-<section class="location"><h2>Localização</h2><p><strong>Localização:</strong> Praça Afonso Pena, Tijuca</p><p><strong>Coordenadas:</strong> -22.91780, -43.21800</p><div id="monument-location-map"></div><!-- [Ref] https://leafletjs.com/ -->
+<section class="location"><h2>Localização</h2><p><strong>Localização:</strong> Praça Afonso Pena, Tijuca</p><p><strong>Coordenadas:</strong> -22.91785, -43.21798</p><div id="monument-location-map"></div><!-- [Ref] https://leafletjs.com/ -->
 <link href="/assets/leaflet/leaflet.1.9.3.css" rel="stylesheet" type="text/css">
 <script src="/assets/leaflet/leaflet.1.9.3.min.js"></script>
 <!-- [Ref] https://github.com/Leaflet/Leaflet.fullscreen -->
 <link href="/assets/leaflet/leaflet.fullscreen.1.0.1.css" rel="stylesheet" type="text/css">
 <script src="/assets/leaflet/leaflet.fullscreen.1.0.1.js"></script><script>
 const bounds = new L.LatLngBounds(
-	new L.LatLng(-22.9428, -43.268),
-	new L.LatLng(-22.8928, -43.168000000000006)
+	new L.LatLng(-22.94285, -43.267979999999994),
+	new L.LatLng(-22.892850000000003, -43.16798)
 );
 const map = L.map("monument-location-map", {
 	center: bounds.getCenter(),
@@ -383,7 +388,7 @@ L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
 	maxZoom: 19,
 	attribution: "&copy; <a href='http://www.openstreetmap.org/copyright'>OSMF</a>"
 }).addTo(map);
-L.marker([-22.9178, -43.218], {
+L.marker([-22.91785, -43.21798], {
 	icon: L.icon({
 		iconUrl: "/assets/leaflet/images/phosphor-marker--estatua.svg",
 		iconSize: [64, 64],
