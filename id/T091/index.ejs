@@ -3,10 +3,12 @@ layout: monument.ejs
 name: Relógio do Túnel Rebouças
 categoria: obra
 tags: [
-	"preliminar"
+	"preliminar",
+	"possui escrita"
 ]
 series: [
-	Túnel Rebouças
+	"Túnel Rebouças",
+	"Lions Clube"
 ]
 
 data_inaug: 
@@ -26,13 +28,12 @@ wikidata:
 ---
 
 <figure>
-	<!-- <a href="photo.jpg" data-llb-src="href"> -->
+	<a href="photo.jpg" data-llb-src="href">
 		<img src="thumb.jpg">
-	<!-- </a> -->
+	</a>
 	<figcaption>
 		<p class="credits">
-			Foto: <a href="https://goo.gl/maps/7sBCVcYpfUpyYtJy5">Google Street
-			View</a>.
+			Foto: Matheus Avellar (22 de janeiro de 2024).
 		</p>
 	</figcaption>
 </figure>
@@ -42,11 +43,17 @@ wikidata:
 	<!-- <h2>Galeria</h2> -->
 </section>
 <section class="inscription">
-<!-- 	<h2>Inscrição</h2>
+	<h2>Inscrição</h2>
 	<p>
-		Há uma placa próxima ao monumento contendo o seguinte texto:
+		Há placas na base do monumento contendo o seguinte texto:
 	</p>
-	<pre class="inscription-text"></pre> -->
+	<pre class="inscription-text">
+UVA
+Universidade
+Veiga de Almeida</pre>
+	<pre class="inscription-text">
+Lions Club
+RJ - Rio Comprido</pre>
 </section>
 <%- makeMap(arguments[0]); %>
 <section class="more">
