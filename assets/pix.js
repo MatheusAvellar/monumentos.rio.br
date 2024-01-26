@@ -1,19 +1,23 @@
 (function() {
 	const button = document.getElementById("copy-pix-key");
-	const key = document.getElementById("pix-key");
+	const key = document.getElementById("pix-key")?.value;
 	const feedback = document.getElementById("copy-feedback");
 	let timeout = -1;
 
-	// Se não tem botão / chave, vai embora
-	if(!button) return;
-	// Se não tem chave ou como copiar, vai embora
-	if(!key || !key.value) {
+	// Se não tem botão, vai embora
+	if(!button) {
+		console.log("[pix] No 'copy' button!");
+		return;
+	}
+	// Se não tem chave, vai embora
+	if(!key) {
 		console.log("[pix] No key!");
 		button.style.display = "none";
 		return;
 	}
+	// Se não tem como copiar, vai embora
 	if(!("clipboard" in navigator)) {
-		console.log("[pix] Clipboard not available!");
+		console.log("[pix] 'navigator.clipboard' not available!");
 		button.style.display = "none";
 		return;
 	}
