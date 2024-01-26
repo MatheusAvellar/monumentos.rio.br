@@ -509,7 +509,7 @@ main section.gallery > figure.sideways {
 }
 main section figure img {
 	max-height: 250px;
-	max-width: min(30vw, 250px);
+	max-width: 250px;
 }
 
 main section.maxwidth {
@@ -943,6 +943,44 @@ h2 {
 	inset: 0;
 }
 
+#donate-box {
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+	gap: .5em;
+	margin: .5em 0 .25em;
+}
+#donate-box button {
+	appearance: none;
+	color: inherit;
+	font-size: inherit;
+	border: 1px solid #bbb;
+	padding: 0.125em 0.25em;
+	border-radius: 2px;
+	background-color: rgba(255, 255, 255, 25%);
+}
+#donate-box button:active {
+	background-color: rgba(19, 155, 255, 25%);
+}
+#donate-box output {
+	display: block;
+	user-select: all;
+	width: 16.5ch;
+	border: 1px solid #bbb;
+	padding: 0.25em 0.5em;
+	border-radius: 2px;
+	white-space: nowrap;
+	vertical-align: middle;
+	overflow-x: hidden;
+}
+#copy-feedback {
+	visibility: hidden;
+	color: green;
+}
+#copy-feedback.open {
+	visibility: visible;
+}
+
 @media screen and (max-width: 600px) {
 	main.monument {
 		display: flex;
@@ -997,6 +1035,9 @@ h2 {
 }
 
 @media screen and (min-width: 601px) and (max-width: 870px) {
+	main figure { float: none; }
+}
+@media screen and (max-width: 500px) {
 	main figure { float: none; }
 }
 
