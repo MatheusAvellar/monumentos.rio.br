@@ -19,7 +19,7 @@
 	<link rel="preconnect" href="https://cdn.avl.la">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="referrer" content="no-referrer">
-	<link rel="stylesheet" href="/assets/style.css?v=07-19">
+	<link rel="stylesheet" href="/assets/style.css?v=01-25">
 </head>
 <body>
 	<!-- Dark mode -->
@@ -330,7 +330,19 @@ L.marker([-22.94611, -43.25777], {
 						<circle cx="12" cy="12" r="4"></circle>
 						<path d="M16 12v1.5a2.5 2.5 0 0 0 5 0v-1.5a9 9 0 1 0 -5.5 8.28"></path>
 					</svg>monumentos.rio.br
+				</p><br>
+				<p>
+					Doação ou gorjetinha?
 				</p>
+				<div id="donate-box">
+					<span>Pix:</span>
+					<output id="pix-key">0b32e95f-8688-4908-9c04-e3917bb7187b</output>
+					<button id="copy-pix-key">Copiar</button>
+				</div>
+				<p>
+					<span id="copy-feedback">Copiado!</span>
+					(<a href="/assets/pix-qr-code.png" data-llb-src="href">abrir QR Code</a>)
+				</p><br>
 			</section>
 			<nav>
 				<ul>
@@ -425,7 +437,7 @@ L.marker([-22.94611, -43.25777], {
 			<p>
 				Todo o conteúdo de minha autoria, exceto se indicado o contrário, está
 				disponibilizado via
-				<a href="https://creativecommons.org/licenses/by/4.0/deed.pt_BR">CC-BY-4.0</a>.
+				<a href="https://creativecommons.org/licenses/by-sa/4.0/deed.pt_BR">CC&nbsp;BY-SA&nbsp;4.0</a>.
 				Isso significa que você pode reutilizá-lo e modificá-lo para quaisquer
 				finalidades, desde que credite a fonte.
 			</p>
@@ -438,5 +450,7 @@ L.marker([-22.94611, -43.25777], {
 	<script src="/assets/litelightbox.min.js?v=05-24"></script>
 	<!-- <details> navigation -->
 	<script src="/assets/details.js?v=05-28"></script>
+	<!-- Pix clipboard -->
+	<script src="/assets/pix.js"></script>
 </body>
 </html>
