@@ -212,7 +212,7 @@
 				<span>
 					<strong>Bustos e efígies</strong><br>
 					<i class="category cat-busto">busto</i>
-					<small>(84 itens)</small>
+					<small>(85 itens)</small>
 				</span>
 			</label>
 			<label>
@@ -1443,6 +1443,9 @@ markersMap.get("obra").list.push(m305);
 const m306 = L.marker([-22.90209,-43.28038],{icon:tempMarker});
 m306.bindPopup(generatePopup("T215", "(Leão do Méier)", "1989", "Méier", '<a class="tag" href="/esculturas"><i class="category cat-escultura">escultura</i></a> <i class="category info-tag preliminar">preliminar</i>'),{offset:F}).openPopup().on({click:markerOnClick});
 markersMap.get("escultura").list.push(m306);
+const m307 = L.marker([-22.81875,-43.1916],{icon:tempMarker});
+m307.bindPopup(generatePopup("T216", "(Busto de Carmen Miranda)", "1960", "Jardim Guanabara", '<a class="tag" href="/bustos"><i class="category cat-busto">busto</i></a> <i class="category info-tag preliminar">preliminar</i>'),{offset:F}).openPopup().on({click:markerOnClick});
+markersMap.get("busto").list.push(m307);
 
 for(const [key, obj] of [...markersMap]) {
 	obj.canvas.addMarkers(obj.list);
