@@ -212,7 +212,7 @@
 				<span>
 					<strong>Bustos e efígies</strong><br>
 					<i class="category cat-busto">busto</i>
-					<small>(85 itens)</small>
+					<small>(87 itens)</small>
 				</span>
 			</label>
 			<label>
@@ -236,7 +236,7 @@
 				<span>
 					<strong>Marcos</strong><br>
 					<i class="category cat-marco">marco</i>
-					<small>(59 itens)</small>
+					<small>(64 itens)</small>
 				</span>
 			</label>
 			<label>
@@ -1144,7 +1144,7 @@ const m206 = L.marker([-22.91671,-43.25081],{icon:tempMarker});
 m206.bindPopup(generatePopup("T102", "(Obelisco da Praça Barão de Drumond)", "S.d.", "Vila Isabel", '<a class="tag" href="/marcos"><i class="category cat-marco">marco</i></a> <i class="category info-tag preliminar">preliminar</i>'),{offset:F}).openPopup().on({click:markerOnClick});
 markersMap.get("marco").list.push(m206);
 const m207 = L.marker([-22.92235,-43.2645],{icon:tempMarker});
-m207.bindPopup(generatePopup("T103", "(Placa da Praça Edmundo Rego)", "S.d.", "Grajaú", '<a class="tag" href="/marcos"><i class="category cat-marco">marco</i></a> <i class="category info-tag preliminar">preliminar</i>'),{offset:F}).openPopup().on({click:markerOnClick});
+m207.bindPopup(generatePopup("T103", "(Marco de Reforma da Praça Edmundo Rego)", "2002", "Grajaú", '<a class="tag" href="/marcos"><i class="category cat-marco">marco</i></a> <i class="category info-tag preliminar">preliminar</i>'),{offset:F}).openPopup().on({click:markerOnClick});
 markersMap.get("marco").list.push(m207);
 const m208 = L.marker([-22.91671,-43.17577],{icon:tempMarker});
 m208.bindPopup(generatePopup("T104", "(Escultura)", "S.d.", "Glória", '<a class="tag" href="/esculturas"><i class="category cat-escultura">escultura</i></a> <i class="category info-tag preliminar">preliminar</i>'),{offset:F}).openPopup().on({click:markerOnClick});
@@ -1446,6 +1446,27 @@ markersMap.get("obra").list.push(m306);
 const m307 = L.marker([-22.90209,-43.28038],{icon:tempMarker});
 m307.bindPopup(generatePopup("T215", "(Leão do Méier)", "1989", "Méier", '<a class="tag" href="/esculturas"><i class="category cat-escultura">escultura</i></a> <i class="category info-tag preliminar">preliminar</i>'),{offset:F}).openPopup().on({click:markerOnClick});
 markersMap.get("escultura").list.push(m307);
+const m308 = L.marker([-22.93122,-43.17749],{icon:tempMarker});
+m308.bindPopup(generatePopup("T216", "(Marco em Homenagem a Machado de Assis)", "S.d.", "Flamengo", '<a class="tag" href="/marcos"><i class="category cat-marco">marco</i></a> <i class="category info-tag preliminar">preliminar</i>'),{offset:F}).openPopup().on({click:markerOnClick});
+markersMap.get("marco").list.push(m308);
+const m309 = L.marker([-22.9223,-43.26469],{icon:tempMarker});
+m309.bindPopup(generatePopup("T217", "(Marco do Lions Clube na Praça Edmundo Rego)", "S.d.", "Grajaú", '<a class="tag" href="/marcos"><i class="category cat-marco">marco</i></a> <i class="category info-tag preliminar">preliminar</i>'),{offset:F}).openPopup().on({click:markerOnClick});
+markersMap.get("marco").list.push(m309);
+const m310 = L.marker([-22.92238,-43.26464],{icon:tempMarker});
+m310.bindPopup(generatePopup("T218", "(Marco de Inauguração da Praça Edmundo Rego)", "2023", "Grajaú", '<a class="tag" href="/marcos"><i class="category cat-marco">marco</i></a> <i class="category info-tag preliminar">preliminar</i>'),{offset:F}).openPopup().on({click:markerOnClick});
+markersMap.get("marco").list.push(m310);
+const m311 = L.marker([-22.91682,-43.26284],{icon:tempMarker});
+m311.bindPopup(generatePopup("T219", "(Marco de Duplicação da Avenida Menezes Cortes)", "1982", "Vila Isabel", '<a class="tag" href="/marcos"><i class="category cat-marco">marco</i></a> <i class="category info-tag preliminar">preliminar</i>'),{offset:F}).openPopup().on({click:markerOnClick});
+markersMap.get("marco").list.push(m311);
+const m312 = L.marker([-22.93108,-43.17906],{icon:tempMarker});
+m312.bindPopup(generatePopup("T220", "(Busto de Alfredo Gomes)", "S.d.", "Catete", '<a class="tag" href="/bustos"><i class="category cat-busto">busto</i></a> <i class="category info-tag preliminar">preliminar</i>'),{offset:F}).openPopup().on({click:markerOnClick});
+markersMap.get("busto").list.push(m312);
+const m313 = L.marker([-22.93093,-43.17918],{icon:tempMarker});
+m313.bindPopup(generatePopup("T221", "(Busto no Largo do Machado)", "S.d.", "Catete", '<a class="tag" href="/bustos"><i class="category cat-busto">busto</i></a> <i class="category info-tag preliminar">preliminar</i>'),{offset:F}).openPopup().on({click:markerOnClick});
+markersMap.get("busto").list.push(m313);
+const m314 = L.marker([-23.01114,-43.311],{icon:tempMarker});
+m314.bindPopup(generatePopup("T222", "(Placa da Praça São Oderico)", "S.d.", "Barra da Tijuca", '<a class="tag" href="/marcos"><i class="category cat-marco">marco</i></a> <i class="category info-tag preliminar">preliminar</i>'),{offset:F}).openPopup().on({click:markerOnClick});
+markersMap.get("marco").list.push(m314);
 
 for(const [key, obj] of [...markersMap]) {
 	obj.canvas.addMarkers(obj.list);
