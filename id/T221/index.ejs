@@ -1,0 +1,55 @@
+---
+layout: monument.ejs
+name: Busto no Largo do Machado
+categoria: busto
+tags: [
+	"preliminar"
+]
+series: [
+	Largo do Machado
+]
+
+data_inaug: 
+altura: 
+largura: 
+material: []
+autores: []
+
+local: Largo do Machado
+bairro: Catete
+lat: -22.93093
+lon: -43.17918
+
+imrj: 
+wikidata: 
+---
+
+<figure>
+	<!-- <a href="photo.jpg" data-llb-src="href"> -->
+		<img src="thumb.jpg">
+	<!-- </a> -->
+	<figcaption>
+		<p class="credits">
+			Foto: <a href="https://maps.app.goo.gl/JJBwY7KTZWQx6N3B6">Google Street
+			View</a> (setembro de 2021).
+		</p>
+	</figcaption>
+</figure>
+<section class="description">
+</section>
+<section class="gallery">
+	<!-- <h2>Galeria</h2> -->
+</section>
+<section class="inscription">
+<!-- 	<h2>Inscrição</h2>
+	<p>
+		Há uma placa no monumento contendo o seguinte texto:
+	</p>
+	<pre class="inscription-text"></pre> -->
+</section>
+<%- makeMap(arguments[0]); %>
+<section class="more">
+<!-- 	<h2>Leia mais</h2>
+	<ol></ol> -->
+</section>
+<%- makeOthersFromSeries(arguments[0]); %>

@@ -1,0 +1,64 @@
+---
+layout: monument.ejs
+name: Marco do Lions Clube na Praça Edmundo Rego
+categoria: marco
+tags: [
+	"preliminar",
+	"possui escrita",
+	"sem descrição"
+]
+series: [
+	"Praça Edmundo Rego",
+	"Lions Clube"
+]
+
+data_inaug: 
+altura: 
+largura: 
+material: 
+autores: []
+
+local: Praça Edmundo Rego
+bairro: Grajaú
+lat: -22.9223
+lon: -43.26469
+
+imrj: 
+wikidata: 
+---
+
+<figure>
+	<a href="photo.jpg" data-llb-src="href">
+		<img src="thumb.jpg">
+	</a>
+	<figcaption>
+		<p class="credits">
+			Foto: Matheus Avellar (30 de janeiro de 2024).
+		</p>
+	</figcaption>
+</figure>
+<section class="description">
+	<!-- <p></p> -->
+</section>
+<section class="refs">
+	<!-- <ol></ol> -->
+</section>
+<section class="gallery">
+	<!-- <h2>Galeria</h2> -->
+</section>
+<section class="inscription">
+	<h2>Inscrição</h2>
+	<p>
+		Há uma inscrição no monumento contendo o seguinte texto:
+	</p>
+	<pre class="inscription-text">
+  Lions
+    L
+International</pre>
+</section>
+<%- makeMap(arguments[0]); %>
+<section class="more">
+<!-- 	<h2>Leia mais</h2>
+	<ol></ol> -->
+</section>
+<%- makeOthersFromSeries(arguments[0]); %>
