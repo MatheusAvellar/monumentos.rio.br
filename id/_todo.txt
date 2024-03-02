@@ -7,12 +7,14 @@
 	- https://fonts.google.com/specimen/Limelight ?
 	- Com text-shadow: -3px 3px var(--color-obra);?
 
-
+Sepetiba
 -22.97080, -43.70963 - Placa na Praça Washington Luis, Sepetiba
 -22.97096, -43.70992 - Placa na Praça Washington Luis, Sepetiba
 -22.97085, -43.70981 - Coreto na Praça Washington Luis, Sepetiba
 -22.98624, -43.69528 - Yemanjá na Baía de Sepetiba (tem placa), Sepetiba
 -22.98684, -43.69261 - Placa na Baía de Sepetiba, Sepetiba
+
+Grande Centro
 -22.89943, -43.20156 - Chafariz, Praça Santo Cristo(?), Santo Cristo
 -22.90689, -43.19647 - Praça Onze de Junho, Zumbi dos Palmares, Centro
 -22.91089, -43.20645 - Chafariz das Ninfas, Cidade Nova
@@ -48,3 +50,11 @@ Afonso Pena
 -22.91769, -43.21822 - (removido) placa? talvez um livro via L2832/1999
 -22.91758, -43.21787 - busto
 -22.91785, -43.21849 - efígie
+
+Barra da Tijuca
+-23.00733, -43.31500 - Chafariz em pracinha
+-23.00740, -43.31620 - Monumento do Lions Clube
+-23.01038, -43.36619 - Busto
+-23.01030, -43.36620 - Escultura(?) metálica
+-23.01013, -43.36619 - Monumento do Lions Clube
+-23.00990, -43.36621 - Monumento da Maçonaria
