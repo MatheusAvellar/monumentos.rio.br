@@ -204,7 +204,7 @@
 				<span>
 					<strong>Obras públicas</strong><br>
 					<i class="category cat-obra">obra</i>
-					<small>(33 itens)</small>
+					<small>(34 itens)</small>
 				</span>
 			</label>
 			<label>
@@ -220,7 +220,7 @@
 				<span>
 					<strong>Chafarizes e fontes</strong><br>
 					<i class="category cat-chafariz">chafariz</i>
-					<small>(34 itens)</small>
+					<small>(36 itens)</small>
 				</span>
 			</label>
 			<label>
@@ -236,7 +236,7 @@
 				<span>
 					<strong>Marcos</strong><br>
 					<i class="category cat-marco">marco</i>
-					<small>(64 itens)</small>
+					<small>(65 itens)</small>
 				</span>
 			</label>
 			<label>
@@ -244,7 +244,7 @@
 				<span>
 					<strong>Esculturas</strong><br>
 					<i class="category cat-escultura">escultura</i>
-					<small>(67 itens)</small>
+					<small>(69 itens)</small>
 				</span>
 			</label>
 		</section>
@@ -1435,10 +1435,10 @@ const m303 = L.marker([-22.9122,-43.176],{icon:tempMarker});
 m303.bindPopup(generatePopup("T211", "(Estátua de Mahatma Gandhi)", "S.d.", "Centro", '<a class="tag" href="/estatuas"><i class="category cat-estatua">estátua</i></a> <i class="category info-tag preliminar">preliminar</i>'),{offset:F}).openPopup().on({click:markerOnClick});
 markersMap.get("estátua").list.push(m303);
 const m304 = L.marker([-22.90357,-43.28438],{icon:tempMarker});
-m304.bindPopup(generatePopup("T212", "(Relógio do Méier I-a)", "S.d.", "Méier", '<a class="tag" href="/obras"><i class="category cat-obra">obra</i></a> <i class="category info-tag preliminar">preliminar</i>'),{offset:F}).openPopup().on({click:markerOnClick});
+m304.bindPopup(generatePopup("T212", "(Relógio do Méier I(a))", "S.d.", "Méier", '<a class="tag" href="/obras"><i class="category cat-obra">obra</i></a> <i class="category info-tag preliminar">preliminar</i>'),{offset:F}).openPopup().on({click:markerOnClick});
 markersMap.get("obra").list.push(m304);
 const m305 = L.marker([-22.90204,-43.27923],{icon:tempMarker});
-m305.bindPopup(generatePopup("T213", "(Relógio do Méier I-b)", "S.d.", "Méier", '<a class="tag" href="/obras"><i class="category cat-obra">obra</i></a> <i class="category info-tag preliminar">preliminar</i>'),{offset:F}).openPopup().on({click:markerOnClick});
+m305.bindPopup(generatePopup("T213", "(Relógio do Méier I(b))", "S.d.", "Méier", '<a class="tag" href="/obras"><i class="category cat-obra">obra</i></a> <i class="category info-tag preliminar">preliminar</i>'),{offset:F}).openPopup().on({click:markerOnClick});
 markersMap.get("obra").list.push(m305);
 const m306 = L.marker([-22.90006,-43.27532],{icon:tempMarker});
 m306.bindPopup(generatePopup("T214", "(Relógio do Méier II)", "S.d.", "Méier", '<a class="tag" href="/obras"><i class="category cat-obra">obra</i></a> <i class="category info-tag preliminar">preliminar</i>'),{offset:F}).openPopup().on({click:markerOnClick});
@@ -1467,6 +1467,24 @@ markersMap.get("busto").list.push(m313);
 const m314 = L.marker([-23.01114,-43.311],{icon:tempMarker});
 m314.bindPopup(generatePopup("T222", "(Marco de Inauguração da Praça São Oderico)", "2002", "Barra da Tijuca", '<a class="tag" href="/marcos"><i class="category cat-marco">marco</i></a> <i class="category info-tag preliminar">preliminar</i>'),{offset:F}).openPopup().on({click:markerOnClick});
 markersMap.get("marco").list.push(m314);
+const m315 = L.marker([-22.97243,-43.21606],{icon:tempMarker});
+m315.bindPopup(generatePopup("T223", "(Marco de Reforma dos Deques da Lagoa)", "2020", "Lagoa", '<a class="tag" href="/marcos"><i class="category cat-marco">marco</i></a> <i class="category info-tag preliminar">preliminar</i>'),{offset:F}).openPopup().on({click:markerOnClick});
+markersMap.get("marco").list.push(m315);
+const m316 = L.marker([-22.96069,-43.21203],{icon:tempMarker});
+m316.bindPopup(generatePopup("T224", "(Desenhista no Parque Lage)", "S.d.", "Jardim Botânico", '<a class="tag" href="/esculturas"><i class="category cat-escultura">escultura</i></a> <i class="category info-tag preliminar">preliminar</i>'),{offset:F}).openPopup().on({click:markerOnClick});
+markersMap.get("escultura").list.push(m316);
+const m317 = L.marker([-22.96056,-43.21211],{icon:tempMarker});
+m317.bindPopup(generatePopup("T225", "(Chafariz no Parque Lage)", "S.d.", "Jardim Botânico", '<a class="tag" href="/chafarizes"><i class="category cat-chafariz">chafariz</i></a> <i class="category info-tag preliminar">preliminar</i>'),{offset:F}).openPopup().on({click:markerOnClick});
+markersMap.get("chafariz").list.push(m317);
+const m318 = L.marker([-22.97043,-43.22446],{icon:tempMarker});
+m318.bindPopup(generatePopup("T226", "(Relógio de Sol do Jardim Botânico)", "2008", "Jardim Botânico", '<a class="tag" href="/obras"><i class="category cat-obra">obra</i></a> <i class="category info-tag preliminar">preliminar</i>'),{offset:F}).openPopup().on({click:markerOnClick});
+markersMap.get("obra").list.push(m318);
+const m319 = L.marker([-22.97049,-43.22445],{icon:tempMarker});
+m319.bindPopup(generatePopup("T227", "(Lago das Tartarugas)", "S.d.", "Jardim Botânico", '<a class="tag" href="/chafarizes"><i class="category cat-chafariz">chafariz</i></a> <i class="category info-tag preliminar">preliminar</i>'),{offset:F}).openPopup().on({click:markerOnClick});
+markersMap.get("chafariz").list.push(m319);
+const m320 = L.marker([-22.97029,-43.22415],{icon:tempMarker});
+m320.bindPopup(generatePopup("T228", "(La Danse: Homenagem a Matisse)", "S.d.", "Jardim Botânico", '<a class="tag" href="/esculturas"><i class="category cat-escultura">escultura</i></a> <i class="category info-tag preliminar">preliminar</i>'),{offset:F}).openPopup().on({click:markerOnClick});
+markersMap.get("escultura").list.push(m320);
 
 for(const [key, obj] of [...markersMap]) {
 	obj.canvas.addMarkers(obj.list);
