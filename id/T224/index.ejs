@@ -1,0 +1,67 @@
+---
+layout: monument.ejs
+name: Desenhista no Parque Lage
+categoria: escultura
+tags: [
+	"preliminar"
+]
+series: [
+	"Parque Lage"
+]
+
+data_inaug: 
+altura: 
+largura: 
+material: []
+autores: []
+
+local: Parque Lage
+bairro: Jardim Botânico
+lat: -22.96069
+lon: -43.21203
+
+imrj: 
+wikidata: 
+---
+
+<figure>
+	<a href="photo.jpg" data-llb-src="href">
+		<img src="thumb.jpg">
+	</a>
+	<figcaption>
+		<p class="credits">
+			Foto: Matheus Avellar (7 de março de 2024).
+		</p>
+	</figcaption>
+</figure>
+<section class="description">
+</section>
+<section class="gallery">
+	<h2>Galeria</h2>
+	<figure>
+		<a href="gallery-2012-full.jpg" data-llb-src="href">
+			<img src="gallery-2012.jpg">
+		</a>
+		<figcaption>
+			<p class="credits">
+				Foto: "User:Solstag" (14 de maio de 2012),
+				<a href="https://creativecommons.org/licenses/by-sa/3.0/deed.en">CC BY-SA 3.0</a>, via
+				<a href="https://commons.wikimedia.org/wiki/File:Escultura_do_pintor_no_Parque_Lage.jpg">Wikimedia
+				Commons</a>.
+			</p>
+		</figcaption>
+	</figure>
+</section>
+<section class="inscription">
+<!-- 	<h2>Inscrição</h2>
+	<p>
+		Há uma placa no monumento contendo o seguinte texto:
+	</p>
+	<pre class="inscription-text"></pre> -->
+</section>
+<%- makeMap(arguments[0]); %>
+<section class="more">
+<!-- 	<h2>Leia mais</h2>
+	<ol></ol> -->
+</section>
+<%- makeOthersFromSeries(arguments[0]); %>
