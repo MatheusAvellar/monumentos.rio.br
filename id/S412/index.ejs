@@ -1,0 +1,90 @@
+---
+layout: monument.ejs
+name: Estrela do Leblon
+categoria: escultura
+tags: [
+	"sem descrição"
+]
+series: [
+	"Praia do Leblon"
+]
+
+data_inaug: 2012-09-13
+altura: 
+largura: 2.4
+material: [ Aço, Ferro ]
+autores: [ Amílcar de Castro ]
+
+local: Praia do Leblon
+bairro: Leblon
+lat: -22.98852
+lon: -43.22766
+
+imrj: 
+wikidata: 
+---
+
+<figure>
+	<a href="photo.jpg" data-llb-src="href">
+		<img src="thumb.jpg">
+	</a>
+	<figcaption>
+		<p class="credits">
+			Foto: Matheus Avellar (9 de março de 2024).
+		</p>
+	</figcaption>
+</figure>
+<section class="description">
+	<blockquote>
+		A peça nomeada 'Estela',<sup>[sic]</sup> de 2,40m de diâmetro e feita de aço e ferro, estava
+		anteriormente na Travessa das Belas Artes, no Centro do Rio. Ela é uma
+		réplica de uma escultura premiada em 1953, na Bienal de São Paulo.
+	</blockquote>
+	<cite>
+		— Pedro Mansur (13 de setembro de 2012).
+		<a href="https://oglobo.globo.com/rio/leblon-ganha-obra-de-amilcar-de-castro-6083444">Leblon
+		ganha obra de Amílcar de Castro</a>. <i>O Globo</i>.
+	</cite>
+</section>
+<section class="refs">
+	<!-- <ol></ol> -->
+</section>
+<section class="gallery">
+	<h2>Galeria</h2>
+	<figure>
+		<a href="gallery-1952-full.jpg" data-llb-src="href">
+			<img src="gallery-1952.jpg">
+		</a>
+		<figcaption>
+			<p>Escultura original, exposta na II Bienal de São Paulo, de 43&nbsp;cm.</p>
+			<p class="credits">
+				Foto: Eduardo Eckenfels (creditado) (S.d.);
+				Escultura: Amilcar de Castro (1952). "Sem título"
+				[via <a href="https://www.luhringaugustine.com/exhibitions/empty-house-casa-vazia">Empty
+				House Casa Vazia</a>, crédito da fotografia por
+				Rodrigo de Castro (c.2016).
+				<a href="https://institutoamilcardecastro.com.br/assets/iacsp2.pdf">Amilcar
+				de Castro: Estudos e Obras</a>].
+			</p>
+		</figcaption>
+	</figure>
+</section>
+<section class="inscription">
+<!-- 	<h2>Inscrição</h2>
+	<p>
+		Há uma placa no monumento contendo o seguinte texto:
+	</p>
+	<pre class="inscription-text"></pre> -->
+</section>
+<%- makeMap(arguments[0]); %>
+<section class="more">
+	<h2>Leia mais</h2>
+	<ol>
+		<li>
+			Pedro Mansur (13 de setembro de 2012).
+			<a href="https://oglobo.globo.com/rio/leblon-ganha-obra-de-amilcar-de-castro-6083444">Leblon
+			ganha obra de Amílcar de Castro</a>. <i>O Globo</i>.
+		</li>
+	</ol>
+</section>
+<%- makeOthersFromSeries(arguments[0]); %>
