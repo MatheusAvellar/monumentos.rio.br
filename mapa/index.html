@@ -228,7 +228,7 @@
 				<span>
 					<strong>Estátuas</strong><br>
 					<i class="category cat-estatua">estátua</i>
-					<small>(31 itens)</small>
+					<small>(32 itens)</small>
 				</span>
 			</label>
 			<label>
@@ -1488,6 +1488,9 @@ markersMap.get("chafariz").list.push(m320);
 const m321 = L.marker([-22.97029,-43.22415],{icon:tempMarker});
 m321.bindPopup(generatePopup("T228", "(La Danse: Homenagem a Matisse)", "S.d.", "Jardim Botânico", '<a class="tag" href="/esculturas"><i class="category cat-escultura">escultura</i></a> <i class="category info-tag preliminar">preliminar</i>'),{offset:F}).openPopup().on({click:markerOnClick});
 markersMap.get("escultura").list.push(m321);
+const m322 = L.marker([-22.95569,-43.17774],{icon:tempMarker});
+m322.bindPopup(generatePopup("T229", "(Estátua Equestre de Simón Bolívar)", "1978", "Botafogo", '<a class="tag" href="/estatuas"><i class="category cat-estatua">estátua</i></a> <i class="category info-tag preliminar">preliminar</i>'),{offset:F}).openPopup().on({click:markerOnClick});
+markersMap.get("estátua").list.push(m322);
 
 for(const [key, obj] of [...markersMap]) {
 	obj.canvas.addMarkers(obj.list);
