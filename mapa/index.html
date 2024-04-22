@@ -204,7 +204,7 @@
 				<span>
 					<strong>Obras públicas</strong><br>
 					<i class="category cat-obra">obra</i>
-					<small>(34 itens)</small>
+					<small>(35 itens)</small>
 				</span>
 			</label>
 			<label>
@@ -244,7 +244,7 @@
 				<span>
 					<strong>Esculturas</strong><br>
 					<i class="category cat-escultura">escultura</i>
-					<small>(68 itens)</small>
+					<small>(69 itens)</small>
 				</span>
 			</label>
 		</section>
@@ -1489,8 +1489,14 @@ const m321 = L.marker([-22.97029,-43.22415],{icon:tempMarker});
 m321.bindPopup(generatePopup("T228", "(La Danse: Homenagem a Matisse)", "S.d.", "Jardim Botânico", '<a class="tag" href="/esculturas"><i class="category cat-escultura">escultura</i></a> <i class="category info-tag preliminar">preliminar</i>'),{offset:F}).openPopup().on({click:markerOnClick});
 markersMap.get("escultura").list.push(m321);
 const m322 = L.marker([-22.95569,-43.17774],{icon:tempMarker});
-m322.bindPopup(generatePopup("T229", "(Estátua Equestre de Simón Bolívar)", "1978", "Botafogo", '<a class="tag" href="/estatuas"><i class="category cat-estatua">estátua</i></a> <i class="category info-tag preliminar">preliminar</i>'),{offset:F}).openPopup().on({click:markerOnClick});
+m322.bindPopup(generatePopup("T229", "(Estátua equestre de Simón Bolívar)", "1978", "Botafogo", '<a class="tag" href="/estatuas"><i class="category cat-estatua">estátua</i></a> <i class="category info-tag preliminar">preliminar</i>'),{offset:F}).openPopup().on({click:markerOnClick});
 markersMap.get("estátua").list.push(m322);
+const m323 = L.marker([-23.00681,-43.31637],{icon:tempMarker});
+m323.bindPopup(generatePopup("T230", "(Escultura na Praça Prof. Sousa Araújo)", "S.d.", "Barra da Tijuca", '<a class="tag" href="/esculturas"><i class="category cat-escultura">escultura</i></a> <i class="category info-tag preliminar">preliminar</i>'),{offset:F}).openPopup().on({click:markerOnClick});
+markersMap.get("escultura").list.push(m323);
+const m324 = L.marker([-22.9206,-43.22397],{icon:tempMarker});
+m324.bindPopup(generatePopup("T231", "(Guarda-sol do Metrô de São Francisco Xavier)", "S.d.", "Tijuca", '<a class="tag" href="/obras"><i class="category cat-obra">obra</i></a> <i class="category info-tag preliminar">preliminar</i>'),{offset:F}).openPopup().on({click:markerOnClick});
+markersMap.get("obra").list.push(m324);
 
 for(const [key, obj] of [...markersMap]) {
 	obj.canvas.addMarkers(obj.list);
