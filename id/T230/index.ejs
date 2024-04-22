@@ -1,0 +1,54 @@
+---
+layout: monument.ejs
+name: Escultura na Praça Prof. Sousa Araújo
+categoria: escultura
+tags: [
+	"preliminar"
+]
+series: [
+	"Praça Professor Sousa Araújo"
+]
+
+data_inaug: 
+altura: 
+largura: 
+material: []
+autores: []
+
+local: Praça Professor Sousa Araújo
+bairro: Barra da Tijuca
+lat: -23.00681
+lon: -43.31637
+
+imrj: 
+wikidata: 
+---
+
+<figure>
+	<!-- <a href="photo.jpg" data-llb-src="href"> -->
+		<img src="thumb.jpg">
+	<!-- </a> -->
+	<figcaption>
+		<p class="credits">
+			Foto: <a href="https://maps.app.goo.gl/66Yd46Kh8utXZRv7A">Google Street View</a> (fevereiro de 2022).
+		</p>
+	</figcaption>
+</figure>
+<section class="description">
+</section>
+<section class="gallery">
+	<!-- <h2>Galeria</h2> -->
+</section>
+<section class="inscription">
+<!-- 	<h2>Inscrição</h2>
+	<p>
+		Há inscrições no pedestal do monumento contendo o seguinte texto:
+	</p>
+	<pre class="inscription-text"></pre> -->
+</section>
+<%- makeMap(arguments[0]); %>
+<section class="more">
+<!-- 	<h2>Leia mais</h2>
+	<ol></ol> -->
+</section>
+<%- makeOthersFromSeries(arguments[0]); %>
