@@ -1,0 +1,95 @@
+---
+layout: monument.ejs
+name: "Monumento à Integração dos Povos da América"
+alt_names: [
+	"Módulo 6.5"
+]
+categoria: escultura
+tags: []
+series: [
+	"Praça Irmãos Bernadelli"
+]
+
+data_inaug: 1997-05-12
+altura: 3
+largura: 9
+comprimento: 4.5
+material: [ Alumínio ]
+autores: [
+	"Ascânio MMM"
+]
+
+local: Praça Irmãos Bernadelli
+bairro: Cidade Nova
+lat: -22.91046
+lon: -43.20508
+
+imrj: 222
+wikidata: Q67210141
+---
+
+<figure>
+	<a href="photo.jpg" data-llb-src="href">
+		<img src="thumb.jpg">
+	</a>
+	<figcaption>
+		<p class="credits">
+			Foto: Matheus Avellar (22 de abril de 2024).
+		</p>
+	</figcaption>
+</figure>
+<section class="description">
+	<p>
+		Obra esculpida entre 1970 e 1997.
+	</p>
+	<blockquote>
+		Uma ondulação branca feita com perfis de alumínio pintado repousará a partir
+		de hoje, às 16h, em frente à sede administrativa da Prefeitura, no Centro.
+		[...] Antes de ser escolhido o local definitivo onde estará a sua escultura
+		pública, ela foi pensada para ser posta em frente à Catedral do Rio de
+		Janeiro. A Igreja [...] preferia que lá ficasse uma estátua em homenagem à
+		visita do Papa.
+	</blockquote>
+	<cite>
+		— Wilson Coutinho (12 de maio de 1997). "Uma nova onda no centro da cidade".
+		<i>O Globo</i>, Segundo Caderno, p.1
+		[via <a href="https://oglobo.globo.com/acervo">Acervo O Globo</a>].
+	</cite>
+	<blockquote>
+		A obra foi doada à cidade pela Associação Comercial do Rio de Janeiro.
+		Inicialmente encomendada para marcar o encerramento do encontro da Câmara
+		Interamericana de Arbitragem Comercial e da Associação Ibero-Americana de
+		Câmaras de Comércio do Rio de Janeiro.
+	</blockquote>
+	<cite>
+		— Vera Dias (s.d.). "Escultura Modulo 6.5 - Monumento a Integração dos
+		Povos da América". <i>Inventário dos Monumentos RJ</i>.
+	</cite>
+</section>
+<section class="gallery">
+	<!-- <h2>Galeria</h2> -->
+</section>
+<section class="inscription">
+<!-- 	<h2>Inscrição</h2>
+	<p>
+		Há uma placa no monumento contendo o seguinte texto:
+	</p>
+	<pre class="inscription-text"></pre> -->
+</section>
+<%- makeMap(arguments[0]); %>
+<section class="more">
+	<h2>Leia mais</h2>
+	<ol>
+		<li>
+			S.n. (s.d.).
+			<a href="https://www.ascaniommm.com/modulo65">Módulo 6.5</a>.
+			<i>Ascânio MMM</i>.
+		</li>
+		<li>
+			S.n. (19 de abril de 2011).
+			<a href="https://www.rio.rj.gov.br/web/guest/exibeconteudo?id=1714327">Conservação
+			faz limpeza em monumento na Cidade Nova</a>. <i>Prefeitura do Rio</i>.
+		</li>
+	</ol>
+</section>
+<%- makeOthersFromSeries(arguments[0]); %>
