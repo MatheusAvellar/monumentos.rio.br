@@ -74,13 +74,13 @@ module.exports = function(eleventyConfig) {
 			return `c.${ye}`;
 		}
 	};
-	getYearsSince = (date) => {
+	getYearsSince = (date, ago=true) => {
 		const d =dateify(date);
-		if(!d) return "? anos atrás";
+		if(!d) return `? anos${ago ? " atrás" : ""}`;
 		const start_year = d.getUTCFullYear();
 		const current_year = (new Date()).getUTCFullYear();
 		const delta_years = current_year - start_year;
-		return `${delta_years} ano${delta_years >= 2 ? "s" : ""} atrás`;
+		return `${delta_years} ano${delta_years >= 2 ? "s" : ""}${ago ? " atrás" : ""}`;
 	};
 
 	getYearFromDate = (date, circa) => {

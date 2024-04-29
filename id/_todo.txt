@@ -68,3 +68,6 @@ Botafogo
 -22.95503, -43.17765 - Escultura do Manequinho
 -22.95499, -43.17767 - Placa na praça junto ao Manequinho
 -22.95526, -43.17801 - Placa já removida
+
+Leblon
+-22.98788, -43.22609 - Remodelação das Avenidas 
