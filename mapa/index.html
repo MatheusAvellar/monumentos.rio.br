@@ -212,7 +212,7 @@
 				<span>
 					<strong>Bustos e efígies</strong><br>
 					<i class="category cat-busto">busto</i>
-					<small>(89 itens)</small>
+					<small>(90 itens)</small>
 				</span>
 			</label>
 			<label>
@@ -228,7 +228,7 @@
 				<span>
 					<strong>Estátuas</strong><br>
 					<i class="category cat-estatua">estátua</i>
-					<small>(33 itens)</small>
+					<small>(35 itens)</small>
 				</span>
 			</label>
 			<label>
@@ -236,7 +236,7 @@
 				<span>
 					<strong>Marcos</strong><br>
 					<i class="category cat-marco">marco</i>
-					<small>(68 itens)</small>
+					<small>(69 itens)</small>
 				</span>
 			</label>
 			<label>
@@ -244,7 +244,7 @@
 				<span>
 					<strong>Esculturas</strong><br>
 					<i class="category cat-escultura">escultura</i>
-					<small>(71 itens)</small>
+					<small>(72 itens)</small>
 				</span>
 			</label>
 		</section>
@@ -1524,6 +1524,21 @@ markersMap.get("marco").list.push(m332);
 const m333 = L.marker([-22.96204,-43.16458],{icon:tempMarker});
 m333.bindPopup(generatePopup("T238", "(Marco de Reconstrução da Avenida Atlântica)", "S.d.", "Leme", '<a class="tag" href="/marcos"><i class="category cat-marco">marco</i></a> <i class="category info-tag preliminar">preliminar</i>'),{offset:F}).openPopup().on({click:markerOnClick});
 markersMap.get("marco").list.push(m333);
+const m334 = L.marker([-22.96255,-43.1644],{icon:tempMarker});
+m334.bindPopup(generatePopup("T239", "(Estátua de Castello Branco)", "1974", "Leme", '<a class="tag" href="/estatuas"><i class="category cat-estatua">estátua</i></a> <i class="category info-tag preliminar">preliminar</i>'),{offset:F}).openPopup().on({click:markerOnClick});
+markersMap.get("estátua").list.push(m334);
+const m335 = L.marker([-22.96212,-43.16505],{icon:tempMarker});
+m335.bindPopup(generatePopup("T240", "(Busto de Júlio de Noronha)", "S.d.", "Leme", '<a class="tag" href="/bustos"><i class="category cat-busto">busto</i></a> <i class="category info-tag preliminar">preliminar</i>'),{offset:F}).openPopup().on({click:markerOnClick});
+markersMap.get("busto").list.push(m335);
+const m336 = L.marker([-22.96192,-43.16489],{icon:tempMarker});
+m336.bindPopup(generatePopup("T241", "(Marco do Lions Clube na Praça Júlio de Noronha)", "S.d.", "Leme", '<a class="tag" href="/marcos"><i class="category cat-marco">marco</i></a> <i class="category info-tag preliminar">preliminar</i>'),{offset:F}).openPopup().on({click:markerOnClick});
+markersMap.get("marco").list.push(m336);
+const m337 = L.marker([-22.96257,-43.16788],{icon:tempMarker});
+m337.bindPopup(generatePopup("T242", "(Estátua de Ary Barroso)", "S.d.", "Leme", '<a class="tag" href="/estatuas"><i class="category cat-estatua">estátua</i></a> <i class="category info-tag preliminar">preliminar</i>'),{offset:F}).openPopup().on({click:markerOnClick});
+markersMap.get("estátua").list.push(m337);
+const m338 = L.marker([-22.96236,-43.16547],{icon:tempMarker});
+m338.bindPopup(generatePopup("T243", "(Escultura sem título de Angelo Venosa)", "S.d.", "Leme", '<a class="tag" href="/esculturas"><i class="category cat-escultura">escultura</i></a> <i class="category info-tag preliminar">preliminar</i>'),{offset:F}).openPopup().on({click:markerOnClick});
+markersMap.get("escultura").list.push(m338);
 
 for(const [key, obj] of [...markersMap]) {
 	obj.canvas.addMarkers(obj.list);
