@@ -1,0 +1,98 @@
+---
+layout: default.ejs
+title: Monumentos do Rio Arte Cidade — Monumentos Rio
+---
+
+<main>
+	<section class="center">
+		<h1 class="cutout-width-limit">Rio Arte Cidade</h1>
+		<p>
+			O projeto Rio Arte Cidade possuía os seguintes <strong>61</strong> monumentos:
+		</p>
+		<div class="card-list">
+			<style>
+.card-preview.grey-bg {
+	background-color: rgba(0,0,0,0.1);
+}
+				</style>
+<%_ function makeCardForId(id) {
+	const monument = collections.all.filter(f => f.filePathStem.startsWith(`/id/${id}`))[0];
+	return monument ? makeCard(monument, false) : "";
+}
+function makeCardForUrl(url, text, removido) {
+	return `<div class="card">
+	<div class="card-preview grey-bg"></div>
+	<div class="card-description">
+		${url.length ? "<p><a href='" + url + "'>" + text + "</a></p>" : "<div>" + text + "</div>"}
+		<div class="card-details"></div>
+		<div class="card-tags">
+			${removido ? makeInfoTag("removido") : ""}
+		</div>
+	</div>
+</div>`;
+}
+_%>
+			<%- makeCardForId("A150"); -%>
+			<%- makeCardForId("C189"); -%>
+			<%- makeCardForUrl("https://maps.app.goo.gl/NoxSR33HQxsgqnqq5", "Ivens Machado (sem título)", true) -%>
+			<%- makeCardForUrl("https://maps.app.goo.gl/PAFBPzcEoP11DMwm9", "Mural (Cândido Portinari)") -%>
+			<%- makeCardForId("E262"); -%>
+			<%- makeCardForId("T243"); -%>
+			<%- makeCardForId("T021"); -%>
+			<%- makeCardForId("S412"); -%>
+			<%- makeCardForUrl("https://maps.app.goo.gl/ZHzCaDeqEqzEF8hR8", "Monumento aos Mortos da Segunda Guerra") -%>
+			<%- makeCardForUrl("https://maps.app.goo.gl/UqFQQBjxRaWgX4tFA", "O Passante") -%>
+			<%- makeCardForId("S337"); -%>
+			<%- makeCardForUrl("https://maps.app.goo.gl/5oSK1XSTzTSQkKVA8", "Estácio de Sá (1520-1567)") -%>
+			<%- makeCardForUrl("https://maps.app.goo.gl/irJw2v21niy5xJTXA", "Mulher com Ânfora") -%>
+			<%- makeCardForId("E322"); -%>
+			<%- makeCardForUrl("https://maps.app.goo.gl/WWc4Fx2hr9CLAag48", "Cubo Virtual") -%>
+			<%- makeCardForUrl("https://maps.app.goo.gl/FS5LqPkqwz8i23a56", "J. Carlos (1884-1950)") -%>
+			<%- makeCardForUrl("https://maps.app.goo.gl/Z6eXUAfgT3w6rYRPA", "Chafariz das Saracuras") -%>
+			<%- makeCardForUrl("https://maps.app.goo.gl/RV3S85FDnpKaE3HW9", "Mural (Paulo Werneck)") -%>
+			<%- makeCardForUrl("https://maps.app.goo.gl/ZDDQZ9APJvtgPAJJA", "Escultura para o Rio") -%>
+			<%- makeCardForUrl("https://maps.app.goo.gl/k4nwf7SUmmXyZF2E7", "Grafites", true) -%>
+			<%- makeCardForUrl("https://maps.app.goo.gl/qcD5b5MDXZ5JEZne7", "Mural (Aloisio Carvão)") -%>
+			<%- makeCardForId("S308"); -%>
+			<%- makeCardForId("C363"); -%>
+			<%- makeCardForUrl("", "Eco e Narciso", true) -%>
+			<%- makeCardForId("T144"); -%>
+			<%- makeCardForUrl("https://maps.app.goo.gl/fsmXpgDUcayuD1498", "Marechal Floriano Peixoto (1839-1895)") -%>
+			<%- makeCardForId("T057"); -%>
+			<%- makeCardForUrl("https://maps.app.goo.gl/SpHrysScGz8jPxfU8", "Manequinho") -%>
+			<%- makeCardForUrl("https://maps.app.goo.gl/c5fL7QpULTxWP6MG8", "Carlos Gomes (1836-1896)") -%>
+			<%- makeCardForId("T055"); -%>
+			<%- makeCardForUrl("https://maps.app.goo.gl/PzfEb9LPyanbFW7r8", "Duque de Caxias (1803-1880)") -%>
+			<%- makeCardForUrl("https://maps.app.goo.gl/NV8y7NBPnng4kYhZA", "General Osório (1808-1879)") -%>
+			<%- makeCardForId("E291"); -%>
+			<%- makeCardForUrl("https://maps.app.goo.gl/MMcH3gUVJ8sTHKbA6", "Jose Bonifácio de Andrada e Silva") -%>
+			<%- makeCardForId("T190"); -%>
+			<%- makeCardForId("T123"); -%>
+			<%- makeCardForUrl("https://maps.app.goo.gl/kyheH91NoFc9RmrLA", "Escritos de Gentileza") -%>
+			<%- makeCardForUrl("https://maps.app.goo.gl/RaACKoPcckiB7Qkb9", "Ponte dos Jesuítas") -%>
+			<%- makeCardForId("T005"); -%>
+			<%- makeCardForUrl("https://maps.app.goo.gl/hgpqeBaFP3tZjKQv5", "Santos Dumont (1873-1932)") -%>
+			<%- makeCardForUrl("https://maps.app.goo.gl/BZHH8X95Dn2u3HUu5", "Chopin (1810-1849)") -%>
+			<%- makeCardForUrl("https://maps.app.goo.gl/hd8H7NG6JTnPaDEL7", "Mnto. aos Heróis de Lagunas e Dourados") -%>
+			<%- makeCardForUrl("https://maps.app.goo.gl/6mcnQGT8YNbksyfn7", "Pequeno Jornaleiro", true) -%>
+			<%- makeCardForUrl("https://maps.app.goo.gl/LLSiRokNuPAPq3PD6", "Zumbi dos Palmares (1655-1695)") -%>
+			<%- makeCardForId("E331"); -%>
+			<%- makeCardForUrl("https://maps.app.goo.gl/KZ4at75uEtvn3g6eA", "Monumento à Juventude", true) -%>
+			<%- makeCardForId("C365"); -%>
+			<%- makeCardForId("T048"); -%>
+			<%- makeCardForId("T207"); -%>
+			<%- makeCardForUrl("https://maps.app.goo.gl/WusBN7grq8MaRBBe8", "Machado de Assis (1839-1908)") -%>
+			<%- makeCardForUrl("https://maps.app.goo.gl/3TbDCwR47edwSFaB7", "Tiradentes (1746-1792)") -%>
+			<%- makeCardForUrl("https://maps.app.goo.gl/2PCZ2kyWDHUf42KC8", "Benjamin Constant (1767-1830)") -%>
+			<%- makeCardForUrl("https://maps.app.goo.gl/LGERQ6uEJ7pwn72r9", "Clarisse Indio do Brasil (1864-1919)") -%>
+			<%- makeCardForUrl("https://maps.app.goo.gl/WScyCXaUf4LrhAwD6", "Francisco Pereira Passos (1836-1913)") -%>
+			<%- makeCardForUrl("https://maps.app.goo.gl/uX2a7Vtud4QE8Ya7A", "Castro Alves (1847-1871)") -%>
+			<%- makeCardForUrl("https://maps.app.goo.gl/H1h9xn5Gptq9vEaF9", "Visconde de Mauá (1813-1889)") -%>
+			<%- makeCardForId("S331"); -%>
+			<%- makeCardForUrl("https://maps.app.goo.gl/J7JZqedvT6nTGr7A6", "Estátua da Liberdade") -%>
+			<%- makeCardForId("C303"); -%>
+			<%- makeCardForId("S311"); -%>
+			<%- makeCardForUrl("https://maps.app.goo.gl/ZUJhu7gZDFCKsDdc6", "Mural (Roberto Burle Marx)") -%>
+		</div>
+	</section>
+</main>
