@@ -300,15 +300,15 @@ V centenario
 1ª vuelta al
 mundo</i></pre>
 </section>
-<section class="location"><h2>Localização</h2><p><strong>Localização:</strong> Orla Professor Luiz Paulo Conde, Centro</p><p><strong>Coordenadas:</strong> -22.89570, -43.17760</p><div id="monument-location-map"></div><!-- [Ref] https://leafletjs.com/ -->
+<section class="location"><h2>Localização</h2><p><strong>Localização:</strong> Orla Professor Luiz Paulo Conde, Centro</p><p><strong>Coordenadas:</strong> -22.89579, -43.17752</p><div id="monument-location-map"></div><!-- [Ref] https://leafletjs.com/ -->
 <link href="/assets/leaflet/leaflet.1.9.3.css" rel="stylesheet" type="text/css">
 <script src="/assets/leaflet/leaflet.1.9.3.min.js"></script>
 <!-- [Ref] https://github.com/Leaflet/Leaflet.fullscreen -->
 <link href="/assets/leaflet/leaflet.fullscreen.1.0.1.css" rel="stylesheet" type="text/css">
 <script src="/assets/leaflet/leaflet.fullscreen.1.0.1.js"></script><script>
 const bounds = new L.LatLngBounds(
-	new L.LatLng(-22.9207, -43.227599999999995),
-	new L.LatLng(-22.870700000000003, -43.1276)
+	new L.LatLng(-22.92079, -43.22752),
+	new L.LatLng(-22.870790000000003, -43.127520000000004)
 );
 const map = L.map("monument-location-map", {
 	center: bounds.getCenter(),
@@ -322,7 +322,7 @@ L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
 	maxZoom: 19,
 	attribution: "&copy; <a href='http://www.openstreetmap.org/copyright'>OSMF</a>"
 }).addTo(map);
-L.marker([-22.8957, -43.1776], {
+L.marker([-22.89579, -43.17752], {
 	icon: L.icon({
 		iconUrl: "/assets/leaflet/images/phosphor-marker--marco.svg",
 		iconSize: [64, 64],
