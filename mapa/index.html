@@ -204,7 +204,7 @@
 				<span>
 					<strong>Obras públicas</strong><br>
 					<i class="category cat-obra">obra</i>
-					<small>(35 itens)</small>
+					<small>(36 itens)</small>
 				</span>
 			</label>
 			<label>
@@ -212,7 +212,7 @@
 				<span>
 					<strong>Bustos e efígies</strong><br>
 					<i class="category cat-busto">busto</i>
-					<small>(90 itens)</small>
+					<small>(89 itens)</small>
 				</span>
 			</label>
 			<label>
@@ -532,7 +532,7 @@ const m2 = L.marker([-23.0639,-43.1459],{icon:markersMap.get("obra").icon});
 m2.bindPopup(generatePopup("A229", "Farol da Ilha Rasa", "1829", "Ipanema", '<a class="tag" href="/obras"><i class="category cat-obra">obra</i></a>'),{offset:F}).openPopup().on({click:markerOnClick});
 markersMap.get("obra").list.push(m2);
 const m3 = L.marker([-22.7661,-43.1031],{icon:markersMap.get("obra").icon});
-m3.bindPopup(generatePopup("A365", "Farol-Relógio da Mesbla", "1965", "Paquetá", '<a class="tag" href="/obras"><i class="category cat-obra">obra</i></a>'),{offset:F}).openPopup().on({click:markerOnClick});
+m3.bindPopup(generatePopup("A366", "Farol-Relógio da Mesbla", "1965", "Paquetá", '<a class="tag" href="/obras"><i class="category cat-obra">obra</i></a>'),{offset:F}).openPopup().on({click:markerOnClick});
 markersMap.get("obra").list.push(m3);
 const m4 = L.marker([-22.93565,-43.2349],{icon:markersMap.get("obra").icon});
 m4.bindPopup(generatePopup("A370", "Coreto da Praça dos Bichinhos", "S.d.", "Tijuca", '<a class="tag" href="/obras"><i class="category cat-obra">obra</i></a>'),{offset:F}).openPopup().on({click:markerOnClick});
@@ -1276,8 +1276,8 @@ const m250 = L.marker([-22.91329,-43.17629],{icon:tempMarker});
 m250.bindPopup(generatePopup("T139", "(Busto de Castro Alves)", "S.d.", "Lapa", '<a class="tag" href="/bustos"><i class="category cat-busto">busto</i></a> <i class="category info-tag preliminar">preliminar</i>'),{offset:F}).openPopup().on({click:markerOnClick});
 markersMap.get("busto").list.push(m250);
 const m251 = L.marker([-22.91329,-43.17629],{icon:tempMarker});
-m251.bindPopup(generatePopup("T140", "(Quiosque do Passeio Público)", "S.d.", "Lapa", '<a class="tag" href="/bustos"><i class="category cat-busto">busto</i></a> <i class="category info-tag preliminar">preliminar</i>'),{offset:F}).openPopup().on({click:markerOnClick});
-markersMap.get("busto").list.push(m251);
+m251.bindPopup(generatePopup("T140", "(Quiosque do Passeio Público)", "S.d.", "Lapa", '<a class="tag" href="/obras"><i class="category cat-obra">obra</i></a> <i class="category info-tag preliminar">preliminar</i>'),{offset:F}).openPopup().on({click:markerOnClick});
+markersMap.get("obra").list.push(m251);
 const m252 = L.marker([-22.91397,-43.17634],{icon:tempMarker});
 m252.bindPopup(generatePopup("T141", "(Busto de Pedro Américo)", "S.d.", "Lapa", '<a class="tag" href="/bustos"><i class="category cat-busto">busto</i></a> <i class="category info-tag preliminar">preliminar</i>'),{offset:F}).openPopup().on({click:markerOnClick});
 markersMap.get("busto").list.push(m252);
