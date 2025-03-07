@@ -51,6 +51,10 @@ Afonso Pena
 -22.91758, -43.21787 - busto
 -22.91785, -43.21849 - efígie
 
+Rio Comprido
+-22.9249,  -43.20962 - pedestal?
+-22.92458, -43.20929 - chafariz na praça paulo de frontim
+
 Barra da Tijuca
 -23.00733, -43.31500 - Chafariz em pracinha
 -23.00740, -43.31620 - Monumento do Lions Clube
@@ -79,6 +83,9 @@ Grande Tijuca
 Mangueira
 -22.90163, -43.24092 - Estátua na frente do Museu do Samba
 
+Galeão
+-22.80586, -43.21264 - Marco Rotário (https://maps.app.goo.gl/UKKDBYShvrsTQ9uF6)
+
 
 https://diariodorio.com/prefeitura-inaugura-placa-em-homenagem-aos-pracinhas-na-praca-mauaprefeitura-inaugura-placa-em-homenagem-aos-pracinhas-no-centro-do-rio/
 https://g1.globo.com/rj/rio-de-janeiro/noticia/2022/02/16/prefeitura-do-rio-inaugura-jardim-francoise-forton-em-homenagem-a-atriz.ghtml
@@ -86,3 +93,15 @@ https://sbtnews.sbt.com.br/noticia/brasil/214985-prefeitura-do-rio-inaugura-quio
 https://odia.ig.com.br/rio-de-janeiro/2023/08/6699740-prefeitura-inaugura-placa-em-homenagem-as-vitimas-da-chacina-de-vigario-geral.html
 https://enfoco.com.br/noticias/cidades/prefeitura-do-rio-inaugura-placa-em-homenagem-ao-jornalista-artur-xexeo-32231
 https://g1.globo.com/rj/rio-de-janeiro/noticia/2024/06/15/inauguracao-parque-susana-naspolini-realengo.ghtml
+
+Copacabana/Leme
+https://commons.wikimedia.org/wiki/File:Avenida_Atl%C3%A2ntica_4,_Acervo_do_Instituto_Moreira_Salles.jpg
+
+Calçadão de Copacabana na verdade não é exatamente o monumento
+Não sei se crio outro pro projeto do Burle Marx?
+https://commons.wikimedia.org/wiki/File:Exposi%C3%A7%C3%A3o_Tatuagens_Urbanas_e_o_Imagin%C3%A1rio_Carioca_06.jpg
+https://commons.wikimedia.org/wiki/File:View_from_Hotel_(4589738271).jpg
+https://commons.wikimedia.org/wiki/File:Cal%C3%A7ada_de_Copacabana.jpg
+
+Arcos da Lapa (usados para protesto)
+https://www.instagram.com/p/DCPAKiZOsS9/

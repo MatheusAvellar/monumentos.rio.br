@@ -722,7 +722,8 @@ hr.vertical {
 	box-shadow: 2px 2px 5px var(--shadow-color, #e5e5e5);
 }
 #monument-location-map.big {
-	height: 650px;
+	min-height: 650px;
+	height: 75vh
 }
 
 .card-list {

@@ -1,0 +1,79 @@
+---
+layout: monument.ejs
+name: Marco de Inauguração da Praça Claudio Minczuk
+categoria: marco
+tags: [
+	"possui escrita"
+]
+series: [ ]
+
+data_inaug: 2005-07
+
+altura: 
+largura: 
+material: 
+autores: 
+
+local: Praça Claudio Minczuk
+bairro: Jardim Guanabara
+lat: -22.81904
+lon: -43.20428
+
+imrj: 
+wikidata: 
+---
+
+<figure>
+	<a href="photo.jpg" data-llb-src="href">
+		<img src="thumb.jpg">
+	</a>
+	<figcaption>
+		<p class="credits">
+			Foto: Matheus Avellar (14 de setembro de 2024).
+		</p>
+	</figcaption>
+</figure>
+<section class="description">
+	<!--<p></p>-->
+</section>
+<section class="refs">
+	<!--<ol></ol>-->
+</section>
+<section class="gallery">
+	<h2>Galeria</h2>
+	<figure>
+		<a href="gallery-2024-full.jpg" data-llb-src="href">
+			<img src="gallery-2024.jpg">
+		</a>
+		<figcaption>
+			<p class="credits">
+				Foto: Matheus Avellar (14 de setembro de 2024).
+			</p>
+		</figcaption>
+	</figure>
+</section>
+<section class="inscription">
+	<h2>Inscrição</h2>
+	<p>
+		Havia uma placa no marco contendo o seguinte texto:
+	</p>
+	<pre class="inscription-text">
+Prefeitura
+da Cidade
+do Rio de Janeiro
+
+Praça Claudio Minczuk
+
+Inaugurada em Julho de 2005
+
+<small>Prefeito</small>
+Cesar Maia
+
+<small>Rio de Janeiro, 11 de Janeiro de 2005</small></pre>
+</section>
+<%- makeMap(arguments[0]); %>
+<section class="more">
+<!-- 	<h2>Leia mais</h2>
+	<ol></ol> -->
+</section>
+<%- makeOthersFromSeries(arguments[0]) %>

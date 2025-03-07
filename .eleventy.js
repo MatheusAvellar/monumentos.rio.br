@@ -1,4 +1,8 @@
+const ejsPlugin = require("@11ty/eleventy-plugin-ejs");
+
 module.exports = function(eleventyConfig) {
+	eleventyConfig.addPlugin(ejsPlugin);
+
 	eleventyConfig.addGlobalData("IMRJ_URL",
 		"https://web.archive.org/web/0/http://www.inventariodosmonumentosrj.com.br/index.asp?iMENU=catalogo&iiCOD=");
 	eleventyConfig.addGlobalData("HPIP_URL", "https://hpip.org/pt/heritage/details/");
