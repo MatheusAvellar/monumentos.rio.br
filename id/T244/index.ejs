@@ -1,25 +1,28 @@
 ---
 layout: monument.ejs
-name: Guarda-sol do Metrô de São Francisco Xavier
-categoria: obra
+name: Marco Rotário da Praça Carlos Paolera
+alt_names: []
+categoria: marco
 tags: [
 	"preliminar"
 ]
 series: [
-	"Guarda-sóis do Metrô",
-	"Praça Carlos Paolera"
+	"Praça Carlos Paolera",
+	"Rotary Club"
 ]
 
-data_inaug: 
+data_inaug: 1986-10
 altura: 
 largura: 
-material: []
-autores: []
+comprimento: 
+peso: 
+material: [ ]
+autores: [ ]
 
 local: Praça Carlos Paolera
 bairro: Tijuca
-lat: -22.92060
-lon: -43.22397
+lat: -22.92075
+lon: -43.22345
 
 imrj: 
 wikidata: 
@@ -41,15 +44,27 @@ wikidata:
 	<!-- <h2>Galeria</h2> -->
 </section>
 <section class="inscription">
-<!-- 	<h2>Inscrição</h2>
+	<h2>Inscrição</h2>
 	<p>
-		Há inscrições no pedestal do monumento contendo o seguinte texto:
+		Há uma placa no monumento contendo o seguinte texto:
 	</p>
-	<pre class="inscription-text"></pre> -->
+	<pre class="inscription-text">
+Rotary
+International
+
+Seja benvindo
+à Tijuca
+
+Rotary Clube
+RJ Tijuca
+D.457
+          X 1986</pre>
 </section>
 <%- makeMap(arguments[0]); %>
-<section class="more">
-<!-- 	<h2>Leia mais</h2>
-	<ol></ol> -->
-</section>
+<%# <section class="more">
+	<h2>Leia mais</h2>
+	<ol>
+		<li></li>
+	</ol>
+</section> %>
 <%- makeOthersFromSeries(arguments[0]); %>

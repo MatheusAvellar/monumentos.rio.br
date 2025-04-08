@@ -311,6 +311,7 @@ footer > section.disclaimer {
 	grid-template-columns: 1fr 1fr;
 	gap: .5rem 1rem;
 	hyphens: auto;
+	clear: both;
 }
 footer > section.disclaimer p {
 	margin: 0;
